@@ -142,21 +142,21 @@ Abstract Stuff Here
 
 
 
-{\color{red}Be sure to fix reference to ``where the rectangle" in figures such as \ref{fig:western C5}. Actually, check all references to diagrams with $\mathbf{b}$.}
+
 
 %%%%%%%  introduction %%%%%%%%%%%%%
 
 \begin{section}{Introduction}\label{sec:intro}
-
-The (type $A$) Temperley--Lieb algebra $\TL(A)$, invented by H.N.V.~Temperley and E.H.~Lieb in 1971~\cite{Temperley1971}, is a finite dimensional associative algebra which first arose in the context of statistical mechanics.
-
-In 1987, V.F.R.~Jones showed that $\TL(A)$ occurs naturally as a quotient of the type $A$ Hecke algebra, $\H(A)$~\cite{Jones1999}.  If $(W,S)$ is Coxeter system of type $\Gamma$, the associated Hecke algebra $\H(\Gamma)$ is an algebra with a basis given by $\{T_w\mid w \in W\}$ and relations that deform the relations of $W$ by a parameter $q$. The realization of the Temperley--Lieb algebra as a Hecke algebra quotient was generalized by J.J.~Graham in~\cite{Graham1995} to the case of an arbitrary Coxeter system.  %In Section~\ref{subsec:TL-algebras}, we define the generalized Temperley--Lieb algebra of type $\C_{n}$, denoted $\TL(\C_{n})$, and describe a special basis, called the monomial basis, which is indexed by the fully commutative elements (defined in Section~\ref{subsec:FC}) of the underlying Coxeter group.
-
-%Moreover, studying these generalized Temperley--Lieb algebras often provides a gateway to understanding the Kazhdan--Lusztig theory of the associated Hecke algebra.  Loosely speaking, $\TL(\Gamma)$ retains some of the relevant structure of $\H(\Gamma)$, yet is small enough that computation of the leading coefficients of the notoriously difficult to compute Kazhdan--Lusztig polynomials is often much simpler.
-
-Section~\ref{sec:prelim} of this paper is concerned with introducing the necessary notation and terminology of Coxeter groups, fully commutative elements, and heaps.  The concept of a heap introduced in Section~\ref{subsec:heaps} will be our main tool for visualizing combinatorial arguments required to prove several technical lemmas appearing in Section~\ref{subsec:prep lemmas}.  
-%In Section~\ref{sec:combinatorics}, we study some of the combinatorics of Coxeter groups of types $B$ and $\C$.  In particular, we introduce weak star reductions and the type I, type II, and non-cancellable elements of a Coxeter group of type $\C$, as well as establish several intermediate results.  The necessary background on generalized Temperley--Lieb algebras (in the sense of Graham) is summarized in Section~\ref{sec:gen TL-algebras}.  
-Lastly, in Section~\ref{sec:closing}, we discuss the implications of our results and future research.
+TO DO LAST
+%The (type $A$) Temperley--Lieb algebra $\TL(A)$, invented by H.N.V.~Temperley and E.H.~Lieb in 1971~\cite{Temperley1971}, is a finite dimensional associative algebra which first arose in the context of statistical mechanics.
+%
+%In 1987, V.F.R.~Jones showed that $\TL(A)$ occurs naturally as a quotient of the type $A$ Hecke algebra, $\H(A)$~\cite{Jones1999}.  If $(W,S)$ is Coxeter system of type $\Gamma$, the associated Hecke algebra $\H(\Gamma)$ is an algebra with a basis given by $\{T_w\mid w \in W\}$ and relations that deform the relations of $W$ by a parameter $q$. The realization of the Temperley--Lieb algebra as a Hecke algebra quotient was generalized by J.J.~Graham in~\cite{Graham1995} to the case of an arbitrary Coxeter system.  %In Section~\ref{subsec:TL-algebras}, we define the generalized Temperley--Lieb algebra of type $\C_{n}$, denoted $\TL(\C_{n})$, and describe a special basis, called the monomial basis, which is indexed by the fully commutative elements (defined in Section~\ref{subsec:FC}) of the underlying Coxeter group.
+%
+%%Moreover, studying these generalized Temperley--Lieb algebras often provides a gateway to understanding the Kazhdan--Lusztig theory of the associated Hecke algebra.  Loosely speaking, $\TL(\Gamma)$ retains some of the relevant structure of $\H(\Gamma)$, yet is small enough that computation of the leading coefficients of the notoriously difficult to compute Kazhdan--Lusztig polynomials is often much simpler.
+%
+%Section~\ref{sec:prelim} of this paper is concerned with introducing the necessary notation and terminology of Coxeter groups, fully commutative elements, and heaps.  The concept of a heap introduced in Section~\ref{subsec:heaps} will be our main tool for visualizing combinatorial arguments required to prove several technical lemmas appearing in Section~\ref{subsec:prep lemmas}.  
+%%In Section~\ref{sec:combinatorics}, we study some of the combinatorics of Coxeter groups of types $B$ and $\C$.  In particular, we introduce weak star reductions and the type I, type II, and non-cancellable elements of a Coxeter group of type $\C$, as well as establish several intermediate results.  The necessary background on generalized Temperley--Lieb algebras (in the sense of Graham) is summarized in Section~\ref{sec:gen TL-algebras}.  
+%Lastly, in Section~\ref{sec:closing}, we discuss the implications of our results and future research.
 
 \end{section}
 
@@ -178,7 +178,7 @@ where $e$ is the identity, $m(s,t) = 1$ if and only if $s = t$, and $m(s,t) = m(
 \]
 with $m(s,t) \geq 2$ factors.
 
-Given a Coxeter system $(W,S)$, a word $s_{x_1}s_{x_2}\cdots s_{x_m}$ in the free monoid $S^*$ is called an \emph{expression} for $w\in W$ if it is equal to $w$ when considered as a group element. If $m$ is minimal among all expressions for $w$, the corresponding word is called a \emph{reduced expression} for $w$. In this case, we define the \emph{length} of $w$ to be $\ell(w)=m$. Each element $w \in W$ can have several different reduced expressions that represent it.  If we wish to emphasize a fixed, possibly reduced, expression for $w\in W$, we represent it  in \textsf{sans serif} font, say $\w=s_{x_1}s_{x_2}\cdots s_{x_m}$, where each $s_{x_i} \in S$.  A product $w_{1}w_{2}\cdots w_{r}$ with $w_{i} \in W$ is called \emph{reduced} if $\ell(w_{1}w_{2}\cdots w_{r})=\sum \ell(w_{i})$.  
+Given a Coxeter system $(W,S)$, a word $s_{x_1}s_{x_2}\cdots s_{x_m}$ in the free monoid $S^*$ is called an \emph{expression} for $w\in W$ if it is equal to $w$ when considered as a group element. If $m$ is minimal among all expressions for $w$, the corresponding word is called a \emph{reduced expression} for $w$. In this case, we define the \emph{length} of $w$ to be $\ell(w)=m$. Each element $w \in W$ can have several different reduced expressions that represent it.  If we wish to emphasize a fixed, possibly reduced, expression for $w\in W$, we represent it  in \textsf{sans serif} font, say $\w=s_{x_1}s_{x_2}\cdots s_{x_m}$, where each $s_{x_i} \in S$.  A product $w_{1}w_{2}\cdots w_{r}$ with $w_{i} \in W$ is called \emph{reduced} if $\ell(w_{1}w_{2}\cdots w_{r})=\sum \ell(w_{i})$. {\color{red}We may not need reduced product.}
 
 Matsumoto's Theorem~\cite[Theorem 1.2.2]{Geck2000} states that if $w \in W$, then every reduced expression for $w$ can be obtained from any other by applying a sequence of \emph{braid moves} of the form 
 \[
@@ -190,12 +190,12 @@ where $s,t \in S$ and each factor in the move has $m(s,t)$ letters.  %The \emph{
 
 The sets $\L(w)=\{s \in S\mid \ell(sw) < \ell(w)\}$ and $\R(w)=\{s \in S\mid \ell(ws) < \ell(w)\}$ are called the \emph{left} and \emph{right descent sets} of $w$, respectively.  It turns out that $s \in \L(w)$ (respectively, $\R(w)$) if and only if $w$ has a reduced expression beginning (respectively, ending) with $s$.
 
-Given a Coxeter system $(W,S)$, the associated \emph{Coxeter graph} is the graph $\Gamma$ with vertex set $S$ and edges $\{s,t\}$ labeled with $m(s,t)$ for all $m(s,t)\geq 3$.  If $m(s,t)=3$, it is customary to leave the corresponding edge unlabeled.  Given a Coxeter graph $\Gamma$, we can uniquely reconstruct the corresponding Coxeter system $(W,S)$.  In this case, we say that $(W,S)$, or just $W$, is of type $\Gamma$. If $(W,S)$ is of type $\Gamma$, for emphasis, we may write $(W,S)$ as $(W(\Gamma),S(\Gamma))$.  Note that generators $s$ and $t$ are connected by an edge in the Coxeter graph $\Gamma$ if and only if $s$ and $s$ do not commute \cite{Humphreys1990}.
+Given a Coxeter system $(W,S)$, the associated \emph{Coxeter graph} is the graph $\Gamma$ with vertex set $S$ and edges $\{s,t\}$ labeled with $m(s,t)$ for all $m(s,t)\geq 3$.  If $m(s,t)=3$, it is customary to leave the corresponding edge unlabeled.  Given a Coxeter graph $\Gamma$, we can uniquely reconstruct the corresponding Coxeter system $(W,S)$.  In this case, we say that $(W,S)$, or just $W$, is of type $\Gamma$. If $(W,S)$ is of type $\Gamma$, for emphasis, we may write $(W,S)$ as $(W(\Gamma),S(\Gamma))$.  Note that generators $s$ and $t$ are connected by an edge in the Coxeter graph $\Gamma$ if and only if $s$ and $s$ do not commute~\cite{Humphreys1990}.
 
-The main focus of this paper will be the Coxeter systems of types {\color{red} insert the types we discuss} $A_n$ which are defined by the Coxeter graphs in Figures \ref{typeB} and \ref{typeC}, respectively, where $n\geq 2$.
+The main focus of this paper will be the Coxeter systems of types {\color{red} insert the types we discuss} $A_n$ which are defined by the Coxeter graphs in Figures~\ref{fig:typeA} and \ref{fig:typeC}, respectively, where $n\geq 2$.
 
 \begin{figure}[!ht]
-\subcaptionbox{Type $A_n$\label{typeA}}[.4\textwidth]{
+\subcaptionbox{Type $A_n$}[.4\textwidth]{
 \begin{tikzpicture}
 \draw[fill=black] \foreach \x in {1,2,3,4,5} {(\x,10) circle (1pt)};
 \draw \foreach \x in {1,2,3} {(\x,10) node[label=below:$s_{\x}$]{}};
@@ -221,7 +221,7 @@ The main focus of this paper will be the Coxeter systems of types {\color{red} i
 %\draw[-] (4,10) -- (6,10);
 %\end{tikzpicture}
 %}
-\caption{Coxeter graphs corresponding to Coxeter systems of type $A_{n}$.}
+\caption{Coxeter graphs corresponding to Coxeter systems of type $A_{n}$.}\label{fig:typeA}
 \end{figure}
 
 %We can obtain $W(B_{n})$ from $W(\C_{n})$ by removing the generator $s_{n+1}$ and the corresponding relations~\cite[Chapter 5]{Humphreys1990}.  We also obtain a Coxeter group of type $B$ if we remove the generator $s_{1}$ and the corresponding relations.  To distinguish these two cases, we let $W(B_{n})$ denote the subgroup of $W(\C_{n})$ generated by $\{s_{1}, s_{2}, \dots, s_{n}\}$ and we let $W(B'_{n})$ denote the subgroup of $W(\C_{n})$ generated by $\{s_{2}, s_{3}, \dots, s_{n+1}\}$.  It is well known that $W(\C_{n})$ is an infinite Coxeter group while $W(B_{n})$ and $W(B'_{n})$ are both finite~\cite[Chapters 2 and 6]{Humphreys1990}.

@@ -306,7 +306,7 @@ Let $\w$ be a fixed reduced expression for $w \in W(\A_{n})$.  As in~\cite{Bille
 \item an entry with coordinates $(x,y)$ is greater than an entry with coordinates $(x',y')$ in the heap if and only if $y > y'$.
 \end{enumerate}
 %If we change the heaps we need to fix the paragraph here. 
-Recall that a finite poset is determined by its covering relations.  In the case of a Coxeter group of type $\A_{n}$ (and any straight line Coxeter graph), it follows from the definition that $(x,y)$ covers $(x',y')$ in the heap if and only if $x = x' \pm 1$, $y > y'$, and there are no entries $(x'', y'')$ such that $x'' \in \{x, x'\}$ and $y'< y'' < y$.  This implies that we can completely reconstruct the edges of the Hasse diagram and the corresponding fig:heap poset from a lattice point representation. The lattice point representation of a heap allows us to visualize potentially cumbersome arguments.  In this case our heaps correspond to a left version of~\cite{Billey2007} and several other papers.  That is, in this paper entries at the left of a heap correspond to generators occurring to the left, as opposed to the right, in the corresponding reduced expression. 
+Recall that a finite poset is determined by its covering relations.  In the case of a Coxeter group of type $\A_{n}$ (and any straight line Coxeter graph), it follows from the definition that $(x,y)$ covers $(x',y')$ in the heap if and only if $x = x' \pm 1$, $y > y'$, and there are no entries $(x'', y'')$ such that $x'' \in \{x, x'\}$ and $y'< y'' < y$.  This implies that we can completely reconstruct the edges of the Hasse diagram and the corresponding heap poset from a lattice point representation. The lattice point representation of a heap allows us to visualize potentially cumbersome arguments.  In this case our heaps correspond to a left version of~\cite{Billey2007} and several other papers.  That is, in this paper entries at the left of a heap correspond to generators occurring to the left, as opposed to the right, in the corresponding reduced expression. 
 
 Let $\w$ be a reduced expression for $w \in W(\A_{n})$.  We let $H(\w)$ denote a lattice representation of the heap poset in $\{1,2,\ldots,n+1\} \times \N$ described in the preceding paragraphs.  If $w$ is FC, then the choice of reduced expression for $w$ is irrelevant, in which case, we will often write $H(w)$ (note the absence of \textsf{sans serif} font) and we will refer to $H(w)$ as the heap of $w$.
 
@@ -436,15 +436,25 @@ Let $(W,S)$ be a Coxeter system of type $\Gamma$ and let $w \in \FC(\Gamma)$. Th
 \begin{section}{Type $\A$ Stuff}
 
 \begin{subsection}{Connection to Symmetric Group}
-	stuff
+
 \end{subsection}
 
 \begin{subsection}{String Diagrams}
-	stuff
+Given the relation between Type $A_n$ and the symmetric group every reduced expression can be expressed as a string diagram that will allow us to visualize a reduced expression. It is important to note that the string diagram is not the string graph of $\A_n$ that is seen in Figure~\ref{fig:typeA}. Let $(W,S)$ be a Coxeter system. Suppose $\w=s_{x_1} \ldots s_{x_r}$ is a fixed reduced expression for $w \in W$. 
+\begin{example}
+Let $\w=s_2 s_1 s_3 s_2$ be a reduced expression for $w \in \FC(\A_3)$. We see that $\w$ corresponds to the following element in $S_4$,~$\w=(23)(12)(34)(23)$. The labeled string diagram for $w$ is shown in Figure~\ref{fig:firststring}.\\	
+\begin{figure*}[!ht]
+\subcaptionbox{\label{fig:firststring}}[.3\textwidth]{
+\includegraphics[scale=.05]{firststring.jpg}}
+\caption{The labeled string diagram for an element of $\FC(\A_3)$.}
+\end{figure*}
+\pagebreak \\
+In this case our string diagrams correspond to a left version of \cite{Jones.B:A} and several other papers. That is, in this paper the strings are moved from the left to the right as opposed to the top to the bottom in the corresponding reduced expression.
+\end{example}
 \end{subsection}
 
 \begin{subsection}{Connection between String Diagrams and Heaps}
-	stuff
+The heap and string diagram representations can be derived from one another. 	
 \end{subsection}
 \end{section}
 

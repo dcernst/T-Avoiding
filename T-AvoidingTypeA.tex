@@ -436,25 +436,43 @@ Let $(W,S)$ be a Coxeter system of type $\Gamma$ and let $w \in \FC(\Gamma)$. Th
 \begin{section}{Type $\A$ Stuff}
 
 \begin{subsection}{Connection to Symmetric Group}
-
+Some introductory sentence. 
 \end{subsection}
 
 \begin{subsection}{String Diagrams}
-Given the relation between Type $A_n$ and the symmetric group every reduced expression can be expressed as a string diagram that will allow us to visualize a reduced expression. It is important to note that the string diagram is not the string graph of $\A_n$ that is seen in Figure~\ref{fig:typeA}. Let $(W,S)$ be a Coxeter system. Suppose $\w=s_{x_1} \ldots s_{x_r}$ is a fixed reduced expression for $w \in W$. 
-\begin{example}
-Let $\w=s_2 s_1 s_3 s_2$ be a reduced expression for $w \in \FC(\A_3)$. We see that $\w$ corresponds to the following element in $S_4$,~$\w=(23)(12)(34)(23)$. The labeled string diagram for $w$ is shown in Figure~\ref{fig:firststring}.\\	
+Given the relation between Type $A_n$ and the symmetric group every reduced expression can be expressed as a string diagram that will allow us to visualize a reduced expression. It is important to note that the string diagram is not the string graph of $\A_n$ that is seen in Figure~\ref{fig:typeA}. Let $(W,S)$ be a Coxeter system of Type $A_n$. Suppose $\w=s_{x_1} \ldots s_{x_r}$ is a fixed reduced expression for $w \in W$. We see that $\w$ corresponds to the following element in $S_{n+1}$, $\sigma=(x_1,x_{x+1})(x_2,x_{x+2}) \ldots (x_r,x_{r+1})$, where $(x_i,x_{i+1})$ is the adjacent transposition defined above. We construct a string diagram as follows, create two columns of $n+1$ nodes that align node $1$ with node $1$ as the top most nodes, node $2$ with node $2$ as the second nodes in each column and so on ending with node $n+1$ aligned with node $n+1$ as the bottom most nodes. Now starting with node $1$ on the right utilize $\sigma$ to find where $1$ ends up, say $j$ and draw a line connection node $1$ on the right to node $j$ on the left. Repeat for nodes $2$ through $n+1$. \\
+A \emph{crossing} in a string diagram refers to the location in which two strings cross. In Type $A_n$ two distinct strings will cross a maximum of one time. 
+\begin{example}\label{ex:first string}
+Let $\w=s_1 s_2 s_3 s_5$ be a reduced expression for $w \in \FC(\A_5)$. We see that $\w$ corresponds to the following element in $S_6$,~$\w=(12)(23)(34)(56)$. The labeled string diagram for $w$ is shown in Figure~\ref{fig:firststring}.\\	
 \begin{figure*}[!ht]
 \subcaptionbox{\label{fig:firststring}}[.3\textwidth]{
 \includegraphics[scale=.05]{firststring.jpg}}
 \caption{The labeled string diagram for an element of $\FC(\A_3)$.}
 \end{figure*}
-\pagebreak \\
-In this case our string diagrams correspond to a left version of \cite{Jones.B:A} and several other papers. That is, in this paper the strings are moved from the left to the right as opposed to the top to the bottom in the corresponding reduced expression.
+
+In this case our string diagrams correspond to a left version of \cite{Jones.B:A} and several other papers. That is, in this paper the strings are moved from the right to the left as opposed to the top to the bottom in the corresponding reduced expression.
+ 
 \end{example}
 \end{subsection}
 
 \begin{subsection}{Connection between String Diagrams and Heaps}
-The heap and string diagram representations can be derived from one another. 	
+It is well known folklore that heaps can be derived from string diagrams and string diagrams can be derived from heaps. We will first show how to construct a heap from a string diagram. Given a string diagram for a reduced expression $\w$ create square nodes at each of the string crossings. Note that the squares fall precisely in the middle of two of the position nodes that we used to create the string diagram. Each of these square nodes corresponds to a unique heap element, if a square falls between $i,~i+1$ then the corresponding heap element has label $s_i$. 
+\begin{example}\label{ex:string to heap}
+Let $\w=s_1 s_2 s_3 s_5$ be a a reduced expression for $w \in \FC(A_5)$. The string diagram is as follows from Example~\ref{ex:first string}.\\
+
+\begin{figure*}
+	\includegraphics[scale=.05]{firststring.jpg}
+\end{figure*}
+\pagebreak
+At each of the string crossings we have created a square node. We see that the first square node on the left falls between position nodes $1$ and $2$, thus the corresponding heap element has label $s_1$. The second square node from the left falls between position nodes $2$ and $3$ and thus the corresponding heap element has label $s_2$. Continuing in this matter we get the following heap.\\
+
+\begin{figure*}
+	\includegraphics[scale=0.05]{stringtoheap.jpg}
+	\includegraphics[scale=0.05]{stringheap}
+\end{figure*}
+ 	
+\end{example}
+
 \end{subsection}
 \end{section}
 

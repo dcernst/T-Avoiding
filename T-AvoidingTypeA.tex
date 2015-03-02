@@ -4,7 +4,7 @@
 
 \usepackage[margin=1in]{geometry}
 \usepackage{tikz}
-\usetikzlibrary{calc, shapes.geometric, positioning, shapes, snakes}
+\usetikzlibrary{calc, shapes.geometric, positioning, shapes, snakes, arrows, shapes, patterns}
 \usepackage{setspace}
 \usepackage{amsmath}
 \usepackage{amsthm}
@@ -82,6 +82,8 @@
 \renewcommand\arraystretch{1.5}
 \renewcommand\thesubfigure{(\alph{subfigure})}
 
+
+
 %%% TikZ for Heaps %%%
 
 %For Heaps. command of the form \heapblock{a}{b}{c} where a is the index of the generator, b is the level in the heap (starting at the bottom), c is the label
@@ -92,6 +94,8 @@
 \newcommand\heapblock[3]{\fill[draw=black, fill=gray!30, rounded corners, line width=1.1pt, shift={(\xxaxis:#1)},shift={(\yyaxis:#2)}] (-1,-0.5) rectangle (1,0.5);\node at (#1,#2) {$#3$};}
 
 \newcommand\heapblank[2]{\fill[fill=white, dotted, draw=black, line width=1.1pt, rounded corners, shift={(\xxaxis:#1)},shift={(\yyaxis:#2)}] (-1,-0.5) rectangle (1,0.5);}
+
+\newcommand\nsq[3]{\fill[fill=cyan!30, draw=black, rounded corners, line width=1pt, shift={(\xxaxis:#1)},shift={(\yyaxis:#2)}] (0,0) -- (2,0) -- (2,-2) -- (0,-2) --cycle;\node at (#1+1,#2-1) {$#3$};}
 
 %%% TikZ for Diagrams %%%
 
@@ -268,36 +272,46 @@ Let $\w = s_3 s_5 s_2 s_4 s_6 s_1 s_5 s_2$ be a reduced expression for $w \in (\
 \begin{figure}[!ht]
 \subcaptionbox{\label{fig:hasse}}[.4\textwidth]{ 
 \begin{tikzpicture}[scale=0.5]
-\draw [fill=black] (2,1) circle (1.5pt);
-\draw (2,1) node[label=right:$s_2$]{};
-\draw [fill=black] (1,2) circle (1.5pt);
-\draw (1,2) node[label=right:$s_1$]{};
+\draw [fill=black] (5,6) circle (1.5pt);
+\draw (5,6) node[label=right:$s_1$]{};
+\draw [fill=black] (3,6) circle (1.5pt);
+\draw (3,6) node[label=left:$s_1$]{};
 \draw [fill=black] (5,2) circle (1.5pt);
 \draw (5,2) node[label=right:$s_5$]{};
-\draw [fill=black] (2,3) circle (1.5pt);
-\draw (2,3) node[label=right:$s_2$]{};
+\draw [fill=black] (4,5) circle (1.5pt);
+\draw (4,5) node[label=left:$s_2$]{};
 \draw [fill=black] (4,3) circle (1.5pt);
-\draw (4,3) node[label=right:$s_4$]{};
-\draw [fill=black] (6,3) circle (1.5pt);
-\draw (6,3) node[label=right:$s_6$]{};
+\draw (4,3) node[label=left:$s_4$]{};
+\draw [fill=black] (4,1) circle (1.5pt);
+\draw (4,1) node[label=left:$s_6$]{};
 \draw [fill=black] (3,4) circle (1.5pt);
-\draw (3,4) node[label=right:$s_3$]{};
-\draw [fill=black] (5,4) circle (1.5pt);
-\draw (5,4) node[label=right:$s_5$]{};
+\draw (3,4) node[label=left:$s_3$]{};
+\draw [fill=black] (3,2) circle (1.5pt);
+\draw (3,2) node[label=left:$s_5$]{};
 \draw [color=white] (1,.5) circle (0pt);
-\draw (2,1)--(1,2)--(2,3)--(3,4)--(4,3)--(5,2)--(6,3)--(5,4)--(4,3);
+\draw (3,6)--(4,5)--(5,6)--(3,4)--(4,3)--(5,2)--(4,1)--(3,2)--(4,3);
 \end{tikzpicture}
 }
 \subcaptionbox{\label{fig:first heap}}[.4\textwidth]{
 \begin{tikzpicture}[scale=0.5]
-\heapblock{5}{4}{s_5};
-\heapblock{3}{4}{s_3};
-\heapblock{6}{3}{s_6};
-\heapblock{4}{3}{s_4};
-\heapblock{2}{3}{s_2};
-\heapblock{5}{2}{s_5};
-\heapblock{1}{2}{s_1};
-\heapblock{2}{1}{s_2};
+%\heapblock{5}{4}{s_5};
+%\heapblock{3}{4}{s_3};
+%\heapblock{6}{3}{s_6};
+%\heapblock{4}{3}{s_4};
+%\heapblock{2}{3}{s_2};
+%\heapblock{5}{2}{s_5};
+%\heapblock{1}{2}{s_1};
+%\heapblock{2}{1}{s_2};
+
+\nsq{0}{0}{5};
+\nsq{0}{2}{3};
+\nsq{0}{4}{1};
+\nsq{2}{-1}{6};
+\nsq{2}{1}{4};
+\nsq{2}{3}{2};
+\nsq{4}{0}{5};
+\nsq{4}{4}{1};
+
 \end{tikzpicture}
 }
 \caption{The labeled Hasse diagram and a possible lattice point representation for the heap of an element from $(\C_5)$.}

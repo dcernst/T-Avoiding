@@ -230,9 +230,9 @@ The main focus of this paper will be the Coxeter systems of types {\color{red} i
 
 %%%%%%%%  FC elements %%%%%%%%%%%%%
 
-\begin{subsection}{Fully commutative elements}\label{subsec:FC}
-
-Let $(W,S)$ be a Coxeter system of type $\Gamma$ and let $w \in W$. Following Stembridge~\cite{Stembridge1996}, we define a relation $\sim$ on the set of reduced expressions for $w$.  Let $\w$ and $\w'$ be two reduced expressions for $w$.  We define $\w \sim \w'$ if we can obtain $\w'$ from $\w$ by applying a single commutation move of the form $st \mapsto ts$, where $m(s,t)=2$.  Now, define the equivalence relation $\approx$ by taking the reflexive transitive closure of $\sim$.  Each equivalence class under $\approx$ is called a \emph{commutation class}. If $w$ has a single commutation class, then we say that $w$ is \emph{fully commutative} (FC).  According to a result in~\cite{Stembridge1996}, an element $w$ is FC if and only if no reduced expression for $w$ contains a subword of the form $sts \cdots$ of length $m(s,t) \geq 3$.  The set of FC elements of the Coxeter system $(W,S)$ of type $\Gamma$ is denoted by $\FC(\Gamma)$, or possibly $\FC(W)$.
+%\begin{subsection}{Fully commutative elements}\label{subsec:FC}
+%
+%Let $(W,S)$ be a Coxeter system of type $\Gamma$ and let $w \in W$. Following Stembridge~\cite{Stembridge1996}, we define a relation $\sim$ on the set of reduced expressions for $w$.  Let $\w$ and $\w'$ be two reduced expressions for $w$.  We define $\w \sim \w'$ if we can obtain $\w'$ from $\w$ by applying a single commutation move of the form $st \mapsto ts$, where $m(s,t)=2$.  Now, define the equivalence relation $\approx$ by taking the reflexive transitive closure of $\sim$.  Each equivalence class under $\approx$ is called a \emph{commutation class}. If $w$ has a single commutation class, then we say that $w$ is \emph{fully commutative} (FC).  According to a result in~\cite{Stembridge1996}, an element $w$ is FC if and only if no reduced expression for $w$ contains a subword of the form $sts \cdots$ of length $m(s,t) \geq 3$.  The set of FC elements of the Coxeter system $(W,S)$ of type $\Gamma$ is denoted by $\FC(\Gamma)$, or possibly $\FC(W)$.
 
 %\begin{remark}\label{rem:illegal convex chains}
 %The elements of $\FC(\C_{n})$ are precisely those whose reduced expressions avoid consecutive subwords of the following types:
@@ -245,21 +245,24 @@ Let $(W,S)$ be a Coxeter system of type $\Gamma$ and let $w \in W$. Following St
 
 %In~\cite{Stembridge1996}, Stembridge classified the Coxeter groups that contain a finite number of FC elements.  According to~\cite[Theorem 5.1]{Stembridge1996}, $W(\C_{n})$ contains an infinite number of FC elements, while $W(B_{n})$ (and hence $W(B'_n)$) contains finitely many.  There are examples of infinite Coxeter groups that contain a finite number of FC elements (e.g., $W(E_n$) is infinite for $n\geq 9$, but contains only finitely many FC elements~\cite[Theorem 5.1]{Stembridge1996}).
 
-\end{subsection}
+%\end{subsection}
 
 %%%%%%%%%%%%%%%%%%%%%
 
 \begin{subsection}{Heaps}\label{subsec:heaps}
 
-Every reduced expression can be associated with a partially ordered set called a heap that will allow us to visualize a reduced expression  while preserving the essential information about the relations among the generators.  The theory of heaps was introduced in~\cite{Viennot1986} by Viennot and visually capture the combinatorial structure of the Cartier--Foata monoid of~\cite{Cartier1969}.  In~\cite{Stembridge1996} and~\cite{Stembridge1998}, Stembridge studied heaps in the context of FC elements, which is our motivation here.  In this section, we mimic the development found in~\cite{Billey2007},~\cite{Ernst2010}, and~\cite{Stembridge1996}.
+Every reduced expression can be associated with a partially ordered set called a heap that will allow us to visualize a reduced expression  while preserving the essential information about the relations among the generators.  The theory of heaps was introduced in~\cite{Viennot1986} by Viennot and visually capture the combinatorial structure of the Cartier--Foata monoid of~\cite{Cartier1969}.  
+%In~\cite{Stembridge1996} and~\cite{Stembridge1998}, Stembridge studied heaps in the context of fully commutative elements, which is our motivation here.  
+In this section, we mimic the development found in~\cite{Billey2007},~\cite{Ernst2010}, and~\cite{Stembridge1996}.
 
 Let $(W,S)$ be a Coxeter system.  Suppose $\w = s_{x_1} \cdots s_{x_r}$ is a fixed reduced expression for $w \in W$.  As in~\cite{Stembridge1996}, we define a partial ordering on the indices $\{1, \dots, r\}$ by the transitive closure of the relation $\lessdot$ defined via $j \lessdot i$ if $i < j$ and $s_{x_i}$ and $s_{x_j}$ do not commute.  In particular, since $\w$ is reduced, $j \lessdot i$ if $i < j$ and $s_{x_i} = s_{x_j}$ by transitivity.  This partial order is referred to as the \emph{heap} of $\w$, where $i$ is labeled by $s_{x_i}$  Note that for simplicity, we are omitting the labels of the underlying poset but retaining the labels of the corresponding generators.
 
-It follows from~\cite[Proposition 2.2]{Stembridge1996} that heaps are well-defined up to commutativity class.  That is, if $\w$ and $\w'$ are two reduced expressions for $w \in W$ that are in the same commutativity class, then the heaps of $\w$ and $\w'$ are equal.  In particular, if $w$ is FC, then it has a single commutativity class, and so there is a unique heap associated to $w$.
+It follows from~\cite[Proposition 2.2]{Stembridge1996} that heaps are well-defined up to commutativity class.  That is, if $\w$ and $\w'$ are two reduced expressions for $w \in W$ that are in the same commutativity class, then the heaps of $\w$ and $\w'$ are equal.  
+%In particular, if $w$ is FC, then it has a single commutativity class, and so there is a unique heap associated to $w$.
 
 %Change to an example for $A_n$?
 \begin{example}\label{ex:first heap}
-Let $\w = s_2 s_1 s_3 s_2$ be a reduced expression for $w \in \FC(\A_{3})$.  We see that $\w$ is indexed by $\{1, 2, 3, 4, 5\}$.  As an example, $3 \lessdot 2$ since $2 < 3$ and the second and third generators do not commute.  The labeled Hasse diagram for the heap poset of $w$ is shown in Figure~\ref{fig:hasse}.
+Let $\w = s_3 s_5 s_2 s_4 s_6 s_1 s_5 s_2$ be a reduced expression for $w \in (\A_{6})$.  We see that $\w$ is indexed by $\{1, 2, 3, 4, 5\}$.  As an example, $3 \lessdot 2$ since $2 < 3$ and the second and third generators do not commute.  The labeled Hasse diagram for the heap poset of $w$ is shown in Figure~\ref{fig:hasse}.
 \end{example}
 
 \begin{figure}[!ht]
@@ -297,7 +300,7 @@ Let $\w = s_2 s_1 s_3 s_2$ be a reduced expression for $w \in \FC(\A_{3})$.  We 
 \heapblock{2}{1}{s_2};
 \end{tikzpicture}
 }
-\caption{The labeled Hasse diagram and a possible lattice point representation for the heap of an element from $\FC(\C_5)$.}
+\caption{The labeled Hasse diagram and a possible lattice point representation for the heap of an element from $(\C_5)$.}
 \end{figure}
 
 Let $\w$ be a fixed reduced expression for $w \in W(\A_{n})$.  As in~\cite{Billey2007} and~\cite{Ernst2010}, we will represent a heap for $\w$ as a set of lattice points embedded in $\{1,2,\ldots,n+1\} \times \mathbb{N}$.  To do so, we assign coordinates (not unique) $(x,y) \in \{1,2,\ldots, n+1\} \times \mathbb{N}$ to each entry of the labeled Hasse diagram for the heap of $\w$ in such a way that:
@@ -306,21 +309,22 @@ Let $\w$ be a fixed reduced expression for $w \in W(\A_{n})$.  As in~\cite{Bille
 \item an entry with coordinates $(x,y)$ is greater than an entry with coordinates $(x',y')$ in the heap if and only if $y > y'$.
 \end{enumerate}
 %If we change the heaps we need to fix the paragraph here. 
-Recall that a finite poset is determined by its covering relations.  In the case of a Coxeter group of type $\A_{n}$ (and any straight line Coxeter graph), it follows from the definition that $(x,y)$ covers $(x',y')$ in the heap if and only if $x = x' \pm 1$, $y > y'$, and there are no entries $(x'', y'')$ such that $x'' \in \{x, x'\}$ and $y'< y'' < y$.  This implies that we can completely reconstruct the edges of the Hasse diagram and the corresponding heap poset from a lattice point representation. The lattice point representation of a heap allows us to visualize potentially cumbersome arguments.  In this case our heaps correspond to a left version of~\cite{Billey2007} and several other papers.  That is, in this paper entries at the left of a heap correspond to generators occurring to the left, as opposed to the right, in the corresponding reduced expression. 
+Recall that a finite poset is determined by its covering relations.  In the case of a Coxeter group of type $\A_{n}$ (and any straight line Coxeter graph), it follows from the definition that $(x,y)$ covers $(x',y')$ in the heap if and only if $x = x' \pm 1$, $y > y'$, and there are no entries $(x'', y'')$ such that $x'' \in \{x, x'\}$ and $y'< y'' < y$.  This implies that we can completely reconstruct the edges of the Hasse diagram and the corresponding heap poset from a lattice point representation. The lattice point representation of a heap allows us to visualize potentially cumbersome arguments.  In this case our heaps correspond to a left version of~\cite{Billey2007} and several other papers.  That is, in this paper entries at the left of a heap correspond to generators occurring to the rights, as opposed to the left, in the corresponding reduced expression. 
 
-Let $\w$ be a reduced expression for $w \in W(\A_{n})$.  We let $H(\w)$ denote a lattice representation of the heap poset in $\{1,2,\ldots,n+1\} \times \N$ described in the preceding paragraphs.  If $w$ is FC, then the choice of reduced expression for $w$ is irrelevant, in which case, we will often write $H(w)$ (note the absence of \textsf{sans serif} font) and we will refer to $H(w)$ as the heap of $w$.
+Let $\w$ be a reduced expression for $w \in W(\A_{n})$.  We let $H(\w)$ denote a lattice representation of the heap poset in $\{1,2,\ldots,n+1\} \times \N$ described in the preceding paragraphs.  
+%If $w$ is FC, then the choice of reduced expression for $w$ is irrelevant, in which case, we will often write $H(w)$ (note the absence of \textsf{sans serif} font) and we will refer to $H(w)$ as the heap of $w$.
 
 Given a heap, there are many possible coordinate assignments, yet the $x$-coordinates for each entry will be fixed for all of them.  In particular, two entries labeled by the same generator may only differ by the amount of horizontal space between them while maintaining their relative vertical position to adjacent entries in the heap.
 
-Let $\w=s_{x_1}\cdots s_{x_r}$ be a reduced expression for $w \in \FC(\A_{n})$.  If $s_{x_i}$ and $s_{x_j}$ are adjacent generators in the Coxeter graph with $i<j$, then we must place the point labeled by $s_{x_i}$ in the column that is \emph{left} of the point labeled by $s_{x_j}$.  Because generators that are not adjacent in the Coxeter graph do commute, points whose $x$-coordinates differ by more than one can slide past each other or land in the same column.  To emphasize the covering relations of the lattice representation we will enclose each entry of the heap in a rectangle in such a way that if one entry covers another, the rectangles overlap halfway.
+Let $\w=s_{x_1}\cdots s_{x_r}$ be a reduced expression for $w \in (\A_{n})$.  If $s_{x_i}$ and $s_{x_j}$ are adjacent generators in the Coxeter graph with $i<j$, then we must place the point labeled by $s_{x_i}$ in the column that is \emph{left} of the point labeled by $s_{x_j}$.  Because generators that are not adjacent in the Coxeter graph do commute, points whose $x$-coordinates differ by more than one can slide past each other or land in the same column.  To emphasize the covering relations of the lattice representation we will enclose each entry of the heap in a rectangle in such a way that if one entry covers another, the rectangles overlap halfway.
 
 \begin{example}\label{ex:second heap}
 Let $w$ be as in Example~\ref{ex:first heap}.  Then one possible representation for $H(w)$ appears in Figure~\ref{fig:first heap}.
 \end{example}
 
-When $w$ is FC, we wish to make a canonical choice for the representation $H(w)$ by assembling the entries in a particular way.  To do this, we give all entries corresponding to elements in $\L(w)$ the leftmost column and all other entries in the heap should have horizontal position as far to the left as possible.  For example, the representation of $H(w)$ given in Figure~\ref{fig:first heap} is the canonical representation.  Note that our canonical representation of heaps of FC elements corresponds precisely to the unique heap factorization of~\cite[Lemma 2.9]{Viennot1986} and to the Cartier--Foata normal form for monomials~\cite{Cartier1969,Green2006a}.  When illustrating heaps, we will adhere to this canonical choice, and when we consider the heaps of arbitrary reduced expressions, we will only allude to the relative columns of the entries, and never their absolute coordinates.  
+%When $w$ is FC, we wish to make a canonical choice for the representation $H(w)$ by assembling the entries in a particular way.  To do this, we give all entries corresponding to elements in $\L(w)$ the leftmost column and all other entries in the heap should have horizontal position as far to the left as possible.  For example, the representation of $H(w)$ given in Figure~\ref{fig:first heap} is the canonical representation.  Note that our canonical representation of heaps of FC elements corresponds precisely to the unique heap factorization of~\cite[Lemma 2.9]{Viennot1986} and to the Cartier--Foata normal form for monomials~\cite{Cartier1969,Green2006a}.  When illustrating heaps, we will adhere to this canonical choice, and when we consider the heaps of arbitrary reduced expressions, we will only allude to the relative columns of the entries, and never their absolute coordinates.  
 
-Let $w \in \FC(\A_n)$ have reduced expression $\w=s_{x_1}\cdots s_{x_r}$ and suppose $s_{x_i}$ and $s_{x_j}$ equal the same generator $s_k$, so that the corresponding entries have $x$-coordinate $k$ in $H(w)$.  We say that $s_{x_i}$ and $s_{x_j}$ are \emph{consecutive} if there is no other occurrence of $s_{k}$ occurring between them in $\w$.
+%Let $w \in \FC(\A_n)$ have reduced expression $\w=s_{x_1}\cdots s_{x_r}$ and suppose $s_{x_i}$ and $s_{x_j}$ equal the same generator $s_k$, so that the corresponding entries have $x$-coordinate $k$ in $H(w)$.  We say that $s_{x_i}$ and $s_{x_j}$ are \emph{consecutive} if there is no other occurrence of $s_{k}$ occurring between them in $\w$.
 
 Let $\w=s_{x_{1}} \cdots s_{x_{r}}$ be a reduced expression for $w \in W(\A_{n})$.  We define a heap $H'$ to be a \emph{subheap} of $H(\w)$ if $H'=H(\w')$, where $\w'=s_{y_1}s_{y_2} \cdots s_{y_k}$ is a subexpression of $\w$.  We emphasize that the subexpression need not be a subword (i.e., a consecutive subexpression).
 
@@ -363,9 +367,9 @@ From this point on, if there can be no confusion, we will not specify the exact 
 
 The following fact is implicit in the literature (in particular, see the proof of~\cite[Proposition 3.3]{Stembridge1996}) and follows easily from the definitions.
 
-\begin{proposition}
-Let $(W,S)$ be a Coxeter system of type $\Gamma$ and let $w \in \FC(\Gamma)$. Then $H'$ is a convex subheap of $H(w)$ if and only if $H'$ is the heap for some subword of some reduced expression for $w$.   \qed
-\end{proposition}
+%\begin{proposition}
+%Let $(W,S)$ be a Coxeter system of type $\Gamma$ and let $w \in \FC(\Gamma)$. Then $H'$ is a convex subheap of $H(w)$ if and only if $H'$ is the heap for some subword of some reduced expression for $w$.   \qed
+%\end{proposition}
 
 %It will be extremely useful for us to be able to recognize when a heap corresponds to an element in $\FC(\C_{n})$.  The following lemma follows immediately from Remark~\ref{rem:illegal convex chains} and is also a special case of~\cite[Proposition 3.3]{Stembridge1996}.
 
@@ -436,18 +440,18 @@ Let $(W,S)$ be a Coxeter system of type $\Gamma$ and let $w \in \FC(\Gamma)$. Th
 \begin{section}{Type $\A$ Stuff}
 
 \begin{subsection}{Connection to Symmetric Group}
-Some introductory sentence. 
+Some introductory sentence.  
 \end{subsection}
 
 \begin{subsection}{String Diagrams}
 Given the relation between Type $A_n$ and the symmetric group every reduced expression can be expressed as a string diagram that will allow us to visualize a reduced expression. It is important to note that the string diagram is not the string graph of $\A_n$ that is seen in Figure~\ref{fig:typeA}. Let $(W,S)$ be a Coxeter system of Type $A_n$. Suppose $\w=s_{x_1} \ldots s_{x_r}$ is a fixed reduced expression for $w \in W$. We see that $\w$ corresponds to the following element in $S_{n+1}$, $\sigma=(x_1,x_{x+1})(x_2,x_{x+2}) \ldots (x_r,x_{r+1})$, where $(x_i,x_{i+1})$ is the adjacent transposition defined above. We construct a string diagram as follows, create two columns of $n+1$ nodes that align node $1$ with node $1$ as the top most nodes, node $2$ with node $2$ as the second nodes in each column and so on ending with node $n+1$ aligned with node $n+1$ as the bottom most nodes. Now starting with node $1$ on the right utilize $\sigma$ to find where $1$ ends up, say $j$ and draw a line connection node $1$ on the right to node $j$ on the left. Repeat for nodes $2$ through $n+1$. \\
 A \emph{crossing} in a string diagram refers to the location in which two strings cross. In Type $A_n$ two distinct strings will cross a maximum of one time. 
 \begin{example}\label{ex:first string}
-Let $\w=s_1 s_2 s_3 s_5$ be a reduced expression for $w \in \FC(\A_5)$. We see that $\w$ corresponds to the following element in $S_6$,~$\w=(12)(23)(34)(56)$. The labeled string diagram for $w$ is shown in Figure~\ref{fig:firststring}.\\	
+Let $\w=s_1 s_2 s_3 s_5$ be a reduced expression for $w \in W(\A_5)$. We see that $\w$ corresponds to the following element in $S_6$,~$\w=(12)(23)(34)(56)$. The labeled string diagram for $w$ is shown in Figure~\ref{fig:firststring}.\\	
 \begin{figure*}[!ht]
 \subcaptionbox{\label{fig:firststring}}[.3\textwidth]{
 \includegraphics[scale=.05]{firststring.jpg}}
-\caption{The labeled string diagram for an element of $\FC(\A_3)$.}
+\caption{The labeled string diagram for an element of $W(\A_3)$.}
 \end{figure*}
 
 In this case our string diagrams correspond to a left version of \cite{Jones.B:A} and several other papers. That is, in this paper the strings are moved from the right to the left as opposed to the top to the bottom in the corresponding reduced expression.
@@ -458,7 +462,7 @@ In this case our string diagrams correspond to a left version of \cite{Jones.B:A
 \begin{subsection}{Connection between String Diagrams and Heaps}
 It is well known folklore that heaps can be derived from string diagrams and string diagrams can be derived from heaps. We will first show how to construct a heap from a string diagram. Given a string diagram for a reduced expression $\w$ create square nodes at each of the string crossings. Note that the squares fall precisely in the middle of two of the position nodes that we used to create the string diagram. Each of these square nodes corresponds to a unique heap element, if a square falls between $i,~i+1$ then the corresponding heap element has label $s_i$. 
 \begin{example}\label{ex:string to heap}
-Let $\w=s_1 s_2 s_3 s_5$ be a a reduced expression for $w \in \FC(A_5)$. The string diagram is as follows from Example~\ref{ex:first string}.\\
+Let $\w=s_1 s_2 s_3 s_5$ be a a reduced expression for $w \in W(A_5)$. The string diagram is as follows from Example~\ref{ex:first string}.\\
 
 \begin{figure*}
 	\includegraphics[scale=.05]{firststring.jpg}
@@ -479,19 +483,26 @@ At each of the string crossings we have created a square node. We see that the f
 %%%%%%%%%%  T-Avoiding in Type $A$ %%%%%%%%%%%%%
 \begin{section}{T-Avoiding in Type A}
 \begin{subsection}{Property T}
-	Stuff
+Given the connection to they symmetric groups of Type $(\A_n)$ we will consider the following definitions in terms of permutations in $S_{n+1}$. A permutation $\sigma \in S_{n+1}$ has \emph{Property T} if and only if there exists an $i$ such that either $\sigma(i)>\sigma(i+1), \sigma(i+2)$ or $\sigma(i+2)<\sigma(i),\sigma(i+1)$ Visually we see this in a string diagram as follows.~{\color{red} Insert property T pictures for Type A here} It is important to note that $\sigma$ containing Property T is not exclusive itself, if $\sigma{-1}$ contains the same properties, then the element is said to have Property T.
+\begin{example}
+Consider $\sigma=(124)(35)$ in $S_{n+1}$. The string diagram for $\sigma$ is as follows. {\color{red} Insert String Diagram here with Property T marked off on the sides}. Note that $\sigma$ has Property T twice and $\sigma^{-1}$ has Property T once.	
+\end{example}
 \end{subsection}
 
-\begin{subsection}{T-Avoiding}
-	Stuff
-\end{subsection}
-
-\begin{subsection}{Bad Elements}
-	Stuff
+\begin{subsection}{T-Avoiding and Bad Elements}
+The focus of our research has been to find elements that don't contain Property T. An element $\sigma \in S_{n+1}$ is said to be \emph{T-avoiding} if and only if neither $\sigma$ nor $\sigma^{-1}$ have property T.	It is clear that if $\sigma$ is a product of commuting adjacent 2 cycles then $\sigma$ is T-avoiding. When $\sigma$ is an element of $S_n$ of this type we say that $\sigma$ is \emph{trivially T-avoiding}. An element $\sigma \in S_{n+1}$ that is T-avoiding by not trivially T-avoiding is called \emph{bad}. 
 \end{subsection}
 
 \begin{subsection}{T-Avoiding in Type \textbf{$A_n$}}
-	Stuff
+We will show that there are no bad elements in Type $A_n$. To do this we will show that there are no bad elements in $S_n$ since they are isomorphic.
+\begin{proposition}
+Elements in $S_n$ are T-Avoiding if and only if the elements are products of commuting adjacent 2 cycles.
+\end{proposition}
+\begin{proof}
+$(\Leftarrow)$ Let $\sigma$ be a product of commuting adjacent 2 cycles. Then $\sigma$ is trivially T-avoiding.\\
+$(\Rightarrow)$ To show this direction we will show the contrapositive is true. That is \emph{if $\sigma$ is not the product of commuting adjacent 2-cycles then either $\sigma$ or $\sigma^{-1}$ has Property T}. Assume that $\sigma$ is not a product of commuting adjacent 2-cycles. This implies that any heap for $\sigma$ has at least 2 columns and that the string diagram has at least one string with more than one crossing.	
+\end{proof}
+
 \end{subsection}
 	
 \end{section}

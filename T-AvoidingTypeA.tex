@@ -474,22 +474,74 @@ In this case our string diagrams correspond to a left version of \cite{Jones.B:A
 \end{subsection}
 
 \begin{subsection}{Connection between String Diagrams and Heaps}
-It is well known folklore that heaps can be derived from string diagrams and string diagrams can be derived from heaps. We will first show how to construct a heap from a string diagram. Given a string diagram for a reduced expression $\w$ create square nodes at each of the string crossings. Note that the squares fall precisely in the middle of two of the position nodes that we used to create the string diagram. Each of these square nodes corresponds to a unique heap element, if a square falls between $i,~i+1$ then the corresponding heap element has label $s_i$. 
+It is well known folklore that heaps can be derived from string diagrams and string diagrams can be derived from heaps. We will first show how to construct a string diagram from a heap. Fix a reduced expression $\w=s_i\ldots s_r$ and construct the corresponding heap. For a heap block corresponding to a generator $s_n$ and label the node corresponding to the top of the block with $n$ and the node at the bottom of the block with $n+1$. In the center of the block create a square node which indicates a string crossing, wherever a block is missing place an x indicating. Repeat this for each block in the heap. Starting in the top most right node labeled with a 1 and trace the string to the closest square node or x, if the string hits a node it will pass through to the next node or x, if the string hits an x it will bounce in the opposite direction the string was traveling going towards the next node or x in the next column.
 \begin{example}\label{ex:string to heap}
-Let $\w=s_1 s_2 s_3 s_5$ be a a reduced expression for $w \in W(A_5)$. The string diagram is as follows from Example~\ref{ex:first string}.\\
+Let $\w=s_1 s_2 s_3 s_5$ be a a reduced expression for $w \in W(A_5)$. The heap is as follows from Example~\ref{ex:first heap}.\\
 
-\begin{figure*}
-	\includegraphics[scale=.05]{firststring.jpg}
-\end{figure*}
-\pagebreak
-At each of the string crossings we have created a square node. We see that the first square node on the left falls between position nodes $1$ and $2$, thus the corresponding heap element has label $s_1$. The second square node from the left falls between position nodes $2$ and $3$ and thus the corresponding heap element has label $s_2$. Continuing in this matter we get the following heap.\\
+\begin{tikzpicture}[scale=0.8]
+\nsq{0}{0}{5};
+\nsq{0}{2}{3};
+\nsq{0}{4}{1};
+\nsq{2}{-1}{6};
+\nsq{2}{1}{4};
+\nsq{2}{3}{2};
+\nsq{4}{0}{5};
+\nsq{4}{4}{1};
+\end{tikzpicture}
 
-\begin{figure*}
-	\includegraphics[scale=0.05]{stringtoheap.jpg}
-	\includegraphics[scale=0.05]{stringheap}
-\end{figure*}
- 	
+\begin{tikzpicture}[scale=0.8]
+\nsq{0}{0}{5};
+\nsq{0}{2}{3};
+\nsq{0}{4}{1};
+\nsq{2}{-1}{6};
+\nsq{2}{1}{4};
+\nsq{2}{3}{2};
+\nsq{4}{0}{5};
+\nsq{4}{4}{1};
+
+
+\node at (7.1,4) {$1$};
+\node at (7.1,3) {$2$};
+\node at (7.1,2) {$3$};
+\node at (7.1,1) {$4$};
+\node at (7.1,0) {$5$};
+\node at (7.1,-1) {$6$};
+\node at (7.1,-2) {$7$};
+
+\node at (-1.1,4) {$1$};
+\node at (-1.1,3) {$2$};
+\node at (-1.1,2) {$3$};
+\node at (-1.1,1) {$4$};
+\node at (-1.1,0) {$5$};
+\node at (-1.1,-1) {$6$};
+\node at (-1.1,-2) {$7$};
+
+\draw [purple,ultra thick] plot [smooth, tension=0.8] coordinates {(7,4)(5,3)(3,2)(1,1)(-1,1)};
+\draw [purple,ultra thick] plot [smooth, tension=0.8] coordinates {(7,3)(5,3)(3,5)(1,3)(-1,3)};
+\draw [purple,ultra thick] plot [smooth, tension=0.8] coordinates {(7,2)(3,2)(1,3)(-1,4)};
+\draw [purple,ultra thick] plot [smooth, tension=0.8] coordinates {(7,1)(3,0)(1,-1)(-1,-1)};
+\draw [purple,ultra thick] plot [smooth, tension=0.8] coordinates {(7,0)(5,-1)(3,-2)(-1,-2)};
+\draw [purple,ultra thick] plot [smooth, tension=0.8] coordinates {(7,-1)(5,-1)(3,0)(1,1)(-1,2)};
+\draw [purple,ultra thick] plot [smooth, tension=0.8] coordinates {(7,-2)(3,-2)(1,-1)(-1,0)};
+\end{tikzpicture}
+
 \end{example}
+%Now we will show how to construct a heap from a string diagram. Given a string diagram for a reduced expression $\w$ create square nodes at each of the string crossings. Note that the squares fall precisely in the middle of two of the position nodes that we used to create the string diagram. Each of these square nodes corresponds to a unique heap element, if a square falls between $i,~i+1$ then the corresponding heap element has label $s_i$. 
+%\begin{example}\label{ex:string to heap}
+%Let $\w=s_1 s_2 s_3 s_5$ be a a reduced expression for $w \in W(A_5)$. The string diagram is as follows from Example~\ref{ex:first string}.\\
+%
+%\begin{figure*}
+%	\includegraphics[scale=.05]{firststring.jpg}
+%\end{figure*}
+%\pagebreak
+%At each of the string crossings we have created a square node. We see that the first square node on the left falls between position nodes $1$ and $2$, thus the corresponding heap element has label $s_1$. The second square node from the left falls between position nodes $2$ and $3$ and thus the corresponding heap element has label $s_2$. Continuing in this matter we get the following heap.\\
+%
+%\begin{figure*}
+%	\includegraphics[scale=0.05]{stringtoheap.jpg}
+%	\includegraphics[scale=0.05]{stringheap}
+%\end{figure*}
+% 	
+%\end{example}
 
 \end{subsection}
 \end{section}
@@ -514,7 +566,9 @@ Elements in $S_n$ are T-Avoiding if and only if the elements are products of com
 \end{proposition}
 \begin{proof}
 $(\Leftarrow)$ Let $\sigma$ be a product of commuting adjacent 2 cycles. Then $\sigma$ is trivially T-avoiding.\\
-$(\Rightarrow)$ To show this direction we will show the contrapositive is true. That is \emph{if $\sigma$ is not the product of commuting adjacent 2-cycles then either $\sigma$ or $\sigma^{-1}$ has Property T}. Assume that $\sigma$ is not a product of commuting adjacent 2-cycles. This implies that any heap for $\sigma$ has at least 2 columns and that the string diagram has at least one string with more than one crossing.	
+$(\Rightarrow)$ To show this direction we will show the contrapositive is true. That is \emph{if $\sigma$ is not the product of commuting adjacent 2-cycles then either $\sigma$ or $\sigma^{-1}$ has Property T}. Assume that $\sigma$ is not a product of commuting adjacent 2-cycles. This implies that any heap for $\sigma$ has at least 2 columns and that the string diagram has at least one string with more than one crossing. We will proceed in two cases which we will call the easy case and the hard case. \\
+\textbf{Easy case} There is at least one node in the second column (left or right hand side) is blocked by only one other node. Without loss of generality suppose the $i+1^{st}$ node is blocked in the $i^{th}$ position but not in the $i+2^{nd}$ position. Then $\sigma(i) \geq i+1$, but $\sigma(i+1) \leq i$ and $\sigma(i+2) \leq i$. {\color{red} picture of the case}.\\
+\textbf{Hard case} Every node in the second column (left or right hand side) is blocked by 2 nodes in the first column.  
 \end{proof}
 
 \end{subsection}

@@ -82,7 +82,8 @@
 \renewcommand\arraystretch{1.5}
 \renewcommand\thesubfigure{(\alph{subfigure})}
 
-
+\definecolor{purple}{RGB}{153,51,255}
+\definecolor{darkblue}{RGB}{0,0,255}
 
 %%% TikZ for Heaps %%%
 
@@ -461,12 +462,34 @@ Some introductory sentence. Type $\A_n$ coxeter groups are isomorphic to the sym
 Given the relation between Type $A_n$ and the symmetric group every reduced expression can be expressed as a string diagram that will allow us to visualize a reduced expression. It is important to note that the string diagram is not the string graph of $\A_n$ that is seen in Figure~\ref{fig:typeA}. Let $(W,S)$ be a Coxeter system of Type $A_n$. Suppose $\w=s_{x_1} \ldots s_{x_r}$ is a fixed reduced expression for $w \in W$. We see that $\w$ corresponds to the following element in $S_{n+1}$, $\sigma=(x_1,x_{x+1})(x_2,x_{x+2}) \ldots (x_r,x_{r+1})$, where $(x_i,x_{i+1})$ is the adjacent transposition defined above. We construct a string diagram as follows, create two columns of $n+1$ nodes that align node $1$ with node $1$ as the top most nodes, node $2$ with node $2$ as the second nodes in each column and so on ending with node $n+1$ aligned with node $n+1$ as the bottom most nodes. Now starting with node $1$ on the right utilize $\sigma$ to find where $1$ ends up, say $j$ and draw a line connection node $1$ on the right to node $j$ on the left. Repeat for nodes $2$ through $n+1$. \\
 A \emph{crossing} in a string diagram refers to the location in which two strings cross. In Type $A_n$ two distinct strings will cross a maximum of one time. 
 \begin{example}\label{ex:first string}
-Let $\w=s_1 s_2 s_3 s_5$ be a reduced expression for $w \in W(\A_5)$. We see that $\w$ corresponds to the following element in $S_6$,~$\w=(12)(23)(34)(56)$. The labeled string diagram for $w$ is shown in Figure~\ref{fig:firststring}.\\	
-\begin{figure*}[!ht]
-\subcaptionbox{\label{fig:firststring}}[.3\textwidth]{
-\includegraphics[scale=.05]{firststring.jpg}}
-\caption{The labeled string diagram for an element of $W(\A_3)$.}
-\end{figure*}
+Let $\w=s_3 s_5 s_2 s_4 s_6 s_1 s_5 s_2$ be a reduced expression for $w \in W(\A_6)$. We see that $\w$ corresponds to the following element in $S_7$,~$\w=(34)(56)(23)(45)(67)(12)(56)(23)$. The labeled string diagram for $w$ is shown in Figure~\ref{fig:firststring}.\\	
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+\node at (7.2,4) {$1$};
+\node at (7.2,3) {$2$};
+\node at (7.2,2) {$3$};
+\node at (7.2,1) {$4$};
+\node at (7.2,0) {$5$};
+\node at (7.2,-1) {$6$};
+\node at (7.2,-2) {$7$};
+
+\node at (-1.2,4) {$1$};
+\node at (-1.2,3) {$2$};
+\node at (-1.2,2) {$3$};
+\node at (-1.2,1) {$4$};
+\node at (-1.2,0) {$5$};
+\node at (-1.2,-1) {$6$};
+\node at (-1.2,-2) {$7$};
+
+\draw [purple,ultra thick] plot [smooth, tension=0.8] coordinates {(7,4)(5,3)(3,2)(1,1)(-1,1)};
+\draw [purple,ultra thick] plot [smooth, tension=0.8] coordinates {(7,3)(5,3)(3,5)(1,3)(-1,3)};
+\draw [purple,ultra thick] plot [smooth, tension=0.8] coordinates {(7,2)(5,1.3)(3,2)(1,3)(-1,4)};
+\draw [purple,ultra thick] plot [smooth, tension=0.8] coordinates {(7,1)(5,.97)(3,0)(1,-1)(-1,-1)};
+\draw [purple,ultra thick] plot [smooth, tension=0.8] coordinates {(7,0)(5,-1)(3,-2)(1,-3)(-1,-2)};
+\draw [purple,ultra thick] plot [smooth, tension=0.8] coordinates {(7,-1)(5,-1)(3,0)(1,1)(-1,2)};
+\draw [purple,ultra thick] plot [smooth, tension=0.8] coordinates {(7,-2)(5,-3)(3,-2)(1,-1)(-1,0)};
+\end{tikzpicture}
+\end{center}
 
 In this case our string diagrams correspond to a left version of \cite{Jones.B:A} and several other papers. That is, in this paper the strings are moved from the right to the left as opposed to the top to the bottom in the corresponding reduced expression.
  
@@ -476,29 +499,17 @@ In this case our string diagrams correspond to a left version of \cite{Jones.B:A
 \begin{subsection}{Connection between String Diagrams and Heaps}
 It is well known folklore that heaps can be derived from string diagrams and string diagrams can be derived from heaps. We will first show how to construct a string diagram from a heap. Fix a reduced expression $\w=s_i\ldots s_r$ and construct the corresponding heap. For a heap block corresponding to a generator $s_n$ and label the node corresponding to the top of the block with $n$ and the node at the bottom of the block with $n+1$. In the center of the block create a square node which indicates a string crossing, wherever a block is missing place an x indicating. Repeat this for each block in the heap. Starting in the top most right node labeled with a 1 and trace the string to the closest square node or x, if the string hits a node it will pass through to the next node or x, if the string hits an x it will bounce in the opposite direction the string was traveling going towards the next node or x in the next column.
 \begin{example}\label{ex:string to heap}
-Let $\w=s_1 s_2 s_3 s_5$ be a a reduced expression for $w \in W(A_5)$. The heap is as follows from Example~\ref{ex:first heap}.\\
-
-\begin{tikzpicture}[scale=0.8]
-\nsq{0}{0}{5};
-\nsq{0}{2}{3};
-\nsq{0}{4}{1};
-\nsq{2}{-1}{6};
-\nsq{2}{1}{4};
-\nsq{2}{3}{2};
-\nsq{4}{0}{5};
-\nsq{4}{4}{1};
-\end{tikzpicture}
-
-\begin{tikzpicture}[scale=0.8]
-\nsq{0}{0}{5};
-\nsq{0}{2}{3};
-\nsq{0}{4}{1};
-\nsq{2}{-1}{6};
-\nsq{2}{1}{4};
-\nsq{2}{3}{2};
-\nsq{4}{0}{5};
-\nsq{4}{4}{1};
-
+Let $\w=s_1 s_2 s_3 s_5$ be a a reduced expression for $w \in W(A_5)$. The heap is as follows from Example~\ref{ex:first heap}. Here we have labeled the top and bottom of the heaps appropriately, put the square nodes in the center of the heap blocks to nodes, put an X in the center of missing heap blocks, and overlaid the strings as well. 
+\begin{center} 
+\begin{tikzpicture}[scale=0.5]
+\nsq{0}{0}{};
+\nsq{0}{2}{};
+\nsq{0}{4}{};
+\nsq{2}{-1}{};
+\nsq{2}{1}{};
+\nsq{2}{3}{};
+\nsq{4}{0}{};
+\nsq{4}{4}{};
 
 \node at (7.1,4) {$1$};
 \node at (7.1,3) {$2$};
@@ -516,16 +527,30 @@ Let $\w=s_1 s_2 s_3 s_5$ be a a reduced expression for $w \in W(A_5)$. The heap 
 \node at (-1.1,-1) {$6$};
 \node at (-1.1,-2) {$7$};
 
+\node[diamond, fill=darkblue] at (5,3) {};
+\node[diamond, fill=darkblue] at (5,-1) {};
+\node[diamond, fill=darkblue] at (3,2) {};
+\node[diamond, fill=darkblue] at (3,0) {};
+\node[diamond, fill=darkblue] at (3,-2) {};
+\node[diamond, fill=darkblue] at (1,3) {};
+\node[diamond, fill=darkblue] at (1,1) {};
+\node[diamond, fill=darkblue] at (1,-1) {};
+\node at (5,1) {X};
+\node at (3,4) {X};
+\node at (1,-3) {X};
+\node at (5,-3) {X};
+
 \draw [purple,ultra thick] plot [smooth, tension=0.8] coordinates {(7,4)(5,3)(3,2)(1,1)(-1,1)};
 \draw [purple,ultra thick] plot [smooth, tension=0.8] coordinates {(7,3)(5,3)(3,5)(1,3)(-1,3)};
-\draw [purple,ultra thick] plot [smooth, tension=0.8] coordinates {(7,2)(3,2)(1,3)(-1,4)};
-\draw [purple,ultra thick] plot [smooth, tension=0.8] coordinates {(7,1)(3,0)(1,-1)(-1,-1)};
-\draw [purple,ultra thick] plot [smooth, tension=0.8] coordinates {(7,0)(5,-1)(3,-2)(-1,-2)};
+\draw [purple,ultra thick] plot [smooth, tension=0.8] coordinates {(7,2)(5,1.3)(3,2)(1,3)(-1,4)};
+\draw [purple,ultra thick] plot [smooth, tension=0.8] coordinates {(7,1)(5,.97)(3,0)(1,-1)(-1,-1)};
+\draw [purple,ultra thick] plot [smooth, tension=0.8] coordinates {(7,0)(5,-1)(3,-2)(1,-3)(-1,-2)};
 \draw [purple,ultra thick] plot [smooth, tension=0.8] coordinates {(7,-1)(5,-1)(3,0)(1,1)(-1,2)};
-\draw [purple,ultra thick] plot [smooth, tension=0.8] coordinates {(7,-2)(3,-2)(1,-1)(-1,0)};
+\draw [purple,ultra thick] plot [smooth, tension=0.8] coordinates {(7,-2)(5,-3)(3,-2)(1,-1)(-1,0)};
 \end{tikzpicture}
-
+\end{center}
 \end{example}
+This can be done to each heap to get the corresponding string diagram. This process can also be done to construct a heap from a string diagram. This is beyond the scope of this paper and will not be discussed here.\\
 %Now we will show how to construct a heap from a string diagram. Given a string diagram for a reduced expression $\w$ create square nodes at each of the string crossings. Note that the squares fall precisely in the middle of two of the position nodes that we used to create the string diagram. Each of these square nodes corresponds to a unique heap element, if a square falls between $i,~i+1$ then the corresponding heap element has label $s_i$. 
 %\begin{example}\label{ex:string to heap}
 %Let $\w=s_1 s_2 s_3 s_5$ be a a reduced expression for $w \in W(A_5)$. The string diagram is as follows from Example~\ref{ex:first string}.\\
@@ -549,7 +574,7 @@ Let $\w=s_1 s_2 s_3 s_5$ be a a reduced expression for $w \in W(A_5)$. The heap 
 %%%%%%%%%%  T-Avoiding in Type $A$ %%%%%%%%%%%%%
 \begin{section}{T-Avoiding in Type A}
 \begin{subsection}{Property T}
-Given the connection to they symmetric groups of Type $(\A_n)$ we will consider the following definitions in terms of permutations in $S_{n+1}$. A permutation $\sigma \in S_{n+1}$ has \emph{Property T} if and only if there exists an $i$ such that either $\sigma(i)>\sigma(i+1), \sigma(i+2)$ or $\sigma(i+2)<\sigma(i),\sigma(i+1)$ Visually we see this in a string diagram as follows.~{\color{red} Insert property T pictures for Type A here} It is important to note that $\sigma$ containing Property T is not exclusive itself, if $\sigma{-1}$ contains the same properties, then the element is said to have Property T.
+Given the connection to they symmetric groups of Type $(\A_n)$ we will consider the following definitions in terms of permutations in $S_{n+1}$. A permutation $\sigma \in S_{n+1}$ has \emph{Property T} if and only if there exists an $i$ such that either $\sigma(i)>\sigma(i+1), \sigma(i+2)$ or $\sigma(i+2)<\sigma(i),\sigma(i+1)$ Visually we see this in a string diagram as follows.~{\color{red} Insert property T pictures for Type A here} It is important to note that $\sigma$ containing Property T is not exclusive itself, if $\sigma^{-1}$ contains the same properties, then the element is said to have Property T.
 \begin{example}
 Consider $\sigma=(124)(35)$ in $S_{n+1}$. The string diagram for $\sigma$ is as follows. {\color{red} Insert String Diagram here with Property T marked off on the sides}. Note that $\sigma$ has Property T twice and $\sigma^{-1}$ has Property T once.	
 \end{example}

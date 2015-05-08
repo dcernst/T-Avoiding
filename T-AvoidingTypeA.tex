@@ -78,6 +78,7 @@
 \renewcommand{\H}{\mathcal{H}}
 \DeclareMathOperator{\FC}{FC}
 \renewcommand{\r}{\mathbf{r}}
+\newcommand{\Sup}{\textrm{Sup}}
 
 \renewcommand\arraystretch{1.5}
 \renewcommand\thesubfigure{(\alph{subfigure})}
@@ -598,6 +599,93 @@ Therefore, if $\sigma$ is not the product of commuting adjacent 2-cycles, then e
 \end{proof}
 
 \end{subsection}
+	
+\end{section}
+
+\begin{section}{T-Avoiding in Type B}
+\begin{subsection}{Property T}
+A slightly different definition is required for Property T for Type $B_n$	
+\end{subsection}
+
+\begin{subsection}{T-Avoiding in Type $B_n$}
+In the following section we will show that there are no bad elements in type $B_n$. In order to do this we first will prove several lemmas, and then we will prove the theorem. In the following, unless otherwise stated $w$ is presented in the diagonal factorization.
+\begin{lemma}
+If $w_n=s_n$, $w_{n-1}=s_{n-1}s_{n-2}$ and $w_i=e$ for all $i \neq n, n-1$, then $w$ has Property T on the left.	
+\end{lemma}
+\begin{proof}	
+Suppose $w_n=s_n$, $w_{n-1}=s_{n-1}s_{n-2}$ and $w_i=e$. Then $w=s_{n-1}s_{n-2}s_n$. Clearly $w$ has Property T on the left.
+\end{proof}
+
+\begin{lemma}
+If everything in the second column (on the right) is blocked by two things in the rightmost column in the heap of $w$ and all the zigs attain maximum height, then $w$ has Property T on the left.	Here maximum height is defined to be the block in the rightmost column, or $s_0$ if it does not reach the right most column.
+\end{lemma}
+\begin{proof}
+Suppose everything in the second column is blocked by two things in the rightmost column in the heap of $w$, and all zigs attain maximum height. Then $w=s_0s_1s_0s_2s_1s_0w_3 \ldots w_n$, and clearly $w$ has Property T on the left.	
+\end{proof}
+
+\begin{lemma}
+If everything in the second column is blocked by two things in the rightmost column, and not all $w_k$ attain maximum height as defined above,then $w$ has Property T on the right.
+\end{lemma}
+\begin{proof}
+Suppose that everything in the second column of the heap of $w$ is blocked by two things in the rightmost column of $w$. Choose the maximal $k$ such that $w_k$ does not attain maximum height. We proceed in the following cases.
+	\begin{itemize}
+	\item Case 1: The $w_k$ 	that does not attain maximum height is one which would contribute to the rightmost column.\\
+		Suppose that the maximal $k$ such that $w_k$ does not attain maximal height is one which would contribute to the rightmost column of the heap. Then we can write $w_k=s_ks_{k-1} \ldots s_i$ and we can write $w=w_0 \ldots w_{k-1} s_k s_{k-1} \ldots s_i s_{k+1} s_k \ldots s_j w_{k+1} \ldots w_n$. Note that $s_j$ is in the right most column.\\
+		 If $s_i=s_j$, then applying commutations to $w$ we see that $w=w_0 \ldots w_{k-1} s_k s_{k-1} \ldots s_{i-1} s_{k+1} s_k \ldots s_i s_{j+1} s_j w_{k+1} \ldots w_n$. Applying a braid to the $s_i s_{j+1} s_j$ elements we get that $w=w_0 \ldots w_{k-1} s_k s_{k-1} \ldots s_{i-1} s_{k+1} s_k \ldots s_{j+1} s_{j} s_{j+1} w_{k+1} \ldots w_n$. In applying the braid move to $w$ we have created a gap in the rightmost wall of the heap. Because of this gap we can apply commutations to $w$ and $w=w_0 \ldots w_{k-1} s_k s_{k-1} \ldots s_{i-1} s_{k+1} s_k \ldots s_{j+1} w_{k+1} \ldots w_n s_{j+1} s_{j}$ and thus $w$ has Property T on the right.\\
+		 Now consider $s_i \neq s_j$. Since $w_{k+1}$ attains maximum height $s_i \in \Sup(w_{k+1})$. Then by applying commutations to $w$ above we see that $w=w_0 \ldots w_{k-1} s_k s_{k-1} \ldots s_{i-1} s_{k+1} s_k \ldots s_i s_{i+1} s_i \ldots s_j w_{k+1} \ldots w_n$. Using the braid moves described at the end of the Type $\A$ proof, which is legal since except for $s_0, s_1$ the same relations hold, we can using braid moves the $s_i s_{i+1} s_i$ to the rightmost wall. In doing this we have created a gap in the rightmost column and by applying the same commutations from above we see that $w=w_0 \ldots w_{k-1} s_k s_{k-1} \ldots s_{i-1} s_{k+1} s_k \ldots s_{j+1} w_{k+1} \ldots w_n s_{i+1} s_{i}$, which has Property T on the right. 
+	\item The $w_k$ that does not attain maximum height is not one which would contribute to the right most column.\\
+		Suppose that the maximal $k$ such that $w_k$ does not attain maximal height is not one which would contribute to the rightmost column. Since $w_k$ does not attain maximal height we can write $w_k=s_k \ldots s_i$ where $s_i \neq 0$. However, since $w_{k+1}$ attains maximal height $s_i \in \Sup(w_{k+1})$. Then we can write $w=w_0 \ldots w_{k-1} s_k s_{k-1} \ldots s_i s_{k+1} s_k \ldots s_i \ldots s_j w_{k+1} \ldots w_n$. By applying commutations we see that  $w=w_0 \ldots w_{k-1} s_k s_{k-1} \ldots s_{i-1} s_{k+1} s_k \ldots s_i s_{i+1} s_i \ldots s_j w_{k+1} \ldots w_n$. Then as above we can apply braid moves to $s_i s_{i+1} s_i$ to create a gap in the rightmost column and applying the commutations as above we get $w=w_0 \ldots w_{k-1} s_k s_{k-1} \ldots s_{i-1} s_{k+1} s_k \ldots s_{j+1} w_{k+1} \ldots w_n s_{i+1} s_{i}$. Thus $w$ has Property T on the right.
+	\end{itemize}
+Therefore, if everything in the second column is blocked by two things in the rightmost column, and not all $w_k$ attain maximum height as defined above,then $w$ has Property T on the right.
+\end{proof}
+
+The above lemmas when combined together show that if the elements in the second column of the heap of $w$ are blocked by two things in the first column then $w$ has Property T. We will use this fact in the proof the following proof.
+
+\begin{theorem}
+	In Type $B_n$, elements, $w \in B_n$, are T-Avoiding if and only if $w$ is a product of commuting generators.
+\end{theorem}
+
+\begin{proof}
+	Let $w \in B_n$ be a reduced expression with diagonal factorization.\\
+	$(\Leftarrow)$ Suppose $w$ is a product of commuting generators. Then $w$ is trivially $T-Avoiding$.\\
+	$(\Rightarrow)$ To prove this direction we will show the contrapositive. That is, if $w$ is not a product of commuting generators then $w$ has Property T on the left or right.\\
+	Suppose $w$ is not a product of commuting generators. If $s_0$ is not in the support of $w$, then $w$ is a Type $\A_{n-1}$ element and we are done. Consider $s_0 \in \Sup(w)$. Since $w$ is not a product of commuting generators there exists a maximal $k$ such that $w_k \neq \{e, s_k\}$. That is, $w_k=s_k \ldots s_i$ for $i \in \{1, \ldots ,k-1\}$. The rest proceeds in case analysis.
+	\begin{enumerate}
+	\item Them minimal $k=n$
+	\begin{enumerate}
+	\item Suppose $w_n=s_ns_{n-1} \ldots s_i$ for $i \in \{0, \ldots ,n-1\}$ and $w_n$ does not zig-zag. Then $w=w_0 \ldots w_{k-1} s_n s_{n-1} \ldots s_{i+1} s_i$, which implies that $w$ has Property T on the right.
+	\item Suppose $w_n=s_n s_{n-1} \ldots s_i$ for $i \in \{0, \ldots ,n\}$ and $w_n$ does zig-zag. Then $w=w_0 \ldots w_{n-1} s_n s_{n-1} \ldots s_1 s_0 s_1 \ldots s_i$, which implies $w$ has Property T on the right.
+	\end{enumerate}
+	\item The minimal $k < n$.
+	\begin{enumerate}
+	\item The element $w_{k+1}=e$.
+	\begin{enumerate}
+	\item Suppose $w_k =s_k \ldots s_i$ for $i \in \{1, \ldots k-1\}$ and $w$ does not zig zag. Then $w=w_0 w_1 \ldots w_{k-1} s_k \ldots s_i e w_{k+2} \ldots w_n$ which when commutations are applied to $w$ we see that $w=w=w_0 w_1 \ldots w_{k-1} e w_{k+2} \ldots w_n s_k \ldots s_i$. This shows that $w$ has Property T on the right.
+	\item Suppose $w_k=s_k \ldots s_i$ for $s_i \in \{0, k\}$. and $w$ zig zags. then $w=w_0 \ldots w_k-1 s_k s_{k-1} \ldots s_i e w_k+2 \ldots w_n$ which applying commutations, a possibility since for $i \geq k+1$, $w_i$ is either $e$ or $s_i$, gives $w=w_0 \ldots w_{k-1} s_k \ldots s_{i-2} w_{k+1} \ldots w_n s_{i-1} s_i$ which clearly has Property on the right.
+	\end{enumerate}
+	\item The element $w_{k+1} \neq e$.
+	\begin{enumerate}
+	\item Suppose $w_k=s_k \ldots s_i$ for $i \in \{0, \ldots k\}$ and $w$ zig-zags, and write $w=w_0 \ldots w_{k-1} s_k \ldots s_i w_{k+1} \ldots w_n$.
+	\begin{enumerate}
+	\item Suppose $i=k$. Then we can write $w=w_0 \ldots w_{k-1} s_k \ldots s_1 s_0 s_1 \ldots s_k w_{k+1} \ldots w_n$.
+	\begin{itemize}
+	\item Suppose $w_{k+2}=e$.Then $w=w_0 w_{k-1} s_k \ldots s_1 s_0 s_1 \ldots s_k s_{k+1} e w_{k+3} \ldots w_n$ which after applying commutations $w=w_0 w_{k-1} s_k \ldots s_1 s_0 s_1 \ldots s_k s_{k+1} e w_{k+3} \ldots w_n s_k s_{k+1}$. Thus $w$ has Property T on the right.
+	\item Suppose $w_{k+2} \neq e$. Then $w=w_0 \ldots w_{k-1} s_k \ldots s_1 s_0 s_1 \ldots s_k s_{k+1} s_{k+2} w_{k+3} \ldots w_n$. If $w_{k+3}=e$ we are done as we can commute $s_{k+1}s_{k+2}$, which implies $w$ has Property T on the right. If $w_{k+3} \neq e$ and $w_{k+4} = e$, then we are done as we can commute $s_{k+2} s_{k+3}$ out to the right. Inductively, choose $w_{k+i}$ and $w_{k+1+i}$  such that neither is the identity and $w_{k+i+2}$ is the identity, and commute them out making $w$ have Property T on the right.
+	\end{itemize}
+	\item Suppose $i \neq k$. Then $w=w_0 \ldots w_{k-1} s_{k} \ldots s_1 s_0 s_1 \ldots s_{i+2} w_{k+1} \ldots w_n$. By applying commutations we see that $w=w_0 \ldots w_{k-1} s_k \ldots s_1 s_0 s_1 \ldots s_{i-2} w_{k+1} \ldots w_n s_{i+1} s_1$. Thus $w$ contains property Property T.
+	\end{enumerate}
+	\item Suppose $w_k=s_k \ldots s_i$ for $i \in \{0, \ldots, k-1\}$ and $w$ does not have zig zags.
+	\begin{itemize}
+	\item Suppose $i \neq k-1$. Then $w=w_0 \ldots w_{k-1} s_k \ldots s_i w_{k+1} \ldots w_n$. By apply commutations we see that $w=w_0 \ldots s_k \ldots s_{i+2} w_{k+1} \ldots w_n s_{i+1} s_i$. This implies that $w$ has Property T on the right.
+	\item Suppose $s_i =s_{k-1}$. Then by the combinations of the lemmas we are done. 	
+	\end{itemize}
+	\end{enumerate}
+	\end{enumerate}
+	\end{enumerate}
+	Therefore in Type $B_n$ elements are T-Avoiding if and only if they are a product of commuting generators.
+\end{proof}
+\end{subsection}
+
 	
 \end{section}
 

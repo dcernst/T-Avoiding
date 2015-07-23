@@ -212,10 +212,13 @@ The main focus of this paper will be the Coxeter systems of types $A_n$ and $B_n
 \subcaptionbox{$B_n$\label{fig:typeB}}[.4\textwidth]{
 \begin{tikzpicture}
 \draw[fill=black] \foreach \x in {1,2,3,4,5} {(\x,10) circle (1pt)};
-\draw \foreach \x in {1,2,3} {(\x,10) node[label=below:$s_{\x}$]{}};
+%\draw \foreach \x in {1,2,3} {(\x,10) node[label=below:$s_{\x}$]{}};
 \draw (1.5,10) node[label=above:$4$]{};
-\draw {(4,10) node[label=below:$s_{n-1}$]{}};
-\draw {(5,10) node[label=below:$s_{n}$]{}};
+\draw {(1,10) node[label=below:$s_{0}$]{}};
+\draw {(2,10) node[label=below:$s_{1}$]{}};
+\draw {(3,10) node[label=below:$s_{3}$]{}};
+\draw {(4,10) node[label=below:$s_{n-2}$]{}};
+\draw {(5,10) node[label=below:$s_{n-1}$]{}};
 \draw {(3.5,10) node[]{$\cdots$}};
 \draw[-] (1,10) -- (3,10);
 \draw[-] (4,10) -- (5,10);
@@ -596,14 +599,22 @@ $(\Rightarrow)$ To show this direction we will show the contrapositive is true. 
 Therefore, if $\sigma$ is not the product of commuting adjacent 2-cycles, then either $\sigma$ or $\sigma^{-1}$ has Property T and elements in $S_n$ are T-Avoiding if and only if the elements are products of commuting 2-cycles.   
 \end{proof}
 
-\end{subsection}
-	
+\end{subsection}	
+\end{section}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Type B_n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{section}{Type $B_n$}
+	\begin{subsection}{Diagonal Factorization}
+		Some sort of introductory sentence. To start with we will define the following sets, $w^{(0)}=\{e, s_0\}$, $w^{(1)}=\{e, s_1, s_1s_0, s_1s_0s_1\}$, $w^{(2)}=\{e, s_2, s_2s_1, s_2s_1s_0, s_2s_1s_0s_1, s_2s_1s_0s_1s_2\}$ and $w^{(i)}=\{e, s_i, s_is_{i-1}, \ldots, s_is_{i-1}\ldots s_1s_0, \ldots, s_1s_{i-1}\ldots s_1s_0s_1 \ldots s_{i-1}s_i\}$. It was shown in {\color{red} paper name}, that if $w \in W(B_n)$, then $w$ can be written in the following way $w=w_0w_1w_2\ldots w_n$, where each $w_i \in W^{(i)}$. 
+	\end{subsection}
 \end{section}
 
 \begin{section}{T-Avoiding in Type B}
 \begin{subsection}{Property T}
-A slightly different definition is required for Property T for Type $B_n$	
+A slightly different definition is required for Property T for Type $B_n$, as we no longer have the close connection the symmetric group. Suppose $w \in B_n$, then $w$ has Property T if and only if $w=stu$ or $w=uts$ is reduced and $m(s,t) \geq 3$, and $u \in B_n$. 	
 \end{subsection}
+
 
 \begin{subsection}{T-Avoiding in Type $B_n$}
 In the following section we will show that there are no bad elements in type $B_n$. In order to do this we first will prove several lemmas, and then we will prove the theorem. In the following, unless otherwise stated $w$ is presented in the diagonal factorization.
@@ -649,7 +660,7 @@ The above lemmas when combined together show that if the elements in the second 
 	$(\Rightarrow)$ To prove this direction we will show the contrapositive. That is, if $w$ is not a product of commuting generators then $w$ has Property T on the left or right.\\
 	Suppose $w$ is not a product of commuting generators. If $s_0$ is not in the support of $w$, then $w$ is a Type $\A_{n-1}$ element and we are done. Consider $s_0 \in \Sup(w)$. Since $w$ is not a product of commuting generators there exists a maximal $k$ such that $w_k \neq \{e, s_k\}$. That is, $w_k=s_k \ldots s_i$ for $i \in \{1, \ldots ,k-1\}$. The rest proceeds in case analysis.
 	\begin{enumerate}
-	\item Them minimal $k=n$
+	\item The minimal $k=n$
 	\begin{enumerate}
 	\item Suppose $w_n=s_ns_{n-1} \ldots s_i$ for $i \in \{0, \ldots ,n-1\}$ and $w_n$ does not zig-zag. Then $w=w_0 \ldots w_{k-1} s_n s_{n-1} \ldots s_{i+1} s_i$, which implies that $w$ has Property T on the right.
 	\item Suppose $w_n=s_n s_{n-1} \ldots s_i$ for $i \in \{0, \ldots ,n\}$ and $w_n$ does zig-zag. Then $w=w_0 \ldots w_{n-1} s_n s_{n-1} \ldots s_1 s_0 s_1 \ldots s_i$, which implies $w$ has Property T on the right.
@@ -658,7 +669,7 @@ The above lemmas when combined together show that if the elements in the second 
 	\begin{enumerate}
 	\item The element $w_{k+1}=e$.
 	\begin{enumerate}
-	\item Suppose $w_k =s_k \ldots s_i$ for $i \in \{1, \ldots k-1\}$ and $w$ does not zig zag. Then $w=w_0 w_1 \ldots w_{k-1} s_k \ldots s_i e w_{k+2} \ldots w_n$ which when commutations are applied to $w$ we see that $w=w=w_0 w_1 \ldots w_{k-1} e w_{k+2} \ldots w_n s_k \ldots s_i$. This shows that $w$ has Property T on the right.
+	\item Suppose $w_k =s_k \ldots s_i$ for $i \in \{1, \ldots k-1\}$ and $w$ does not zig zag. Then $w=w_0 w_1 \ldots w_{k-1} s_k \ldots s_i e w_{k+2} \ldots w_n$ which when commutations are applied to $w$ we see that $w=w_0 w_1 \ldots w_{k-1} e w_{k+2} \ldots w_n s_k \ldots s_i$. This shows that $w$ has Property T on the right.
 	\item Suppose $w_k=s_k \ldots s_i$ for $s_i \in \{0, k\}$. and $w$ zig zags. then $w=w_0 \ldots w_k-1 s_k s_{k-1} \ldots s_i e w_k+2 \ldots w_n$ which applying commutations, a possibility since for $i \geq k+1$, $w_i$ is either $e$ or $s_i$, gives $w=w_0 \ldots w_{k-1} s_k \ldots s_{i-2} w_{k+1} \ldots w_n s_{i-1} s_i$ which clearly has Property on the right.
 	\end{enumerate}
 	\item The element $w_{k+1} \neq e$.
@@ -680,7 +691,7 @@ The above lemmas when combined together show that if the elements in the second 
 	\end{enumerate}
 	\end{enumerate}
 	\end{enumerate}
-	Therefore in Type $B_n$ elements are T-Avoiding if and only if they are a product of commuting generators.
+	Therefore, in Type $B_n$ elements are T-Avoiding if and only if they are a product of commuting generators.
 \end{proof}
 \end{subsection}
 

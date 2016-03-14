@@ -1,0 +1,80 @@
+% Here is what your top file should look like. Create individual files
+% for each chapter (called chap*.tex below), abstract, acknowledgements,
+% and biography. These need have no opening commands at the top. Create a
+% file (here called preamble.tex) containing all your global commands, in
+% addition to title, committee, discipline, date, etc. See the file
+% nau_sample.tex in this directory for an example. (You could copy that
+% file and this one into your directory and edit the information.)
+% This style has been used and passed the Graduate College format 
+% review. It may require minor fixes when used in the future; if so you
+% should contact M. Falk in Mathematics, or your local TeX wizard.
+
+\documentclass[12pt]{nauthesis}                       
+ %\nofiles
+% prevents writing new toc lof files
+
+%\usepackage{amsmath}
+%\usepackage{amsfonts}
+\usepackage{tikz}
+\usetikzlibrary{3d}
+\usepackage{amsmath,amssymb,amsfonts,amscd, array,amsthm}
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage[labelformat=simple,labelfont={}]{subcaption}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+
+
+%\usepackage{nauthesis}
+\input{preamble}
+
+
+\begin{document}
+
+\maketitle
+
+
+\pagestyle{plain}
+\pagenumbering{roman}
+\setcounter{page}{2}
+\setlength{\footskip}{2cm}
+\include{abstract}
+
+\include{acknowledgements}
+
+
+
+\tableofcontents
+
+
+\listoffigures
+%\include{preface}
+
+\newpage
+\pagestyle{plain}
+\pagenumbering{arabic}
+
+
+\include{chapter1}
+
+
+
+
+\include{chapter2}
+%
+%
+\include{chapter3}
+
+
+%\include{chapter4}
+
+
+
+
+%\setspacing{1.0}
+\bibliographystyle{plain}
+\bibliography{biblio}
+
+
+\include{biblio}
+\end{document}

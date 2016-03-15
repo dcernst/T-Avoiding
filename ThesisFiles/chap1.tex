@@ -1,14 +1,24 @@
-\chapter{Title of Chapter 1}
+\chapter{Preliminaries}
 
-Say intelligent stuff here.
-\cite{Penrose1971}
+\section{Introduction}
+To be written once we know where everything is going to go.
 
-\begin{tikzpicture}[scale=2]
-\node (p1) at (0,0) {$\circ$};
-\node (p2) at (1,1) {$\circ$};
-\draw[draw=red,->,thick] (p1) -- (p2);
-\end{tikzpicture}
+\section{Coxeter System}\label{sec:coxeter}
+A \emph{Coxeter System} is a pair $(W,S)$ consisting of a finite set $S$ of generating involutions and a group $W$, called a \emph{Coxeter Group}, with presentation 
+\[ 
+W = \langle S \mid (st)^{m(s, t)} = e \text{ for } m(s, t) < \infty \rangle,
+\]
+where $e$ is the identity, $m(s,t) = 1$ if and only if $s = t$, and $m(s,t) = m(t,s)$. It turns out that the elements of $S$ are distinct as group elements and that $m(s,t)$ is the \emph\emph{order} of $st$~\cite{Humphreys1990}. We call $m(s,t)$ the \emph{bond strength} of $s$ and $t$.\\
 
-\section{Rad}
+Since $s$ and $t$ are elements of order 2, the relation $(st)^{m(s,t)}=e$ can be written as
+\begin{equation}\label{braid} 
+	\underbrace{sts \cdots}_{m(s,t)}=\underbrace{tst\cdots}_{m(s,t)}
+\end{equation}
+with $m(s,t) \geq 2$ factors. If $m(s,t)=2$, then $st=ts$ is called a \emph{short braid relation} and $s$ and $t$ commute. Otherwise, if $m(s,t) \geq 3$, then the relation in \eqref{braid} is called a \emph{long braid relation}. Replacing $\underbrace{sts\cdots}_{m(s,t)}$ with $\underbrace{tst\cdots}_{m(s,t)}$ will be referred to as a \emph{braid move}.\\
 
-So rad.
+We can represent a Coxeter System, $(W,S)$, with a unique \emph{Coxeter graph}, $\Gamma$, having
+\begin{enumerate}
+\item vertex set $S=\{s_1, s_2, \ldots, s_n\}$ and
+\item edges $\{s_i, s_j\}$ for each $m(s,t) \geq 3$.	
+\end{enumerate}
+Each edge $\{s_i, s_j\}$ is labeled with its corresponding bond strength $m(s,t)$. Since $m(s,t)=3$ occurs most frequently, it is customary to leave the edge unlabeled. If $(W,S)$ is a Coxeter group with corresponding Coxeter system $\Gamma$, we may denote the group as $W(\Gamma)$ for emphasis. There is a one-to-one correspondence between Coxeter systems and Coxeter graphs. Given a Coxeter graph $\Gamma$, we can uniquely reconstruct the corresponding Coxeter system. Note that $s$ and $t$ are not connected in the graph if and only if $m(s,t)=2$. Also, the Coxeter group $W(\Gamma)$ is said to be \emph{irreducible} if and only if $\Gamma$ is connected. Otherwise, $W(\Gamma)$ is said to be \emph{reducible}. Furthermore, if the graph is disconnected, the connected components correspond to factors in a direct product of irreducible Coxeter groups~\cite{Humphreys1990}.\\

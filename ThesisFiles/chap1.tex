@@ -22,3 +22,55 @@ We can represent a Coxeter System, $(W,S)$, with a unique \emph{Coxeter graph}, 
 \item edges $\{s_i, s_j\}$ for each $m(s,t) \geq 3$.	
 \end{enumerate}
 Each edge $\{s_i, s_j\}$ is labeled with its corresponding bond strength $m(s,t)$. Since $m(s,t)=3$ occurs most frequently, it is customary to leave the edge unlabeled. If $(W,S)$ is a Coxeter group with corresponding Coxeter system $\Gamma$, we may denote the group as $W(\Gamma)$ for emphasis. There is a one-to-one correspondence between Coxeter systems and Coxeter graphs. Given a Coxeter graph $\Gamma$, we can uniquely reconstruct the corresponding Coxeter system. Note that $s$ and $t$ are not connected in the graph if and only if $m(s,t)=2$. Also, the Coxeter group $W(\Gamma)$ is said to be \emph{irreducible} if and only if $\Gamma$ is connected. Otherwise, $W(\Gamma)$ is said to be \emph{reducible}. Furthermore, if the graph is disconnected, the connected components correspond to factors in a direct product of irreducible Coxeter groups~\cite{Humphreys1990}.\\
+
+\begin{example}
+~
+\begin{itemize}
+\item[(a)~] The Coxeter graph of type $A_n$ is seen in Figure \textcolor{red}{reference the proper figure}. Given $A_n$, we can construct the corresponding Coxeter system, $W(A_n)$, with generating set $S=\{s_1, s_2, \ldots s_n\}$ and defining relations
+\begin{enumerate}
+	\item $s_i^2=e$ for all $i$
+	\item $s_is_j=s_js_i$ when $|i-j|>1$
+	\item $s_is_js_i=s_js_is_j$ when $|i-j|=1.$
+\end{enumerate}
+The Coxeter group $W(A_n)$ is isomorphic to the symmetric group $S_{n+1}$ elements sending $s_i \rightarrow (i, i+1)$. This thesis will briefly touch on Coxeter systems of type $A_n$.
+\item[(b)~] The Coxeter graph of type $B_n$ is seen in Figure \textcolor{red}{reference the proper figure}. From $B_n$, we can construct the Coxeter group $W(B_n)$ with generating set $S=~\{s_0,s_1, \ldots s_{n-1}\}$ and defining relations
+\begin{enumerate}
+	\item $s_i^2=e$ for all $i$
+	\item $s_is_j=s_js_i$  when $|i-j|>1$
+	\item $s_is_js_i=s_js_is_j$ when $|i-j|=1$ for $i,j \in \{1,2,\ldots, n-1\}$
+	\item $s_0s_1s_0s_1=s_1s_0s_1s_0$.
+\end{enumerate}
+The Coxeter group $W(B_n)$ is isomorphic to $S_n^B$, where $S_n^B$ is the group of all signed permutations. This thesis will also touch on Coxeter systems of type $B_n$.
+\item[(c)~] The Coxeter graph of Type $\widetilde C_n$ is seen in Figure \textcolor{red}{reference the proper figure}. From $\widetilde C_n$ we can construct the Coxeter group $W(\widetilde C_n)$ with generating set $S=~\{s_0, s_1, \ldots s_n\}$ and defining relations 
+\begin{enumerate}
+	\item $s_i^2=e$ for all $i$
+	\item $s_is_j=s_js_i$ when $|i-j|>1$ for $i \in \{1,2, \ldots, n-1\}$
+	\item $s_is_js_i=s_js_is_j$ 	when $|i-j|=1$ for $i \in \{1,2, \ldots, n-1\}$
+	\item $s_0s_1s_0s_1=s_1s_0s_1s_0$
+	\item $s_ns_{n-1}s_ns_{n-1}=s_{n-1}s_ns_{n-1}s_n.$
+\end{enumerate}
+The Coxeter group $W(\widetilde C_n)$ will be touched upon in this thesis as well.
+\end{itemize}
+\end{example}
+
+Given a Coxeter system, $(W,S)$, a word $s_{x_1}s_{x_2} \cdots s_{x_m}$ in the free monoid $S^*$ on $S$, is called an \emph{expression} for $w \in W$ if it is equal to $w$ when considered as a group element. If $m$ is minimal over all expressions for $w$, the corresponding word is called a \emph{reduced expression} for $w$. In this case, we define the \emph{length} of $w$ to be $l(w):= m$. Each element $w \in W$ may have multiple reduced expressions to represent it. If we wish to emphasize a specific possibly reduced expression for $w \in W$ we will represent it as $\overline{w}=s_{x_1}s_{x_2}\cdots s_{x_m}.$ The following theorem tells us more about how reduced expressions relate.
+
+\begin{theorem} [Matsumoto, \cite{Geck2000}]
+	If $w \in W$, then every reduced expression for $w$ can be obtained by a sequence of braid moves of the form
+	\[\underbrace{sts\cdots}_{m(s,t)} \rightarrow \underbrace{tst\cdots}_{m(s,t)}\]
+	where $s,t \in S$ and $m(s,t) \geq 2$.
+\end{theorem}
+ 
+It follows from Matsumoto's Theorem that any reduced expression for $w \in W$ contains the same number of generators in the expression. Let $w \in W$ and fix a reduced expression $\overline{w}$ for $w$. Then the \emph{support} of $w$, denoted $\supp(\overline{w})$, is the set of all generators of that appear in $\overline{w}$. It follows from Matsumoto's Theorem that $s$ appears in $\supp(\overline{w})$ if and only if $s$ appears in the support of all reduced expressions for $w$. If $\supp(\overline{w})=S$, we say that $s$ has \emph{full support}. Given $w \in W$ and a fixed reduced expression $\overline{w}$ for $w$, any subsequence of $\overline{w}$ is called a \emph{subexpression} of $\overline{w}$. \\
+
+\begin{example}
+Let $w \in W(A_7)$ and let $\overline{w}=s_7s_2s_4s_5s_3s_2s_3s_6$ be a fixed expression for $w$. Then we have
+\begin{align*}
+s_7s_2s_4s_5s_3s_2s_3s_6&=s_7s_4s_2s_5s_3s_2s_3s_6\\
+&=s_7s_4s_5s_2s_3s_2 s_3s_6\\
+&=s_7s_4s_5s_3s_2s_3s_3s_6\\
+&=s_7s_4s_5s_3s_2s_6.
+\end{align*}
+This shows that $\overline{w}$ was not reduced. However, $s_7s_4s_5s_3s_2s_6$ is reduced. Thus $l(w)=6$ and $\supp(w)=\{s_2, s_3, s_4, s_5, s_6, s_7\}$.
+\end{example}
+

@@ -3,6 +3,8 @@
 \section{Introduction}
 To be written once we know where everything is going to go.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{Coxeter System}\label{sec:coxeter}
 A \emph{Coxeter System} is a pair $(W,S)$ consisting of a finite set $S$ of generating involutions and a group $W$, called a \emph{Coxeter Group}, with presentation 
 \[ 
@@ -73,4 +75,32 @@ s_7s_2s_4s_5s_3s_2s_3s_6&=s_7s_4s_2s_5s_3s_2s_3s_6\\
 \end{align*}
 This shows that $\overline{w}$ was not reduced. However, $s_7s_4s_5s_3s_2s_6$ is reduced. Thus $l(w)=6$ and $\supp(w)=\{s_2, s_3, s_4, s_5, s_6, s_7\}$.
 \end{example}
+
+Let $w \in W(\Gamma)$. We define the \emph{left descent set} and \emph{right descent set} of $w$ as follows:
+\[\mathcal{L}(w):=\{s \in S \mid l(sw) < l(w)\}\]
+and
+\[\mathcal{R}(w):=\{s \in S \mid l(ws) < l(w)\}.\]
+It should be noted that $s \in \mathcal{L}(w)$ if and only if there is a reduced expression for $w$ that begins with $s$ and $s \in \mathcal{R}(w)$ if and only if there is a reduced expression for $w$ that ends with $s$.
+
+\begin{example}
+Let $w \in W(B_4)$ and let $\overline{w}=s_0s_1s_2s_1s_3$ be a reduced expression for $w$. Note that all reduced expressions for $w$ are as follows 
+$$\begin{array}{ll}
+s_0s_1s_2s_1s_3 & s_0s_2s_1s_2s_3\\
+s_0s_1s_2s_3s_1 & s_2s_0s_1s_2s_3.	
+\end{array}$$
+We see that $l(w)=5$, and $w$ has full support. Note that $\mathcal{L}(w)=\{s_0, s_2\}$ and $\mathcal{R}(w)=\{s_1, s_3\}$.	
+\end{example}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Fully Commutative Elements}\label{sec:FC}
+Let $(W,S)$ be a Coxeter system of type $\Gamma$ and let $w \in W$. Following~\cite{Stembridge1996}, we define a relation $\sim$ on the set of reduced expressions for $w$. Let $\overline{w}_1$ and $\overline{w}_2$ be two reduced expressions for $w$. We define $\overline{w}_1 \sim \overline{w}_2$ if we can obtain $\overline{w}_2$ from $\overline{w}_1$ by applying a single braid move of the form $s_is_j \mapsto s_js_i$ where $m(s_i,s_j)=2$. Now, define the equivalence relation $\approx$ by taking the reflexive transitive closure of $\sim$. Each equivalence class under $\approx$ is called a \emph{commutation class}. If $w$ has a single commutation class, then we say that $w$ is \emph{fully commutative}, or just FC. 
+
+The set of fully commutative elements of $W(\Gamma)$ is denoted by $\FC(\Gamma)$. We say that a reduced expression $\overline{w}$ is $\FC$ if it is a reduced expression for $w \in \FC(\Gamma)$. Given some $w \in \FC(\Gamma)$, the definition of fully commutative tells us that to obtain all the reduced expressions for $w$, one must only perform short braid moves. The following theorem tells us that the we can not obtain a reduced expression for $w$ using long braid relations.
+
+\begin{theorem}[Stembridge,~\cite{Stembridge1996}]
+	An element $w \in W$ is FC if and only if no reduced expression for $w$ contains $\underbrace{sts\cdots}_{m(s,t)}$ as a subword for all $s_i \neq s_j$ when $m(s,t) \geq 3$.
+\end{theorem}
 

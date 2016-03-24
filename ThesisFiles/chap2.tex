@@ -1,3 +1,50 @@
-\chapter{Title of Chapter 2}
+\chapter{My Cool Stuff}
 
-Say even more intelligent stuff here.
+\section{Classification of T-Avoiding Elements in Type B}\label{sec:TAB}
+
+\textcolor{red}{An introduction should go here regarding the awesome sauce that is to follow.}
+
+\textcolor{red}{And we probably need some other stuff to go here but Sarah S. told me to work on typing page 1 today.}
+
+\begin{proposition}[Bj\"{o}rner, \textcolor{red}{cite when in Mendalay}]\label{prop:descent}
+Let $w \in W(B_n)$. Then 
+\[ \mathcal{R}(w)=\{s_i \in S: w(i) > w(i+1)\} \]
+where w(0)=0 by definition.
+\begin{proof}
+	This is, \textcolor{red}{cite when in Mendelay} Proposition 8.1.2.
+\end{proof}
+\end{proposition}
+
+
+\begin{lemma}\label{lem:sts}
+Let $s,t \in S$ such that $m(s,t)=3.$ Then $w$ has a reduced expression ending in $sts$ if and only if $w$ has the consecutive pattern $321$.
+\begin{proof}
+	Let $i \geq 1$, let $I=\{s_i,s_{i+1}\}$ and write $w=w^Iw_I$ as in 2.2.4 in~\textcolor{red}{cite BB when in Mendelay}. Observe that if $w$ has a reduced expression ending in two non-commuting generators $s_i, s_{i+1}$ in some order then we have $w_I \in \{s_is_{i+1}, s_{i+1}s_i\}$.
+	
+	$(\Rightarrow)$ Suppose $w$ has the consecutive pattern $321$. Then there is some $i$ such that $w(i) > w(i+1) > w(i+1)$. By \ref{prop:descent} $s_i,s_{i+1} \in \mathcal{R}(w)$. By \textcolor{red}{Tyson's reference to simply laced coxeter group stuff 1.2.1} $w$ ends in $s_is_{i+1}s_{i+2}$.
+	$(\Leftarrow)$ Suppose $w$ ends in $s_is_i+1s_i$. This implies that either $w_I=s_is_{i+1}$ or $w_I=s_{i+1}s_i$ which implies that $s_i,s_{i+1} \in \mathcal{R}(w)$. Since $s_i,s_{i+1} \in \mathcal{R}(w)$, we see that $w(i)>w(i+1)>w(i+2)$ by \ref{prop:descent}. Thus $w$ has the consecutive pattern 321.
+	Therefore, $w$ has a reduced expression ending in $sts$ if and only if $w$ has the consecutive pattern $321$. 
+\end{proof}	
+\end{lemma}
+
+\begin{lemma}\label{lem:ts}
+Let $s,t \in S$ such that $m(s,t)=3.$ Then $w$ has a reduced expression ending in $st$ if and only if $w$ has the consecutive pattern $231$.
+\begin{proof}
+	Let $i \geq 1$, let $I=\{s_i,s_{i+1}\}$ and write $w=w^Iw_I$ as in 2.2.4 in~\textcolor{red}{cite BB when in Mendelay}. Observe that if $w$ has a reduced expression ending in two non-commuting generators $s_i, s_{i+1}$ in some order then we have $w_I \in \{s_is_{i+1}, s_{i+1}s_i\}$.
+	
+	$(\Rightarrow)$ Suppose that $w$ has the consecutive pattern $231$. Then there is some $i$ such that $w(i+1)>w(i)>w(i+2)$. By \ref{prop:descent} $s_{i+1} \in \mathcal{R}(w)$. Now multiplying on the right by $s_{i+1}$ we see that $ws_{i+1}(i+1)=w(i+2)$ and $ws_{i+1}(i)=w(i)$. We know that $w(i+2)<w(i)$, this implies that $s_i \in \mathcal{R}(ws_{i+1})$. This implies $w$ has a reduced expression that ends in $s_is_{i+1}$.
+	$(\Leftarrow)$ Suppose that $w$ has a reduced expression ending in $s_is_{i+1}$. Then $w(i+2)<w(i+1)$ and $w(i)<w(i+1)$. Since $s_i \in \mathcal{R}(ws_{i+1})$ we have $w(i+2)=ws_{i+1}(i+1)<ws_{i+1}(i)=w(i)$. Thus we have that $w(i+1) > w(i) > w(i+2)$. Hence $w$ has the consecutive pattern 231.
+	Therefore, $w$ has a reduced expression ending in $st$ if and only if $w$ has the consecutive pattern $231$.
+\end{proof}	
+\end{lemma}
+
+
+\begin{lemma}\label{lem:st}
+Let $s,t \in S$ such that $m(s,t)=3.$ Then $w$ has a reduced expression ending in $ts$ if and only if $w$ has the consecutive pattern $312$.
+\begin{proof}
+	Let $i \geq 1$, let $I=\{s_i,s_{i+1}\}$ and write $w=w^Iw_I$ as in 2.2.4 in~\textcolor{red}{cite BB when in Mendelay}. Observe that if $w$ has a reduced expression ending in two non-commuting generators $s_i, s_{i+1}$ in some order then we have $w_I \in \{s_is_{i+1}, s_{i+1}s_i\}$.
+	
+	$(\Rightarrow)$ Suppose that $w$ has the consecutive pattern $312$.  Then there is some $i$ such that $w(i)>w(i+2)>w(i+1)$. By \ref{prop:descent} we see that $s_i \in \mathcal{R}(w)$. Multiplying on the right by $s_i$ we get $ws_i(i+1)=w(i)$ and $ws_i(i+2)=w(i+2)$. By above $w(i)>w(i+2)$, and by \ref{prop:descent} $s_{i+1} \in \mathcal{R}(ws_i)$. This implies that $w$ has a reduced expression ending in $s_{i+1}s_i$. 
+	$(\Leftarrow)$ Conversely suppose $w$ ends in a reduced expression with $s_{i+1}s_i$ Then $w_I=s_{i+1}s_i$. We see that $w(i)>w(i+1)$ and $w(i+2)>w(i+1)$. Since $s_{i+1} \in \mathcal{R}(ws_i)$, we have $w(i+2)=ws_i(i+2)<ws_i(i+1)=w(i)$. From this we have $w(i)>w(i+2)$, so $w(i)>w(i+2)>w(i+1)$. Hence, $w$ has the consecutive pattern $312$. Therefore, $w$ has a reduced expression ending in $ts$ if and only if $w$ has the consecutive pattern $312$.
+\end{proof}
+\end{lemma}

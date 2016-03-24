@@ -104,3 +104,22 @@ The set of fully commutative elements of $W(\Gamma)$ is denoted by $\FC(\Gamma)$
 	An element $w \in W$ is FC if and only if no reduced expression for $w$ contains $\underbrace{sts\cdots}_{m(s,t)}$ as a subword for all $s_i \neq s_j$ when $m(s,t) \geq 3$.
 \end{theorem}
 
+\begin{example}
+	Let $w \in \widetilde{C}_4$ and let $\overline{w}=s_0s_1s_2s_0s_3s_1$ be a reduced expression for $w$. We see that
+	\[s_0s_1\textcolor{purple}{s_2s_0}s_3s_1=s_0s_1s_0s_2\textcolor{purple}{s_3s_1}=s_0s_1s_0s_2s_1s_3,\]
+	where the purple indicates applying a short braid relation. Note that there is no way possible to perform a long braid relation. Hence $w$ is $\FC$.
+\end{example}
+
+\begin{example}
+Let $w \in \widetilde{C}_4$ and let $\overline{w}=s_0s_1s_2s_0s_1s_2$ be a reduced expression for $w$. We see that
+\[s_0s_1\textcolor{purple}{s_3s_0}s_1s_2=s_0s_1s_0\textcolor{purple}{s_3s_1}s_2=\textcolor{blue}{s_0s_1s_0s_1}s_3s_2,\]
+where the purple indicates applying a short braid relation and the blue indicates applying a long braid relation. Thus $w$ is not $\FC$ since a long braid relation can be applied.  	
+\end{example}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Heaps}\label{sec:Heaps}
+

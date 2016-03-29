@@ -5,8 +5,8 @@ To be written once we know where everything is going to go.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Coxeter System}\label{sec:coxeter}
-A \emph{Coxeter System} is a pair $(W,S)$ consisting of a finite set $S$ of generating involutions and a group $W$, called a \emph{Coxeter Group}, with presentation 
+\section{Coxeter Systems}\label{sec:coxeter}
+A \emph{Coxeter system} is a pair $(W,S)$ consisting of a finite set $S$ of generating involutions and a group $W$, called a \emph{Coxeter group}, with presentation 
 \[ 
 W = \langle S \mid (st)^{m(s, t)} = e \text{ for } m(s, t) < \infty \rangle,
 \]
@@ -16,89 +16,375 @@ Since $s$ and $t$ are elements of order 2, the relation $(st)^{m(s,t)}=e$ can be
 \begin{equation}\label{braid} 
 	\underbrace{sts \cdots}_{m(s,t)}=\underbrace{tst\cdots}_{m(s,t)}
 \end{equation}
-with $m(s,t) \geq 2$ factors. If $m(s,t)=2$, then $st=ts$ is called a \emph{short braid relation} and $s$ and $t$ commute. Otherwise, if $m(s,t) \geq 3$, then the relation in \eqref{braid} is called a \emph{long braid relation}. Replacing $\underbrace{sts\cdots}_{m(s,t)}$ with $\underbrace{tst\cdots}_{m(s,t)}$ will be referred to as a \emph{braid move}.\\
+with $m(s,t) \geq 2$ factors. If $m(s,t)=2$, then $st=ts$ is called a \emph{commutation relation} and $s$ and $t$ commute. Otherwise, if $m(s,t) \geq 3$, then the relation in \eqref{braid} is called a \emph{braid relation}. Replacing $\underbrace{sts\cdots}_{m(s,t)}$ with $\underbrace{tst\cdots}_{m(s,t)}$ will be referred to as a \emph{braid move} if $m(s,t) \geq 3$ or a \emph{commutation} if $m(s,t)=2$.\\
 
-We can represent a Coxeter System, $(W,S)$, with a unique \emph{Coxeter graph}, $\Gamma$, having
+We can represent a Coxeter system $(W,S)$ with a unique \emph{Coxeter graph} $\Gamma$ having
 \begin{enumerate}
-\item vertex set $S=\{s_1, s_2, \ldots, s_n\}$ and
-\item edges $\{s_i, s_j\}$ for each $m(s,t) \geq 3$.	
+\item[(1)~] vertex set $S$ and
+\item[(2)~] edges $\{s, t\}$ for each $m(s,t) \geq 3$.	
 \end{enumerate}
-Each edge $\{s_i, s_j\}$ is labeled with its corresponding bond strength $m(s,t)$. Since $m(s,t)=3$ occurs most frequently, it is customary to leave the edge unlabeled. If $(W,S)$ is a Coxeter group with corresponding Coxeter system $\Gamma$, we may denote the group as $W(\Gamma)$ for emphasis. There is a one-to-one correspondence between Coxeter systems and Coxeter graphs. Given a Coxeter graph $\Gamma$, we can uniquely reconstruct the corresponding Coxeter system. Note that $s$ and $t$ are not connected in the graph if and only if $m(s,t)=2$. Also, the Coxeter group $W(\Gamma)$ is said to be \emph{irreducible} if and only if $\Gamma$ is connected. Otherwise, $W(\Gamma)$ is said to be \emph{reducible}. Furthermore, if the graph is disconnected, the connected components correspond to factors in a direct product of irreducible Coxeter groups~\cite{Humphreys1990}.\\
+Each edge $\{s, t\}$ is labeled with its corresponding bond strength $m(s,t)$. Since $m(s,t)=3$ occurs most frequently, it is customary to leave the edge unlabeled. If $(W,S)$ is a Coxeter group with corresponding Coxeter system $\Gamma$, we may denote the group as $W(\Gamma)$ for clarity. There is a one-to-one correspondence between Coxeter systems and Coxeter graphs. Given a Coxeter graph $\Gamma$, we can uniquely reconstruct the corresponding Coxeter system. Note that $s$ and $t$ are not connected in the graph if and only if $m(s,t)=2$. Also, the Coxeter group $W(\Gamma)$ is said to be \emph{irreducible} if and only if $\Gamma$ is connected. Otherwise, $W(\Gamma)$ is said to be \emph{reducible}. Furthermore, if the graph is disconnected, the connected components correspond to factors in a direct product of irreducible Coxeter groups~\cite{Humphreys1990}.\\
 
 \begin{example}
 ~
 \begin{itemize}
-\item[(a)~] The Coxeter graph of type $A_n$ is seen in Figure \textcolor{red}{reference the proper figure}. Given $A_n$, we can construct the corresponding Coxeter system, $W(A_n)$, with generating set $S=\{s_1, s_2, \ldots s_n\}$ and defining relations
+\item[(a)~] The Coxeter graph of type $A_n$ is given in Figure~\ref{fig:A}. Given $A_n$, we can construct the corresponding Coxeter system\ with generating set $S=\{s_1, s_2, \ldots s_n\}$ and defining relations
 \begin{enumerate}
-	\item $s_i^2=e$ for all $i$
-	\item $s_is_j=s_js_i$ when $|i-j|>1$
+	\item $s_i^2=e$ for all $i$;
+	\item $s_is_j=s_js_i$ when $|i-j|>1$;
 	\item $s_is_js_i=s_js_is_j$ when $|i-j|=1.$
 \end{enumerate}
-The Coxeter group $W(A_n)$ is isomorphic to the symmetric group $S_{n+1}$ elements sending $s_i \rightarrow (i, i+1)$. This thesis will briefly touch on Coxeter systems of type $A_n$.
-\item[(b)~] The Coxeter graph of type $B_n$ is seen in Figure \textcolor{red}{reference the proper figure}. From $B_n$, we can construct the Coxeter group $W(B_n)$ with generating set $S=~\{s_0,s_1, \ldots s_{n-1}\}$ and defining relations
+The Coxeter group $W(A_n)$ is isomorphic to the symmetric group $\Sym_{n+1}$ sending $s_i \mapsto (i, i+1)$, where $s_i$ corresponds to the adjacent transposition $(i, i+1)$.
+\item[(b)~] The Coxeter graph of type $B_n$ is given in Figure~\ref{fig:B}. From $B_n$, we can construct the corresponding Coxeter system with generating set $S=~\{s_0,s_1, \ldots s_{n-1}\}$ and defining relations
 \begin{enumerate}
-	\item $s_i^2=e$ for all $i$
-	\item $s_is_j=s_js_i$  when $|i-j|>1$
-	\item $s_is_js_i=s_js_is_j$ when $|i-j|=1$ for $i,j \in \{1,2,\ldots, n-1\}$
+	\item $s_i^2=e$ for all $i$;
+	\item $s_is_j=s_js_i$  when $|i-j|>1$;
+	\item $s_is_js_i=s_js_is_j$ when $|i-j|=1$ for $i,j \in \{1,2,\ldots, n-1\}$;
 	\item $s_0s_1s_0s_1=s_1s_0s_1s_0$.
 \end{enumerate}
-The Coxeter group $W(B_n)$ is isomorphic to $S_n^B$, where $S_n^B$ is the group of all signed permutations. This thesis will also touch on Coxeter systems of type $B_n$.
-\item[(c)~] The Coxeter graph of Type $\widetilde C_n$ is seen in Figure \textcolor{red}{reference the proper figure}. From $\widetilde C_n$ we can construct the Coxeter group $W(\widetilde C_n)$ with generating set $S=~\{s_0, s_1, \ldots s_n\}$ and defining relations 
+The Coxeter group $W(B_n)$ is isomorphic to $\Sym_n^B$, where $\Sym_n^B$ is the group of all signed permutations. 
+\item[(c)~] The Coxeter graph of type $\widetilde C_n$ is seen in Figure~\ref{fig:affC}. From $\widetilde C_n$, we can construct the Coxeter group $W(\widetilde C_n)$ with generating set $S=~\{s_0, s_1, \ldots s_n\}$ and defining relations 
 \begin{enumerate}
-	\item $s_i^2=e$ for all $i$
-	\item $s_is_j=s_js_i$ when $|i-j|>1$ for $i \in \{1,2, \ldots, n-1\}$
-	\item $s_is_js_i=s_js_is_j$ 	when $|i-j|=1$ for $i \in \{1,2, \ldots, n-1\}$
-	\item $s_0s_1s_0s_1=s_1s_0s_1s_0$
+	\item $s_i^2=e$ for all $i$;
+	\item $s_is_j=s_js_i$ when $|i-j|>1$ for $i \in \{1,2, \ldots, n-1\}$;
+	\item $s_is_js_i=s_js_is_j$ 	when $|i-j|=1$ for $i \in \{1,2, \ldots, n-1\}$;
+	\item $s_0s_1s_0s_1=s_1s_0s_1s_0$;
 	\item $s_ns_{n-1}s_ns_{n-1}=s_{n-1}s_ns_{n-1}s_n.$
 \end{enumerate}
-The Coxeter group $W(\widetilde C_n)$ will be touched upon in this thesis as well.
 \end{itemize}
 \end{example}
 
-Given a Coxeter system, $(W,S)$, a word $s_{x_1}s_{x_2} \cdots s_{x_m}$ in the free monoid $S^*$ on $S$, is called an \emph{expression} for $w \in W$ if it is equal to $w$ when considered as a group element. If $m$ is minimal over all expressions for $w$, the corresponding word is called a \emph{reduced expression} for $w$. In this case, we define the \emph{length} of $w$ to be $l(w):= m$. Each element $w \in W$ may have multiple reduced expressions to represent it. If we wish to emphasize a specific possibly reduced expression for $w \in W$ we will represent it as $\overline{w}=s_{x_1}s_{x_2}\cdots s_{x_m}.$ The following theorem tells us more about how reduced expressions relate.
+In Figures~\ref{fig:fincoxgraphs} and~\ref{fig:infincoxgraphs} all finite and infinite Coxeter graphs are given. The Coxeter graphs in Figure~\ref{fig:fincoxgraphs} correspond to the finite Coxeter groups, while the Coxeter graphs in Figure~\ref{fig:infincoxgraphs} are affine Coxeter groups and are infinite. This thesis will mainly focus upon $W(A_n)$, $W(B_n)$, and $W(\widetilde{C}_n)$. However, this thesis will also briefly touch upon $W(\widetilde{A}_n)$, and $W(F)$.
+
+Given a Coxeter system $(W,S)$, a word $s_{x_1}s_{x_2} \cdots s_{x_m}$ in the free monoid $S^*$ on $S$ is called an \emph{expression} for $w \in W$ if it is equal to $w$ when considered as a group element. If $m$ is minimal over all expressions for $w$, the corresponding word is called a \emph{reduced expression} for $w$. In this case, we define the \emph{length} of $w$ to be $l(w):= m$. Each element $w \in W$ may have multiple reduced expressions to represent it. If we wish to emphasize a specific, possibly reduced, expression for $w \in W$ we will represent it as $\overline{w}=s_{x_1}s_{x_2}\cdots s_{x_m}.$ The following theorem tells us more about how reduced expressions for a given group element are related.
 
 \begin{theorem} [Matsumoto, \cite{Geck2000}]
-	If $w \in W$, then every reduced expression for $w$ can be obtained by a sequence of braid moves of the form
+	If $w \in W$, then every reduced expression for $w$ can be obtained by a sequence of braid moves and commutations of the form
 	\[\underbrace{sts\cdots}_{m(s,t)} \rightarrow \underbrace{tst\cdots}_{m(s,t)}\]
 	where $s,t \in S$ and $m(s,t) \geq 2$. \qed
 \end{theorem}
  
-It follows from Matsumoto's Theorem that any reduced expression for $w \in W$ contains the same number of generators in the expression. Let $w \in W$ and fix a reduced expression $\overline{w}$ for $w$. Then the \emph{support} of $w$, denoted $\supp(\overline{w})$, is the set of all generators of that appear in $\overline{w}$. It follows from Matsumoto's Theorem that $s$ appears in $\supp(\overline{w})$ if and only if $s$ appears in the support of all reduced expressions for $w$. If $\supp(\overline{w})=S$, we say that $s$ has \emph{full support}. Given $w \in W$ and a fixed reduced expression $\overline{w}$ for $w$, any subsequence of $\overline{w}$ is called a \emph{subexpression} of $\overline{w}$. \\
+It follows from Matsumoto's Theorem that if a generator $s_i$ appears in a reduced expression for $w \in W$, then $s_i$ appears in all reduced expressions for $w$. Let $w \in W$ and fix a reduced expression $\overline{w}$ for $w$. Then the \emph{support} of $w$, denoted $\supp(\overline{w})$, is the set of all generators of that appear in $\overline{w}$. It follows from Matsumoto's Theorem that $s$ appears in $\supp(\overline{w})$ if and only if $s$ appears in the support of all reduced expressions for $w$. If $\supp(\overline{w})=S$, we say that $s$ has \emph{full support}. 
+
+Given $w \in W$ and a fixed reduced expression $\overline{w}$ for $w$, any subsequence of $\overline{w}$ is called a \emph{subexpression} of $\overline{w}$. We will refer to a string of consecutive generators from a reduced expression $\overline{w}$ as a \emph{subword} of $\overline{w}$.\\
 
 \begin{example}
 Let $w \in W(A_7)$ and let $\overline{w}=s_7s_2s_4s_5s_3s_2s_3s_6$ be a fixed expression for $w$. Then we have
 \begin{align*}
-s_7s_2s_4s_5s_3s_2s_3s_6&=s_7s_4s_2s_5s_3s_2s_3s_6\\
-&=s_7s_4s_5s_2s_3s_2 s_3s_6\\
-&=s_7s_4s_5s_3s_2s_3s_3s_6\\
-&=s_7s_4s_5s_3s_2s_6.
+s_7\textcolor{blue}{s_2s_4}s_5s_3s_2s_3s_6&=s_7s_4\textcolor{blue}{s_2s_5}s_3s_2s_3s_6\\
+&=s_7s_4s_5\textcolor{orange}{s_2s_3s_2} s_3s_6\\
+&=s_7s_4s_5s_3s_2\textcolor{red}{s_3s_3}s_6\\
+&=s_7s_4s_5s_3s_2s_6,
 \end{align*}
-This shows that $\overline{w}$ was not reduced. However, $s_7s_4s_5s_3s_2s_6$ is reduced. Thus $l(w)=6$ and $\supp(w)=\{s_2, s_3, s_4, s_5, s_6, s_7\}$.
+where the blue highlighted text corresponds to a commutation, the orange highlighted text corresponds to a braid move, and the red highlighted text corresponds to two elements that create the identity. This shows that $\overline{w}$ is not reduced. However it turns out that, $s_7s_4s_5s_3s_2s_6$ is reduced. Thus $l(w)=6$ and $\supp(w)=\{s_2, s_3, s_4, s_5, s_6, s_7\}$.
 \end{example}
 
 Let $w \in W(\Gamma)$. We define the \emph{left descent set} and \emph{right descent set} of $w$ as follows:
 \[\mathcal{L}(w):=\{s \in S \mid l(sw) < l(w)\}\]
 and
 \[\mathcal{R}(w):=\{s \in S \mid l(ws) < l(w)\}.\]
-It should be noted that $s \in \mathcal{L}(w)$ if and only if there is a reduced expression for $w$ that begins with $s$ and $s \in \mathcal{R}(w)$ if and only if there is a reduced expression for $w$ that ends with $s$.
+It should be noted that $s \in \mathcal{L}(w)$ if and only if there is a reduced expression for $w$ that begins with $s$ and $s \in \mathcal{R}(w)$ if and only if there is a reduced expression for $w$ that ends with $s$~\textcolor{red}{\cite{, Corollary 1.4.6}}
 
 \begin{example}
 Let $w \in W(B_4)$ and let $\overline{w}=s_0s_1s_2s_1s_3$ be a reduced expression for $w$. Note that all reduced expressions for $w$ are as follows 
 $$\begin{array}{ll}
 s_0s_1s_2s_1s_3 & s_0s_2s_1s_2s_3\\
-s_0s_1s_2s_3s_1 & s_2s_0s_1s_2s_3.	
+s_0s_1s_2s_3s_1 & s_2s_0s_1s_2s_3	
 \end{array}$$
-We see that $l(w)=5$, and $w$ has full support. Note that $\mathcal{L}(w)=\{s_0, s_2\}$ and $\mathcal{R}(w)=\{s_1, s_3\}$.	
+We see that $l(w)=5$, and $w$ has full support. Note that $\mathcal{L}(w)=\{s_0, s_2\}$ while $\mathcal{R}(w)=\{s_1, s_3\}$.	
 \end{example}
 
+\begin{figure}[h!]
+\begin{tabular}{m{7cm} m{7cm}}
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]%A_{n}
+\draw[fill=black] \foreach \x in {1,2,...,6} {(\x,10) circle (2pt)};
+\draw {(.5,10) node{}
+(4.5,10) node{$\cdots$}
+[-] (1,10) -- (4,10)
+[-] (5,10) -- (6,10)
+(1,10) node{}}; 
+\end{tikzpicture}
+\caption{$A_{n}$} \label{fig:A}
+\end{subfigure} &
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]%B_{n}
+\draw [fill=black] \foreach \x in {1,2,...,6} {(\x,8.5) circle (2pt)};
+\draw {(.5,8.5) node{}
+(1.5,8.5) node[label=above:$4$]{}
+(4.5,8.5) node{$\cdots$}
+[-] (1,8.5) -- (4,8.5)
+[-] (5,8.5) -- (6,8.5)
+(2,8.5) node{}}; 
+\end{tikzpicture}
+\caption{$B_{n}$} \label{fig:B}
+\end{subfigure} \\
+
+    & \\ 
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]
+\draw[fill=black] \foreach \x in {1,2} {(\x,0) circle (2pt)};
+\draw {(.25,0) node{}
+(1.5,0) node[label=above:$m$]{}
+[-] (1,0) -- (2,0)
+(2,0) node{}};
+\end{tikzpicture}
+\caption{$I_{2}(m)$} \label{fig:I}
+\end{subfigure} &
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]
+\draw[fill=black] \foreach \x in {1,2,...,6} {(\x,6.5) circle (2pt)};%D_{n}
+\draw[fill=black] (2,7.5) circle (2pt);
+\draw {(.5,6.5) node{}
+(4.5,6.5) node{$\cdots$}
+[-] (1,6.5) -- (4,6.5)
+[-] (5,6.5) -- (6,6.5)
+[-] (2,6.5) -- (2,7.5)
+(2,6.5) node{}};
+\end{tikzpicture}
+\caption{$D_{n}$} \label{fig:D}
+\end{subfigure} \\
+
+    & \\ 
+    
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]%E_{6}
+\draw[fill=black] \foreach \x in {1,2,...,5} {(\x,4.5) circle (2pt)};
+\draw[fill=black] (3,5.5) circle (2pt);
+\draw {
+[-] (1,4.5) -- (5,4.5)
+[-] (3,4.5) -- (3,5.5)
+(3,4.5) node{}};
+\end{tikzpicture}
+\caption{$E_{6}$} \label{fig:E6}
+\end{subfigure} &
+
+
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]%E_{7}
+\draw[fill=black] \foreach \x in {1,2,...,6} {(\x,4.5) circle (2pt)};
+\draw[fill=black] (3, 5.5) circle (2pt);
+\draw {
+[-] (1,4.5) -- (5,4.5)
+[-] (5,4.5) -- (6,4.5)
+[-] (3,4.5) -- (3,5.5)
+(3,4.5) node{}};
+\end{tikzpicture}
+\caption{$E_{7}$} \label{fig:E7}
+\end{subfigure} \\
+
+    & \\ 
+
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]%E_{8}
+\draw[fill=black] \foreach \x in {1,2,...,7} {(\x,4.5) circle (2pt)};
+\draw[fill=black] (3,5.5) circle (2pt);
+\draw {
+[-] (1,4.5) -- (7,4.5)
+[-] (3,4.5) -- (3,5.5)
+(3,4.5) node{}};
+\end{tikzpicture}
+\caption{$E_{8}$} \label{fig:E6}
+\end{subfigure} &
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]%F_{4}
+\draw[fill=black] \foreach \x in {1,2,...,4} {(\x,3) circle (2pt)};
+\draw {(.5,3) node{}
+(2.5,3) node[label=above:$4$]{}
+[-] (1,3) -- (4,3)
+(3,3) node{}};
+\end{tikzpicture}
+\caption{$F_{4}$} \label{fig:F4}
+\end{subfigure} \\
+
+&\\
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]
+\draw[fill=black] \foreach \x in {1,2,...,3} {(\x,1.5) circle (2pt)};%H_{3}
+\draw {(.5,1.5) node{}
+(1.5,1.5) node[label=above:$5$]{}
+[-] (1,1.5) -- (3,1.5)
+(2,1.5) node{}}; 
+\end{tikzpicture}
+\caption{$H_{3}$} \label{fig:H}
+\end{subfigure} &
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]
+\draw[fill=black] \foreach \x in {1,2,...,4} {(\x,1.5) circle (2pt)};%H_{4}
+\draw {(.5,1.5) node{}
+(1.5,1.5) node[label=above:$5$]{}
+[-] (1,1.5) -- (4,1.5)
+(2,1.5) node{}}; 
+\end{tikzpicture}
+\caption{$H_{4}$} \label{fig:H}
+\end{subfigure}
+\end{tabular}
+\caption{Coxeter graphs corresponding to the finite Coxeter groups.}
+\label{fig:fincoxgraphs}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{tabular}{m{7cm} m{7cm}}
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]%\widetilde{A}_{2}
+\draw[fill=black] \foreach \x in {1,2} {(\x,10) circle (2pt)};
+\draw { (.5,10) node{}
+(1.5,10) node[label=above:$\infty$]{}
+[-] (1,10) -- (2,10)
+(1,10) node{}}; 
+\end{tikzpicture}
+\caption{$\widetilde{A}_{2}$} \label{fig:affA2}
+\end{subfigure} &
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]%\widetilde{A}_{n}
+\draw [fill=black] \foreach \x in {1,...,4} {(\x,7.5) circle (2pt)};
+\draw [fill=black] (2.5, 8.5) circle (2pt);
+\draw {(.5,8.5) node{}
+(2.5,7.5) node{$\cdots$}
+[-] (2.5,8.5) -- (1, 7.5)
+[-] (2.5,8.5) -- (4, 7.5)
+[-] (1,7.5) -- (2,7.5)
+[-] (3,7.5) -- (4,7.5)
+(2,8.5) node{}}; 
+\end{tikzpicture}
+\caption{$\widetilde{A}_{n}$} \label{fig:affAn}
+\end{subfigure} \\
+
+    & \\ 
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]%\widetilde{B}_{n}
+\draw[fill=black] \foreach \x in {1,2,...,6} {(\x,0) circle (2pt)};
+\draw[fill=black] (2,1) circle (2pt);
+\draw {(.25,0) node{}
+(5.5,0) node[label=above:$4$]{}
+(4.5, 0) node{$\cdots$}
+[-] (1,0) -- (4,0)
+[-] (5,0) -- (6,0)
+[-] (2,1) -- (2,0)
+(2,0) node{}};
+\end{tikzpicture}
+\caption{$\widetilde{B}_{n}$} \label{fig:affB}
+\end{subfigure} &
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]
+\draw[fill=black] \foreach \x in {1,2,...,6} {(\x,5) circle (2pt)};%\widetild{C}_{n}
+\draw {(.5,5) node{}
+(4.5,5) node{$\cdots$}
+(5.5,5) node[label=above:$4$]{}
+(1.5,5) node[label=above:$4$]{}
+[-] (1,5) -- (4,5)
+[-] (5,5) -- (6,5)
+(2,5) node{}};
+\end{tikzpicture}
+\caption{$\widetilde{C}_{n}$} \label{fig:affC}
+\end{subfigure} \\
+
+    & \\ 
+    
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]%\widetilde{D}_{6}
+\draw[fill=black] \foreach \x in {1,2,...,6} {(\x,3.5) circle (2pt)};
+\draw[fill=black] (2,4.5) circle (2pt);
+\draw[fill=black] (5,4.5) circle (2pt);
+\draw {
+(3.5,3.5) node{$\cdots$}
+[-] (1,3.5) -- (3,3.5)
+[-] (4, 3.5) --(6, 3.5)
+[-] (2,3.5) -- (2,4.5)
+[-] (5,3.5)-- (5,4.5)
+(3,4.5) node{}};
+\end{tikzpicture}
+\caption{$\widetilde{D}_{n}$} \label{fig:E6}
+\end{subfigure} &
+
+
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]%\widetilde{E}_{6}
+\draw[fill=black] \foreach \x in {1,2,...,5} {(\x,4.5) circle (2pt)};
+\draw[fill=black] (3, 5.5) circle (2pt);
+\draw[fill=black] (3, 6.5) circle (2pt);
+\draw {
+[-] (1,4.5) -- (5,4.5)
+[-] (3,4.5) -- (3,6.5)
+(3,4.5) node{}};
+\end{tikzpicture}
+\caption{$\widetilde{E}_{6}$} \label{fig:affE6}
+\end{subfigure} \\
+
+    & \\ 
+
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]%\widetilde{E}_{7}
+\draw[fill=black] \foreach \x in {1,2,...,7} {(\x,4.5) circle (2pt)};
+\draw[fill=black] (4,5.5) circle (2pt);
+\draw {
+[-] (1,4.5) -- (7,4.5)
+[-] (4,4.5) -- (4,5.5)
+(3,4.5) node{}};
+\end{tikzpicture}
+\caption{$\widetilde{E}_{7}$} \label{fig:affE7}
+\end{subfigure} &
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]%\widetilde{E}_{8}
+\draw[fill=black] \foreach \x in {1,2,...,8} {(\x,3) circle (2pt)};
+\draw[fill=black] (3,4) circle (2pt);
+\draw {(.5,3) node{}
+[-] (3,4) -- (3,3)
+[-] (1,3) -- (8,3)
+(3,3) node{}};
+\end{tikzpicture}
+\caption{$\widetilde{E}_{8}$} \label{fig:affE8}
+\end{subfigure} \\
+
+&\\
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]
+\draw[fill=black] \foreach \x in {1,2,...,5} {(\x,1.5) circle (2pt)};%\widetilde{F}_{4}
+\draw {(.5,1.5) node{}
+(3.5,1.5) node[label=above:$5$]{}
+[-] (1,1.5) -- (5,1.5)
+(2,1.5) node{}}; 
+\end{tikzpicture}
+\caption{$\widetilde{F}_{4}$} \label{fig:H}
+\end{subfigure} &
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]
+\draw[fill=black] \foreach \x in {1,2,...,3} {(\x,1.5) circle (2pt)};%\widetilde{G}_{2}
+\draw {(.5,1.5) node{}
+(2.5,1.5) node[label=above:$6$]{}
+[-] (1,1.5) -- (3,1.5)
+(2,1.5) node{}}; 
+\end{tikzpicture}
+\caption{$\widetilde{G}_{4}$} \label{fig:H}
+\end{subfigure}
+\end{tabular}
+\caption{Coxeter graphs corresponding to the infinite Coxeter groups}
+\label{fig:infincoxgraphs}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \section{Fully Commutative Elements}\label{sec:FC}
-Let $(W,S)$ be a Coxeter system of type $\Gamma$ and let $w \in W$. Following~\cite{Stembridge1996}, we define a relation $\sim$ on the set of reduced expressions for $w$. Let $\overline{w}_1$ and $\overline{w}_2$ be two reduced expressions for $w$. We define $\overline{w}_1 \sim \overline{w}_2$ if we can obtain $\overline{w}_2$ from $\overline{w}_1$ by applying a single braid move of the form $s_is_j \mapsto s_js_i$ where $m(s_i,s_j)=2$. Now, define the equivalence relation $\approx$ by taking the reflexive transitive closure of $\sim$. Each equivalence class under $\approx$ is called a \emph{commutation class}. If $w$ has a single commutation class, then we say that $w$ is \emph{fully commutative}, or just FC. 
+Let $(W,S)$ be a Coxeter system of type $\Gamma$ and let $w \in W$. Following~\cite{Stembridge1996}, we define a relation $\sim$ on the set of reduced expressions for $w$. Let $\overline{w}_1$ and $\overline{w}_2$ be two reduced expressions for $w$. We define $\overline{w}_1 \sim \overline{w}_2$ if we can obtain $\overline{w}_2$ from $\overline{w}_1$ by applying a single commutation move of the form $st \mapsto ts$ where $m(s,t)=2$. Now, define the equivalence relation $\approx$ by taking the reflexive transitive closure of $\sim$. Each equivalence class under $\approx$ is called a \emph{commutation class}. If $w$ has a single commutation class, then we say that $w$ is \emph{fully commutative}, (FC). 
 
-The set of fully commutative elements of $W(\Gamma)$ is denoted by $\FC(\Gamma)$. We say that a reduced expression $\overline{w}$ is $\FC$ if it is a reduced expression for $w \in \FC(\Gamma)$. Given some $w \in \FC(\Gamma)$, the definition of fully commutative tells us that to obtain all the reduced expressions for $w$, one must only perform short braid moves. The following theorem tells us that the we can not obtain a reduced expression for $w$ using long braid relations.
+The set of FC elements of $W(\Gamma)$ is denoted by $\FC(\Gamma)$. We say that a reduced expression $\overline{w}$ is $\FC$ if it is a reduced expression for $w \in \FC(\Gamma)$. Given some $w \in \FC(\Gamma)$ and some starting expression for $w$, observe that the definition of FC states that to obtain all the reduced expressions for $w$, one only needs to perform commutations. The following theorem tells us that when $w$ is $\FC$, performing commutations is the only possible way to another reduced expression for $w$.
 
 \begin{theorem}[Stembridge,~\cite{Stembridge1996}]
 	An element $w \in W$ is FC if and only if no reduced expression for $w$ contains $\underbrace{sts\cdots}_{m(s,t)}$ as a subword for all $s_i \neq s_j$ when $m(s,t) \geq 3$. \qed
@@ -107,19 +393,24 @@ The set of fully commutative elements of $W(\Gamma)$ is denoted by $\FC(\Gamma)$
 \begin{example}
 	Let $w \in W(\widetilde{C}_4)$ and let $\overline{w}=s_0s_1s_2s_0s_3s_1$ be a reduced expression for $w$. We see that
 	\[s_0s_1\textcolor{purple}{s_2s_0}s_3s_1=s_0s_1s_0s_2\textcolor{purple}{s_3s_1}=s_0s_1s_0s_2s_1s_3,\]
-	where the purple indicates applying a short braid relation. Note that there is no way possible to perform a long braid relation. Hence $w$ is $\FC$.
+	where the purple indicates applying a commutation. Note that there is no possible way to perform a braid move. Hence $w$ is $\FC$.
 \end{example}
 
 \begin{example}
 Let $w \in W(\widetilde{C}_4)$ and let $\overline{w}=s_0s_1s_2s_0s_1s_2$ be a reduced expression for $w$. We see that
 \[s_0s_1\textcolor{purple}{s_3s_0}s_1s_2=s_0s_1s_0\textcolor{purple}{s_3s_1}s_2=\textcolor{blue}{s_0s_1s_0s_1}s_3s_2,\]
-where the purple indicates applying a short braid relation and the blue indicates applying a long braid relation. Thus $w$ is not $\FC$ since a long braid relation can be applied.  	
+where the purple indicates applying a commutation and the blue indicates applying a braid move. Thus $w$ is not $\FC$ since a braid move can be applied.  	
 \end{example}
 
-Stembridge classified the irreducible Coxeter groups that contain a finite number of fully commutative elements, the so-called \emph{FC-finite Coxeter groups}. This thesis is mainly concerned with $W(A_n),~W(B_n),~W(\widetilde{C}_n)$. Both $W(A_n),~W(B_n)$ are finite Coxeter groups, and thus are $\FC$ finite. On the other hand $W(\widetilde{C}_n)$ is infinite and has infinitely many $\FC$ elements. However, there exist some infinite Coxeter groups that contain finitely many $\FC$ elements. For example, $E_n$ for $n \geq 9$ are infinite \textcolor{red}{cite coxeter graph figure}, but contain only finitely many fully commutative elements.
+\begin{example}
+Let $\overline{w}=s_1s_0s_4s_1s_3s_5s_2s_4s_6$ for $w \in \FC(\widetilde{C}_6)$. Applying the commutation $s_4s_2=s_2s_4$, we can obtain another reduced expression for $w$, namely $\overline{w}_2=s_1s_0s_4s_1s_3s_5s_4s_2s_6$ which is in the same commutation class as $\overline{w_1}$. However, applying the braid move $s_2s_3s_2=s_3s_2s_3$, we obtain another reduced expression $\overline{w_3}=s_1s_3s_2s_3s_4s_0$. Note that since $\overline{w}_3$ was obtained by applying a braid move, $\overline{w_3}$ is in a different commutation class than $\overline{w_1}$ and $\overline{w_2}$. It turns out that the $w$ has exactly two commutation classes, one containing $\overline{w}_1$ and $\overline{w}_2$ and another containing $\overline{w}_3$.
+\end{example}
+
+
+Stembridge classified the irreducible Coxeter groups that contain a finite number of fully commutative elements, the so-called \emph{FC-finite Coxeter groups}. This thesis is mainly concerned with $W(A_n),~W(B_n),~W(\widetilde{C}_n)$. Both $W(A_n),~W(B_n)$ are finite Coxeter groups, and thus are $\FC$ finite. On the other hand $W(\widetilde{C}_n)$ is infinite and has infinitely many $\FC$ elements. However, there exist some infinite Coxeter groups that contain finitely many $\FC$ elements. For example, $E_n$ for $n \geq 9$ which is seen in Figure~\ref{fig:infincoxgraphs} is infinite, but contain only finitely many fully commutative elements.
 
 \begin{theorem}[Stembridge,~\cite{Stembridge1996}]
-\label{thm:FCfinite} The FC-finite irreducible Coxeter groups are of type $A_n$ with $n \geq 1$, $B_n$ with $n \geq 2$, $D_n$ with $n \geq 4$, $E_n$ with $n \geq 6$, $F_n$ with $n \geq 4$, $H_n$ with $n \geq 3$, and $I_2(m)$ with $5 \leq m < \infty$. The corresponding Coxeter graphs are shown in \textcolor{red}{reference coxeter graph figure}. \qed
+\label{thm:FCfinite} The FC-finite irreducible Coxeter groups are of type $A_n$ with $n \geq 1$, $B_n$ with $n \geq 2$, $D_n$ with $n \geq 4$, $E_n$ with $n \geq 6$, $F_n$ with $n \geq 4$, $H_n$ with $n \geq 3$, and $I_2(m)$ with $5 \leq m < \infty$. The corresponding Coxeter graphs are shown in Figures~\ref{fig:fincoxgraphs} and~\ref{fig:infincoxgraphs}. \qed
 \end{theorem}
   
 
@@ -139,16 +430,16 @@ It follows from~\cite{Stembridge1996} that heaps are well-defined up to commutat
 Let $\overline{w}=s_1s_0s_4s_1s_3s_5s_2s_4s_6$ for $w \in \FC(\widetilde{C}_6).$ We see that $\overline{w}$ is indexed by $\{1,2,3,4,5,6,7,8,9\}$. As an example, $1 \lessdot 0$ since $0 <1$ and $s_0$ and $s_1$ do not commute. The labeled Hasse diagram for the heap poset is seen in Figure~\ref{fig:Hasse}.
 \begin{figure}[h]
 \centering
-\begin{tikzpicture}[scale=0.3]
-	\node[scale=0.6, label=above:$s_{2}$] at (2,5.5) {$\bullet$};
-	\node[scale=0.6, label=above:$s_{4}$] at (4,5.5) {$\bullet$};
-	\node[scale=0.6, label=above:$s_{6}$] at (6,5.5) {$\bullet$};
-	\node[scale=0.6, label=above:$s_{1}$] at (1,4.5) {$\bullet$};
-	\node[scale=0.6, label=above:$s_{3}$] at (3,4.5) {$\bullet$};
-	\node[scale=0.6, label=above:$s_{5}$] at (5,4.5) {$\bullet$};
-	\node[scale=0.6, label=above:$s_{0}$] at (0,3.5) {$\bullet$};
-	\node[scale=0.6, label=above:$s_{4}$] at(4,3.5) {$\bullet$};
-	\node[scale=0.6, label=above:$s_{1}$] at (1,2.5) {$\bullet$};
+\begin{tikzpicture}[scale=0.5]
+	\node[scale=0.6, label=left:$s_{2}$] at (2,5.5) {$\bullet$};
+	\node[scale=0.6, label=left:$s_{4}$] at (4,5.5) {$\bullet$};
+	\node[scale=0.6, label=left:$s_{6}$] at (6,5.5) {$\bullet$};
+	\node[scale=0.6, label=left:$s_{1}$] at (1,4.5) {$\bullet$};
+	\node[scale=0.6, label=left:$s_{3}$] at (3,4.5) {$\bullet$};
+	\node[scale=0.6, label=right:$s_{5}$] at (5,4.5) {$\bullet$};
+	\node[scale=0.6, label=left:$s_{0}$] at (0,3.5) {$\bullet$};
+	\node[scale=0.6, label=left:$s_{4}$] at(4,3.5) {$\bullet$};
+	\node[scale=0.6, label=left:$s_{1}$] at (1,2.5) {$\bullet$};
 \draw (1,2.5)--(0,3.5)--(1,4.5)--(2,5.5)--(3,4.5)--(4,3.5);
 \draw (3,4.5)--(4,5.5)--(5,4.5)--(4,3.5);
 \draw (6,5.5)--(5,4.5);

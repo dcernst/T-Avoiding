@@ -388,6 +388,293 @@ Example 1.4.3\\
 \heapblock{13}{0}{3}{orange}
 \end{tikzpicture}
 
+\newpage
+Finite Coxeter Graphs Figure
+\begin{figure}[h!]
+\begin{tabular}{m{7cm} m{7cm}}
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]%A_{n}
+\draw[fill=black] \foreach \x in {1,2,...,6} {(\x,10) circle (2pt)};
+\draw {(.5,10) node{}
+(4.5,10) node{$\cdots$}
+[-] (1,10) -- (4,10)
+[-] (5,10) -- (6,10)
+(1,10) node{}}; 
+\end{tikzpicture}
+\caption{$A_{n}$} \label{fig:A}
+\end{subfigure} &
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]%B_{n}
+\draw [fill=black] \foreach \x in {1,2,...,6} {(\x,8.5) circle (2pt)};
+\draw {(.5,8.5) node{}
+(1.5,8.5) node[label=above:$4$]{}
+(4.5,8.5) node{$\cdots$}
+[-] (1,8.5) -- (4,8.5)
+[-] (5,8.5) -- (6,8.5)
+(2,8.5) node{}}; 
+\end{tikzpicture}
+\caption{$B_{n}$} \label{fig:B}
+\end{subfigure} \\
+
+    & \\ 
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]
+\draw[fill=black] \foreach \x in {1,2} {(\x,0) circle (2pt)};
+\draw {(.25,0) node{}
+(1.5,0) node[label=above:$m$]{}
+[-] (1,0) -- (2,0)
+(2,0) node{}};
+\end{tikzpicture}
+\caption{$I_{2}(m)$} \label{fig:I}
+\end{subfigure} &
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]
+\draw[fill=black] \foreach \x in {1,2,...,6} {(\x,6.5) circle (2pt)};%D_{n}
+\draw[fill=black] (2,7.5) circle (2pt);
+\draw {(.5,6.5) node{}
+(4.5,6.5) node{$\cdots$}
+[-] (1,6.5) -- (4,6.5)
+[-] (5,6.5) -- (6,6.5)
+[-] (2,6.5) -- (2,7.5)
+(2,6.5) node{}};
+\end{tikzpicture}
+\caption{$D_{n}$} \label{fig:D}
+\end{subfigure} \\
+
+    & \\ 
+    
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]%E_{6}
+\draw[fill=black] \foreach \x in {1,2,...,5} {(\x,4.5) circle (2pt)};
+\draw[fill=black] (3,5.5) circle (2pt);
+\draw {
+[-] (1,4.5) -- (5,4.5)
+[-] (3,4.5) -- (3,5.5)
+(3,4.5) node{}};
+\end{tikzpicture}
+\caption{$E_{6}$} \label{fig:E6}
+\end{subfigure} &
+
+
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]%E_{7}
+\draw[fill=black] \foreach \x in {1,2,...,6} {(\x,4.5) circle (2pt)};
+\draw[fill=black] (3, 5.5) circle (2pt);
+\draw {
+[-] (1,4.5) -- (5,4.5)
+[-] (5,4.5) -- (6,4.5)
+[-] (3,4.5) -- (3,5.5)
+(3,4.5) node{}};
+\end{tikzpicture}
+\caption{$E_{7}$} \label{fig:E7}
+\end{subfigure} \\
+
+    & \\ 
+
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]%E_{8}
+\draw[fill=black] \foreach \x in {1,2,...,7} {(\x,4.5) circle (2pt)};
+\draw[fill=black] (3,5.5) circle (2pt);
+\draw {
+[-] (1,4.5) -- (7,4.5)
+[-] (3,4.5) -- (3,5.5)
+(3,4.5) node{}};
+\end{tikzpicture}
+\caption{$E_{8}$} \label{fig:E6}
+\end{subfigure} &
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]%F_{4}
+\draw[fill=black] \foreach \x in {1,2,...,4} {(\x,3) circle (2pt)};
+\draw {(.5,3) node{}
+(2.5,3) node[label=above:$4$]{}
+[-] (1,3) -- (4,3)
+(3,3) node{}};
+\end{tikzpicture}
+\caption{$F_{4}$} \label{fig:F4}
+\end{subfigure} \\
+
+&\\
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]
+\draw[fill=black] \foreach \x in {1,2,...,3} {(\x,1.5) circle (2pt)};%H_{3}
+\draw {(.5,1.5) node{}
+(1.5,1.5) node[label=above:$5$]{}
+[-] (1,1.5) -- (3,1.5)
+(2,1.5) node{}}; 
+\end{tikzpicture}
+\caption{$H_{3}$} \label{fig:H}
+\end{subfigure} &
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]
+\draw[fill=black] \foreach \x in {1,2,...,4} {(\x,1.5) circle (2pt)};%H_{4}
+\draw {(.5,1.5) node{}
+(1.5,1.5) node[label=above:$5$]{}
+[-] (1,1.5) -- (4,1.5)
+(2,1.5) node{}}; 
+\end{tikzpicture}
+\caption{$H_{4}$} \label{fig:H}
+\end{subfigure}
+\end{tabular}
+\caption{Coxeter graphs corresponding to the finite Coxeter groups.}
+\label{fig:fincoxgraphs}
+\end{figure}
+
+\newpage
+Infinite Coxeter Graphs Figure
+\begin{figure}[h!]
+\begin{tabular}{m{7cm} m{7cm}}
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]%\widetilde{A}_{2}
+\draw[fill=black] \foreach \x in {1,2} {(\x,10) circle (2pt)};
+\draw { (.5,10) node{}
+(1.5,10) node[label=above:$\infty$]{}
+[-] (1,10) -- (2,10)
+(1,10) node{}}; 
+\end{tikzpicture}
+\caption{$\widetilde{A}_{2}$} \label{fig:affA2}
+\end{subfigure} &
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]%\widetilde{A}_{n}
+\draw [fill=black] \foreach \x in {1,...,4} {(\x,7.5) circle (2pt)};
+\draw [fill=black] (2.5, 8.5) circle (2pt);
+\draw {(.5,8.5) node{}
+(2.5,7.5) node{$\cdots$}
+[-] (2.5,8.5) -- (1, 7.5)
+[-] (2.5,8.5) -- (4, 7.5)
+[-] (1,7.5) -- (2,7.5)
+[-] (3,7.5) -- (4,7.5)
+(2,8.5) node{}}; 
+\end{tikzpicture}
+\caption{$\widetilde{A}_{n}$} \label{fig:affAn}
+\end{subfigure} \\
+
+    & \\ 
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]%\widetilde{B}_{n}
+\draw[fill=black] \foreach \x in {1,2,...,6} {(\x,0) circle (2pt)};
+\draw[fill=black] (2,1) circle (2pt);
+\draw {(.25,0) node{}
+(5.5,0) node[label=above:$4$]{}
+(4.5, 0) node{$\cdots$}
+[-] (1,0) -- (4,0)
+[-] (5,0) -- (6,0)
+[-] (2,1) -- (2,0)
+(2,0) node{}};
+\end{tikzpicture}
+\caption{$\widetilde{B}_{n}$} \label{fig:affB}
+\end{subfigure} &
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]
+\draw[fill=black] \foreach \x in {1,2,...,6} {(\x,5) circle (2pt)};%\widetild{C}_{n}
+\draw {(.5,5) node{}
+(4.5,5) node{$\cdots$}
+(5.5,5) node[label=above:$4$]{}
+(1.5,5) node[label=above:$4$]{}
+[-] (1,5) -- (4,5)
+[-] (5,5) -- (6,5)
+(2,5) node{}};
+\end{tikzpicture}
+\caption{$\widetilde{C}_{n}$} \label{fig:affC}
+\end{subfigure} \\
+
+    & \\ 
+    
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]%\widetilde{D}_{6}
+\draw[fill=black] \foreach \x in {1,2,...,6} {(\x,3.5) circle (2pt)};
+\draw[fill=black] (2,4.5) circle (2pt);
+\draw[fill=black] (5,4.5) circle (2pt);
+\draw {
+(3.5,3.5) node{$\cdots$}
+[-] (1,3.5) -- (3,3.5)
+[-] (4, 3.5) --(6, 3.5)
+[-] (2,3.5) -- (2,4.5)
+[-] (5,3.5)-- (5,4.5)
+(3,4.5) node{}};
+\end{tikzpicture}
+\caption{$\widetilde{D}_{n}$} \label{fig:E6}
+\end{subfigure} &
+
+
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]%\widetilde{E}_{6}
+\draw[fill=black] \foreach \x in {1,2,...,5} {(\x,4.5) circle (2pt)};
+\draw[fill=black] (3, 5.5) circle (2pt);
+\draw[fill=black] (3, 6.5) circle (2pt);
+\draw {
+[-] (1,4.5) -- (5,4.5)
+[-] (3,4.5) -- (3,6.5)
+(3,4.5) node{}};
+\end{tikzpicture}
+\caption{$\widetilde{E}_{6}$} \label{fig:affE6}
+\end{subfigure} \\
+
+    & \\ 
+
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]%\widetilde{E}_{7}
+\draw[fill=black] \foreach \x in {1,2,...,7} {(\x,4.5) circle (2pt)};
+\draw[fill=black] (4,5.5) circle (2pt);
+\draw {
+[-] (1,4.5) -- (7,4.5)
+[-] (4,4.5) -- (4,5.5)
+(3,4.5) node{}};
+\end{tikzpicture}
+\caption{$\widetilde{E}_{7}$} \label{fig:affE7}
+\end{subfigure} &
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]%\widetilde{E}_{8}
+\draw[fill=black] \foreach \x in {1,2,...,8} {(\x,3) circle (2pt)};
+\draw[fill=black] (3,4) circle (2pt);
+\draw {(.5,3) node{}
+[-] (3,4) -- (3,3)
+[-] (1,3) -- (8,3)
+(3,3) node{}};
+\end{tikzpicture}
+\caption{$\widetilde{E}_{8}$} \label{fig:affE8}
+\end{subfigure} \\
+
+&\\
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]
+\draw[fill=black] \foreach \x in {1,2,...,5} {(\x,1.5) circle (2pt)};%\widetilde{F}_{4}
+\draw {(.5,1.5) node{}
+(3.5,1.5) node[label=above:$5$]{}
+[-] (1,1.5) -- (5,1.5)
+(2,1.5) node{}}; 
+\end{tikzpicture}
+\caption{$\widetilde{F}_{4}$} \label{fig:H}
+\end{subfigure} &
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]
+\draw[fill=black] \foreach \x in {1,2,...,3} {(\x,1.5) circle (2pt)};%\widetilde{G}_{2}
+\draw {(.5,1.5) node{}
+(2.5,1.5) node[label=above:$6$]{}
+[-] (1,1.5) -- (3,1.5)
+(2,1.5) node{}}; 
+\end{tikzpicture}
+\caption{$\widetilde{G}_{4}$} \label{fig:H}
+\end{subfigure}
+\end{tabular}
+\caption{Coxeter graphs corresponding to the infinite Coxeter groups}
+\label{fig:infincoxgraphs}
+\end{figure}
 
 \end{document}
 =======

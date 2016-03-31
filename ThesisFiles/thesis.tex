@@ -5,7 +5,13 @@
 \usepackage{tikz}
 \usetikzlibrary{3d}
 \usepackage{amsmath,amssymb,amsfonts,amscd, array,amsthm}
-\usepackage{subcaption}
+%\usepackage{subcaption}
+
+\usepackage{caption}
+\usepackage[labelformat=simple,labelfont={}]{subcaption}
+	\renewcommand\thesubfigure{(\alph{subfigure})}
+
+
 
 \input{preamble}
 

@@ -553,3 +553,30 @@ Using the notion of star reducible we are now able to introduce the concept of a
 \begin{theorem}
 	Let $W(\Gamma)$ be a Coxeter group with (finite) generating set $S$. Then $W(\Gamma)$ is star reducible if an only if each component of $\Gamma$ is either a complete graph with labels $m(s,t)\geq 3$, or is one of the following types: type $A_n$ $(n \geq 1)$, type $B_n$ $(n \geq 2)$, type $D_n$ $(n \geq 4)$, type $F_n$ $(n \geq 4)$, type $H_n$ $(n \geq 2)$, type $I_2(m)$ $(m \geq 3)$, type $\widetilde{A}_{n-1}$ $(n \geq 3 \textrm{ and } n \textrm{ odd })$, type $\widetilde{C}_{n-1}$ $(n\geq 4 \textrm{ and } n \textrm{ even })$, type $\widetilde{E}_6$ or type $\widetilde{F}_5$. \qed
 \end{theorem}  
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Property T and T-Avoiding Elements}\label{Tavoid}
+
+\textcolor{red}{Introduction and Motivation for this section}
+
+We first begin by defining the notion of Property-T. Let $(W,S)$ be a Coxeter system of type $\Gamma$ and let $w \in W$ we say that $w$ has \emph{Property-T} if and only if there exists are reduced expression $\overline{w}$ such that $\overline{w}=stu$ or $\overline{w}=uts$ where $m(s,t)\geq 3$. That is, $w$ has Property-T if there exists a reduced expression for $w$ that begins with a product of non-commuting generators or ends with a product of non-commuting generators. It should be noted that by the symmetry of the definition if $w$ has Property-T, then $w^{-1}$ has Property-T
+
+\begin{example}
+Let $w \in W(A_5)$ and let $\overline{w}=s_1s_4s_2s_3s_5$. Note that applying a commutation to $s_4s_5$ results in $\overline{w}_1=s_1s_2s_4s_3s_5$. Hence $w$ has Property-T, since $m(s_1,s_2)=3$ and there is a reduced expression for $w$ which starts with $s_1s_2$.	
+\end{example}
+
+\begin{example}\label{ex:tavoid}
+Let $w \in W(A_5)$ and let $\overline{w}=s_1s_3s_5$. It turns out that since $w$ is a product of commuting generators there is no reduced expression for $w$ that begins or ends with a pair of non-commuting generators. This implies that $w$ does not have Property-T.	
+\end{example}
+
+An element $w \in W(\Gamma)$ is called \emph{T-avoiding} if $w$ and $w^{-1}$ does not have Property-T. As seen in Example~\ref{ex:tavoid} an element $w \in W(\Gamma)$ will be T-avoiding if $w$ is a product of commuting generators. We will call an element that is a product of commuting generators \emph{trivially T-avoiding}. If $w$ is T-avoiding and not a product of commuting generators, we will say that $w$ is \emph{non-trivially T-avoiding.}
+
+\begin{example}
+Let $w \in W(A_5)$ and let $\overline{w}=s_1s_3s_5$. Then by Example~\ref{ex:tavoid}, we know that $w$ is T-avoiding. Furthermore, since $w$ is a product of commuting generators, $w$ is trivially T-avoiding.	
+\end{example}
+
+\begin{example}
+Let $w \in W(\widetilde{C}_4)$ and let $\overline{w}=s_0s_2s_4s_1s_3s_0s_2s_4$. It turns out that $w$ is non-trivially T-avoiding. 	
+\end{example}
+

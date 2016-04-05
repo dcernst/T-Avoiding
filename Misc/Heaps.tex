@@ -676,6 +676,94 @@ Infinite Coxeter Graphs Figure
 \label{fig:infincoxgraphs}
 \end{figure}
 
+\newpage
+Star Reducible Heaps
+\begin{figure}[h!]
+\begin{tabular}{m{7cm} m{7cm}}
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=0.5]
+\heapblock{3}{6}{3}{purple}
+\heapblock{2}{4}{2}{purple}
+\heapblock{0}{4}{0}{purple}
+\heapblock{1}{2}{1}{purple}
+\heapblock{0}{0}{0}{purple}
+\end{tikzpicture}
+\caption{\textcolor{red}{I don't know what to call this}} \label{fig:heapy}
+\end{subfigure} &
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=0.5]
+\heapblock{3}{6}{}{white}
+\heapblock{2}{4}{2}{purple}
+\heapblock{0}{4}{0}{purple}
+\heapblock{1}{2}{1}{purple}
+\heapblock{0}{0}{0}{purple}
+\end{tikzpicture}
+\caption{\textcolor{red}{I don't know what to call this}} \label{fig:multiplied}
+\end{subfigure}
+\end{tabular}
+\caption{Visualization of Example~\ref{ex:starred}}
+\label{fig:starred}
+\end{figure}
+
+
+Weak Star Reducible Heap\\
+\begin{figure}
+\begin{tikzpicture}[scale=0.5]
+\heapblock{3}{6}{3}{purple}
+\heapblock{2}{4}{2}{purple}
+\heapblock{0}{4}{0}{orange}
+\heapblock{1}{2}{1}{orange}
+\heapblock{0}{0}{0}{orange}
+\heapblock{1}{-2}{1}{orange}
+\end{tikzpicture}
+\caption{\textcolor{red}{I don't know what to call this}} \label{fig:noncancel}
+\end{figure}
+
+
+
+Heaps for Property-T Section\\
+
+\begin{figure}[h!]
+\begin{tabular}{m{7cm} m{7cm}}
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=0.5]
+\heapblock{5}{6}{5}{purple}
+\heapblock{3}{6}{3}{purple}
+\heapblock{2}{4}{2}{orange}
+\heapblock{4}{4}{4}{purple}
+\heapblock{1}{2}{1}{orange}
+\end{tikzpicture}
+\caption{Heap of an element with Property-T} \label{fig:heapw/T}	
+\end{subfigure}&
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=0.5]
+\heapblock{1}{6}{1}{purple}
+\heapblock{3}{6}{3}{purple}
+\heapblock{5}{6}{5}{purple}
+\end{tikzpicture}
+\caption{Heap of a T-Avoiding element}\label{fig:heapnoT}
+\end{subfigure}
+\end{tabular}
+\caption{Heaps of an element with Property-T and a T-Avoiding element}
+\end{figure}
+
+\begin{figure}
+\begin{tikzpicture}[scale=0.5]
+\heapblock{0}{6}{0}{purple}
+\heapblock{2}{6}{2}{purple}
+\heapblock{4}{6}{2}{purple}
+\heapblock{1}{4}{1}{purple}
+\heapblock{3}{4}{3}{purple}
+\heapblock{0}{2}{0}{purple}
+\heapblock{2}{2}{2}{purple}
+\heapblock{4}{2}{4}{purple}
+\end{tikzpicture}
+\caption{Heap of a non-trivially T-Avoiding element in $W(\widetilde{C}_4)$.}	
+\end{figure}
+
+
 \end{document}
 =======
 

@@ -1,0 +1,67 @@
+\chapter{Property-T and T-Avoiding}
+
+\section{Property-T and T-Avoiding Elements}\label{Tavoid}
+
+\textcolor{red}{Introduction and Motivation for this section}
+
+We first begin by defining the notion of Property-T. Let $(W,S)$ be a Coxeter system of type $\Gamma$ and let $w \in W$ we say that $w$ has \emph{Property-T} if and only if there exists a reduced expression $\overline{w}$ such that $\overline{w}=stu$ or $\overline{w}=uts$ where $m(s,t)\geq 3$. That is, $w$ has Property-T if there exists a reduced expression for $w$ that begins with a product of non-commuting generators or ends with a product of non-commuting generators. It should be noted that by the symmetry of the definition if $w$ has Property-T, then $w^{-1}$ has Property-T.
+
+\begin{example}\label{ex:prop-T}
+Let $w \in W(A_5)$ and let $\overline{w}=s_1s_4s_2s_3s_5$. Note that applying a commutation to $s_4s_5$ results in $\overline{w}_1=s_1s_2s_4s_3s_5$. Hence $w$ has Property-T, since $m(s_1,s_2)=3$ and there is a reduced expression for $w$ which starts with $s_1s_2$.	
+\end{example}
+
+\begin{example}\label{ex:tavoid}
+Let $w \in W(A_5)$ and let $\overline{w}=s_1s_3s_5$. It turns out that since $w$ is a product of commuting generators there is no reduced expression for $w$ that begins or ends with a pair of non-commuting generators. This implies that $w$ does not have Property-T.	
+\end{example}
+
+As with star reducible elements it may be helpful to visualize Property-T through heaps. Figure~\ref{fig:heapw/T} provides a representation of $\overline{w}$ seen in Example~\ref{ex:prop-T} and Figure~\ref{fig:heapnoT} provides a representation of $\overline{w}$ seen in Example~\ref{ex:tavoid}. Notice that if we were to remove the block for $s_1$ in the bottom row of Figure~\ref{fig:heapw/T} , we would have a new bottom row. However, in Figure~\ref{fig:heapnoT}, we are not able to remove able to remove any bricks and have a new brick come to the top or bottom row as the heap is just one row.  Property-T provides the ability for us get a new row in our heap when we remove the top most or bottom most row from a specific reduced expression for $w$.
+
+\begin{figure}[h!]
+\begin{tabular}{m{7cm} m{7cm}}
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=0.5]
+\heapblock{5}{6}{5}{purple}
+\heapblock{3}{6}{3}{purple}
+\heapblock{2}{4}{2}{orange}
+\heapblock{4}{4}{4}{purple}
+\heapblock{1}{2}{1}{orange}
+\end{tikzpicture}
+\caption{Heap of an element with Property-T} \label{fig:heapw/T}	
+\end{subfigure}&
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=0.5]
+\heapblock{1}{6}{1}{purple}
+\heapblock{3}{6}{3}{purple}
+\heapblock{5}{6}{5}{purple}
+\end{tikzpicture}
+\caption{Heap of a T-Avoiding element}\label{fig:heapnoT}
+\end{subfigure}
+\end{tabular}
+\caption{Heaps of an element with Property-T and a T-Avoiding element}
+\end{figure}
+
+An element $w \in W(\Gamma)$ is called \emph{T-avoiding} if $w$ and $w^{-1}$ do not have Property-T. As seen in Example~\ref{ex:tavoid} an element $w \in W(\Gamma)$ will be T-avoiding if $w$ is a product of commuting generators. We will call an element that is a product of commuting generators \emph{trivially T-avoiding}. If $w$ is T-avoiding and not a product of commuting generators, we will say that $w$ is \emph{non-trivially T-avoiding.}
+
+\begin{example}
+Let $w \in W(A_5)$ and let $\overline{w}=s_1s_3s_5$. Then by Example~\ref{ex:tavoid}, we know that $w$ is T-avoiding. Furthermore, since $w$ is a product of commuting generators, $w$ is trivially T-avoiding.	
+\end{example}
+
+\begin{example}
+Let $w \in W(\widetilde{C}_4)$ and let $\overline{w}=s_0s_2s_4s_1s_3s_0s_2s_4$. It turns out that $w$ is non-trivially T-avoiding. 	
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[scale=0.5]
+\heapblock{0}{6}{0}{purple}
+\heapblock{2}{6}{2}{purple}
+\heapblock{4}{6}{2}{purple}
+\heapblock{1}{4}{1}{purple}
+\heapblock{3}{4}{3}{purple}
+\heapblock{0}{2}{0}{purple}
+\heapblock{2}{2}{2}{purple}
+\heapblock{4}{2}{4}{purple}
+\end{tikzpicture}
+\caption{Heap of a non-trivially T-Avoiding element in $W(\widetilde{C}_4)$.}	
+\end{figure}
+\end{example}
+

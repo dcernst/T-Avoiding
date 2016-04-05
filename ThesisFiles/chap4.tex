@@ -1,3 +1,79 @@
-\chapter{Title of Chapter 4}
+\chapter{Star Operations}
 
-In this chapter, we'll say the most intelligent stuff anyone has ever said.
+\section{Star Operations}\label{Star}
+
+The notion of star operations was originally introduced by Kazhdan and Lusztig in~\cite{Kazhdan1979} for simply laced Coxeter systems (i.e., $m(s,t) \leq 3$ for all $s,t \in S$), and was later generalized to all Coxeter systems in~\cite{Lusztig1985}. If $I=\{s,t\}$ is a pair of non-commuting generators of a Coxeter group $W$, then $I$ induces four partially defined maps from $W$ to itself, known as \emph{star operations}. A star operation, when it is defined, increases or decreases the length of an element to which it is applied by 1. For our purposes it is enough to define only the star operations that decrease the length of an element by 1, and as a result we will not develop the notion in full generality.
+
+\textcolor{red}{Dana will you make sure that this definition is correct.} Let $(W,S)$ be a Coxeter system of type $\Gamma$ and let $I=\{s,t\}\subseteq S$ be a pair of noncommuting generators whose product has order $m$. Let $w \in W(\Gamma)$ such that $s \in \mathcal{L}(w)$. We define $w$ to be \emph{left star reducible by $s$ with respect to $t$} if there exists $t \in \mathcal{L}(sw)$. We analogously define $w$ to be \emph{right star reducible by $s$ with respect to $t$}. Observe that if $m(s,t) \geq 3$, then $w$ is left (respectively, right) star reducible if and only if there is a reduced expression for $w$ such that $\overline{w}=stv$ (respectively, $\overline{w}=vts$). We say that $w$ is \emph{star reducible} if it is either left or right star reducible.
+
+\begin{example}\label{ex:starred}
+Let $w \in W(B_4)$ and let $\overline{w}=s_0s_1s_0s_2s_3$ be a reduced expression for $w$. We see that $w$ is left star reducible by $s_0$ with respect to $s_1$ to $s_1s_0s_2s_3$, since $m(s_0,s_1)=4$ and $s_0 \in \mathcal{L}(w)$ while $s_1 \in \mathcal{L}(s_0w)$. Also $w$ is right star reducible by $s_3$ with respect to $s_2$ to $s_0s_1s_0s_2$, since $m(s_2,s_3)=3$ and $s_3 \in \mathcal{R}(w)$ and $s_2 \in \mathcal{R}(ws_3)$.
+\end{example}
+
+It may be helpful to visualize star reducible in terms of heaps. Figure~\ref{fig:heapy} represents $\overline{w}$. Note that, we can see $s_0$ is in the left descent set of $w$ since $s_0$ is in the bottom row of the heap. Furthermore, multiplying on the left by $s_0$ we get the heap in Figure~\ref{fig:multiplied}. Again, since $s_1$ is in the bottom row of the heap, $s_1 \in \mathcal{L}(s_1w)$. In figure~\ref{fig:heapy} we also see that $s_3$ is in the right descent set of $w$ since $s_3 \in \mathcal{R}(w)$. Multiplying on the left by $s_3$ we can see that $s_2$ would be in the top level of the heap so $s_2 \in \mathcal{R}(ws_2)$. From this we can interpret visually an element $w \in W(\Gamma)$ is left star reducible (respectively, right star reducible) if there exists a heap that we can pull a block off the bottom row of the heap (respectively, top of the heap) and a new block that wasn't previously in the bottom row (respectively, top row) is now in the bottom row (respectively, top row) of the heap.
+
+\begin{figure}[h!]
+\begin{tabular}{m{7cm} m{7cm}}
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=0.5]
+\heapblock{3}{6}{3}{purple}
+\heapblock{2}{4}{2}{purple}
+\heapblock{0}{4}{0}{purple}
+\heapblock{1}{2}{1}{purple}
+\heapblock{0}{0}{0}{purple}
+\end{tikzpicture}
+\caption{\textcolor{red}{I don't know what to call this}} \label{fig:heapy}
+\end{subfigure} &
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=0.5]
+\heapblock{3}{6}{3}{purple}
+\heapblock{2}{4}{2}{purple}
+\heapblock{0}{4}{0}{purple}
+\heapblock{0}{0}{}{white}
+\heapblock{1}{2}{1}{purple}
+\end{tikzpicture}
+\caption{\textcolor{red}{I don't know what to call this}} \label{fig:multiplied}
+\end{subfigure}
+\end{tabular}
+\caption{Visualization of Example~\ref{ex:starred}}
+\label{fig:starred}
+\end{figure}
+
+Using the notion of star reducible we are now able to introduce the concept of a star reducible Coxeter group. We say that a Coxeter group $W(\Gamma)$, or it's Coxeter graph $\Gamma$, is \emph{star reducible} if every element of $\FC(\Gamma)$ is star reducible to a product of commuting generators. That is, $W(\Gamma)$ is star reducible if when we apply star operations repeatedly to $w \in \FC(\Gamma)$ and eventually $w$ is a product of commuting generators. In\cite{Green2006a}, Green classified all star reducible Coxeter groups. 
+%The Coxeter groups $W(A_n)$, $W(B_n)$ and $W(\widetilde{C}_n)$ are star reducible. However, $W(A_n)$ and $W(B_n)$ don't have non-trivial T-avoiding elements, while $W(\widetilde{C}_n)$ in one parity does have non-trivial T-avoiding elements.
+\begin{theorem}
+	Let $W(\Gamma)$ be a Coxeter group with (finite) generating set $S$. Then $W(\Gamma)$ is star reducible if an only if each component of $\Gamma$ is either a complete graph with labels $m(s,t)\geq 3$, or is one of the following types: type $A_n$ $(n \geq 1)$, type $B_n$ $(n \geq 2)$, type $D_n$ $(n \geq 4)$, type $F_n$ $(n \geq 4)$, type $H_n$ $(n \geq 2)$, type $I_2(m)$ $(m \geq 3)$, type $\widetilde{A}_{n-1}$ $(n \geq 3 \textrm{ and } n \textrm{ odd })$, type $\widetilde{C}_{n-1}$ $(n\geq 4 \textrm{ and } n \textrm{ even })$, type $\widetilde{E}_6$ or type $\widetilde{F}_5$. \qed
+\end{theorem}  
+
+\section{Non-Cancellable Elements}
+ 
+We now introduce the concept of weak star reducible which is related to the notion of cancellable in~\cite{Fan1997}. Let $(W,S)$ be a Coxeter system of type $\Gamma$ and let $I=\{s,t\} \subseteq S$ be a pair of noncommuting generators of the Coxeter group $W(\Gamma)$. If $w  \in \FC(\Gamma)$, then $w$ is \emph{left weak star reducible by $s$ with respect to $t$ to $sw$} if
+\begin{enumerate}
+\item $w$ is left star reducible by $s$ with respect to $t$;
+\item and $tw \notin \FC(W)$.	
+\end{enumerate}
+Notice that (2) implies that $l(tw)>l(w)$. Also note that we are restricting out definition of weak star reducible to the set of $\FC$ elements of $W(\Gamma)$. We analogously define \emph{right weak star reducible by $s$ with respect to $t$ to $ws$}. We say that $w$ is \emph{weak star reducible} if $w$ is either left or right weak star reducible. Otherwise, we say that $w$ is \emph{non-cancellable} or \emph{weak star irreducible}.
+
+\begin{example}\label{ex:noncancel}
+Let $w \in \FC(B_4)$ and let $\overline{w}=s_0s_1s_0s_2s_3$ be a reduced expression for $w$ as in Example~\ref{ex:starred}. By Example~\ref{ex:starred} we know that $w$ is left star reducible. Also, $tw=s_1s_0s_1s_0s_2s_3$ which is not in $\FC(B_4)$. Thus, we see that $w$ is left weak star reducible by $s_0$ with respect to $s_1$ to $s_1s_0s_2s_3$. In addition, Example~\ref{ex:starred} showed that $w$ is right star reducible. Also, $wt=s_0s_1s_0s_2s_3s_2$ which is not in $\FC(B_4)$. Thus, we see that $w$ is right weak star reducible by $s_3$ with respect to $s_2$ to $s_0s_1s_0s_2$. This implies that $w$ is not non-cancellable.
+\end{example}
+
+Again it might be useful to visualize the concept of weak star reducible in terms of heaps. Recall in Figure~\ref{fig:heapy} we have a representation for $w$ as described in Example~\ref{ex:noncancel} and an associated discussion about the reason for $w$ being star reducible. Now in Figure~\ref{fig:noncancel} we can see that when we multiply $w$ by $s_1$ we end up with a braid, highlighted in orange and hence $ws_1 \notin \FC(\Gamma)$. Here the same properties as described above for $w$ to be star reducible must be visualized in a heap and when multiplying on the left or right by $t$ a braid must appear.
+
+\begin{figure*}[h!] \centering
+\begin{tikzpicture}[scale=0.5]
+\heapblock{3}{6}{3}{purple}
+\heapblock{2}{4}{2}{purple}
+\heapblock{0}{4}{0}{orange}
+\heapblock{1}{2}{1}{orange}
+\heapblock{0}{0}{0}{orange}
+\heapblock{1}{-2}{1}{orange}
+\end{tikzpicture}
+\caption{\textcolor{red}{I don't know what to call this either.}} \label{fig:noncancel}
+\end{figure*}
+
+\begin{example}
+Let $w \in \FC(B_4)$ and let $\overline{w}=s_0s_1$ be a reduced expression for $w$. Note that $w$ is left (respectively, right) star reducible by $s_0$ with respect to $s_1$ (respectively, by $s_1$ with respect to $s_0$). However, $s_1s_0s_1 \in \FC(B_4)$ (respectively, $s_0s_1s_0 \in \FC(B_4)$). Thus $w$ is non-cancellable.
+\end{example}
+

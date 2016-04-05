@@ -389,13 +389,14 @@ Example 1.4.3\\
 \end{tikzpicture}
 
 \newpage
-Finite Coxeter Graphs Figure
+Finite Irreducible Coxeter Graphs Figure
 \begin{figure}[h!]
 \begin{tabular}{m{7cm} m{7cm}}
 \begin{subfigure}{0.5\textwidth} \centering
 \begin{tikzpicture}[scale=1.0]%A_{n}
 \draw[fill=black] \foreach \x in {1,2,...,6} {(\x,10) circle (2pt)};
 \draw {(.5,10) node{}
+(1.5,10) node[label=above:\textcolor{white}{$4$}]{}
 (4.5,10) node{$\cdots$}
 [-] (1,10) -- (4,10)
 [-] (5,10) -- (6,10)
@@ -422,6 +423,7 @@ Finite Coxeter Graphs Figure
 \begin{subfigure}{0.5\textwidth} \centering
 \begin{tikzpicture}[scale=1.0]
 \draw[fill=black] \foreach \x in {1,2} {(\x,0) circle (2pt)};
+\fill[fill=white] (2,1) circle (2pt);
 \draw {(.25,0) node{}
 (1.5,0) node[label=above:$m$]{}
 [-] (1,0) -- (2,0)
@@ -491,6 +493,7 @@ Finite Coxeter Graphs Figure
 \begin{subfigure}{0.5\textwidth} \centering
 \begin{tikzpicture}[scale=1.0]%F_{4}
 \draw[fill=black] \foreach \x in {1,2,...,4} {(\x,3) circle (2pt)};
+\fill[white] (1,4) circle (2pt);
 \draw {(.5,3) node{}
 (2.5,3) node[label=above:$4$]{}
 [-] (1,3) -- (4,3)
@@ -528,12 +531,13 @@ Finite Coxeter Graphs Figure
 \end{figure}
 
 \newpage
-Infinite Coxeter Graphs Figure
+Affine Coxeter Graphs Figure
 \begin{figure}[h!]
 \begin{tabular}{m{7cm} m{7cm}}
 \begin{subfigure}{0.5\textwidth} \centering
 \begin{tikzpicture}[scale=1.0]%\widetilde{A}_{2}
 \draw[fill=black] \foreach \x in {1,2} {(\x,10) circle (2pt)};
+\fill[white] (1,11) circle (2pt);
 \draw { (.5,10) node{}
 (1.5,10) node[label=above:$\infty$]{}
 [-] (1,10) -- (2,10)
@@ -577,6 +581,7 @@ Infinite Coxeter Graphs Figure
 \begin{subfigure}{0.5\textwidth} \centering
 \begin{tikzpicture}[scale=1.0]
 \draw[fill=black] \foreach \x in {1,2,...,6} {(\x,5) circle (2pt)};%\widetild{C}_{n}
+\fill[white] (1,6) circle (2pt);
 \draw {(.5,5) node{}
 (4.5,5) node{$\cdots$}
 (5.5,5) node[label=above:$4$]{}
@@ -594,6 +599,7 @@ Infinite Coxeter Graphs Figure
 \begin{tikzpicture}[scale=1.0]%\widetilde{D}_{6}
 \draw[fill=black] \foreach \x in {1,2,...,6} {(\x,3.5) circle (2pt)};
 \draw[fill=black] (2,4.5) circle (2pt);
+\fill[white] (2,5.5) circle (2pt);
 \draw[fill=black] (5,4.5) circle (2pt);
 \draw {
 (3.5,3.5) node{$\cdots$}
@@ -677,6 +683,104 @@ Infinite Coxeter Graphs Figure
 \end{figure}
 
 \newpage
+FC-finite Coxeter Groups
+\begin{figure}[h!]
+\begin{tabular}{m{7cm} m{7cm}}
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]%A_{n}
+\draw[fill=black] \foreach \x in {1,2,...,6} {(\x,10) circle (2pt)};
+\draw {(.5,10) node{}
+(1.5,10) node[label=above:\textcolor{white}{$4$}]{}
+(4.5,10) node{$\cdots$}
+[-] (1,10) -- (4,10)
+[-] (5,10) -- (6,10)
+(1,10) node{}}; 
+\end{tikzpicture}
+\caption{$A_{n}$} \label{fig:FCA}
+\end{subfigure} &
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]%B_{n}
+\draw [fill=black] \foreach \x in {1,2,...,6} {(\x,8.5) circle (2pt)};
+\draw {(.5,8.5) node{}
+(1.5,8.5) node[label=above:$4$]{}
+(4.5,8.5) node{$\cdots$}
+[-] (1,8.5) -- (4,8.5)
+[-] (5,8.5) -- (6,8.5)
+(2,8.5) node{}}; 
+\end{tikzpicture}
+\caption{$B_{n}$} \label{fig:FCB}
+\end{subfigure} \\
+
+    & \\ 
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]
+\draw[fill=black] \foreach \x in {1,2,...,6} {(\x,6.5) circle (2pt)};%D_{n}
+\draw[fill=black] (2,7.5) circle (2pt);
+\draw {(.5,6.5) node{}
+(4.5,6.5) node{$\cdots$}
+[-] (1,6.5) -- (4,6.5)
+[-] (5,6.5) -- (6,6.5)
+[-] (2,6.5) -- (2,7.5)
+(2,6.5) node{}};
+\end{tikzpicture}
+\caption{$D_{n}$} \label{fig:D}
+\end{subfigure} &
+    
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]%E_{6}
+\draw[fill=black] \foreach \x in {1,2,...,6} {(\x,4.5) circle (2pt)};
+\draw[fill=black] (3,5.5) circle (2pt);
+%\fill[white] (3,5.9) circle (2pt);
+\draw {(.5, 4.5) node{}
+(4.5,4.5) node{$\cdots$}
+[-] (1,4.5) -- (4,4.5)
+[-] (5,4.5) -- (6,4.5)
+[-] (3,4.5) -- (3,5.5)
+(3,4.5) node{}};
+\end{tikzpicture}
+\caption{$E_{n}$} \label{fig:En}
+\end{subfigure} \\
+
+&\\
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]%F_{n}
+\draw[fill=black] \foreach \x in {1,2,...,6} {(\x,3) circle (2pt)};
+\fill[white] (1,4) circle (2pt);
+\draw {(.5,3) node{}
+(2.5,3) node[label=above:$4$]{}
+(4.5,3) node{$\cdots$}
+[-] (1,3) -- (4,3)
+[-] (5,3) -- (6,3)
+(3,3) node{}};
+\end{tikzpicture}
+\caption{$F_{n}$} \label{fig:Fn}
+\end{subfigure} &
+
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]
+\draw[fill=black] \foreach \x in {1,2,...,6} {(\x,1.5) circle (2pt)};%H_{4}
+\fill[white] (1,3) circle (2pt);
+\draw {(.5,1.5) node{}
+(1.5,1.5) node[label=above:$5$]{}
+(4.5,1.5) node{$\cdots$}
+[-] (1,1.5) -- (4,1.5)
+[-] (5,1.5) -- (6,1.5)
+(2,1.5) node{}}; 
+\end{tikzpicture}
+\caption{$H_{n}$} \label{fig:H}
+\end{subfigure}
+\end{tabular}
+\caption{Coxeter graphs corresponding to the FC-finite Coxeter groups.}
+\label{fig:FCfincoxgraphs}
+\end{figure}
+
+
+
+\newpage
 Star Reducible Heaps
 \begin{figure}[h!]
 \begin{tabular}{m{7cm} m{7cm}}
@@ -719,6 +823,9 @@ Weak Star Reducible Heap\\
 \end{tikzpicture}
 \caption{\textcolor{red}{I don't know what to call this}} \label{fig:noncancel}
 \end{figure}
+
+
+\newpage
 
 
 

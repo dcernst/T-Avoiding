@@ -1,20 +1,20 @@
-\chapter{Property-T and T-Avoiding}
+\chapter{Property T and T-Avoiding}
 
-\section{Property-T and T-Avoiding Elements}\label{Tavoid}
+\section{Property T and T-Avoiding Elements}\label{Tavoid}
 
 \textcolor{red}{Introduction and Motivation for this section}
 
-We first begin by defining the notion of Property-T. Let $(W,S)$ be a Coxeter system of type $\Gamma$ and let $w \in W$ we say that $w$ has \emph{Property-T} if and only if there exists a reduced expression $\overline{w}$ such that $\overline{w}=stu$ or $\overline{w}=uts$ where $m(s,t)\geq 3$. That is, $w$ has Property-T if there exists a reduced expression for $w$ that begins with a product of non-commuting generators or ends with a product of non-commuting generators. It should be noted that by the symmetry of the definition if $w$ has Property-T, then $w^{-1}$ has Property-T.
+We first begin by defining the notion of Property T. Let $(W,S)$ be a Coxeter system of type $\Gamma$ and let $w \in W$ we say that $w$ has \emph{Property T} if and only if there exists a reduced expression $\overline{w}$ such that $\overline{w}=stu$ or $\overline{w}=uts$ where $m(s,t)\geq 3$. That is, $w$ has Property T if there exists a reduced expression for $w$ that begins with a product of non-commuting generators or ends with a product of non-commuting generators. It should be noted that by the symmetry of the definition if $w$ has Property T, then $w^{-1}$ has Property T.
 
 \begin{example}\label{ex:prop-T}
-Let $w \in W(A_5)$ and let $\overline{w}=s_1s_4s_2s_3s_5$. Note that applying a commutation to $s_4s_5$ results in $\overline{w}_1=s_1s_2s_4s_3s_5$. Hence $w$ has Property-T, since $m(s_1,s_2)=3$ and there is a reduced expression for $w$ which starts with $s_1s_2$.	
+Let $w \in W(A_5)$ and let $\overline{w}=s_1s_4s_2s_3s_5$. Note that applying a commutation to $s_4s_5$ results in $\overline{w}_1=s_1s_2s_4s_3s_5$. Hence $w$ has Property T, since $m(s_1,s_2)=3$ and there is a reduced expression for $w$ which starts with $s_1s_2$.	
 \end{example}
 
 \begin{example}\label{ex:tavoid}
-Let $w \in W(A_5)$ and let $\overline{w}=s_1s_3s_5$. It turns out that since $w$ is a product of commuting generators there is no reduced expression for $w$ that begins or ends with a pair of non-commuting generators. This implies that $w$ does not have Property-T.	
+Let $w \in W(A_5)$ and let $\overline{w}=s_1s_3s_5$. It turns out that since $w$ is a product of commuting generators there is no reduced expression for $w$ that begins or ends with a pair of non-commuting generators. This implies that $w$ does not have Property T.	
 \end{example}
 
-As with star reducible elements it may be helpful to visualize Property-T through heaps. Figure~\ref{fig:heapw/T} provides a representation of $\overline{w}$ seen in Example~\ref{ex:prop-T} and Figure~\ref{fig:heapnoT} provides a representation of $\overline{w}$ seen in Example~\ref{ex:tavoid}. Notice that if we were to remove the block for $s_1$ in the bottom row of Figure~\ref{fig:heapw/T} , we would have a new bottom row. However, in Figure~\ref{fig:heapnoT}, we are not able to remove able to remove any bricks and have a new brick come to the top or bottom row as the heap is just one row.  Property-T provides the ability for us get a new row in our heap when we remove the top most or bottom most row from a specific reduced expression for $w$.
+As with star reducible elements it may be helpful to visualize Property T through heaps. Figure~\ref{fig:heapw/T} provides a representation of $\overline{w}$ seen in Example~\ref{ex:prop-T} and Figure~\ref{fig:heapnoT} provides a representation of $\overline{w}$ seen in Example~\ref{ex:tavoid}. Notice that if we were to remove the block for $s_1$ in the bottom row of Figure~\ref{fig:heapw/T} , we would have a new bottom row. However, in Figure~\ref{fig:heapnoT}, we are not able to remove able to remove any bricks and have a new brick come to the top or bottom row as the heap is just one row.  Property T provides the ability for us get a new row in our heap when we remove the top most or bottom most row from a specific reduced expression for $w$.
 
 \begin{figure}[h!]
 \begin{tabular}{m{7cm} m{7cm}}
@@ -26,7 +26,7 @@ As with star reducible elements it may be helpful to visualize Property-T throug
 \heapblock{4}{4}{4}{purple}
 \heapblock{1}{2}{1}{orange}
 \end{tikzpicture}
-\caption{Heap of an element with Property-T} \label{fig:heapw/T}	
+\caption{Heap of an element with Property T} \label{fig:heapw/T}	
 \end{subfigure}&
 
 \begin{subfigure}{0.5\textwidth} \centering
@@ -38,10 +38,10 @@ As with star reducible elements it may be helpful to visualize Property-T throug
 \caption{Heap of a T-Avoiding element}\label{fig:heapnoT}
 \end{subfigure}
 \end{tabular}
-\caption{Heaps of an element with Property-T and a T-Avoiding element}
+\caption{Heaps of an element with Property T and a T-Avoiding element}
 \end{figure}
 
-An element $w \in W(\Gamma)$ is called \emph{T-avoiding} if $w$ and $w^{-1}$ do not have Property-T. As seen in Example~\ref{ex:tavoid} an element $w \in W(\Gamma)$ will be T-avoiding if $w$ is a product of commuting generators. We will call an element that is a product of commuting generators \emph{trivially T-avoiding}. If $w$ is T-avoiding and not a product of commuting generators, we will say that $w$ is \emph{non-trivially T-avoiding.}
+An element $w \in W(\Gamma)$ is called \emph{T-avoiding} if $w$ and $w^{-1}$ do not have Property T. As seen in Example~\ref{ex:tavoid} an element $w \in W(\Gamma)$ will be T-avoiding if $w$ is a product of commuting generators. We will call an element that is a product of commuting generators \emph{trivially T-avoiding}. If $w$ is T-avoiding and not a product of commuting generators, we will say that $w$ is \emph{non-trivially T-avoiding.}
 
 \begin{example}
 Let $w \in W(A_5)$ and let $\overline{w}=s_1s_3s_5$. Then by Example~\ref{ex:tavoid}, we know that $w$ is T-avoiding. Furthermore, since $w$ is a product of commuting generators, $w$ is trivially T-avoiding.	
@@ -78,17 +78,12 @@ As mentioned in Section~\ref{Star} Green classified all star reducible Coxeter g
 	\end{enumerate}
 \end{theorem}
 
-We see that Item~\ref{it:triv} corresponds to the element $w$ being trivially T-avoiding, Items~\ref{it:proptend} and~\ref{it:proptbeg} refer to the element $w$ having Property-T at the beginning and end respectively, and Item~\ref{it:tavoid} corresponds to the element $w$ being T-avoiding. Notice that this implies that some Coxeter groups will have elements that are non-trivially T-avoiding while others may not. For example, as will be seen in the following sections, the Coxeter groups of type $A_n$ and $B_n$ have no non-trivial T-avoiding elements, while the Coxeter group of type $D_n$ does have non-trivial T-avoiding elements. The following sections and chapters classify T-avoiding elements in different Coxeter groups. 
+We see that Item~\ref{it:triv} corresponds to the element $w$ being trivially T-avoiding, Items~\ref{it:proptend} and~\ref{it:proptbeg} refer to the element $w$ having Property T at the beginning and end respectively, and Item~\ref{it:tavoid} corresponds to the element $w$ being T-avoiding. Notice that this implies that some Coxeter groups will have elements that are non-trivially T-avoiding while others may not. For example, as will be seen in the following sections, the Coxeter groups of type $A_n$ and $B_n$ have no non-trivial T-avoiding elements, while the Coxeter group of type $D_n$ does have non-trivial T-avoiding elements. The following sections and chapters classify T-avoiding elements in different Coxeter groups. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Classification of T-Avoiding Elements}\label{tavoid}
 
-In this section we will classify what is known about the non-trivial T-Avoiding elements in Coxeter groups of type $\widetilde{A}_n$, $A_n$, $D_n$, $I_2(m)$, and $F_n$.
-
-%%%%%%%%%%%%%%%%
-
-\subsection{T-Avoiding Elements in Type $\widetilde{A}_n$ and $A_n$}
+\section{T-Avoiding Elements in Type $\widetilde{A}_n$ and $A_n$}
 We start by classifying the non-trivial T-avoiding elements in Coxeter groups of type $\widetilde{A}_n$ and $A_n$. 
 \begin{theorem}
 Let $W=W(\widetilde{A}_n)$.  If $n \geq 2$ and $n$ is even, then there are no non-trivial T-avoiding elements in $W$. Otherwise, if $n \geq 2$ and $n$ is even then $W$ contains non-trivial T-avoiding elements.
@@ -109,24 +104,38 @@ This implies that in the Coxeter group of type $\widetilde{A}_n$, when $n$ is ev
 
 %%%%%%%%%%%%%%%%
 
-\subsection{T-Avoiding Elements in Type $I_2(m)$}
+\section{T-Avoiding Elements in Type $D_n$}
+
+In this section we will classify the non-trivial T-avoiding elements in the Coxeter group of type $D_n$. Recall that $W(D_n)$ is a star reducible Coxeter group and as a result of this any non-trivial T-avoiding element will not be fully commutative.
+
+\begin{theorem}
+Let $W=W(D_n)$. Then $W$ contains non-trivial T-avoiding elements.
+\begin{proof}
+	This is a consequence of~\cite[Section 2.2]{Gern2013}.
+\end{proof}
+\end{theorem}
+
+In addition, to showing that there are non-trivial T-avoiding elements in type $D_n$ Gern also classified the non-trivial T-avoiding elements as well. The following is his classification translated into heaps. 
+
+%%%%%%%%%%%%%%%
+
+\section{T-Avoiding Elements in Type $F_n$}
+
+In this section we state what is known regarding the non-trivial T-avoiding elements in the Coxeter groups of type $F_n$ for $n \geq 4$. 
+
+
+%%%%%%%%%%%%%%%%
+
+\section{T-Avoiding Elements in Type $I_2(m)$}
 
 We next will classify the non-trivial T-avoiding elements in Coxeter groups of type $I_2(m)$. Although it the following is a quick result, this is the first time that we believe it has been written.
 \begin{theorem}
 Let $W=W(I_2(m))$. Then $W$ has no non-trivial T-avoiding elements.
 \begin{proof}
-	Let $W=W(I_2(m))$. Recall that the Coxeter graph for Type $I_2(m)$ consists 2 vertices, $s,t$, and an edge with weight $m(s,t)$. Since $s$ and $t$ are involutions this implies that the elements in $W$ must alternate between $s$ and $t$. This implies that the fully commutative elements in $W$ are just $s$ and $t$. The rest of the elements in $W$ must be alternating products of $s$ and $t$. By definition $m(s,t)>3$ and hence all elements in $W$ that are not products of commuting generators have Property-T. Hence $W$ has no non-trivial T-avoiding elements. 
+	Let $W=W(I_2(m))$. Recall that the Coxeter graph for Type $I_2(m)$ consists 2 vertices, $s,t$, and an edge with weight $m(s,t)$. Since $s$ and $t$ are involutions this implies that the elements in $W$ must alternate between $s$ and $t$. This implies that the fully commutative elements in $W$ are just $s$ and $t$. The rest of the elements in $W$ must be alternating products of $s$ and $t$. By definition $m(s,t)>3$ and hence all elements in $W$ that are not products of commuting generators have Property T. Hence $W$ has no non-trivial T-avoiding elements. 
 \end{proof}	
 \end{theorem}
  
 As mentioned before the Coxeter group of type $I_2(m)$ is a star reducible Coxeter group. Similar to the Coxeter group of type $A_n$ and $\widetilde{A_n}$ for $n$ odd both star reducible Coxeter groups, $W(I_2(m))$ has no non-trivial T-avoiding elements. 
 
-%%%%%%%%%%%%%%%
 
-\subsection{T-Avoiding Elements in Type $F_n$}
-
-In this section we state what is known regarding the non-trivial T-avoiding elements in the Coxeter groups of type $F_4$, $F_5$, and $F_6$. \textcolor{red}{Don't forget to talk to Dana tomorrow regarding what is known about type $F$.}
-
-%%%%%%%%%%%%%%%%
-
-\subsection{T-Avoiding Elements in Type $D_n$}

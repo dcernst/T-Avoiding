@@ -102,5 +102,82 @@ Let $\overline{w}_1=s_1s_2s_3s_4s_2s_0$ be a reduced expression for $w \in W(\wi
 \end{figure}
 \end{example}
 
+It will be extremely useful for us to be able to quickly identify a heap corresponding to an element in $\FC(A_n)$, $\FC(B_n)$, and $\FC(\widetilde{C}_n)$. The next proposition is a special case of \cite[Proposition 3.3]{Stembridge1996} and follows quickly when one considers the consecutive subwords that are impermissible in reduced expressions for elements in $\FC(A_n)$, $\FC(B_n)$ and $\FC(\widetilde{C}_n)$.
 
+\begin{theorem}
+If $w \in \FC(\widetilde{C}_n)$, then $H(w)$ cannot contain any of the subheaps seen in Figure~\ref{fig:impermiss heaps}, where $0 < k < n+1$ and we use a square with a dotted boundary to emphasize that no element of the heap occupies the corresponding  position. \qed
+\end{theorem}
+
+\begin{figure}[h]
+\begin{tabular}{m{4cm} m{4cm} m{4cm}}
+	\begin{subfigure}{0.33\textwidth} \centering
+	\begin{tikzpicture}[scale=0.5]
+		\heapblock{1}{6}{1}{purple}
+		\dheapblock{2}{4}{}{black}
+		\heapblock{0}{4}{0}{purple}
+		\heapblock{1}{2}{1}{purple}
+		\heapblock{0}{0}{0}{purple}
+	\end{tikzpicture}
+	\caption{}\label{fig:C&B}
+	\end{subfigure} &
+	
+	\begin{subfigure}{0.33\textwidth} \centering
+	\begin{tikzpicture}[scale=0.5]
+		\heapblock{0}{6}{0}{purple}
+		\heapblock{1}{4}{1}{purple}
+		\heapblock{0}{2}{0}{purple}
+		\dheapblock{2}{2}{}{black}
+		\heapblock{1}{0}{1}{purple}
+	\end{tikzpicture}
+	\caption{}\label{fig:C&B2}
+	\end{subfigure} &
+
+	\begin{subfigure} {0.33\textwidth} \centering
+	\begin{tikzpicture}[scale=0.5]
+		\heapblock{1}{6}{k+1}{purple}
+		\heapblock{0}{4}{k}{purple}
+		\dheapblock{2}{4}{}{black}
+		\heapblock{1}{2}{1}{purple}
+	\end{tikzpicture}
+	\caption{}\label{fig:a,b,c}
+	\end{subfigure}\\
+	
+	&\\
+	
+	\begin{subfigure}{0.33\textwidth} \centering
+	\begin{tikzpicture}[scale=0.5]
+		\heapblock{2}{6}{k}{purple}
+		\heapblock{3}{4}{k+1}{purple}
+		\dheapblock{1}{4}{}{black}
+		\heapblock{2}{2}{k}{purple}
+	\end{tikzpicture}
+	\caption{}\label{fig:a,b,c2}
+	\end{subfigure}&
+	
+	\begin{subfigure}{0.33\textwidth} \centering
+	\begin{tikzpicture}[scale=0.5]
+		\heapblock{2}{6}{n}{purple}
+		\heapblock{1}{4}{n-1}{purple}
+		\heapblock{2}{2}{n}{purple}
+		\dheapblock{0}{2}{}{black}
+		\heapblock{1}{0}{n-1}{purple}
+	\end{tikzpicture}
+	\caption{}\label{fig:cimpermiss}	
+	\end{subfigure} &
+	
+	\begin{subfigure}{0.33\textwidth} \centering
+	\begin{tikzpicture}[scale=0.5]
+		\heapblock{1}{6}{n-1}{purple}
+		\dheapblock{0}{4}{}{black}
+		\heapblock{2}{4}{n}{purple}
+		\heapblock{1}{2}{n-1}{purple}
+		\heapblock{2}{0}{n}{purple}
+	\end{tikzpicture}	
+	\caption{}\label{fig:cimpermiss2}
+	\end{subfigure}
+\end{tabular}	
+\caption{Impermissible subheaps for elements in $\FC(\widetilde{C}_n)$.}\label{fig:impermiss heaps}
+\end{figure}
+
+Since $W(A_n)$ and $W(B_n)$ are parabolic subgroups of $W(\widetilde{C}_n)$ we can use Figure~\ref{fig:impermiss heaps} to classify the impermissible subheaps for elements of $\FC(A_n)$ and $\FC(B_n)$. The impermissible subheaps for elements of $\FC(A_n)$ are those seen in Figures~\ref{fig:a,b,c} and~\ref{fig:a,b,c2}. The impermissible subheaps for elements of $\FC(B_n)$ are those that are impermissible for elements of $\FC(A_n)$ as $W(A_n)$ is a parabolic subgroup of $W(B_n)$ and those seen in Figures~\ref{fig:C&B} and~\ref{fig:C&B2}. 
 

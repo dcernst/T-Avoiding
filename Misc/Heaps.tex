@@ -30,6 +30,7 @@
       }%
 
 \newcommand\heapblock[4]{\fill[fill=#4, fill opacity=0.35, draw=#4, line width=1.1pt, rounded corners,shift={(\xxaxis:#1)},shift={(\yyaxis:#2)}] (-1,-1) rectangle (1,1);\node at (#1,#2) {\footnotesize $#3$};}
+\newcommand\dheapblock[4]{\draw[dotted, draw=#4, line width=1.1pt, rounded corners,shift={(\xxaxis:#1)},shift={(\yyaxis:#2)}] (-1,-1) rectangle (1,1);\node at (#1,#2) {\footnotesize $#3$};}
 
 \newcommand\xxaxis{0}
 \newcommand\yyaxis{90}
@@ -868,6 +869,81 @@ Heaps for Property-T Section\\
 \heapblock{4}{2}{4}{purple}
 \end{tikzpicture}
 \caption{Heap of a non-trivially T-Avoiding element in $W(\widetilde{C}_4)$.}	
+\end{figure}
+
+
+\newpage
+Impermissible subheaps for elements in FC groups
+
+\begin{figure}[h!]
+\begin{tabular}{m{4cm} m{4cm} m{4cm}}
+	\begin{subfigure}{0.33\textwidth} \centering
+	\begin{tikzpicture}[scale=0.5]
+		\heapblock{1}{6}{1}{purple}
+		\dheapblock{2}{4}{}{black}
+		\heapblock{0}{4}{0}{purple}
+		\heapblock{1}{2}{1}{purple}
+		\heapblock{0}{0}{0}{purple}
+	\end{tikzpicture}
+	\caption{}\label{fig:C&B}
+	\end{subfigure} &
+	
+	\begin{subfigure}{0.33\textwidth} \centering
+	\begin{tikzpicture}[scale=0.5]
+		\heapblock{0}{6}{0}{purple}
+		\heapblock{1}{4}{1}{purple}
+		\heapblock{0}{2}{0}{purple}
+		\dheapblock{2}{2}{}{black}
+		\heapblock{1}{0}{1}{purple}
+	\end{tikzpicture}
+	\caption{}\label{fig:C&B2}
+	\end{subfigure} &
+
+	\begin{subfigure} {0.33\textwidth} \centering
+	\begin{tikzpicture}[scale=0.5]
+		\heapblock{1}{6}{k+1}{purple}
+		\heapblock{0}{4}{k}{purple}
+		\dheapblock{2}{4}{}{black}
+		\heapblock{1}{2}{1}{purple}
+	\end{tikzpicture}
+	\caption{}\label{fig:a,b,c}
+	\end{subfigure}\\
+	
+	&\\
+	
+	\begin{subfigure}{0.33\textwidth} \centering
+	\begin{tikzpicture}[scale=0.5]
+		\heapblock{2}{6}{k}{purple}
+		\heapblock{3}{4}{k+1}{purple}
+		\dheapblock{1}{4}{}{black}
+		\heapblock{2}{2}{k}{purple}
+	\end{tikzpicture}
+	\caption{}\label{fig:a,b,c2}
+	\end{subfigure}&
+	
+	\begin{subfigure}{0.33\textwidth} \centering
+	\begin{tikzpicture}[scale=0.5]
+		\heapblock{2}{6}{n}{purple}
+		\heapblock{1}{4}{n-1}{purple}
+		\heapblock{2}{2}{n}{purple}
+		\dheapblock{0}{2}{}{black}
+		\heapblock{1}{0}{n-1}{purple}
+	\end{tikzpicture}
+	\caption{}\label{fig:cimpermiss}	
+	\end{subfigure} &
+	
+	\begin{subfigure}{0.33\textwidth} \centering
+	\begin{tikzpicture}[scale=0.5]
+		\heapblock{1}{6}{n-1}{purple}
+		\dheapblock{0}{4}{}{black}
+		\heapblock{2}{4}{n}{purple}
+		\heapblock{1}{2}{n-1}{purple}
+		\heapblock{2}{0}{n}{purple}
+	\end{tikzpicture}	
+	\caption{}\label{fig:cimpermiss2}
+	\end{subfigure}
+\end{tabular}	
+\caption{Impermissible subheaps for elements in FC$(\widetilde{C}_n)$.}\label{fig:impermiss heaps}
 \end{figure}
 
 

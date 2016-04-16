@@ -1,15 +1,16 @@
 \chapter{Heaps}
 
+%%%%%%%%%%
 \section{Heaps}\label{sec:Heaps}
 
 We now discuss a visual representation of Coxeter group elements. Each reduced expression can be associated with a labeled partially ordered set (poset) called a heap.  Heaps provide a visual representation of a reduced expression while preserving the relations among the generators. We follow the development of heaps for straight line Coxeter groups found in~\cite{Billey2007},~\cite{Ernst2010}, and~\cite{Stembridge1996}. 
 
-Let $(W,S)$ be a Coxeter system of type $\Gamma$. Suppose $\overline{w}=s_{x_1}s_{x_2}\cdots s_{x_r}$ is a fixed reduced expression for $w \in W$. As in~\cite{Stembridge1996}, we define a partial ordering on the indices $\{1, 2, \ldots, r\}$ by the transitive closure of the relation $\lessdot$ defined via $j \lessdot i$ if $i < j$ and $s_{x_i}$ and $s_{x_j}$ do not commute. In particular, since $\overline{w}$ is reduced, $j \lessdot i$ if $s_{x_i}=s_{x_j}$ by transitivity. This partial order is referred to as the \emph{heap} of $\overline{w}$, where $i$ is labeled by $s_{x_i}$. Note that for simplicity we are omitting the labels of the underlying poset but retaining the labels of the corresponding generators.
+Let $(W,S)$ be a Coxeter system of type $\Gamma$. Suppose $\w=s_{x_1}s_{x_2}\cdots s_{x_r}$ is a fixed reduced expression for $w \in W$. As in~\cite{Stembridge1996}, we define a partial ordering on the indices $\{1, 2, \ldots, r\}$ by the transitive closure of the relation $\lessdot$ defined via $j \lessdot i$ if $i < j$ and $s_{x_i}$ and $s_{x_j}$ do not commute. In particular, since $\w$ is reduced, $j \lessdot i$ if $s_{x_i}=s_{x_j}$ by transitivity. This partial order is referred to as the \emph{heap} of $\w$, where $i$ is labeled by $s_{x_i}$. Note that for simplicity we are omitting the labels of the underlying poset but retaining the labels of the corresponding generators.
 
-It follows from~\cite{Stembridge1996} that heaps are well-defined up to commutation class. That is, given two reduced expressions $\overline{w}$ and $\overline{w'}$ for $w \in W$ that are in the same commutation class, then the heaps for $\overline{w}$ and $\overline{w'}$ will be equal. In particular, if $w \in \FC(\Gamma)$, then $w$ has a one commutation class, and thus $w$ has a unique heap. Conversely, if $\overline{w}$ and $\overline{w'}$ are in different commutation classes, then there will not be a unique heap representation for $w$.
+It follows from~\cite{Stembridge1996} that heaps are well-defined up to commutation class. That is, given two reduced expressions $\w$ and $\w'$ for $w \in W$ that are in the same commutation class, then the heaps for $\w$ and $\w'$ will be equal. In particular, if $w \in \FC(\Gamma)$, then $w$ has one commutation class, and thus $w$ has a unique heap. Conversely, if $\w$ and $\w'$ are in different commutation classes, then there will not be a unique heap representation for $w$.
 
 \begin{example}
-Let $\overline{w}=s_1s_0s_4s_1s_3s_5s_2s_4s_6$ be a reduced expression for $w \in \FC(\widetilde{C}_6).$ We see that $\overline{w}$ is indexed by $\{1,2,3,4,5,6,7,8,9\}$. As an example, $1 \lessdot 0$ since $0 <1$ and $s_0$ and $s_1$ do not commute. The labeled Hasse diagram for the heap poset is seen in Figure~\ref{fig:Hasse}.
+Let $\w=s_6s_4s_2s_5s_3s_1s_4s_0s_1$ be a reduced expression for $w \in \FC(\widetilde{C}_6).$ We see that $\w$ is indexed by $\{1,2,3,4,5,6,7,8,9\}$. As an example, $8 \lessdot 9$ since $0 <1$ and $s_0$ and $s_1$ do not commute. The labeled Hasse diagram for the heap poset is seen in Figure~\ref{fig:Hasse}.
 \begin{figure}[h]
 \centering
 \begin{tikzpicture}[scale=0.5]
@@ -31,7 +32,7 @@ Let $\overline{w}=s_1s_0s_4s_1s_3s_5s_2s_4s_6$ be a reduced expression for $w \i
 \end{figure}
 \end{example}
 
-Let $\overline{w}$ be a reduced expression for an element in $w \in W(\widetilde{C}_n)$. As in~\cite{Billey2007} and~\cite{Ernst2010} we can represent a heap for $\overline{w}$ as a set of lattice points embedded in $\{0,1,2,\ldots, n\} \times \mathbb{N}$. To do so, we assign coordinates (not unique) $(x,y) \in \{0,1,2,\ldots, n\} \times \mathbb{N}$ to each entry of the labeled Hasse diagram for the heap of $\overline{w}$ in such a way that:
+Let $\w$ be a reduced expression for an element in $w \in W(\widetilde{C}_n)$. As in~\cite{Billey2007} and~\cite{Ernst2010} we can represent a heap for $\w$ as a set of lattice points embedded in $\{0,1,2,\ldots, n\} \times \mathbb{N}$. To do so, we assign coordinates (not unique) $(x,y) \in \{0,1,2,\ldots, n\} \times \mathbb{N}$ to each entry of the labeled Hasse diagram for the heap of $\w$ in such a way that:
 \begin{enumerate}
 \item An entry with coordinates $(x,y)$ is labeled $s_i$ (or $i$) in the heap if and only if $x = i$; 
 
@@ -42,14 +43,14 @@ Although the above is specific to $W(\widetilde{C}_n)$, the same construction wo
 
 In the case of any straight line Coxeter graph it follows from the definition that $(x,y)$ covers $(x',y')$ in the heap if and only if $x = x' \pm 1$, $y > y'$, and there are no entries $(x'', y'')$ such that $x'' \in \{x, x'\}$ and $y'< y'' < y$. This implies that we can completely reconstruct the edges of the Hasse diagram and the corresponding heap poset from a lattice point representation. The lattice point representation can help us visualize arguments that are potentially complex. Note that in our heaps the entries in the top correspond to the generators occurring in the right descent set of the corresponding reduced expression.
 
-Let $\overline{w}$ be a reduced expression for $w \in W(\widetilde{C}_n)$. We denote the lattice representation of the heap poset in $\{0,1,2, \ldots n\} \times \mathbb{N}$ described in the preceding paragraphs via $H(\overline{w})$. If $w$ is $\FC$, then the choice of reduced expression for $w$ is irrelevant and we will often write $H(w)$ and we refer to $H(w)$ as the heap of $w$. Note that we will use the same notation for heaps in Coxeter groups of all types.
+Let $\w$ be a reduced expression for $w \in W(\widetilde{C}_n)$. We denote the lattice representation of the heap poset in $\{0,1,2, \ldots n\} \times \mathbb{N}$ described in the preceding paragraphs via $H(\w)$. If $w$ is $\FC$, then the choice of reduced expression for $w$ is irrelevant and we will often write $H(w)$ and we refer to $H(w)$ as the heap of $w$. Note that we will use the same notation for heaps in Coxeter groups of all types.
 
-When $w$ is $\FC$, we wish to make a canonical choice for the representation of $H(w)$ by assembling the entries in a particular way. To do so, we position all of the entries corresponding to elements in $\mathcal{L}(w)$ in the same vertical position, and all of the remaining elements should be positioned as high as possible in the lattice point representation. For example, the representation in Figure~\ref{fig:FC heap} is the canonical representation for $w$. Note that our canonical representation of heaps corresponds to Cartier-Foata normal form for monomials~\cite{Cartier1969, Green2006a}. There are potentially many ways to illustrate a heap of an arbitrary reduced expression, each differing by the vertical placement of the blocks. For example, we can place blocks in vertical positions as high as possible, as low as possible, or some combination of low/high. In this thesis, we choose what we view to be the best representation of the heap for each example and when illustrating the heaps of arbitrary reduced expressions we will discuss the relative position of the entries but never the absolute coordinates. 
+When $w$ is $\FC$, we wish to make a canonical choice for the representation of $H(w)$ by assembling the entries in a particular way. To do so, we position all of the entries corresponding to elements in $\mathcal{L}(w)$ in the same vertical position, and all of the remaining elements should be positioned as low as possible in the lattice point representation. For example, the representation in Figure~\ref{fig:FC heap} is the canonical representation for $w$. Note that our canonical representation of heaps corresponds to Cartier-Foata normal form for monomials~\cite{Cartier1969, Green2006a}. There are potentially many ways to illustrate a heap of an arbitrary reduced expression, each differing by the vertical placement of the blocks. For example, we can place blocks in vertical positions as high as possible, as low as possible, or some combination of low/high. In this thesis, we choose what we view to be the best representation of the heap for each example and when illustrating the heaps of arbitrary reduced expressions we will discuss the relative position of the entries but never the absolute coordinates. 
 
-Let $\overline{w}=s_{x_1}s_{x_2}\cdots s_{x_r}$ be a reduced expression for $w \in W(\widetilde{C}_n)$. If $s_{x_i}$ and $s_{x_j}$ are adjacent generators in the Coxeter graph with $i<j$, then we must place the point labeled by $s_{x_j}$ at a level that is \emph{above} the level of the point labeled by $s_{x_i}$. Because generators in a Coxeter graph that are not adjacent do commute, points whose $x$-coordinates differ by more than one can slide past each other or land in the same level. To emphasize the covering relations of the lattice point representation we will enclose each entry in the heap in a square with rounded corners in such a way that if one entry covers another the squares overlap halfway. In addition, we will also label each square for $s_i$ with $i$.
+Let $\w=s_{x_1}s_{x_2}\cdots s_{x_r}$ be a reduced expression for $w \in W(\widetilde{C}_n)$. If $s_{x_i}$ and $s_{x_j}$ are adjacent generators in the Coxeter graph with $i<j$, then we must place the point labeled by $s_{x_j}$ at a level that is \emph{above} the level of the point labeled by $s_{x_i}$. Because generators in a Coxeter graph that are not adjacent do commute, points whose $x$-coordinates differ by more than one can slide past each other or land in the same level. To emphasize the covering relations of the lattice point representation we will enclose each entry in the heap in a square with rounded corners in such a way that if one entry covers another the squares overlap halfway. In addition, we will also label each square for $s_i$ with $i$.
 
 \begin{example}
-	Let $\overline{w}=s_1s_0s_4s_1s_3s_5s_2s_4s_6$ be a reduced expression for $w \in \FC(\widetilde{C}_6)$ as seen in Example 1.4.1. Figure~\ref{fig:FC heap} shows a possible lattice point representation for $H(w)$.
+	Let $\w=s_6s_4s_2s_5s_3s_1s_4s_0s_1$ be a reduced expression for $w \in \FC(\widetilde{C}_6)$ as seen in Example 1.4.1. Figure~\ref{fig:FC heap} shows a possible lattice point representation for $H(w)$.
 \begin{figure}[h]
 \centering
 \begin{tikzpicture}[scale=0.4]
@@ -69,7 +70,7 @@ Let $\overline{w}=s_{x_1}s_{x_2}\cdots s_{x_r}$ be a reduced expression for $w \
 \end{example}
 
 \begin{example}
-Let $\overline{w}_1=s_1s_2s_3s_4s_2s_0$ be a reduced expression for $w \in W(\widetilde{C}_4)$. Applying the commutation $s_4s_2=s_2s_4$, we can obtain another reduced expression for $w$, namely $\overline{w}_2$ which is in the same commutation class as $\overline{w_1}$ and hence has the same heap. However, applying the braid move $s_2s_3s_2=s_3s_2s_3$, we obtain another reduced expression $\overline{w_3}=s_1s_3s_2s_3s_4s_0$. Note that since $\overline{w}_3$ was obtained by applying a braid move, $\overline{w_3}$ is in a different commutation class than $\overline{w_1}$ and $\overline{w_2}$. Representations of $H(\overline{w}_1), H(\overline{w}_2)$, and $H(\overline{w_3})$ are seen in Figure~\ref{fig:not FC} where the braid relation is colored in orange.
+Let $\w_1=s_0s_2s_4s_3s_2s_1$ be a reduced expression for $w \in W(\widetilde{C}_4)$. Applying the commutation $s_4s_2=s_2s_4$, we can obtain another reduced expression for $w$, namely $\w_2$ which is in the same commutation class as $\w_1$ and hence has the same heap. However, applying the braid move $s_2s_3s_2=s_3s_2s_3$, we obtain another reduced expression $\w_3=s_0s_4s_3s_2s_3s_1$. Note that since $\w_3$ was obtained by applying a braid move, $\w_3$ is in a different commutation class than $\w_1$ and $\w_2$. Representations of $H(\w_1), H(\w_2)$, and $H(\w_3)$ are seen in Figure~\ref{fig:not FC} where the braid relation is colored in orange.
 
 \begin{figure}[h]
 \centering
@@ -83,7 +84,7 @@ Let $\overline{w}_1=s_1s_2s_3s_4s_2s_0$ be a reduced expression for $w \in W(\wi
 \heapblock{2}{2}{2}{orange}
 \heapblock{1}{0}{1}{purple}
 \end{tikzpicture}
-\caption{$H(\overline{w}_1)$ and $H(\overline{w}_2)$.}
+\caption{$H(\w_1)$ and $H(\w_2)$.}
 \end{subfigure}
 \begin{subfigure}[b]{0.3\textwidth}	
 \centering
@@ -95,9 +96,9 @@ Let $\overline{w}_1=s_1s_2s_3s_4s_2s_0$ be a reduced expression for $w \in W(\wi
 \heapblock{11}{0}{1}{purple}
 \heapblock{13}{0}{3}{orange}
 \end{tikzpicture}
-\caption{$H(\overline{w}_3)$}
+\caption{$H(\w_3)$}
 \end{subfigure}
-\caption{Two heaps of a non-FC element in $W(\widetilde{C}_4$}	
+\caption{Two heaps of a non-FC element in $W(\widetilde{C}_4)$}	
 \label{fig:not FC}
 \end{figure}
 \end{example}

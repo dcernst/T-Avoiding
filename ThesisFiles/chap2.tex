@@ -1,20 +1,22 @@
-\chapter{Type-B}
+\chapter{T-Avoiding Elements in Type $B_n$}
 
-\section{Classification of T-Avoiding Elements in Type B}\label{sec:TAB}
+\section{Tools for the claassification}
 
-\textcolor{red}{An introduction should go here regarding the awesome sauce that is to follow.}
 
-\textcolor{red}{And we probably need some other stuff to go here but Sarah S. told me to work on typing page 1 today.}
 
-\begin{proposition}[Bj\"{o}rner, \textcolor{red}{cite when in Mendalay}]\label{prop:descent}
+
+
+
+\begin{proposition}[Bj\"{o}rner,~\cite{Bjorner2005}]\label{prop:descent}
 Let $w \in W(B_n)$. Then 
 \[ \mathcal{R}(w)=\{s_i \in S: w(i) > w(i+1)\} \]
 where w(0)=0 by definition.
 \begin{proof}
-	This is, \textcolor{red}{cite when in Mendelay} Proposition 8.1.2.
+	This is,~\cite{Bjorner2005} Proposition 8.1.2.
 \end{proof}
 \end{proposition}
 
+\section{Classification of T-Avoiding Elements in Type $B_n$}\label{sec:TAB}
 
 \begin{lemma}\label{lem:sts}
 Let $s,t \in S$ such that $m(s,t)=3.$ Then $w$ has a reduced expression ending in $sts$ if and only if $w$ has the consecutive pattern $321$.
@@ -48,3 +50,4 @@ Let $s,t \in S$ such that $m(s,t)=3.$ Then $w$ has a reduced expression ending i
 	$(\Leftarrow)$ Conversely suppose $w$ ends in a reduced expression with $s_{i+1}s_i$ Then $w_I=s_{i+1}s_i$. We see that $w(i)>w(i+1)$ and $w(i+2)>w(i+1)$. Since $s_{i+1} \in \mathcal{R}(ws_i)$, we have $w(i+2)=ws_i(i+2)<ws_i(i+1)=w(i)$. From this we have $w(i)>w(i+2)$, so $w(i)>w(i+2)>w(i+1)$. Hence, $w$ has the consecutive pattern $312$. Therefore, $w$ has a reduced expression ending in $ts$ if and only if $w$ has the consecutive pattern $312$.
 \end{proof}
 \end{lemma}
+

@@ -56,7 +56,7 @@ Note that $W(\widetilde{C}_n)$ has $n+1$ generators.
 
 The Coxeter graphs given in Figure~\ref{fig:fincoxgraphs} correspond to the collection of irreducible finite Coxeter groups, while the Coxeter graphs given in Figure~\ref{fig:infincoxgraphs} are the irreducible affine Coxeter groups, which are infinite~\cite{Humphreys1990}. The irreducible affine Coxeter systems are unique in that if a vertex is removed along with the corresponding edges from the Coxeter graph, the newly created graph will result in a finite Coxeter group. This thesis will focus on Coxeter groups of type $B_n$ and $\widetilde{C}_n$.
 
-Given a Coxeter system $(W,S)$, a word $s_{x_1}s_{x_2} \cdots s_{x_m}$ in the free monoid $S^*$ on $S$ is called an \emph{expression} for $w \in W$ if it is equal to $w$ when considered as a group element. If $m$ is minimal among all expressions for $w$, the corresponding word is called a \emph{reduced expression} for $w$. In this case, we define the \emph{length} of $w$ to be $l(w):= m$. Each element $w \in W$ may have multiple reduced expressions that represent it. If we wish to emphasize a specific, possibly reduced, expression for $w \in W$ we will represent it as $\overline{w}=s_{x_1}s_{x_2}\cdots s_{x_m}.$ The following theorem tells us more about how reduced expressions for a given group element are related.
+Given a Coxeter system $(W,S)$, a word $s_{x_1}s_{x_2} \cdots s_{x_m}$ in the free monoid $S^*$ on $S$ is called an \emph{expression} for $w \in W$ if it is equal to $w$ when considered as a group element. If $m$ is minimal among all expressions for $w$, the corresponding word is called a \emph{reduced expression} for $w$. In this case, we define the \emph{length} of $w$ to be $l(w):= m$. Each element $w \in W$ may have multiple reduced expressions that represent it. If we wish to emphasize a specific, possibly reduced, expression for $w \in W$ we will represent it as $\w=s_{x_1}s_{x_2}\cdots s_{x_m}.$ The following theorem tells us more about how reduced expressions for a given group element are related.
 
 \begin{theorem} [Matsumoto, \cite{Geck2000}]
 	Let $(W,S)$ be a Coxeter system. If $w \in W$, then given a reduced expression for $w$ we can obtain every other reduced expression for $w$ by a sequence of braid moves and commutations of the form
@@ -66,17 +66,17 @@ Given a Coxeter system $(W,S)$, a word $s_{x_1}s_{x_2} \cdots s_{x_m}$ in the fr
  
 It follows from Matsumoto's Theorem that if a generator $s$ appears in a reduced expression for $w \in W$, then $s$ appears in all reduced expressions for $w$. Let $w \in W$ and define the \emph{support} of $w$, denoted $\supp(w)$, to be the set of all generators that appear in any reduced expression for $w$. If $\supp(w)=S$, we say that $w$ has \emph{full support}. 
 
-Given $w \in W$ and a fixed reduced expression $\overline{w}$ for $w$, any subsequence of $\overline{w}$ is called a \emph{subexpression} of $\overline{w}$. We will refer to a subexpression consisting of a consecutive subsequence of $\overline{w}$ as a \emph{subword} of $\overline{w}$. Occasionally, we will refer to the product of group elements in $W$. That is, let $w \in (W,S)$ a Coxeter system of type $\Gamma$, where $w=uv$ for $u,v \in W(\Gamma)$. We say that the product of group elements $uv$ is \emph{reduced} if $l(uv)=l(u)+l(v)$. \\
+Given $w \in W$ and a fixed reduced expression $\w$ for $w$, any subsequence of $\w$ is called a \emph{subexpression} of $\w$. We will refer to a subexpression consisting of a consecutive subsequence of $\w$ as a \emph{subword} of $\w$. Occasionally, we will refer to the product of group elements in $W$. That is, let $w \in (W,S)$ a Coxeter system of type $\Gamma$, where $w=uv$ for $u,v \in W(\Gamma)$. We say that the product of group elements $uv$ is \emph{reduced} if $l(uv)=l(u)+l(v)$. \\
 
 \begin{example}
-Let $w \in W(A_7)$ and let $\overline{w}=s_7s_2s_4s_5s_3s_2s_3s_6$ be a fixed expression for $w$. Then we have
+Let $w \in W(A_7)$ and let $\w=s_7s_2s_4s_5s_3s_2s_3s_6$ be a fixed expression for $w$. Then we have
 \begin{align*}
 s_7\textcolor{blue}{s_2s_4}s_5s_3s_2s_3s_6&=s_7s_4\textcolor{blue}{s_2s_5}s_3s_2s_3s_6\\
 &=s_7s_4s_5\textcolor{teal}{s_2s_3s_2} s_3s_6\\
 &=s_7s_4s_5s_3s_2\textcolor{red}{s_3s_3}s_6\\
 &=s_7s_4s_5s_3s_2s_6,
 \end{align*}
-where the \textcolor{blue}{blue} highlighted text corresponds to a commutation, the \textcolor{teal}{teal} highlighted text corresponds to a braid move, and the \textcolor{red}{red} highlighted text corresponds to cancellation. This shows that $\overline{w}$ is not reduced. However, it turns out that $s_7s_4s_5s_3s_2s_6$ is reduced. Thus $l(w)=6$ and $\supp(w)=\{s_2, s_3, s_4, s_5, s_6, s_7\}$.
+where the \textcolor{blue}{blue} highlighted text corresponds to a commutation, the \textcolor{teal}{teal} highlighted text corresponds to a braid move, and the \textcolor{red}{red} highlighted text corresponds to cancellation. This shows that $\w$ is not reduced. However, it turns out that $s_7s_4s_5s_3s_2s_6$ is reduced. Thus $l(w)=6$ and $\supp(w)=\{s_2, s_3, s_4, s_5, s_6, s_7\}$.
 \end{example}
 
 Let $(W,S)$ be a Coxeter system of type $\Gamma$ and let $w \in W(\Gamma)$. We define the \emph{left descent set} and \emph{right descent set} of $w$ as follows:
@@ -390,7 +390,7 @@ We see that $l(w)=5$ and $w$ has full support. Also, we see that $\mathcal{L}(w)
 
 
 \section{Fully Commutative Elements}\label{sec:FC}
-Let $(W,S)$ be a Coxeter system of type $\Gamma$ and let $w \in W$. Following~\cite{Stembridge1996}, we define a relation $\sim$ on the set of reduced expressions for $w$. Let $\overline{w}_1$ and $\overline{w}_2$ be two reduced expressions for $w$. We define $\overline{w}_1 \sim \overline{w}_2$ if we can obtain $\overline{w}_2$ from $\overline{w}_1$ by applying a single commutation move of the form $st \mapsto ts$ where $m(s,t)=2$. Now, define the equivalence relation $\approx$ by taking the reflexive transitive closure of $\sim$. Each equivalence class under $\approx$ is called a \emph{commutation class}. If $w$ has a single commutation class, then we say that $w$ is \emph{fully commutative} (FC). 
+Let $(W,S)$ be a Coxeter system of type $\Gamma$ and let $w \in W$. Following~\cite{Stembridge1996}, we define a relation $\sim$ on the set of reduced expressions for $w$. Let $\w_1$ and $\w_2$ be two reduced expressions for $w$. We define $\w_1 \sim \w_2$ if we can obtain $\w_2$ from $\w_1$ by applying a single commutation move of the form $st \mapsto ts$ where $m(s,t)=2$. Now, define the equivalence relation $\approx$ by taking the reflexive transitive closure of $\sim$. Each equivalence class under $\approx$ is called a \emph{commutation class}. If $w$ has a single commutation class, then we say that $w$ is \emph{fully commutative} (FC). 
 
 The set of FC elements of $W(\Gamma)$ is denoted by $\FC(\Gamma)$. Given some $w \in \FC(\Gamma)$, and a starting reduced expression for $w$, observe the definition of FC states that one only needs to perform commutations to obtain all reduced expressions for $w$, but the following result due to Stembridge~\cite{Stembridge1996} states that when $w$ is FC performing commutations is the only possible way to obtain another reduced expression for $w$.
 
@@ -401,17 +401,17 @@ The set of FC elements of $W(\Gamma)$ is denoted by $\FC(\Gamma)$. Given some $w
 In other words, $w$ is FC if and only if we never have the opportunity to apply a braid move.
 
 \begin{example}
-	Let $w \in W(\widetilde{C}_4)$ and let $\overline{w}=s_0s_1s_2s_0s_3s_1$ be a reduced expression for $w$. We see that
+	Let $w \in W(\widetilde{C}_4)$ and let $\w=s_0s_1s_2s_0s_3s_1$ be a reduced expression for $w$. We see that
 	\[s_0s_1\textcolor{purple}{s_2s_0}s_3s_1=s_0s_1s_0s_2\textcolor{purple}{s_3s_1}=s_0s_1s_0s_2s_1s_3,\]
 	where the \textcolor{purple}{purple} indicates applying a commutation. Note that there is no possible way to perform a braid move. Hence $w$ is $\FC$.
 \end{example}
 
 \begin{example}
-Let $\overline{w}=s_1s_0s_4s_1s_3s_5s_2s_4s_6$ be a reduced expression for $w \in \FC(\widetilde{C}_6)$. Applying the commutation $s_4s_2=s_2s_4$, we can obtain another reduced expression for $w$, namely $\overline{w}_2=s_1s_0s_4s_1s_3s_5s_4s_2s_6$ which is in the same commutation class as $\overline{w_1}$. However, applying the braid move $s_2s_3s_2=s_3s_2s_3$, we obtain another reduced expression $\overline{w_3}=s_1s_3s_2s_3s_4s_0$. Note that since $\overline{w}_3$ was obtained by applying a braid move, $\overline{w_3}$ is in a different commutation class than $\overline{w_1}$ and $\overline{w_2}$. It turns out $w$ has exactly two commutation classes, one containing $\overline{w}_1$ and $\overline{w}_2$ and another containing $\overline{w}_3$. So $w$ is not FC.
+Let $\w=s_1s_0s_4s_1s_3s_5s_2s_4s_6$ be a reduced expression for $w \in \FC(\widetilde{C}_6)$. Applying the commutation $s_4s_2=s_2s_4$, we can obtain another reduced expression for $w$, namely $\w_2=s_1s_0s_4s_1s_3s_5s_4s_2s_6$ which is in the same commutation class as $\w$. However, applying the braid move $s_2s_3s_2=s_3s_2s_3$, we obtain another reduced expression $\w=s_1s_3s_2s_3s_4s_0$. Note that since $\w_3$ was obtained by applying a braid move, $\w_3$ is in a different commutation class than $\w_1$ and $\w_2$. It turns out $w$ has exactly two commutation classes, one containing $\w_1$ and $\w_2$ and another containing $\w_3$. So $w$ is not FC.
 \end{example}
 
 \begin{example}
-Let $w \in W(\widetilde{C}_4)$ and let $\overline{w}=s_0s_1s_2s_0s_1s_2$ be a reduced expression for $w$. We see that
+Let $w \in W(\widetilde{C}_4)$ and let $\w=s_0s_1s_2s_0s_1s_2$ be a reduced expression for $w$. We see that
 \[s_0s_1\textcolor{purple}{s_3s_0}s_1s_2=s_0s_1s_0\textcolor{purple}{s_3s_1}s_2=\textcolor{orange}{s_0s_1s_0s_1}s_3s_2,\]
 where the \textcolor{purple}{purple} indicates applying a commutation and the \textcolor{orange}{orange} indicates applying a braid move. Thus $w$ is not $\FC$ by Theorem~\ref{thm:Stembridge}.  	
 \end{example}

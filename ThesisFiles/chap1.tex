@@ -19,10 +19,10 @@ with $m(s,t) \geq 2$ factors. If $m(s,t)=2$, then $st=ts$ is called a \emph{comm
 We can represent a Coxeter system $(W,S)$ with a unique \emph{Coxeter graph} $\Gamma$ having
 \begin{enumerate}
 \item vertex set $S$ and
-\item labeled edges $\{s, t\}$ for each $m(s,t) \geq 3$ with labeled with its corresponding bond strength $m(s,t)$ .	
+\item edges $\{s, t\}$ for each $m(s,t) \geq 3$ labeled by its corresponding bond strength $m(s,t)$ .	
 \end{enumerate}
 
-Since $m(s,t)=3$ occurs frequently, it is customary to omit this label. Note that $s$ and $t$ are not connected in the graph if and only if $m(s,t)=2$. There is a one-to-one correspondence between Coxeter systems and Coxeter graphs. That is, given a Coxeter graph $\Gamma$, we can uniquely reconstruct the corresponding Coxeter system. If $(W,S)$ is a Coxeter system with corresponding Coxeter graph $\Gamma$, we may denote the Coxeter group as $W(\Gamma)$ and the generating set as $S(\Gamma)$ for clarity. Also, the Coxeter system $(W,S)$ is said to be \emph{irreducible} if and only if $\Gamma$ is connected. Further, if the graph $\Gamma$ is disconnected, the connected components correspond to factors in a direct product of the corresponding Coxeter groups~\cite{Humphreys1990}.
+Since $m(s,t)=3$ occurs frequently, it is customary to omit this label. Note that $s$ and $t$ are not connected by a single edge in the graph if and only if $m(s,t)=2$. There is a one-to-one correspondence between Coxeter systems and Coxeter graphs. That is, given a Coxeter graph $\Gamma$, we can uniquely reconstruct the corresponding Coxeter system. If $(W,S)$ is a Coxeter system with corresponding Coxeter graph $\Gamma$, we may denote the Coxeter group as $W(\Gamma)$ and the generating set as $S(\Gamma)$ for clarity. Also, the Coxeter system $(W,S)$ is said to be \emph{irreducible} if and only if $\Gamma$ is connected. Further, if the graph $\Gamma$ is disconnected, the connected components correspond to factors in a direct product of the corresponding Coxeter groups~\cite{Humphreys1990}.
 
 \begin{example}
 ~
@@ -54,7 +54,7 @@ Note that $W(\widetilde{C}_n)$ has $n+1$ generators.
 \end{itemize}
 \end{example}
 
-The Coxeter graphs given in Figure~\ref{fig:fincoxgraphs} correspond to the collection of irreducible finite Coxeter groups, while the Coxeter graphs given in Figure~\ref{fig:infincoxgraphs} are the irreducible affine Coxeter groups, which are infinite~\cite{Humphreys1990}. The irreducible affine Coxeter systems are unique in that if a vertex is removed along with the corresponding edges from the Coxeter graph, the newly created graph will result in a finite Coxeter group. This thesis will focus on Coxeter groups of type $B_n$ and $\widetilde{C}_n$.
+The Coxeter graphs given in Figure~\ref{fig:fincoxgraphs} correspond to the collection of irreducible finite Coxeter groups, while the Coxeter graphs given in Figure~\ref{fig:infincoxgraphs} are the so called irreducible \emph{affine Coxeter groups}, which are infinite~\cite{Humphreys1990}. Note that $W(\C_n)$ is one of the affine groups making it infinite. The irreducible affine Coxeter systems are unique in that if a vertex is removed along with the corresponding edges from the Coxeter graph, the newly created graph will result in a Coxeter system with a finite Coxeter group. This thesis will focus on Coxeter groups of type $B_n$ and $\widetilde{C}_n$.
 
 Given a Coxeter system $(W,S)$, a word $s_{x_1}s_{x_2} \cdots s_{x_m}$ in the free monoid $S^*$ on $S$ is called an \emph{expression} for $w \in W$ if it is equal to $w$ when considered as a group element. If $m$ is minimal among all expressions for $w$, the corresponding word is called a \emph{reduced expression} for $w$. In this case, we define the \emph{length} of $w$ to be $l(w):= m$. Each element $w \in W$ may have multiple reduced expressions that represent it. If we wish to emphasize a specific, possibly reduced, expression for $w \in W$ we will represent it as $\w=s_{x_1}s_{x_2}\cdots s_{x_m}.$ The following theorem tells us more about how reduced expressions for a given group element are related.
 
@@ -66,7 +66,7 @@ Given a Coxeter system $(W,S)$, a word $s_{x_1}s_{x_2} \cdots s_{x_m}$ in the fr
  
 It follows from Matsumoto's Theorem that if a generator $s$ appears in a reduced expression for $w \in W$, then $s$ appears in all reduced expressions for $w$. Let $w \in W$ and define the \emph{support} of $w$, denoted $\supp(w)$, to be the set of all generators that appear in any reduced expression for $w$. If $\supp(w)=S$, we say that $w$ has \emph{full support}. 
 
-Given $w \in W$ and a fixed reduced expression $\w$ for $w$, any subsequence of $\w$ is called a \emph{subexpression} of $\w$. We will refer to a subexpression consisting of a consecutive subsequence of $\w$ as a \emph{subword} of $\w$. Occasionally, we will refer to the product of group elements in $W$. That is, let $w \in (W,S)$ a Coxeter system of type $\Gamma$, where $w=uv$ for $u,v \in W(\Gamma)$. We say that the product of group elements $uv$ is \emph{reduced} if $l(uv)=l(u)+l(v)$. \\
+Given $w \in W$ and a fixed reduced expression $\w$ for $w$, any subsequence of $\w$ is called a \emph{subexpression} of $\w$. We will refer to a subexpression consisting of a consecutive subsequence of $\w$ as a \emph{subword} of $\w$. If $u,v \in W(\Gamma)$, we say that the product of group elements $uv$ is \emph{reduced} if $l(uv)=l(u)+l(v)$. \\
 
 \begin{example}
 Let $w \in W(A_7)$ and let $\w=s_7s_2s_4s_5s_3s_2s_3s_6$ be a fixed expression for $w$. Then we have
@@ -76,7 +76,7 @@ s_7\textcolor{blue}{s_2s_4}s_5s_3s_2s_3s_6&=s_7s_4\textcolor{blue}{s_2s_5}s_3s_2
 &=s_7s_4s_5s_3s_2\textcolor{red}{s_3s_3}s_6\\
 &=s_7s_4s_5s_3s_2s_6,
 \end{align*}
-where the \textcolor{blue}{blue} highlighted text corresponds to a commutation, the \textcolor{teal}{teal} highlighted text corresponds to a braid move, and the \textcolor{red}{red} highlighted text corresponds to cancellation. This shows that $\w$ is not reduced. However, it turns out that $s_7s_4s_5s_3s_2s_6$ is reduced. Thus $l(w)=6$ and $\supp(w)=\{s_2, s_3, s_4, s_5, s_6, s_7\}$.
+where the \textcolor{blue}{blue} highlighted text corresponds to a commutation, the \textcolor{teal}{teal} highlighted text corresponds to a braid move, and the \textcolor{red}{red} highlighted text corresponds to cancellation. This shows that the original expression $\w$ is not reduced. However, it turns out that $s_7s_4s_5s_3s_2s_6$ is reduced. Thus $l(w)=6$ and $\supp(w)=\{s_2, s_3, s_4, s_5, s_6, s_7\}$.
 \end{example}
 
 Let $(W,S)$ be a Coxeter system of type $\Gamma$ and let $w \in W(\Gamma)$. We define the \emph{left descent set} and \emph{right descent set} of $w$ as follows:
@@ -86,7 +86,7 @@ and
 In~\cite{Bjorner2005} it is shown that $s \in \mathcal{L}(w)$ (respectively, $\mathcal{R}(w)$) if and only if there is a reduced expression for $w$ that begins (respectively, ends) with $s$.
 
 \begin{example}
-The following list consists of all reduced expressions for a given element $w \in W(B_4)$.
+The following list consists of all reduced expressions some $w \in W(B_4)$:
 $$\begin{array}{ll}
 s_0s_1s_2s_1s_3 & s_0s_2s_1s_2s_3\\
 s_0s_1s_2s_3s_1 & s_2s_0s_1s_2s_3	
@@ -390,33 +390,33 @@ We see that $l(w)=5$ and $w$ has full support. Also, we see that $\mathcal{L}(w)
 
 
 \section{Fully Commutative Elements}\label{sec:FC}
-Let $(W,S)$ be a Coxeter system of type $\Gamma$ and let $w \in W$. Following~\cite{Stembridge1996}, we define a relation $\sim$ on the set of reduced expressions for $w$. Let $\w_1$ and $\w_2$ be two reduced expressions for $w$. We define $\w_1 \sim \w_2$ if we can obtain $\w_2$ from $\w_1$ by applying a single commutation move of the form $st \mapsto ts$ where $m(s,t)=2$. Now, define the equivalence relation $\approx$ by taking the reflexive transitive closure of $\sim$. Each equivalence class under $\approx$ is called a \emph{commutation class}. If $w$ has a single commutation class, then we say that $w$ is \emph{fully commutative} (FC). 
+Let $(W,S)$ be a Coxeter system of type $\Gamma$ and let $w \in W(\Gamma)$. Following~\cite{Stembridge1996}, we define a relation $\sim$ on the set of reduced expressions for $w$. Let $\w_1$ and $\w_2$ be two reduced expressions for $w$. We define $\w_1 \sim \w_2$ if we can obtain $\w_2$ from $\w_1$ by applying a single commutation move of the form $st \mapsto ts$ where $m(s,t)=2$. Now, define the equivalence relation $\approx$ by taking the reflexive transitive closure of $\sim$. Each equivalence class under $\approx$ is called a \emph{commutation class}. If $w$ has a single commutation class, then we say that $w$ is \emph{fully commutative} (FC). 
 
-The set of FC elements of $W(\Gamma)$ is denoted by $\FC(\Gamma)$. Given some $w \in \FC(\Gamma)$, and a starting reduced expression for $w$, observe the definition of FC states that one only needs to perform commutations to obtain all reduced expressions for $w$, but the following result due to Stembridge~\cite{Stembridge1996} states that when $w$ is FC performing commutations is the only possible way to obtain another reduced expression for $w$.
+The set of FC elements of $W(\Gamma)$ is denoted by $\FC(\Gamma)$. Given some $w \in \FC(\Gamma)$, and a starting reduced expression for $w$, observe the definition of FC states that one only needs to perform commutations to obtain all reduced expressions for $w$, but the following result due to Stembridge~\cite{Stembridge1996} states that when $w$ is FC, performing commutations is the only possible way to obtain another reduced expression for $w$.
 
 \begin{theorem}[Stembridge,~\cite{Stembridge1996}]\label{thm:Stembridge}
-	Let $(W,S)$ be a Coxeter system. An element $w \in W$ is FC if and only if no reduced expression for $w$ contains $\underbrace{sts\cdots}_{m(s,t)}$ as a subword for all when $m(s,t) \geq 3$. \qed
+	Let $(W,S)$ be a Coxeter system. An element $w \in W$ is FC if and only if no reduced expression for $w$ contains $\underbrace{sts\cdots}_{m(s,t)}$ as a subword for all $m(s,t) \geq 3$. \qed
 \end{theorem}
 
-In other words, $w$ is FC if and only if we never have the opportunity to apply a braid move.
+In other words, $w$ is FC if and only if we never have the opportunity to apply a braid move. In particular, for a Coxeter group of type $B_n$ an element is $\FC$ if it does not contain the subwords $s_0s_1s_0s_1$, $s_1s_0s_1s_0$, $s_ks_{k+1}s_k$, and $s_{k+1}s_ks_{k+1}$ where $0<k<n+1$. In a Coxeter group of type $\C_n$, an element is $\FC$ if it does not contain the subwords seen above and does not contain the subwords $s_{n-1}s_ns_{n-1}s_n$ and $s_{n}s_{n-1}s_ns_{n-1}$.
 
 \begin{example}
 	Let $w \in W(\widetilde{C}_4)$ and let $\w=s_0s_1s_2s_0s_3s_1$ be a reduced expression for $w$. We see that
 	\[s_0s_1\textcolor{purple}{s_2s_0}s_3s_1=s_0s_1s_0s_2\textcolor{purple}{s_3s_1}=s_0s_1s_0s_2s_1s_3,\]
-	where the \textcolor{purple}{purple} indicates applying a commutation. Note that there is no possible way to perform a braid move. Hence $w$ is $\FC$.
+	where the \textcolor{purple}{purple} highlighted text indicates applying a commutation. Although it is not immediately obvious, these are all of the reduced expressions for the given $w$. Note that there is no possible way to perform a braid move. Hence $w$ is $\FC$.
 \end{example}
 
 \begin{example}
-Let $\w=s_1s_0s_4s_1s_3s_5s_2s_4s_6$ be a reduced expression for $w \in \FC(\widetilde{C}_6)$. Applying the commutation $s_4s_2=s_2s_4$, we can obtain another reduced expression for $w$, namely $\w_2=s_1s_0s_4s_1s_3s_5s_4s_2s_6$ which is in the same commutation class as $\w$. However, applying the braid move $s_2s_3s_2=s_3s_2s_3$, we obtain another reduced expression $\w=s_1s_3s_2s_3s_4s_0$. Note that since $\w_3$ was obtained by applying a braid move, $\w_3$ is in a different commutation class than $\w_1$ and $\w_2$. It turns out $w$ has exactly two commutation classes, one containing $\w_1$ and $\w_2$ and another containing $\w_3$. So $w$ is not FC.
+Let $\w=s_1s_0s_4s_1s_3s_5s_2s_4s_6$ be a reduced expression for $w \in \FC(\widetilde{C}_6)$. Applying the commutation $s_4s_2=s_2s_4$, we can obtain another reduced expression for $w$, namely $\w_2=s_1s_0s_4s_1s_3s_5s_4s_2s_6$, which is in the same commutation class as $\w$. However, applying the braid move $s_2s_3s_2=s_3s_2s_3$, we obtain another reduced expression $\w=s_1s_3s_2s_3s_4s_0$. Note that since $\w_3$ was obtained by applying a braid move, $\w_3$ is in a different commutation class than $\w_1$ and $\w_2$. It turns out that $w$ has exactly two commutation classes, one consisting of $\w_1$ and $\w_2$ and another consisting of $\w_3$. So $w$ is not FC.
 \end{example}
 
 \begin{example}
 Let $w \in W(\widetilde{C}_4)$ and let $\w=s_0s_1s_2s_0s_1s_2$ be a reduced expression for $w$. We see that
 \[s_0s_1\textcolor{purple}{s_3s_0}s_1s_2=s_0s_1s_0\textcolor{purple}{s_3s_1}s_2=\textcolor{orange}{s_0s_1s_0s_1}s_3s_2,\]
-where the \textcolor{purple}{purple} indicates applying a commutation and the \textcolor{orange}{orange} indicates applying a braid move. Thus $w$ is not $\FC$ by Theorem~\ref{thm:Stembridge}.  	
+where the \textcolor{purple}{purple} highlighted text indicates applying a commutation and the \textcolor{orange}{orange} highlighted text indicates applying a braid move. Thus $w$ is not $\FC$ by Theorem~\ref{thm:Stembridge}.  	
 \end{example}
 
-Stembridge classified the irreducible Coxeter Systems that contain a finite number of FC elements, the so-called \emph{FC-finite Coxeter groups}. This thesis is mainly concerned with $W(A_n),~W(B_n),\text{ and }W(\widetilde{C}_n)$. Both $W(A_n)~\mathrm{and}~W(B_n)$ are finite Coxeter groups, and thus are $\FC$-finite. On the other hand, $W(\widetilde{C}_n)$ is infinite and has infinitely many $\FC$ elements. However, there exist some infinite Coxeter groups that contain finitely many $\FC$ elements. For example, $E_n$ for $n \geq 9$ (see Figure~\ref{fig:FCfincoxgraphs}) is infinite, but contains only finitely many FC elements.
+Stembridge classified the Coxeter Systems that contain a finite number of FC elements, the so-called \emph{FC-finite Coxeter groups}. Both $W(A_n)~\mathrm{and}~W(B_n)$ are finite Coxeter groups, and thus are $\FC$-finite. On the other hand, $W(\widetilde{C}_n)$ is infinite and happens to also contain infinitely many $\FC$ elements. However, there exist some infinite Coxeter groups that contain finitely many $\FC$ elements. For example, $W(E_n$) for $n \geq 9$ (see Figure~\ref{fig:FCfincoxgraphs}) is infinite, but contains only finitely many FC elements.
 
 \begin{theorem}[Stembridge,~\cite{Stembridge1996}]
 \label{thm:FCfinite} The FC-finite irreducible Coxeter systems are of type $A_n$ with $n \geq 1$, $B_n$ with $n \geq 2$, $D_n$ with $n \geq 4$, $E_n$ with $n \geq 6$, $F_n$ with $n \geq 4$, $H_n$ with $n \geq 3$, and $I_2(m)$ with $5 \leq m < \infty$. \qed

@@ -46,7 +46,7 @@ Let $w \in W(B_4)$ with signed permutation \[w=[\underbar{2},4, \underbar{1}, 3]
 
 \section{Classification of T-Avoiding Elements in Type $B_n$}\label{sec:TAB}
 
-In this section we will classify the T-avoiding elements in Coxeter groups of type $B_n$. As in the previous classifications seen in Chapter~\ref{chap:TandTavoid} $W(B_n)$ has trivial T-avoiding elements as all Coxeter groups contain elements that are products of commuting generators. This leaves us to classify any non-trivial T-avoiding elements in $W(B_n)$. Then following is our classification.
+In this section we will classify the T-avoiding elements in Coxeter groups of type $B_n$. As in the previous classifications seen in Chapter~\ref{chap:TandTavoid} $W(B_n)$ has trivial T-avoiding elements as all Coxeter groups contain elements that are products of commuting generators. This leaves us to classify any non-trivial T-avoiding elements in $W(B_n)$. The following is our classification.
 
 \begin{theorem}\label{thm:classificationofB}
 There are no non-trivial T-avoiding elements in $W(B_n)$.	
@@ -66,6 +66,13 @@ Let $s,t \in S(B_n)$ such that $m(s,t)=3$, and $s_0 \notin \{s,t\}.$ Then $w$ ha
 \end{proof}	
 \end{lemma}
 
+\begin{corollary}\label{lem:endswithsts}
+	Let $s,t \in S(B_n)$ such that $m(s,t)=3$, and $s_0 \notin\{s,t\}$. Then $w$ has a reduced expression beginning with $sts$ if and only if $w^{-1}$ has the consecutive pattern $321$.
+	\begin{proof}
+		Let $s,t \in S(B_n)$ such that $m(s,t)=3$, and $s_0 \notin\{s,t\}$. We know that $w$ has no reduced expressions beginning with $sts$ if and only if $w^{-1}$ has no reduced expression ending with $sts$ which by Theorem~\ref{lem:endswithsts} happens only if $w^{-1}$ avoids the consecutive pattern $321$.
+	\end{proof}
+\end{corollary}
+
 \begin{lemma}\label{lem:ts}
 Let $s,t \in S(B_n)$ such that $m(s,t)=3$, and $s_0 \notin \{s,t\}.$ Then $w$ has a reduced expression ending in $st$ if and only if $w$ has the consecutive pattern $231$.
 \begin{proof}
@@ -78,6 +85,12 @@ Let $s,t \in S(B_n)$ such that $m(s,t)=3$, and $s_0 \notin \{s,t\}.$ Then $w$ ha
 \end{proof}	
 \end{lemma}
 
+\begin{corollary}\label{lem:endswithst}
+	Let $s,t \in S(B_n)$ such that $m(s,t)=3$, and $s_0 \notin\{s,t\}$. Then $w$ has a reduced expression beginning with $st$ if and only if $w^{-1}$ has the consecutive pattern $231$.
+	\begin{proof}
+		Let $s,t \in S(B_n)$ such that $m(s,t)=3$, and $s_0 \notin\{s,t\}$. We know that $w$ has no reduced expressions beginning with $st$ if and only if $w^{-1}$ has no reduced expression ending with $st$ which by Theorem~\ref{lem:endswithsts} happens only if $w^{-1}$ avoids the consecutive pattern $231$.
+	\end{proof}
+\end{corollary}
 
 \begin{lemma}\label{lem:st}
 Let $s,t \in S(B_n)$ such that $m(s,t)=3$, and $s_0 \notin \{s,t\}.$ Then $w$ has a reduced expression ending in $ts$ if and only if $w$ has the consecutive pattern $312$.
@@ -90,6 +103,13 @@ Let $s,t \in S(B_n)$ such that $m(s,t)=3$, and $s_0 \notin \{s,t\}.$ Then $w$ ha
 \end{proof}
 \end{lemma}
 
+\begin{corollary}\label{lem:endswithts}
+	Let $s,t \in S(B_n)$ such that $m(s,t)=3$, and $s_0 \notin\{s,t\}$. Then $w$ has a reduced expression beginning with $ts$ if and only if $w^{-1}$ has the consecutive pattern $312$.
+	\begin{proof}
+		Let $s,t \in S(B_n)$ such that $m(s,t)=3$, and $s_0 \notin\{s,t\}$. We know that $w$ has no reduced expressions beginning with $ts$ if and only if $w^{-1}$ has no reduced expression ending with $ts$ which by Theorem~\ref{lem:endswithsts} happens only if $w^{-1}$ avoids the consecutive pattern $312.$
+	\end{proof}
+\end{corollary}
+
 \begin{lemma}\label{lem:endswiths0}
 Let $w \in W(B_n)$. Then $w$ has a reduced expression ending in $s_1s_0$ if and only if $w(0)>w(1)$ and $-w(1)>w(2)$.
 \begin{proof}
@@ -98,6 +118,13 @@ Let $w \in W(B_n)$. Then $w$ has a reduced expression ending in $s_1s_0$ if and 
 	Conversely, suppose $w \in W(B_n)$ such that $w(0)>w(1)$ and $-w(1)>w(2)$. Since $w(0)>w(1)$ so $s_0 \in \RD(w)$. Multiplying on the right by $s_0$ we see that $ws_0(1)=-w(1)$ and $ws_0(2)=w(2)$. Note that since $ws_0(1)=-w(1)>w(2)=ws_0(2)$, $s_1 \in \RD(ws_0)$. Thus $w$ ends with $s_1s_0$. Therefore, $w$ has a reduced expression ending in $s_1s_0$ if and only if $w(0)>w(1)$ and $-w(1)>w(2)$.
 \end{proof}
 \end{lemma}
+
+\begin{corollary}\label{lem:beginswiths0}
+	Let $w \in W(B_n)$. Then $w$ has a reduced expression beginning in $s_0s_1$ if and only if $w^{-1}(0)>w^{-1}(1)$ and $-w^{-1}(1)>w^{-1}(2)$.
+	\begin{proof}
+		Let $w \in W(B_n)$. We know that $w$ has no reduced expressions beginning in $s_0s_1$ if and only if $w^{-1}$ has no reduced expressions ending in $s_0s_1$. By Lemma~\ref{lem:endswiths0} we know that this occurs if and only if $w^{-1}(0)>w^{-1}(1)$ and $-w^{-1}(1)>w^{-1}(2)$.
+	\end{proof}
+\end{corollary}
 
 \begin{lemma}\label{lem:endswiths_1}
 Let $w \in W(B_n)$. Then $w$ has a reduced expression ending in $s_0s_1$ if and only if $w(0)>w(2)$ and $w(1)>w(2)$.
@@ -108,14 +135,21 @@ Let $w \in W(B_n)$. Then $w$ has a reduced expression ending in $s_0s_1$ if and 
 \end{proof}	
 \end{lemma}
 
+\begin{corollary}\label{lem:beginswiths1}
+	Let $w \in W(B_n)$. Then $w$ has a reduced expression beginning in $s_1s_0$ if and only if $w^{-1}(0)>w^{-1}(2)$ and $w^{-1}(1)>w^{-1}(2)$.
+	\begin{proof}
+		Let $w \in W(B_n)$. We know that $w$ has no reduced expressions beginning in $s_1s_0$ if and only if $w^{-1}$ has no reduced expressions ending in $s_1s_0$. By Lemma~\ref{lem:endswiths0} we know that this occurs if and only if $w^{-1}(0)>w^{-1}(2)$ and $w^{-1}(1)>w^{-1}(2)$.
+	\end{proof}
+\end{corollary}
+
 \begin{lemma}\label{lem:prodofcommA}
 Let $w \in W(B_n)$ such that each entry for $w$ in the one-line notation is positive and both $w$ and $w^{-1}$ avoid the consecutive patterns $321$, $231$, and $312$, then $w$ is a product of commuting generators.
 \begin{proof}
-	This is~\cite[Lemma 2.2.9]{Gern2013a}
+	This is~\cite[Lemma 2.2.9]{Gern2013a}.
 \end{proof}	
 \end{lemma}
 
-\begin{lemma}
+\begin{lemma}\label{lem:prodofCommB}
 Let $w \in W(B_n)$ be trivially T-avoiding and let $i \in \{1,2, \ldots, n\}$. Then $w$ satisfies the following conditions:
 \begin{enumerate}
 \item $w(j) > \min(\{w(i-1), w(i)\})$ for all $j >i$;\label{it:trivT1}
@@ -132,3 +166,88 @@ Let $w \in W(B_n)$ be trivially T-avoiding and let $i \in \{1,2, \ldots, n\}$. T
 \end{proof}	
 \end{lemma}
 
+\begin{lemma}\label{lem:231}
+Let $w \in W(B_n)$ such that $w$ has the consecutive pattern $\underbar{2}31$. Then $w$ has Property T.
+\begin{proof}
+	Let $w \in W(B_n)$ such that $w$ has the consecutive pattern $\underbar{2}31$.
+	
+	Case 1: Suppose $w$ has the one-line notation $w=[\underbar{2},3,1]$. This implies that $w=s_1s_0s_2$. Clearly, $w$ begins with a product of non-commuting generators. Thus $w$ has Property T.
+	
+	Case 2: Suppose that $w$ has the one-line notation $w=[\underbar{a},b,c, \ast, \ldots, \ast]$ where $\underbar{a},b,c$ correspond to the signed consecutive pattern $\underbar{2},3,1$. We now consider the signed consecutive pattern that can arise involving $b,c, \ast$. The following are the possibilities for the signed consecutive pattern that can arise: $31\pm2$, $32 \pm1$, or $21\pm3$. We know that $b,c$ must be positive since they are positive in $w$ and we also know that $b>c$ by the original signed consecutive pattern. Note that by Lemmas~\ref{lem:sts},~\ref{lem:ts}, and~\ref{lem:endswiths0} all of these patterns imply that $w$ ends or begins with a product of noncommuting generators. Thus $w$ has Property T.
+	
+	Case 3: Suppose that $w$ has the one-line notation $w=[\ast, \ldots, \ast, \underbar{a},b,c]$ where $\underbar{a},b,c$ correspond to the signed consecutive pattern $\underbar{2},3,1$. We now consider the signed consecutive pattern that can arise involving $\ast, \underbar{a}, b$. The following are the possibilities for the signed consecutive pattern that can arise: $\pm1 \underbar{2} 3$, $\pm 2 \underbar{1} 3$, and $\pm 3 \underbar{1} 2$. Note that by Lemmas~\ref{lem:ts},~\ref{lem:endswiths0}, and~\ref{lem:endswiths_1} all of these patterns implies that $w$ ends or begins with a product of noncommuting generators. Thus $w$ has Property T. 
+
+	Therefore, if $w \in W(B_n)$ contains the consecutive pattern $\underbar{2}31$, then $w$ has Property T.
+\end{proof}	
+\end{lemma}
+
+\begin{lemma}\label{lem:2312}
+Let $w \in W(B_n)$ such that $w$ has the consecutive pattern $\underbar{2}3\underbar{1}$. Then $w$ has Property T.
+\begin{proof}
+	Let $w \in W(B_n)$ such that $w$ has the consecutive pattern $\underbar{2}3\underbar{1}$.
+	
+	Case 1: Suppose $w$ has the one-line notation $w=[\underbar{2},3,\underbar{1}]$. This implies that $w=s_0s_1s_0s_2$. Clearly, $w$ begins with a product of non-commuting generators. Thus $w$ has Property T.
+	
+	Case 2: Suppose that $w$ has the one-line notation $w=[\underbar{a},b,\underbar{c}, \ast, \ldots, \ast]$ where $\underbar{a},b,\underbar{c}$ correspond to the signed consecutive pattern $\underbar{2},3,\underbar{1}$. We now consider the signed consecutive pattern that can arise involving $b,\underbar{c}, \ast$. The following are the possibilities for the signed consecutive pattern that can arise: $3\underbar{1}\pm2$, $3\underbar{2} \pm1$, or $2\underbar{1}\pm3$. We know that $b$ must be positive since it is positive in $w$, $c$ must be negative since it is negative in $w$, and we also know that $|b|>|c|$ by the original signed consecutive pattern. Note that by Lemmas~\ref{lem:sts},~\ref{lem:ts}, and~\ref{lem:endswiths0} all of these patterns imply that $w$ ends or begins with a product of noncommuting generators. Thus $w$ has Property T.
+	
+	Case 3: Suppose that $w$ has the one-line notation $w=[\ast, \ldots, \ast, \underbar{a},b,\underbar{c}]$ where $\underbar{a},b,\underbar{c}$ correspond to the signed consecutive pattern $\underbar{2},3,\underbar{1}$. We now consider the signed consecutive pattern that can arise involving $\ast, \underbar{a}, b$. The following are the possibilities for the signed consecutive pattern that can arise: $\pm1 \underbar{2} 3$, $\pm 2 \underbar{1} 3$, and $\pm 3 \underbar{1} 2$. We know that $a$ must be negative, $b$ must be positive and $|a|<|b|$ by the original signed permutation. Note that by Lemmas~\ref{lem:ts},~\ref{lem:endswiths0}, and~\ref{lem:endswiths_1} all of these patterns implies that $w$ ends or begins with a product of noncommuting generators. Thus $w$ has Property T. 
+
+	Therefore, if $w \in W(B_n)$ contains the consecutive pattern $\underbar{2}3\underbar{1}$, then $w$ has Property T.
+\end{proof}	
+\end{lemma}
+
+\begin{lemma}\label{lem:123}
+Let $w \in W(B_n)$ such that $w$ has the consecutive pattern $\underbar{1}23$. Then $w$ has Property T or is a trivial T-avoiding element.
+\begin{proof}
+	Let $w \in W(B_n)$ such that $w$ has the consecutive pattern $\underbar{1}23$.
+	
+	Case 1: Suppose $w$ has the one-line notation $w=[\underbar{1}23]$. This implies that $w=s_0$. Clearly, $w$ is a trivial T-avoiding element as it is a single generator.
+	
+	Case 2: Suppose that $w$ has the one-line notation $w=[\underbar{a},b,c, \ast, \ldots, \ast]$ where $\underbar{a},b,c$ correspond to the signed consecutive pattern $\underbar{1},2,3$. We now consider the signed consecutive pattern that can arise involving $b,c, \ast$. The following are the possibilities for the signed consecutive pattern that can arise: $23\pm1$, $13 \pm2$, or $12\pm3$. We know that $b,c$, and we also know that $|b|<|c|$ by the original signed consecutive pattern. Note that by Lemmas~\ref{lem:sts},~\ref{lem:ts}, and~\ref{lem:endswiths0} all of these patterns imply that $w$ ends or begins with a product of noncommuting generators. Thus $w$ has Property T.
+	
+	Case 3: Suppose that $w$ has the one-line notation $w=[\ast, \ldots, \ast, \underbar{a},b,c]$ where $\underbar{a},b,c$ correspond to the signed consecutive pattern $\underbar{2},3,1$. We now consider the signed consecutive pattern that can arise involving $\ast, \underbar{a}, b$. The following are the possibilities for the signed consecutive pattern that can arise: $\pm3 \underbar{1} 2$, $\pm 2 \underbar{1} 3$, and $\pm 1 \underbar{2} 3$. We know that $a$ must be negative, $b$ must be positive and $|a|<|b|$ by the original signed permutation. Note that by Lemmas~\ref{lem:ts},~\ref{lem:endswiths0}, and~\ref{lem:endswiths_1} all of these patterns implies that $w$ ends or begins with a product of noncommuting generators. Thus $w$ has Property T. 
+
+	Therefore, if $w \in W(B_n)$ contains the consecutive pattern $\underbar{1}23$, then $w$ has Property T or is a trivial T-avoiding element.
+\end{proof}	
+\end{lemma}
+
+\begin{lemma}\label{lem:132}
+Let $w \in W(B_n)$ such that $w$ has the consecutive pattern $\underbar{1}32$. Then $w$ has Property T or is a trivial T-avoiding element.
+\begin{proof}
+	Let $w \in W(B_n)$ such that $w$ has the consecutive pattern $\underbar{1}32$.
+	
+	Case 1: Suppose $w$ has the one-line notation $w=[\underbar{1}32]$. This implies that $w=s_0s_2$. Clearly, $w$ is a trivial T-avoiding element as it is a single generator.
+	
+	Case 2: Suppose that $w$ has the one-line notation $w=[\underbar{a},b,c, \ast, \ldots, \ast]$ where $\underbar{a},b,c$ correspond to the signed consecutive pattern $\underbar{1},2,3$. We now consider the signed consecutive pattern that can arise involving $b,c, \ast$. The following are the possibilities for the signed consecutive pattern that can arise: $23\pm1$, $13 \pm2$, or $12\pm3$. We know that $b,c$, and we also know that $|b|<|c|$ by the original signed consecutive pattern. Note that by Lemmas~\ref{lem:sts},~\ref{lem:ts}, and~\ref{lem:endswiths0} all of these patterns imply that $w$ ends or begins with a product of noncommuting generators. Thus $w$ has Property T.
+	
+	Case 3: Suppose that $w$ has the one-line notation $w=[\ast, \ldots, \ast, \underbar{a},b,c]$ where $\underbar{a},b,c$ correspond to the signed consecutive pattern $\underbar{2},3,1$. We now consider the signed consecutive pattern that can arise involving $\ast, \underbar{a}, b$. The following are the possibilities for the signed consecutive pattern that can arise: $\pm3 \underbar{1} 2$, $\pm 2 \underbar{1} 3$, and $\pm 3 \underbar{2} 1$. We know that $a$ must be negative, $b$ must be positive and $|a|<|b|$ by the original signed permutation. Note that by Lemmas~\ref{lem:ts},~\ref{lem:endswiths0}, and~\ref{lem:endswiths_1} all of these patterns implies that $w$ ends or begins with a product of noncommuting generators. Thus $w$ has Property T. 
+
+	Therefore, if $w \in W(B_n)$ contains the consecutive pattern $\underbar{1}23$, then $w$ has Property T or is a trivial T-avoiding element.
+\end{proof}	
+\end{lemma}
+
+We can prove~\ref{thm:classificationofB}.
+
+\begin{proof}
+Suppose that $w \in W(B_n)$ is a non-trivial T-avoiding element. There are $2^3 \cdot 3!$ possible choices of signed consecutive patterns for $w(1)w(2)w(3)$ where $w=[w(1), w(2), w(3), \ast, \ldots, \ast]$.
+
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|l|l|l|}
+\hline
+\cellcolor{blue!30}$123$ & \cellcolor{orange2!40}$\underbar{1}23$ & \cellcolor{brown!50}$1\underbar{2}3$ & \cellcolor{red!25}$12\underbar{3}$ & \cellcolor{brown!50}$\underbar{12}3$ & \cellcolor{red!25}$\underbar{1}2\underbar{3}$ & \cellcolor{turq!40}$1\underbar{23}$ & \cellcolor{turq!40}$\underbar{123}$ \\
+\hline
+\cellcolor{blue!30}$132$ & \cellcolor{orange2!40}$\underbar{1}32$ & \cellcolor{brown!50}$1\underbar{3}2$ & \cellcolor{red!25}$13\underbar{2}$ & \cellcolor{brown!50}$\underbar{13}2$ & \cellcolor{red!25}$\underbar{1}3\underbar{2}$ & \cellcolor{ggreen!50}$1\underbar{32}$ & \cellcolor{ggreen!50}$\underbar{132}$ \\
+\hline
+\cellcolor{blue!30}$213$ & \cellcolor{yellow!50}$\underbar{2}13$ & \cellcolor{brown!50}$2\underbar{1}3$ & \cellcolor{turq!40}$21\underbar{3}$ & \cellcolor{yellow!50}$\underbar{21}3$ & \cellcolor{red!25}$\underbar{2}1\underbar{3}$ & \cellcolor{turq!40}$2\underbar{13}$ & \cellcolor{red!25}$\underbar{213}$ \\
+\hline
+\cellcolor{red!25}$231$ & \cellcolor{purple2!50}$\underbar{2}31$ & \cellcolor{ggreen!50}$2\underbar{3}1$ & \cellcolor{red!25}$23\underbar{1}$ & \cellcolor{brown!50}$\underbar{23}1$ & \cellcolor{purple2!50}$\underbar{2}3\underbar{1}$ & \cellcolor{ggreen!50}$2\underbar{31}$ & \cellcolor{brown!50}$\underbar{231}$ \\
+\hline
+\cellcolor{ggreen!50}$312$ & \cellcolor{yellow!50}$\underbar{3}12$ & \cellcolor{ggreen!50}$3\underbar{1}2$ &\cellcolor{turq!40}$31\underbar{2}$ & \cellcolor{yellow!50}$\underbar{31}2$ & \cellcolor{yellow!50}$\underbar{3}1\underbar{2}$ & \cellcolor{turq!40}$3\underbar{12}$ & \cellcolor{yellow!50}$\underbar{312}$ \\
+\hline
+\cellcolor{turq!40}$321$ & \cellcolor{yellow!50}$\underbar{3}21$ & \cellcolor{ggreen!50}$3\underbar{2}1$ & \cellcolor{turq!40}$32\underbar{1}$ & \cellcolor{yellow!50}$\underbar{32}1$ & \cellcolor{yellow!50}$\underbar{3}2\underbar{1}$ & \cellcolor{ggreen!50}$3\underbar{21}$ & \cellcolor{yellow!50}$\underbar{321}$\\
+\hline
+\end{tabular}
+\end{center}
+
+We can use Lemma~\ref{lem:sts} and Corollary~\ref{lem:endswithsts} to eliminate the signed consecutive patterns highlighted in \textcolor{turq}{turquoise}. We can use Lemma~\ref{lem:st} and Corollary~\ref{lem:endswithst} to eliminate the signed consecutive patterns highlighted in \textcolor{red}{red}. We can use Lemma~\ref{lem:ts} and Corollary~\ref{lem:endswithts} to eliminate the consecutive patterns highlighted in \textcolor{ggreen}{green}.  We can use Lemma~\ref{lem:endswiths0} and Corollary~\ref{lem:beginswiths0} to eliminate the signed consecutive patterns highlighted in \textcolor{yellow}{yellow}. We can use Lemma~\ref{lem:endswiths_1} and Corrollary~\ref{lem:beginswiths1} to eliminate signed consecutive patterns highlighted in \textcolor{brown}{brown}. We can use Lemma~\ref{lem:prodofcommA} to elminate the signed consecutive patterns highlighted in \textcolor{blue}{blue}. We can use Lemmas~\ref{lem:231} and~\ref{lem:2312} to eliminate signed consecutive patterns highlighted in \textcolor{purple}{purple}. Finally we can use Lemmas~\ref{lem:123} and~\ref{lem:132} to eliminate signed consecutive patterns highlighted in \textcolor{orange2}{orange}. Since all of the above patterns are eliminated as possibilities for $w(1)w(2)w(3)$ and there are no other signed consecutive patterns that are possible for these positions, $w$ can not be a non-trivial T-avoiding element in the Coxeter group of type B. Therefore, there are no non-trivial T-avoiding elements in $W(B_n)$.
+\end{proof}

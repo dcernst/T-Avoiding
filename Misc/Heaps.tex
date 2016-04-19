@@ -399,6 +399,12 @@ Finite Irreducible Coxeter Graphs Figure
 \draw {(.5,10) node{}
 (1.5,10) node[label=above:\textcolor{white}{$4$}]{}
 (4.5,10) node{$\cdots$}
+(1,10) node[label=below:$s_1$]{}
+(2,10) node[label=below:$s_2$]{}
+(3,10) node[label=below:$s_3$]{}
+(4,10) node[label=below:$s_4$]{}
+(5,10) node[label=below:$s_{n-1}$]{}
+(6,10) node[label=below:$s_{n}$]{}
 [-] (1,10) -- (4,10)
 [-] (5,10) -- (6,10)
 (1,10) node{}}; 
@@ -412,6 +418,12 @@ Finite Irreducible Coxeter Graphs Figure
 \draw {(.5,8.5) node{}
 (1.5,8.5) node[label=above:$4$]{}
 (4.5,8.5) node{$\cdots$}
+(1,8.5) node[label=below:$s_0$]{}
+(2,8.5) node[label=below:$s_1$]{}
+(3,8.5) node[label=below:$s_2$]{}
+(4,8.5) node[label=below:$s_3$]{}
+(5,8.5) node[label=below:$s_{n-2}$]{}
+(6,8.5) node[label=below:$s_{n-1}$]{}
 [-] (1,8.5) -- (4,8.5)
 [-] (5,8.5) -- (6,8.5)
 (2,8.5) node{}}; 
@@ -944,6 +956,146 @@ Impermissible subheaps for elements in FC groups
 	\end{subfigure}
 \end{tabular}	
 \caption{Impermissible subheaps for elements in FC$(\widetilde{C}_n)$.}\label{fig:impermiss heaps}
+\end{figure}
+
+
+\begin{figure}
+\begin{tikzpicture}[scale=0.5]
+\heapblock{0}{2}{0}{purple}
+\heapblock{1}{0}{1}{purple}	
+\end{tikzpicture}	
+\end{figure}
+
+\begin{figure*}
+\begin{tabular}{m{4cm} m{4cm}}
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=0.5]
+	\heapblock{0}{2}{s}{purple}
+	\heapblock{1}{0}{t}{purple}
+\end{tikzpicture}
+
+(reduced product)
+\caption{}
+\end{subfigure} &
+
+\begin{subfigure}{0.5\textwidth} \centering
+(reduced product)
+
+\begin{tikzpicture}[scale=0.5]
+	\heapblock{0}{2}{s}{purple}
+	\heapblock{1}{0}{t}{purple}
+\end{tikzpicture}
+\caption{}	
+\end{subfigure}
+\end{tabular}
+\caption{A visual representation of Property T.}\label{heapwithT}
+\end{figure*}
+
+\newpage
+
+Single Bowtie
+
+\begin{figure*}[h!]
+\begin{tabular}{m{4cm} m{4cm}}
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=0.5]
+	\heapblock{1}{10}{1}{purple}
+	\heapblock{3}{10}{3}{orange}
+	\heapblock{5}{10}{5}{purple}
+	\heapblock{2}{8}{2}{orange}
+	\heapblock{4}{8}{4}{purple}
+	\heapblock{3}{6}{3}{orange}
+	\heapblock{2}{4}{2}{orange}
+	\heapblock{4}{4}{4}{purple}
+	\heapblock{1}{2}{1}{purple}
+	\heapblock{3}{2}{3}{orange}
+	\heapblock{5}{2}{5}{purple}
+\end{tikzpicture}
+\caption{}\label{fig:singbowtie4}
+\end{subfigure}&
+
+\begin{subfigure}{0.5\textwidth}\centering
+\begin{tikzpicture}[scale=0.5]
+	\heapblock{1}{10}{1}{purple}
+	\heapblock{3}{10}{3}{purple}
+	\heapblock{5}{10}{5}{purple}
+	\heapblock{2}{8}{2}{purple}
+	\heapblock{4}{8}{4}{teal}
+	\heapblock{3}{6}{3}{teal}
+	\heapblock{2}{4}{2}{purple}
+	\heapblock{4}{4}{4}{teal}
+	\heapblock{1}{2}{1}{purple}
+	\heapblock{3}{2}{3}{purple}
+	\heapblock{5}{2}{5}{purple}
+\end{tikzpicture}
+\caption{}\label{fig:singbowtiebraid}
+\end{subfigure}
+\end{tabular}
+\caption{A single bowtie in $W(F_5)$.}\label{fig:singbowtie}	
+\end{figure*}
+
+\begin{figure*}[h!]
+\begin{tikzpicture}[scale=0.5]
+\heapblock{1}{10}{1}{purple}
+	\heapblock{3}{10}{3}{orange}
+	\heapblock{5}{10}{5}{purple}
+	\heapblock{2}{8}{2}{orange}
+	\heapblock{4}{8}{4}{purple}
+	\heapblock{3}{6}{3}{orange}
+	\heapblock{2}{4}{2}{orange}
+	\heapblock{4}{4}{4}{purple}
+	\heapblock{1}{2}{1}{purple}
+	\heapblock{3}{2}{3}{orange}
+	\heapblock{5}{2}{5}{purple}
+	\heapblock{2}{0}{2}{orange}
+	\heapblock{4}{0}{4}{purple}
+	\heapblock{3}{-2}{3}{orange}
+	\heapblock{2}{-4}{2}{orange}
+	\heapblock{4}{-4}{4}{purple}
+	\heapblock{1}{-6}{1}{purple}
+	\heapblock{3}{-6}{3}{orange}
+	\heapblock{5}{-6}{5}{purple}
+	
+	\node[] at (3,-8){$\vdots$};
+	
+	\heapblock{1}{-10}{1}{purple}
+	\heapblock{3}{-10}{3}{orange}
+	\heapblock{5}{-10}{5}{purple}
+	\heapblock{2}{-12}{2}{orange}
+	\heapblock{4}{-12}{4}{purple}
+	\heapblock{3}{-14}{3}{orange}
+	\heapblock{2}{-16}{2}{orange}
+	\heapblock{4}{-16}{4}{purple}
+	\heapblock{1}{-18}{1}{purple}
+	\heapblock{3}{-18}{3}{orange}
+	\heapblock{5}{-18}{5}{purple}
+\end{tikzpicture}
+\caption{A stack of bowties in $W(F_5)$.}\label{fig:stackobowties}
+\end{figure*}
+
+\begin{figure}[h!]\centering
+\begin{tikzpicture}[scale=0.5]
+	\heapblock{2}{10}{2}{orange}
+	\heapblock{4}{10}{4}{purple}
+	\heapblock{6}{10}{6}{purple}
+	\heapblock{3}{8}{3}{orange}
+	\heapblock{5}{8}{5}{purple}
+	\heapblock{2}{6}{2}{orange}
+	\heapblock{4}{6}{4}{purple}
+	\heapblock{1}{4}{1}{purple}
+	\heapblock{3}{4}{3}{orange}
+	\heapblock{2}{2}{2}{orange}
+	\heapblock{1}{0}{1}{purple}
+	\heapblock{3}{0}{3}{orange}
+	\heapblock{2}{-2}{2}{orange}
+	\heapblock{4}{-2}{4}{purple}
+	\heapblock{3}{-4}{3}{orange}
+	\heapblock{5}{-4}{5}{purple}
+	\heapblock{2}{-6}{2}{orange}
+	\heapblock{4}{-6}{4}{purple}
+	\heapblock{6}{-6}{6}{purple}
+\end{tikzpicture}
+\caption{A non-trivial T-avoiding element in $W(F_6)$}\label{fig:f6bat}
 \end{figure}
 
 

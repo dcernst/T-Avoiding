@@ -1,31 +1,63 @@
-\chapter{Property T and T-Avoiding}\label{chap:TandTavoid}
+\chapter{Property T and T-Avoiding Elements}\label{chap:TandTavoid}
 
-\section{Property T and T-Avoiding Elements}\label{Tavoid}
+\section{Property T}\label{Tavoid}
+
+\textcolor{red}{Dana will you think about the connection of Star Reducible and Property T}
 
 As mentioned in Section~\ref{sec:star} Green classified all star reducible Coxeter groups. In~\cite{Green2006a}, Green utilizes the following theorem to help classify the star reducible Coxeter groups. 
 \begin{theorem}[Green,~\cite{Green2006a}]
-	Let $W$ be a star reducible Coxeter group, and let $w \in W$. Then one of the following possibilities occurs for some Coxeter generators s,t, u with $m(s,t) \neq 2$, $m(t,u) \neq 2$, and $m(s,u)=2$:
+	Let $(W,S)$ be a star reducible Coxeter system of type $\Gamma$, and let $w \in W$. Then one of the following possibilities occurs for some Coxeter generators s,t, u with $m(s,t) \neq 2$, $m(t,v) \neq 2$, and $m(s,u)=2$:
 	\begin{enumerate}
 	\item $w$ is a product of commuting generators;\label{it:triv}
-	\item $w$ has a reduced expression beginning with $st$;\label{it:proptend}
-	\item $w$ has a reduced expression ending in $ts$;\label{it:proptbeg}
-	\item $w$ has a reduced expression beginning with $sut$.\label{it:tavoid}	\qed
+	\item $w$ has a reduced product beginning with $stu$;\label{it:proptend}
+	\item $w$ has a reduced product ending in $uts$;\label{it:proptbeg}
+	\item $w$ has a reduced product beginning with $svtu$.\label{it:tavoid}	\qed
 	\end{enumerate}
 \end{theorem}
 
-In the following discussion we will give name to elements that exhibit the property in Item~\ref{it:triv}, as well as name elements that exhibit the properties seen in Items~\ref{it:proptend} and~\ref{it:proptbeg}, and name elements that exhibit the property seen in Item~\ref{it:tavoid}. We will then focus on discussing the irreducible finite and affine Coxeter groups that have elements with properties seen in Items~\ref{it:triv} and~\ref{it:tavoid}.
-
-We first begin by defining the notion of Property T. Let $(W,S)$ be a Coxeter system of type $\Gamma$ and let $w \in W$. We say that $w$ has \emph{Property T} if and only if there exists a reduced product for $w$ such that $w=stu$ or $w=uts$ where $m(s,t)\geq 3$. That is, $w$ has Property T if there exists a reduced expression for $w$ that begins or ends with a product of non-commuting generators. It should be noted that by the symmetry of the definition $w$ has Property T if and only if $w^{-1}$ has Property T.
+In the following discussion we will give name to elements that exhibit the properties above. We first begin by defining the notion of Property T which is motivated by Items~\ref{it:proptend} and~\ref{it:proptbeg} above. Let $(W,S)$ be a Coxeter system of type $\Gamma$ and let $w \in W$. We say that $w$ has \emph{Property T} if and only if there exists a reduced product for $w$ such that $w=stu$ or $w=uts$ where $m(s,t)\geq 3$. That is, $w$ has Property T if there exists a reduced expression for $w$ that begins or ends with a product of non-commuting generators. 
 
 \begin{example}\label{ex:prop-T}
-Let $w \in W(A_5)$ with reduced expression $\w=s_1s_4s_2s_3s_5$. At first glance it may appear that $w$ does not have Property T, since both $s_1$ and $s_4$ commute as well as $s_3$ and $s_5$. However, note that applying a commutation to $s_4s_2$ results in $\w_1=s_1s_2s_4s_3s_5$. Hence $w$ has Property T, since $m(s_1,s_2)=3$ and there is a reduced expression for $w$ that begins with $s_1s_2$.	
+Let $w \in W(A_5)$ with reduced expression $\w_1=s_1s_4s_2s_3s_5$. At first glance it may appear that $w$ does not have Property T, since both $s_1$ and $s_4$ commute as well as $s_3$ and $s_5$. However, note that applying a commutation to $s_4s_2$ results in $\w_2=s_1s_2s_4s_3s_5$. Hence $w$ has Property T, since $m(s_1,s_2)=3$ and there is a reduced expression for $w$ that begins with $s_1s_2$.	
 \end{example}
 
 \begin{example}\label{ex:tavoid}
 Let $w \in W(A_5)$ with reduced expression $\w=s_1s_3s_5$. It turns out that since $w$ is a product of commuting generators there is no reduced expression for $w$ that begins or ends with a pair of non-commuting generators. This implies that $w$ does not have Property T.	
 \end{example}
 
-As with star reducible elements it may be helpful to visualize Property T through heaps. Figure~\ref{fig:heapw/T} provides a representation of an element in $W(\Gamma)$ with Property T and Figure~\ref{fig:heapnoT} provides a representation of an element without Property T. Notice that if we were to remove the block for $s_1$ in the bottom row of Figure~\ref{fig:heapw/T}, the heap would become one less row in height and we would have a new bottom row in the heap. However, in Figure~\ref{fig:heapnoT}, we are not able to remove able to remove any bricks and have a new brick come to the top or bottom row as the heap is just one row. From this we can gather that when we are using heaps to visualize whether or not an element of $W(\Gamma)$ has Property T we must observe either of the following things. The first of these is that the heap decreased in height. That is, there is one less row than the original heap. The second thing that we could observe is that when we remove a block from the heap a new element, that was originally trapped in the second (respectively, second to last) row is now able to move into the first (respectively, last) row of the heap. This implies that an element that does not have Property-T, has every element in the second and second to last row of the heap blocked by two blocks in the first and last rows of the heap, as this would imply that we could not remove a block and have a new element come to the first or last row as it would still be blocked by the other element that remained.
+As with star reducible elements it may be helpful to visualize Property T through heaps. In Figure~\ref{fig:heapwithT} we see the heap representation of an element with Property T, where the (reduced product) references $u$ in the definition of Property T. It is important to note that if the group element we are evaluating for Property T is not FC, then we must consider all heap representations for the element before concluding that an element does not have Property T. Similar to star reducible in heaps we see that Property T can be thought of as removing a fully exposed block from the top or bottom of a heap and having a new block become fully exposed. 
+
+\begin{figure*}[h!]
+\begin{tabular}{m{7cm} m{7cm}}
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=0.5]
+	\heapblock{0}{2}{s}{purple}
+	\heapblock{1}{0}{t}{purple}
+\end{tikzpicture}
+
+(reduced product)
+\caption{}
+\end{subfigure} &
+
+\begin{subfigure}{0.5\textwidth} \centering
+(reduced product)
+
+\begin{tikzpicture}[scale=0.5]
+	\heapblock{0}{2}{s}{purple}
+	\heapblock{1}{0}{t}{purple}
+\end{tikzpicture}
+\caption{}	
+\end{subfigure}
+\end{tabular}
+\caption{A visual representation of Property T.}\label{fig:heapwithT}
+\end{figure*}
+
+%As with star reducible elements it may be helpful to visualize Property T through heaps. Figure~\ref{fig:heapw/T} provides a representation of an element in $W(\Gamma)$ with Property T and Figure~\ref{fig:heapnoT} provides a representation of an element without Property T. Notice that if we were to remove the block for $s_1$ in the bottom row of Figure~\ref{fig:heapw/T}, the heap would become one less row in height and we would have a new bottom row in the heap. However, in Figure~\ref{fig:heapnoT}, we are not able to remove able to remove any bricks and have a new brick come to the top or bottom row as the heap is just one row. From this we can gather that when we are using heaps to visualize whether or not an element of $W(\Gamma)$ has Property T we must observe either of the following things. The first of these is that the heap decreased in height. That is, there is one less row than the original heap. The second thing that we could observe is that when we remove a block from the heap a new element, that was originally trapped in the second (respectively, second to last) row is now able to move into the first (respectively, last) row of the heap. This implies that an element that does not have Property-T, has every element in the second and second to last row of the heap blocked by two blocks in the first and last rows of the heap, as this would imply that we could not remove a block and have a new element come to the first or last row as it would still be blocked by the other element that remained.
+
+\begin{example}
+Let $\w_1=s_1s_4s_2s_3s_5$ be a reduced expression for $w_1 \in W(A_5)$ as seen in Example~\ref{ex:prop-T}	and let $\w_2=s_1s_3s_5$ be a reduced expression for $w_2 \in W(A_5)$. In Figure~\ref{fig:heapw/T} we see the heap for $\w_1$. Note that we can see Property T in the bottom of the heap highlighted in orange. In Figure~\ref{fig:heapnoT} we see the heap for $w_2$. Note that as the heap is only one row and $w_2$ is FC, it is clear that $w_2$ does not have Property T.
+\end{example}
+
 
 \begin{figure}[h!]
 \begin{tabular}{m{7cm} m{7cm}}
@@ -42,6 +74,8 @@ As with star reducible elements it may be helpful to visualize Property T throug
 
 \begin{subfigure}{0.5\textwidth} \centering
 \begin{tikzpicture}[scale=0.5]
+\heapblock{3}{4}{}{white}
+\heapblock{3}{8}{}{white}
 \heapblock{1}{6}{1}{purple}
 \heapblock{3}{6}{3}{purple}
 \heapblock{5}{6}{5}{purple}
@@ -49,10 +83,10 @@ As with star reducible elements it may be helpful to visualize Property T throug
 \caption{Heap of a T-Avoiding element}\label{fig:heapnoT}
 \end{subfigure}
 \end{tabular}
-\caption{Heaps of an element with Property T and a T-Avoiding element}
+\caption{Heaps of an element with Property T and a T-Avoiding element}\label{fig:prptheaps}
 \end{figure}
 
-An element $w \in W(\Gamma)$ is called \emph{T-avoiding} if $w$ and $w^{-1}$ do not have Property T. We will call an element that is a product of commuting generators \emph{trivially T-avoiding}. The reason behind this comes in the following theorem. If $w$ is T-avoiding and not a product of commuting generators, we will say that $w$ is \emph{non-trivially T-avoiding.} 
+An element $w \in W(\Gamma)$ is called \emph{T-avoiding} if $w$ does not have Property T. We will call an element that is a product of commuting generators \emph{trivially T-avoiding}. The reason behind this comes in the following theorem. If $w$ is T-avoiding and not a product of commuting generators, we will say that $w$ is \emph{non-trivially T-avoiding.} 
 
 \begin{theorem}
 Let $(W,S)$ be a Coxeter system of type $\Gamma$ and let $w \in W(\Gamma)$ such that $w$ is a product of commuting generators. Then $w$ is T-avoiding. \qed	
@@ -65,7 +99,7 @@ Let $w \in W(A_5)$ and let $\w=s_1s_3s_5$. Then by Example~\ref{ex:tavoid}, we k
 \end{example}
 
 \begin{example}
-Let $w \in W(\widetilde{C}_4)$ with reduced expression $\w=s_0s_2s_4s_1s_3s_0s_2s_4$. It turns out that $w$ is FC and non-trivially T-avoiding. The heap for $w$ is seen if Figure~\ref{fig:sandwich1}. Notice that no matter which block we remove from the top row of $w$ no new element can be pushed into the topmost row. The same applies to the bottom row. Hence there is not a single block that can be removed from the top that allows a new element to come into the top row and no single block that can be removed from the bottom row to allow a new element to come into the bottom row. Thus, $w$ is non-trivially T-avoiding. 
+Let $w \in W(\widetilde{C}_4)$ with reduced expression $\w=s_0s_2s_4s_1s_3s_0s_2s_4$. It turns out that $w$ is FC and non-trivially T-avoiding. The heap for $w$ is seen if Figure~\ref{fig:sandwich1}. Notice that no matter which block we remove that is fully exposed to the top of the heap no new element becomes fully exposed. The same applies to the bottom exposure. Hence there is not a single block that can be removed from the top that allows a new element to become fully exposed in the top or bottom of the heap. Thus, $w$ is non-trivially T-avoiding. 
 \begin{figure}[h!]
 \centering
 \begin{tikzpicture}[scale=0.5]
@@ -82,26 +116,17 @@ Let $w \in W(\widetilde{C}_4)$ with reduced expression $\w=s_0s_2s_4s_1s_3s_0s_2
 \end{figure}
 \end{example}
 
-Referring back to Green's classification of what elements in star reducible Coxeter groups look like, we see that Item~\ref{it:triv} corresponds to the element $w$ being trivially T-avoiding, Items~\ref{it:proptend} and~\ref{it:proptbeg} refer to the element $w$ having Property T at the beginning and end respectively, and Item~\ref{it:tavoid} corresponds to the element $w$ being T-avoiding. Notice that this implies that some Coxeter groups will have elements that are non-trivially T-avoiding while others may not. For example, as will be seen in the following sections, the Coxeter groups of type $A_n$ and $B_n$ have no non-trivial T-avoiding elements, while the Coxeter group of type $D_n$ does have non-trivial T-avoiding elements. One interesting thing to note about star reducible Coxeter groups is that if they contain non-trivially T-avoiding elements, these elements will not be FC. This is because FC elements in star reducible Coxeter groups are star reducible and star reducible elements in the way in which we have defined them are analogous to the element having Property T.
+Referring back to Green's classification of what elements in star reducible Coxeter groups look like, we see that Item~\ref{it:triv} corresponds to an element $w$ being trivially T-avoiding, Items~\ref{it:proptend} and~\ref{it:proptbeg} refer to the element $w$ having Property T at the beginning and end respectively, and Item~\ref{it:tavoid} refers to an element being non-trivially T-avoiding if no reduced expressions for the element exhibit Items~\ref{it:proptend} and~\ref{it:proptbeg}. It is not clear that non-trivially T-avoiding elements exist. However, in star reducible Coxeter groups, every FC element is star reducible to a product of commuting generators, which implies that no FC element can be non-trivially T-avoiding. For example, as will be seen in the following sections, the Coxeter groups of type $A_n$ and $B_n$ have no non-trivial T-avoiding elements, while the Coxeter group of type $D_n$ does have non-trivial T-avoiding elements. 
 
-We will now extend the definition of Property T to Coxeter groups similar to Properties F and S seen in Section~\ref{sec:star}. That is, we say a Coxeter group $W(\Gamma)$ has Property T if all elements in $W(\Gamma)$ that are not the products of commuting generators have Property T. It is clear that if a Coxeter group has Property T, then it also has Property S. It remains an open question whether or not if a Coxeter group has Property S, then it has Property T. If this is the case, then by a remark following the definition in~\cite{Green2007}, completes the classification of the T-avoiding elements of any connected, nonbranching Coxeter graph of finite or affine type, except the Coxeter group $\widetilde{F}_4$. 
+We will now extend the definition of Property T to Coxeter groups. Let $(W,S)$ be a Coxeter group of type $\Gamma$. We say that $W(\Gamma)$ has \emph{Property T} if all elements in $W(\Gamma)$ that are not the products of commuting generators have Property T. It is clear that if a Coxeter group has Property T, then it also has Property S. It remains an open question whether or not a Coxeter group with Property S, also has Property T, but we conjecture this is true. \textcolor{red}{Dana I don't know if I agree with our conjecture anymore upon retooling definitions today. I feel like Property S implies that a Coxeter group has all of it's elements star reducible to a braid?} If this is the case, then by a remark following the definition of Property S in~\cite{Green2007}, the classification of the T-avoiding elements for any connected, nonbranching Coxeter graph of finite or affine type, except the Coxeter system of type $\widetilde{F}_4$, would be complete. 
 
-One thing to notice here is that all Coxeter groups have trivial T-avoiding elements as they all contain products of commuting generators. The more interesting non-trivial T-avoiding elements do not appear in all Coxeter groups. The remainder of this thesis discusses what is currently know regarding T-avoiding elements in the irreducible finite Coxeter groups and the irreducible affine Coxeter groups, as well as it classifies the T-avoiding elements in Coxeter groups of types $B_n$ and $\widetilde{C}_n$. In the next few sections we will summarize what is known about the T-avoiding elements in Coxeter groups of types $\widetilde{A}_n$, $A_n$, $D_n$, $F_n$ and $I_2(m)$.
+One thing to notice here is that all Coxeter groups have trivial T-avoiding elements as they all contain products of commuting generators. As a result of this we will avoid mentioning them in the following classification. The more interesting non-trivial T-avoiding elements do not appear in all Coxeter groups. The remainder of this thesis discusses what is currently know regarding T-avoiding elements in the irreducible finite Coxeter groups and the irreducible affine Coxeter groups, and we classify the T-avoiding elements in Coxeter groups of types $B_n$ and $\widetilde{C}_n$. In the next few sections we will summarize what is known about the T-avoiding elements in Coxeter groups of types $\widetilde{A}_n$, $A_n$, $D_n$, $F_n$, and $I_2(m)$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{T-Avoiding Elements in Types $\widetilde{A}_n$ and $A_n$}
-We start by classifying the T-avoiding elements in Coxeter groups of type $\widetilde{A}_n$ and $A_n$. Specifically we will classify the T-avoiding elements in $W(A_n)$ and then move to $W(\widetilde{A}_n)$. Clearly $W(A_n)$ contains trivial T-avoiding elements and $W(A_n)$ contains products of commuting generators. Now we will classify the non-trivial T-avoiding elements in $W(A_n)$. Recall that $W(A_n)$ is a star reducible Coxeter group which by our observations above implies that if $W(A_n)$ has non-trivial T-Avoiding elements, these elements will be not FC. In~\cite{Fan1999}, the non-trivial T-avoiding elements were classified. The classification is seen in the following theorem.
-
-\begin{theorem}
-Then there are no non-trivially T-avoiding elements in $W(A_n)$. 
-\begin{proof}
-This is a consequence of~\cite[Proposition 3.1.2.]{Fan1999}.	 
-\end{proof}
-\end{theorem}
-
-We will now proceed into the classification of T-avoiding elements in $W(\widetilde{A}_n)$. Similar to $W(A_n)$, $W(\widetilde{A}_n)$ will also have trivial T-avoiding elements since $W(\widetilde{A}_n)$ contains elements that are products of commuting generators. We will now proceed to classifying non-trivial T-avoiding elements in $W(\widetilde{A_n})$. The following classification is a result from~\cite{Fan1999}.
+We start by classifying the T-avoiding elements in Coxeter groups of type $\widetilde{A}_n$ and $A_n$. We first classify non-trivial T-avoiding elements in $W(\widetilde{A}_n)$.
 
 \begin{theorem}
  If $n \geq 2$ and $n$ is even, then there are no non-trivial T-avoiding elements in $W(\widetilde{A}_n)$. Otherwise, if $n \geq 2$ and $n$ is even then $W(\widetilde{A}_n)$ contains non-trivial T-avoiding elements.
@@ -110,28 +135,45 @@ We will now proceed into the classification of T-avoiding elements in $W(\wideti
 \end{proof}
 \end{theorem}
 
-This implies that in the Coxeter group of type $\widetilde{A}_n$, when $n$ is even there are no non-trivial T-avoiding elements, while when $n$ is odd, there are non-trivial T-avoiding elements. One interesting observation to go along with this is $W(\widetilde{A}_n)$ is star reducible for $n$ even but not star reducible for $n$ odd. The classification seen in~\cite{Fan1999} did not specifically classify the non-trivial T-avoiding elements for type $\widetilde{A}_n$ for $n$ odd. Before we state our conjecture as to what the non-trivial T-Avoiding elements are in $W(\widetilde{A}_n)$ we will discuss shortly what the heaps look like in $W(\widetilde{A}_n)$. Because the Coxeter graph for type $\widetilde{A}_n$ is not a straight line Coxeter graph, the heaps can no longer be 2 dimensional and now must take on a 3 dimensional representation. The nature of the Coxeter graph of type $\widetilde{A}_n$ leads us to represent heaps in the sense of a turret on a castle where the blocks are stacked in a circular manner. We now continue with our conjectured classification. Because type $A_n$ does not contain any non-trivial T-avoiding elements we know that the non-trivial T-avoiding elements in $W(\widetilde{A}_n)$ for $n$ odd must have full support. We conjecture that the only non-trivial T-avoiding elements are castle turrets that have no missing blocks in the walls. However, this remains an open problem.
+%Now we will classify the non-trivial T-avoiding elements in $W(A_n)$. Recall that $W(A_n)$ is a star reducible Coxeter group which by our observations above implies that if $W(A_n)$ has non-trivial T-Avoiding elements, these elements will be not FC. In~\cite{Fan1999}, the non-trivial T-avoiding elements were classified. The classification is seen in the following theorem.
+
+%We will now proceed into the classification of T-avoiding elements in $W(\widetilde{A}_n)$. Similar to $W(A_n)$, $W(\widetilde{A}_n)$ will also have trivial T-avoiding elements since $W(\widetilde{A}_n)$ contains elements that are products of commuting generators. We will now proceed to classifying non-trivial T-avoiding elements in $W(\widetilde{A_n})$. The following classification is a result from~\cite{Fan1999}.
+
+The previous theorem implies that when $n$ is even the Coxeter group of type $\widetilde{A}_n$, has no non-trivial T-avoiding elements. However, while $n$ is odd, the Coxeter group of type $\widetilde{A}_n$ has non-trivial T-avoiding elements. The classification seen in~\cite{Fan1999} did not specifically classify the non-trivial T-avoiding elements for type $\widetilde{A}_n$ for $n$ odd. Since $W(\widetilde{A}_n)$ for $n$ odd is not star reducible we know that the non-trivial T-avoiding elements could be FC. The following is our conjecture regarding what the non-trivial T-avoiding elements are in $W(\widetilde{A}_n)$ for $n$ odd.
+\begin{conjecture}
+	The only non-trivial T-avoiding elements in $W(\widetilde{A}_n)$ for $n$ odd are of the form $w=(s_0s_2 \cdots s_{n-2}s_ns_1s_3 \cdots s_{n-3}s_{n-1})^k$  for $k \in \mathbb{Z}^+$. 
+\end{conjecture} 
+
+Notice that the above non-trivial T-avoiding elements are FC. As stated in the conjecture we believe that these are the only non-trivial T-avoiding elements. However, this remains an open problem. We now proceed with the classification of T-avoiding elements in Coxeter groups of type $A_n$. 
+
+\begin{corollary}
+Then there are no non-trivially T-avoiding elements in $W(A_n)$. 
+\begin{proof}
+Since $W(A_n)$ is a parabolic subgroup of $W(\widetilde{A}_n)$ this is a consequence of~\cite[Proposition 3.1.2.]{Fan1999}. Specifically, we can obtain the Coxeter graph of type $A_n$ from the Coxeter graph of type $\widetilde{A}_n$ for $n$ even by removing the appropriate number of vertices and edges. From this we can see that if $W(A_n)$ was to have non-trivial T-avoiding elements, this would imply that $W(\widetilde{A}_n)$ for $n$ even would also have non-trivial T-avoiding elements as well. Thus $W(A_n)$ can not have bad elements.
+\end{proof}
+\end{corollary}
+
 
 %%%%%%%%%%%%%%%%
 
 \section{T-Avoiding Elements in Type $D_n$}
 
-In this section we will classify the T-avoiding elements in the Coxeter group of type $D_n$. We begin with trivial T-avoiding elements. Note that like $W(A_n)$, $W(D_n)$ has elements that are products of commuting generators. Hence, $W(D_n)$ contains trivial T-avoiding elements. We will now classify the non-trivial T-avoiding elements of Coxeter groups of type $D_n$. Recall that $W(D_n)$ is a star reducible Coxeter group and as a result of this any non-trivial T-avoiding element will not be fully commutative.
+In this section we will classify the non-trivial T-avoiding elements in the Coxeter group of type $D_n$. Recall that $W(D_n)$ is a star reducible Coxeter group and as a result of this any non-trivial T-avoiding element will not be fully commutative.
 
 \begin{theorem}
-Let $W=W(D_n)$. Then $W$ contains non-trivial T-avoiding elements.
+ There are non-trivial T-avoiding elements in $W(D_n)$ for $n \geq 4$.
 \begin{proof}
 	This is a consequence of~\cite[Section 2.2]{Gern2013a}.
 \end{proof}
 \end{theorem}
 
-In addition, to showing that there are non-trivial T-avoiding elements in type $D_n$ Gern also classified the non-trivial T-avoiding elements as well. The following is his classification translated into heaps. \textcolor{red}{Once we figure out the heap include it here.} For the full details regarding his classification see~\cite{Gern2013a}. Note that in his classification Gern  refers to non-trivially T-avoiding elements as ''bad."
+In addition, to showing that there are non-trivial T-avoiding elements in type $D_n$, Gern also classified the non-trivial T-avoiding elements as well. The following is his classification translated into heaps. \textcolor{red}{Once we figure out the heap include it here.} For the full details regarding his classification see~\cite{Gern2013a}. Note that in his classification, Gern  refers to non-trivially T-avoiding elements as ``bad."
 
 %%%%%%%%%%%%%%%
 
 \section{T-Avoiding Elements in Type $F_n$}
 
-In this section we classify what is known regarding the non-trivial T-avoiding elements in the Coxeter groups of type $F_n$ for $n \geq 4$. Note that all of the following results are unpublished. First as with all other types we have seen so far, $F_n$ has trivial T-avoiding elements since the groups contain products of commuting generators. For the rest of this section we will focus on the non-trivial T-avoiding elements in $F_n$. Recall that $F$ is a star reducible Coxeter group so any non-trivial T-avoiding element in $F_n$ will not be FC.
+In this section we classify what is known regarding the non-trivial T-avoiding elements in the Coxeter groups of type $F_n$ for $n \geq 4$. Note that all of the following results are unpublished. Recall that $W(F_n)$ is a star reducible Coxeter group so any non-trivial T-avoiding element in $W(F_n)$ will not be FC.
 
 We start with the Coxeter group of type $F_5$. In 2012, Cross, Ernst, Hills-Kimball, and Quaranta classified all non-trivial T-avoiding elements in the following theorem.
 
@@ -139,23 +181,125 @@ We start with the Coxeter group of type $F_5$. In 2012, Cross, Ernst, Hills-Kimb
 An element in $F_5$ is non-trivially T-avoiding if and only if it is a stack of bowties. \qed	
 \end{theorem}
 
-The above theorem references a stack of bowties. This refers to what the heap of the given non-trivial T-avoiding element looks like. We first restrict our attention to a single bowtie, this is seen in Figures~\ref{}. Note that in this figure, the orange blocks correspond to the elements that have bond strength 4 (Figure~\ref{}). Since the element is not FC we also wished to highlight the braid which is seen in the center of the element as colored in orange in Figure~\ref{}. In stacking the single bowties together, we get the stack of bowties referenced in the theorem which is seen in Figure~\ref{}. As a result of the classification in $F_5$, Cormier et. al. were also able to classify the non-trivial T-avoiding elements in $F_4$. The following is their classification.
+The above theorem references a stack of bowties. This refers to what the heap of the given non-trivial T-avoiding element looks like. We first restrict our attention to a single bowtie, this is seen in Figure~\ref{fig:singbowtie}. Note that in this figure, the \textcolor{orange}{orange} blocks correspond to the elements that have bond strength 4 (Figure~\ref{fig:singbowtie4}). Since the element is not FC we also wished to highlight the braid which is seen in the center of the element as colored in \textcolor{teal}{teal} in Figure~\ref{fig:singbowtiebraid}. In stacking the single bowties together, we get the stack of bowties referenced in the theorem which is seen in Figure~\ref{fig:stackobowties}. As a result of the classification in $F_5$, Cross et al. were also able to classify the non-trivial T-avoiding elements in $F_4$. The following is their classification.
 
+\begin{figure*}[h!]
+\begin{tabular}{m{7cm} m{7cm}}
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=0.5]
+	\heapblock{1}{10}{1}{purple}
+	\heapblock{3}{10}{3}{orange}
+	\heapblock{5}{10}{5}{purple}
+	\heapblock{2}{8}{2}{orange}
+	\heapblock{4}{8}{4}{purple}
+	\heapblock{3}{6}{3}{orange}
+	\heapblock{2}{4}{2}{orange}
+	\heapblock{4}{4}{4}{purple}
+	\heapblock{1}{2}{1}{purple}
+	\heapblock{3}{2}{3}{orange}
+	\heapblock{5}{2}{5}{purple}
+\end{tikzpicture}
+\caption{}\label{fig:singbowtie4}
+\end{subfigure}&
+
+\begin{subfigure}{0.5\textwidth}\centering
+\begin{tikzpicture}[scale=0.5]
+	\heapblock{1}{10}{1}{purple}
+	\heapblock{3}{10}{3}{purple}
+	\heapblock{5}{10}{5}{purple}
+	\heapblock{2}{8}{2}{purple}
+	\heapblock{4}{8}{4}{teal}
+	\heapblock{3}{6}{3}{teal}
+	\heapblock{2}{4}{2}{purple}
+	\heapblock{4}{4}{4}{teal}
+	\heapblock{1}{2}{1}{purple}
+	\heapblock{3}{2}{3}{purple}
+	\heapblock{5}{2}{5}{purple}
+\end{tikzpicture}
+\caption{}\label{fig:singbowtiebraid}
+\end{subfigure}
+\end{tabular}
+\caption{A single bowtie in $W(F_5)$.}\label{fig:singbowtie}	
+\end{figure*}
+
+\begin{figure*}[h!] \centering
+\begin{tikzpicture}[scale=0.5]
+\heapblock{1}{10}{1}{purple}
+	\heapblock{3}{10}{3}{orange}
+	\heapblock{5}{10}{5}{purple}
+	\heapblock{2}{8}{2}{orange}
+	\heapblock{4}{8}{4}{purple}
+	\heapblock{3}{6}{3}{orange}
+	\heapblock{2}{4}{2}{orange}
+	\heapblock{4}{4}{4}{purple}
+	\heapblock{1}{2}{1}{purple}
+	\heapblock{3}{2}{3}{orange}
+	\heapblock{5}{2}{5}{purple}
+	\heapblock{2}{0}{2}{orange}
+	\heapblock{4}{0}{4}{purple}
+	\heapblock{3}{-2}{3}{orange}
+	\heapblock{2}{-4}{2}{orange}
+	\heapblock{4}{-4}{4}{purple}
+	\heapblock{1}{-6}{1}{purple}
+	\heapblock{3}{-6}{3}{orange}
+	\heapblock{5}{-6}{5}{purple}
+	
+	\node[] at (3,-8){$\vdots$};
+	
+	\heapblock{1}{-10}{1}{purple}
+	\heapblock{3}{-10}{3}{orange}
+	\heapblock{5}{-10}{5}{purple}
+	\heapblock{2}{-12}{2}{orange}
+	\heapblock{4}{-12}{4}{purple}
+	\heapblock{3}{-14}{3}{orange}
+	\heapblock{2}{-16}{2}{orange}
+	\heapblock{4}{-16}{4}{purple}
+	\heapblock{1}{-18}{1}{purple}
+	\heapblock{3}{-18}{3}{orange}
+	\heapblock{5}{-18}{5}{purple}
+\end{tikzpicture}
+\caption{A stack of bowties in $W(F_5)$.}\label{fig:stackobowties}
+\end{figure*}
 \begin{corollary}
 There are no non-trivial T-avoiding elements in $F_4$. \qed	
 \end{corollary}
 
-As a result of their work, Cross et. al. conjectured that in Coxeter groups of type $F_n$ for $n \geq 5$, an element is non-trivially T-avoiding if and only if it is a stack of bowties multiplied by a product of commuting generators. In 2013, Gilbertson and Ernst worked with this conjecture and quickly found out that it was incorrect. The heap seen in Figure~\ref{} corresponds to a non-trivial T-avoiding element in $F_6$. It turns out that like the bowties discussed above these elements can also be stacked to create and infinite number of non-trivial T-avoiding elements as well. In addition, as $n$ gets large there are a number of things that can be altered in the group element that result in the element being non-trivially T-avoiding. This leads us to believe that there are potentially even more non-trivially T-avoiding elements in $F_n$ for $n \geq 6$. From this we can see that the classification of T-avoiding elements in $F_n$ for $n \geq 6$ gets complicated very quickly. Hence, classifying T-avoiding elements in $F_n$ for $n \geq 5$ remains an open problem. 
+As a result of their work, Cross et al. conjectured that in Coxeter groups of type $F_n$ for $n \geq 5$, an element is non-trivially T-avoiding if and only if it is a stack of bowties multiplied by a product of commuting generators. In 2013, Gilbertson and Ernst worked with this conjecture and quickly found out that it was incorrect. The heap seen in Figure~\ref{fig:f6bat} corresponds to a non-trivial T-avoiding element in $F_6$. It turns out that like the bowties discussed above these elements can also be stacked to create and infinite number of non-trivial T-avoiding elements as well. In addition, as $n$ gets large there are a number of things that can be altered in the group element that result in the element being non-trivially T-avoiding. This leads us to believe that there are potentially even more non-trivially T-avoiding elements in $W(F_n)$ for $n \geq 6$. From this we conjecture that the classification of T-avoiding elements in Coxeter systems of type $F_n$ for $n \geq 6$ gets complicated very quickly. Classifying T-avoiding elements in $W(F_n)$ for $n \geq 5$ remains an open problem. 
+
+\begin{figure}[h!]\centering
+\begin{tikzpicture}[scale=0.5]
+	\heapblock{2}{10}{2}{orange}
+	\heapblock{4}{10}{4}{purple}
+	\heapblock{6}{10}{6}{purple}
+	\heapblock{3}{8}{3}{orange}
+	\heapblock{5}{8}{5}{purple}
+	\heapblock{2}{6}{2}{orange}
+	\heapblock{4}{6}{4}{purple}
+	\heapblock{1}{4}{1}{purple}
+	\heapblock{3}{4}{3}{orange}
+	\heapblock{2}{2}{2}{orange}
+	\heapblock{1}{0}{1}{purple}
+	\heapblock{3}{0}{3}{orange}
+	\heapblock{2}{-2}{2}{orange}
+	\heapblock{4}{-2}{4}{purple}
+	\heapblock{3}{-4}{3}{orange}
+	\heapblock{5}{-4}{5}{purple}
+	\heapblock{2}{-6}{2}{orange}
+	\heapblock{4}{-6}{4}{purple}
+	\heapblock{6}{-6}{6}{purple}
+\end{tikzpicture}
+\caption{A non-trivial T-avoiding element in $W(F_6)$}\label{fig:f6bat}
+\end{figure}
 
 %%%%%%%%%%%%%%%%
 
 \section{T-Avoiding Elements in Type $I_2(m)$}
 
-We next will classify the T-avoiding elements in Coxeter groups of type $I_2(m)$. Differing from the preceding classifications, $W(I_2(m))$ has exactly 2 trivial T-avoiding elements as $W(I_2(m))$ contains only 2 generators and as a result the only products of commuting generators are single generators. We now classify the non-trivial T-avoiding elements in $W(I_2(m))$. Although the following is a quick result, we believe that the result does not already appear in literature.
+We next will classify the T-avoiding elements in Coxeter groups of type $I_2(m)$. Note that in Coxeter groups of type $I_2(m)$, the only products of commuting generators have length 1. The following is the classification of non-trivial T-avoiding elements. Although the following is a quick result, we believe that the result does not already appear in literature.
 \begin{theorem}
 The Coxeter group $W(I_2(m))$ has no non-trivial T-avoiding elements.
 \begin{proof}
-	The graph for the Coxeter group of type $I_2(m)$ appears in Figure~\ref{fig:I}. Note that the graph consists of two 2 vertices, $s_1,s_2$, and an edge with weight $m(s,t)$. First recall, that $W(I_2(m))$ is a star reducible Coxeter group. This implies that any non-trivial T-avoiding elements in $W(I_2(m))$ must not be FC. As all of the FC elements have Property T. We now consider the case when $w \in W(I_2(m))$ is not FC. Since $s_1$ and $s_2$ are involutions this implies that the elements in $W$ must alternate between $s_1$ and $s_2$. Since $w$ is not FC this implies that a reduced expression for $w$ is $\w=\underbrace{s_1s_2 \cdots s_1}_{m(s_1,s_2)}$. By definition $m(s_1,s_2)>3$ and hence all elements in $W(I_2(m))$ that are not products of commuting generators have Property T, as they clearly have a reduced expression that begins with a product of non-commuting generators. Hence $W(I_2(m))$ has no non-trivial T-avoiding elements. 
+	The graph for the Coxeter group of type $I_2(m)$ appears in Figure~\ref{fig:I}. Note that the graph consists of two vertices, namely, $s_1$ and $s_2$, and a single edge with weight $m(s,t)$. First recall that $W(I_2(m))$ is a star reducible Coxeter group. This implies that any non-trivial T-avoiding elements in $W(I_2(m))$ must not be FC, ss all of the FC elements have Property T. The only non-FC element in $W(I_2(m))$ is the element of length $m(s,t)$ which has exactly two reduced expressions consisting of alternating products of $s_1$ and $s_2$. Cleary, this element begins with and ends with a product of noncommuting generators. Thus, this element has Property T. Hence $W(I_2(m))$ has no non-trivial T-avoiding elements. 
 \end{proof}	
 \end{theorem}
  

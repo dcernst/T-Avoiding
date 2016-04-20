@@ -1098,6 +1098,153 @@ Single Bowtie
 \caption{A non-trivial T-avoiding element in $W(F_6)$}\label{fig:f6bat}
 \end{figure}
 
+Labeled Coxeter Graphs that the thesis deals with
+
+\begin{figure}[h!]
+\begin{tabular}{m{7cm} m{7cm}}
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]%A_{n}
+\draw[fill=black] \foreach \x in {1,2,...,6} {(\x,10) circle (2pt)};
+\draw {(.5,10) node{}
+(1.5,10) node[label=above:\textcolor{white}{$4$}]{}
+(4.5,10) node{$\cdots$}
+(1,10) node[label=below:$s_1$]{}
+(2,10) node[label=below:$s_2$]{}
+(3,10) node[label=below:$s_3$]{}
+(4,10) node[label=below:$s_4$]{}
+(5,10) node[label=below:$s_{n-1}$]{}
+(6,10) node[label=below:$s_{n}$]{}
+[-] (1,10) -- (4,10)
+[-] (5,10) -- (6,10)
+(1,10) node{}}; 
+\end{tikzpicture}
+\caption{$A_{n}$} \label{fig:labeledA}
+\end{subfigure} &
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]%\widetilde{A}_{n}
+\draw [fill=black] \foreach \x in {1,...,4} {(\x,7.5) circle (2pt)};
+\draw [fill=black] (2.5, 8.5) circle (2pt);
+\draw {(.5,8.5) node{}
+(2.5,7.5) node{$\cdots$}
+(1,7.5) node[label=below:$s_1$]{}
+(2,7.5) node[label=below:$s_2$]{}
+(3,7.5) node[label=below:$s_{n-1}$]{}
+(4,7.5) node[label=below:$s_{n}$]{}
+(2.5,8.5) node[label=right:$s_{n+1}$]{}
+[-] (2.5,8.5) -- (1, 7.5)
+[-] (2.5,8.5) -- (4, 7.5)
+[-] (1,7.5) -- (2,7.5)
+[-] (3,7.5) -- (4,7.5)
+(2,8.5) node{}}; 
+\end{tikzpicture}
+\caption{$\widetilde{A}_{n}$} \label{fig:labeledaffAn}
+\end{subfigure} \\
+
+    & \\ 
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]%B_{n}
+\draw [fill=black] \foreach \x in {1,2,...,6} {(\x,8.5) circle (2pt)};
+\draw {(.5,8.5) node{}
+(1.5,8.5) node[label=above:$4$]{}
+(4.5,8.5) node{$\cdots$}
+(1,8.5) node[label=below:$s_0$]{}
+(2,8.5) node[label=below:$s_1$]{}
+(3,8.5) node[label=below:$s_2$]{}
+(4,8.5) node[label=below:$s_3$]{}
+(5,8.5) node[label=below:$s_{n-2}$]{}
+(6,8.5) node[label=below:$s_{n-1}$]{}
+[-] (1,8.5) -- (4,8.5)
+[-] (5,8.5) -- (6,8.5)
+(2,8.5) node{}}; 
+\end{tikzpicture}
+\caption{$B_{n}$} \label{fig:labeledB}
+\end{subfigure} &
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]
+\draw[fill=black] \foreach \x in {1,2,...,6} {(\x,5) circle (2pt)};%\widetild{C}_{n}
+\fill[white] (1,6) circle (2pt);
+\draw {(.5,5) node{}
+(4.5,5) node{$\cdots$}
+(5.5,5) node[label=above:$4$]{}
+(1.5,5) node[label=above:$4$]{}
+(1,5) node[label=below:$s_0$]{}
+(2,5) node[label=below:$s_1$]{}
+(3,5) node[label=below:$s_2$]{}
+(4,5) node[label=below:$s_3$]{}
+(5,5) node[label=below:$s_{n-1}$]{}
+(6,5) node[label=below:$s_{n}$]{}
+[-] (1,5) -- (4,5)
+[-] (5,5) -- (6,5)
+(2,5) node{}};
+\end{tikzpicture}
+\caption{$\widetilde{C}_{n}$} \label{fig:labeledaffC}
+\end{subfigure}  \\
+
+& \\
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]
+\draw[fill=black] \foreach \x in {1,2,...,6} {(\x,6.5) circle (2pt)};%D_{n}
+\draw[fill=black] (2,7.5) circle (2pt);
+\draw {(.5,6.5) node{}
+(4.5,6.5) node{$\cdots$}
+(1,6.5) node[label=below:$s_1$]{}
+(2,6.5) node[label=below:$s_2$]{}
+(3,6.5) node[label=below:$s_3$]{}
+(4,6.5) node[label=below:$s_4$]{}
+(5,6.5) node[label=below:$s_{n-2}$]{}
+(6,6.5) node[label=below:$s_{n-1}$]{}
+(2,7.5) node[label=right:$s_0$]{}
+[-] (1,6.5) -- (4,6.5)
+[-] (5,6.5) -- (6,6.5)
+[-] (2,6.5) -- (2,7.5)
+(2,6.5) node{}};
+\end{tikzpicture}
+\caption{$D_{n}$} \label{fig:labeledD}
+\end{subfigure}&
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]%F_{n}
+\draw[fill=black] \foreach \x in {1,2,...,6} {(\x,3) circle (2pt)};
+\fill[white] (1,4) circle (2pt);
+\draw {(.5,3) node{}
+(2.5,3) node[label=above:$4$]{}
+(4.5,3) node{$\cdots$}
+(1,3) node[label=below:$s_1$]{}
+(2,3) node[label=below:$s_2$]{}
+(3,3) node[label=below:$s_3$]{}
+(4,3) node[label=below:$s_4$]{}
+(5,3) node[label=below:$s_{n-1}$]{}
+(6,3) node[label=below:$s_{n}$]{}
+[-] (1,3) -- (4,3)
+[-] (5,3) -- (6,3)
+(3,3) node{}};
+\end{tikzpicture}
+\caption{$F_{n}$} \label{fig:labeledFn}
+\end{subfigure}  \\
+
+& \\
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=1.0]
+\draw[fill=black] \foreach \x in {1,2} {(\x,0) circle (2pt)};
+\fill[fill=white] (2,1) circle (2pt);
+\draw {(.25,0) node{}
+(1.5,0) node[label=above:$m$]{}
+(1,0) node[label=below:$s_1$]{}
+(2,0) node[label=below:$s_2$]{}
+[-] (1,0) -- (2,0)
+(2,0) node{}};
+\end{tikzpicture}
+\caption{$I_{2}(m)$} \label{fig:labeledI}
+\end{subfigure}
+\end{tabular}
+\caption{Labeled Coxeter Graphs}\label{}
+\end{figure}
+
 
 \end{document}
 =======

@@ -132,7 +132,7 @@ In~\cite{Green2006a}, Green classified all star reducible Coxeter groups.
 As previously mentioned Green classified all star reducible Coxeter groups. In~\cite{Green2006a}, Green utilizes the following theorem to help classify the star reducible Coxeter groups. 
 \begin{theorem}[Green,~\cite{Green2006a}]\label{thm:starred}
 	Let $(W,S)$ be a star reducible Coxeter system of type $\Gamma$, and let $w \in W$. Then one of the following possibilities occurs for some Coxeter generators s,t, u with $m(s,t) \neq 2$, $m(t,v) \neq 2$, and $m(s,u)=2$:
-	\begin{enumerate}
+	\begin{enumerate}[leftmargin=2cm]
 	\item $w$ is a product of commuting generators;\label{it:triv}
 	\item $w$ has a reduced product $w=stu$;\label{it:proptend}
 	\item $w$ has a reduced product $w=uts$;\label{it:proptbeg}
@@ -231,10 +231,10 @@ One thing to notice here is that all Coxeter groups have trivial T-avoiding elem
 %%%%%%%%%%%%%%
 
 
-\section{Non-Cancellable Elements}
+\section{Non-Cancellable Elements}\label{sec:noncancel}
  
 We now introduce the concept of weak star reducible, which is related to the notion of cancellable in~\cite{Fan1997}. Let $(W,S)$ be a Coxeter system of type $\Gamma$ and let $I=\{s,t\} \subseteq S$ be a pair of noncommuting generators. If $w  \in \FC(\Gamma)$, then $w$ is \emph{left weak star reducible by $s$ with respect to $t$ to $sw$} if
-\begin{enumerate}
+\begin{enumerate}[leftmargin=2cm]
 \item $w$ is left star reducible by $s$ with respect to $t$, and
 \item $tw \notin \FC(W)$.	
 \end{enumerate}
@@ -254,7 +254,7 @@ Again it might be useful to visualize the concept of weak star reducible in term
 %Recall in Figure~\ref{fig:heapy} we have a representation for $w$ as described in Example~\ref{ex:noncancel}. In Section~\ref{sec:star}, we described how  In Figure~\ref{fig:noncancel} we can see that when we multiply $w$ by $s_1$ on the right we end up with a braid, which is  highlighted in orange. Since the heap in Figure~\ref{fig:noncancel} has the impermissible subheap seen in Figure~\ref{fig:C&B2}, $s_1w \notin \FC(B_4)$.  When using heaps to identify whether an element $w$ of $\FC(\Gamma)$ is Non-Cancellable or not there are two key properties that must be observed. The first of the properties is that the $H(w)$ must be able to be dismantled from the top or bottom so that the heap resulting from pulling the top block off or the bottom block off is one row shorter or allows for a new brick to be in the top most or bottom most row of the heap. The second property that must be observed is that given the block that appears in the top or bottom of the heap when the star operation is performed, adding another of that block to the top or bottom of the original heap respectively will result in an impermissible subheap appearing. If both of these properties occur, then the element that corresponds to the heap is not Non-Cancellable.
 
 \begin{figure*}[h!] \centering
-\begin{tikzpicture}[scale=0.45]
+\begin{tikzpicture}[scale=0.4]
 \heapblock{2}{0}{2}{purple}
 \heapblock{0}{0}{0}{orange}
 \heapblock{1}{2}{1}{orange}
@@ -269,9 +269,105 @@ Let $w \in \FC(B_4)$ and let $\w=s_0s_1$ be a reduced expression for $w$. Note t
 \end{example}
 
 \begin{figure*}[h!] \centering
-\begin{tikzpicture}[scale=0.45]
+\begin{tikzpicture}[scale=0.4]
 \heapblock{0}{2}{0}{purple}
 \heapblock{1}{0}{1}{purple}	
 \end{tikzpicture}	
 \caption{Visualization of a non-cancellable element of $\FC(B_4)$.}\label{fig:noncancelvisual}
 \end{figure*}
+
+In~\cite{Ernst2010}, Ernst classified the non-cancellable elements in Coxeter groups of type $W(B_n)$ and $W(\C_n)$. We will state part of the classification here as it is important to the development of the non-trivial T-avoiding elements in $W(\C_n)$. To see the full classification see~\cite[Sections 4.2 and 5]{Ernst2010}. 
+
+Before we state the classification we first define a specific group element called a Type II element in $W(\C_n)$. We will refer to this element as a single \emph{sandwich stack}, which is seen in Figure~\ref{fig:singsandstack}.
+
+\begin{figure}[h!] \centering
+\begin{tikzpicture}[scale=0.5]
+	\heapblock{0}{4}{0}{purple}
+	\heapblock{2}{4}{2}{purple}
+	\node[] at (4,4){$\cdots$};
+	\heapblock{6}{4}{n-2}{purple}
+	\heapblock{8}{4}{n}{purple}
+	\heapblock{1}{2}{1}{purple}
+	\heapblock{3}{2}{3}{purple}
+	\node[] at (5,2){$\cdots$};
+	\heapblock{7}{2}{n-1}{purple}
+	\heapblock{0}{0}{0}{purple}
+	\heapblock{2}{0}{2}{purple}
+	\node[] at (4,0){$\cdots$};
+	\heapblock{6}{0}{n-2}{purple}
+	\heapblock{8}{0}{n}{purple}
+\end{tikzpicture}
+\caption{A single sandwich stack in $W(\C_n)$.}\label{fig:singsandstack}
+\end{figure}
+
+We can stack single sandwich stacks together and get a ``stack of sandwich stacks." This is done by removing the top most layer of the heap and adding a new single bowtie to the stack. A stack of bowties is seen in Figure~\ref{fig:stacksandstack}. These heaps are referenced in the classification of non-trivial T-avoiding elements in $W(\C_n)$.
+
+\begin{figure}[h!] \centering
+\begin{tikzpicture}[scale=0.5]
+	\heapblock{0}{4}{0}{purple}
+	\heapblock{2}{4}{2}{purple}
+	\node[] at (4,4){$\cdots$};
+	\heapblock{6}{4}{n-2}{purple}
+	\heapblock{8}{4}{n}{purple}
+	\heapblock{1}{2}{1}{purple}
+	\heapblock{3}{2}{3}{purple}
+	\node[] at (5,2){$\cdots$};
+	\heapblock{7}{2}{n-1}{purple}
+	\heapblock{0}{0}{0}{purple}
+	\heapblock{2}{0}{2}{purple}
+	\node[] at (4,0){$\cdots$};
+	\heapblock{6}{0}{n-2}{purple}
+	\heapblock{8}{0}{n}{purple}
+	\node[] at (5,-2){$\vdots$};
+	\heapblock{1}{-4}{1}{purple}
+	\heapblock{3}{-4}{3}{purple}
+	\node[] at (5,-4){$\cdots$};
+	\heapblock{7}{-4}{n-1}{purple}
+	\heapblock{0}{-6}{0}{purple}
+	\heapblock{2}{-6}{2}{purple}
+	\node[] at (4,-6){$\cdots$};
+	\heapblock{6}{-6}{n-2}{purple}
+	\heapblock{8}{-6}{n}{purple}
+\end{tikzpicture}	
+\caption{A stack of sandwich stacks in $W(\C_n)$.}\label{fig:stacksandstack}
+\end{figure}
+
+In~\cite{Ernst2010}, Ernst classified the sandwich stack as a non-cancellable element. Ernst also classified two other types of non-cancellable elements. The first does not have full support in $W(\C_n)$ and the second clearly has Property T. Thus from now on we will only consider stacks of sandwich stacks.
+%\begin{theorem}
+%Let $w \in \FC(B_n)$. Then $w$ is non-cancellable if and only if $w$ is either a product of commuting generators, $s_0s_1u$, and $s_1s_0u$ where $u$ is a product of commuting generators with $s_1, s_2,s_3 \in \	supp(w)$. \textcolor{red}{Dana this isn't related to the thesis but to satisfy my curiosity why can't $s_3$ be in $supp(w)$} \qed
+%\end{theorem}
+%
+%\begin{figure}[h!]
+%\begin{tabular}{m{7cm} m{7cm}}
+%\begin{subfigure}{0.5\textwidth} \centering
+%\begin{tikzpicture}[scale=0.4]
+%	\heapblock{0}{6}{0}{rred}
+%	\heapblock{1}{4}{1}{rred}
+%	\heapblock{3}{4}{}{purple}
+%	\heapblock{5}{4}{}{purple}
+%	
+%	\node[] at (7,4){$\cdots$};
+%	
+%	\heapblock{9}{4}{}{purple}
+%\end{tikzpicture}
+%%\caption{}	
+%\end{subfigure}&
+%
+%\begin{subfigure}{0.5\textwidth}\centering
+%	\begin{tikzpicture}[scale=0.4]
+%	\heapblock{1}{6}{1}{rred}
+%	\heapblock{0}{4}{0}{rred}
+%	\heapblock{2}{4}{}{purple}
+%	\heapblock{4}{4}{}{purple}
+%	
+%	\node[] at (6,4){$\cdots$};
+%	
+%	\heapblock{8}{4}{}{purple}
+%\end{tikzpicture}
+%%\caption{}
+%\end{subfigure}
+%\end{tabular}
+%\caption{Visualization of all non-cancellable elements in $W(B_n)$.}
+%\end{figure}
+%\end{theorem}
+

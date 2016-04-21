@@ -1,0 +1,438 @@
+\chapter{T-Avoiding Elements in Type $\C_n$}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Classification of T-Avoiding Elements in $W(\C_n)$}
+
+In this section we will classify the T-avoiding elements in Coxeter groups of type $\C_n$. Because, $W(A_n)$ and $W(B_n)$ are parabolic subgroups of $W(\C_n)$, this implies that if $W(\C_n)$ is to have any non-trivial T-avoiding elements they will have full support, because if they did not the problem is reduced to a cross product of $W(A_n)$ and $W(B_n)$ in some way. We will first show that there are no non-trivial T-avoiding elements that are not FC in $W(\C_n)$.
+
+\begin{theorem}\label{thm:TavoidC}
+There are no non-trivial T-avoiding elements in $W(\C_n)/\FC(\Gamma)$. 	
+\begin{proof}
+	Let $w$ be a reduced expression in $W(\C_n)$ such that $w$ has full support and $w$ does not have Property T. Consider all possible heaps for $w$ and choose a heap a bottom most braid. That is, choose a heap where the braid is as low as possible in the heap, which means the generators below the braid are FC.
+	
+	Case 1: Suppose the braid does not contain $0,1$ or$n-1,n$. Subcase a: Suppose $w$ has the fixed reduced product $w=u\textcolor{teal}{s_ks_{k-1}s_k}s_{k-1}s_{k-2}v$ or $w=u\textcolor{teal}{s_ks_{k-1}s_k}s_{k+1}s_{k-1}s_{k-2}v$ where $v$ is fully commutative, and the braid is highlighted in \textcolor{teal}{teal}. Applying the braid move we obtain the element $w=us_{k-1}s_k\textcolor{teal}{s_{k-1}s_{k-2}s_{k-1}}v$ or $w=us_{k-1}s_k\textcolor{teal}{s_{k-1}s_{k-2}s_{k-1}}s_{k+1}v$. Notice that the braid is now located next to $v$ having moved closer to the bottom in the heap. This is a contradiction to choosing a heap with the lowest braid. Therefore $w$ does not have the fixed reduced product $w=u\textcolor{teal}{s_ks_{k-1}s_k}s_{k-1}s_{k-2}v$ or $w=u\textcolor{teal}{s_ks_{k-1}s_k}s_{k+1}s_{k-1}s_{k-2}v$. Visually we see this in Figure~\ref{fig:Case1a}. Notice how there are two braids located in Figure~\ref{fig:case:a2}, the braid that starts in \textcolor{purple}{purple} and ends with \textcolor{teal}{teal} and the braid that is fully highlighted in \textcolor{teal}{teal}. 
+		
+	\begin{figure}[h!]
+	\begin{tabular}{m{7cm} m{7cm}}
+	\begin{subfigure}{0.5\textwidth} \centering
+	\begin{tikzpicture}[scale=0.5]
+		\heapblock{3}{-2}{}{white}
+		\heapblock{4}{6}{k}{teal}
+		\heapblock{3}{4}{k-1}{teal}
+		\heapblock{4}{2}{k}{teal}
+		\heapblock{2}{2}{k-2}{purple}
+		\dheapblock{5}{0}{k+1}{black}
+		\heapblock{3}{0}{k-1}{purple}
+	\end{tikzpicture}
+	\caption{}\label{fig:case:a1}
+	\end{subfigure}&
+
+	\begin{subfigure}{0.5\textwidth} \centering
+	\begin{tikzpicture}[scale=0.5]
+		\heapblock{3}{8}{k-1}{purple}
+		\heapblock{4}{6}{k}{purple}
+		\heapblock{3}{4}{k-1}{teal}
+		\heapblock{2}{2}{k-2}{teal}
+		\dheapblock{5}{0}{k+1}{black}
+		\heapblock{3}{0}{k-1}{teal}
+	\end{tikzpicture}
+	\caption{}\label{fig:case:a2}
+	\end{subfigure}	
+	\end{tabular}
+	\caption{Visual representation of the heap configuration discussed in Case 1a.}\label{fig:Case1a}
+	\end{figure}
+	
+	Subcase b: Suppose $w$ has the fixed reduced product $w=u\textcolor{teal}{s_ks_{k-1}s_k}s_{k+1}v$ where $v$ is FC and does not contain $s_{k-2}$ and $s_{k-1}$ in the left descent set. Again we have highlighted the braid in \textcolor{teal}{teal}. Applying the braid move we obtain an new fixed product $w=u\textcolor{teal}{s_{k-1}s_ks_{k-1}}s_{k+1}v$. Notice that the braid is now able to be written next to $v$ whereas it previously was not. This again contradicts choosing a heap with the braid in the lowest location. Visually we see this in Figure~\ref{fig:Case1b}. Notice how in Figure~\ref{fig:caseb2} the braid is located next to the block for $s_{k+1}$ whereas in Figure~\ref{fig:caseb1} the braid is below the block for $s_{k+1}$. 
+	
+	\begin{figure}[h!]
+	\begin{tabular}{m{7cm} m{7cm}}
+	\begin{subfigure}{0.5\textwidth} \centering
+	\begin{tikzpicture}[scale=0.5]
+		\heapblock{4}{4}{k}{teal}
+		\heapblock{3}{2}{k-1}{teal}
+		\dheapblock{2}{0}{}{black}
+		\heapblock{4}{0}{k}{teal}
+		\dheapblock{3}{-2}{}{black}
+		\heapblock{5}{-2}{k+1}{purple}
+	\end{tikzpicture}
+	\caption{}\label{fig:caseb1}
+	\end{subfigure} &
+
+	\begin{subfigure}{0.5\textwidth} \centering
+	\begin{tikzpicture}[scale=0.5]
+		\heapblock{3}{6}{}{white}
+		\heapblock{3}{4}{k-1}{teal}
+		\heapblock{4}{2}{k}{teal}
+		\dheapblock{2}{2}{}{black}
+		\heapblock{3}{0}{k-1}{teal}
+		\heapblock{5}{0}{k+1}{purple}
+	\end{tikzpicture}
+	\caption{}\label{fig:caseb2}
+	\end{subfigure}
+	\end{tabular}
+	\caption{Visual representation of the heap configuration discussed in Case 1b.}\label{fig:Case1b}
+	\end{figure}
+
+	Case 2: Suppose the braid contains $2$ or $n-2$. Without loss of generality we will take the braid to contain $2$ the other argument is symmetric to the one presented here. Notice that if the braid is of the form $s_2s_3s_2$ we are in the case above as a result we assume that the braid we refer to in the following subcases do not involve $s_2s_3s_2$ to start. Subcase a: Suppose $w$ has the fixed reduced product $w=u\textcolor{teal}{s_2s_1s_2}s_0s_1s_0v$, where $v$ is FC and does not contain $s_2$ in the left descent set. Again we highlight the braid for emphasis in \textcolor{teal}{teal}. Applying the braid move we obtain the reduced product $w=us_1s_2\textcolor{orange}{s_1s_0s_1s_0}v$. Notice that the braid is now able to touch $v$ as it wasn't before. This contradicts our original choice of heap and as a result we can not choose the reduced product $w=u\textcolor{teal}{s_2s_1s_2}s_0s_1s_0v$. Visually this is seen Figure~\ref{fig:Case2a}. Notice how there are two braids located in Figure~\ref{fig:case2b2}. The braid highlighted in orange did not appear in our original heap seen in Figure~\ref{fig:case2b1} and is lower in the heap than the original.
+		\begin{figure}[h!]
+	\begin{tabular}{m{7cm} m{7cm}}
+	\begin{subfigure}{0.5\textwidth} \centering
+	\begin{tikzpicture}[scale=0.5]
+		\heapblock{0}{-2}{}{white}
+		\heapblock{2}{8}{2}{teal}
+		\heapblock{1}{6}{1}{teal}
+		\heapblock{2}{4}{2}{teal}
+		\heapblock{0}{4}{0}{purple}
+		\heapblock{1}{2}{1}{purple}
+		\heapblock{0}{0}{0}{purple}
+		\dheapblock{2}{0}{}{black}
+	\end{tikzpicture}
+	\caption{}\label{fig:case2b1}
+	\end{subfigure} &
+
+	\begin{subfigure}{0.5\textwidth} \centering
+	\begin{tikzpicture}[scale=0.5]
+		\heapblock{1}{8}{1}{purple}
+		\heapblock{2}{6}{2}{purple}
+		\heapblock{1}{4}{1}{orange}
+		\heapblock{0}{2}{0}{orange}
+		\heapblock{1}{0}{1}{orange}
+		\heapblock{0}{-2}{0}{orange}
+		\dheapblock{2}{-2}{}{black}
+	\end{tikzpicture}
+	\caption{}\label{fig:case2b2}
+	\end{subfigure}
+	\end{tabular}
+	\caption{Visual representation of the heap configuration discussed in Case 2a.}\label{fig:Case2a}
+	\end{figure}
+	
+	Subcase b: Suppose $w$ has the fixed reduced product $w=u\textcolor{teal}{s_2s_1s_2}s_0s_1s_3s_2v$ where $v$ is FC. Again we have highlighted the braid in \textcolor{teal}{teal}. Applying the braid move we end up with the reduced product $w=u\textcolor{teal}{s_1s_2s_1}s_0s_1s_3s_2v$. Notice this time the braid does not force a higher braid. Visually this appears in Figure~\ref{fig:Case2b}. In Figures~\ref{fig:caseb2a} and~\ref{fig:caseb2b} we see that the braid actually moves higher in the heap.
+	
+	\begin{figure}[h!]
+	\begin{tabular}{m{7cm} m{7cm}}
+	\begin{subfigure}{0.5\textwidth} \centering
+	\begin{tikzpicture}[scale=0.5]
+		\heapblock{0}{12}{}{white}
+		\heapblock{2}{10}{2}{teal}
+		\heapblock{1}{8}{1}{teal}
+		\heapblock{2}{6}{2}{teal}
+		\heapblock{0}{6}{0}{purple}
+		\heapblock{1}{4}{1}{purple}
+		\heapblock{3}{4}{3}{purple}
+	\end{tikzpicture}
+	\caption{}\label{fig:caseb2a}
+	\end{subfigure} &
+
+	\begin{subfigure}{0.5\textwidth} \centering
+	\begin{tikzpicture}[scale=0.5]
+		\heapblock{1}{10}{1}{teal}
+		\heapblock{2}{8}{2}{teal}
+		\heapblock{1}{6}{1}{teal}
+		\heapblock{0}{4}{0}{purple}
+		\heapblock{1}{2}{1}{purple}
+		\heapblock{3}{2}{3}{purple}
+	\end{tikzpicture}
+	\caption{}\label{fig:caseb2b}
+	\end{subfigure}
+	\end{tabular}
+	\caption{Visual representation of the heap configuration discussed in Case 2b.}\label{fig:Case2b}
+	\end{figure}
+
+	Since we assumed that $w$ does not have Property T, we know that $u$ in the fixed reduced product that we have for $w$ is non-trivial. That is, it contains some generators. Given our original reduced fixed expression for $w$ we add a new row to our heap if we were to add $s_0$ to the new row we would have a braid appear higher in the heap so we will not add $s_0$. This forces us to add $s_2$ and we get the configuration seen here \begin{figure}[h!] \centering
+\begin{tikzpicture}[scale=0.5] 
+	\heapblock{2}{10}{2}{teal}
+	\heapblock{1}{8}{1}{teal}
+	\heapblock{2}{6}{2}{teal}
+	\heapblock{0}{6}{0}{purple}
+	\heapblock{1}{4}{1}{purple}
+	\heapblock{3}{4}{3}{purple}
+	\heapblock{2}{2}{2}{rred}
+\end{tikzpicture}\label{fig:heap2}
+\end{figure}\\
+Again this can not be the top row in our heap so we must add another level in our heap. Notice that adding $s_1$ would create a braid in our heap so we will add $s_3$ however in doing so we will also need to add $s_4$. The resulting heap is seen here \begin{figure}[h!] \centering
+\begin{tikzpicture}[scale=0.5] 
+	\heapblock{2}{10}{2}{teal}
+	\heapblock{1}{8}{1}{teal}
+	\heapblock{2}{6}{2}{teal}
+	\heapblock{0}{6}{0}{purple}
+	\heapblock{1}{4}{1}{purple}
+	\heapblock{3}{4}{3}{purple}
+	\heapblock{2}{2}{2}{rred}
+	\heapblock{3}{0}{3}{rred}
+	\heapblock{4}{2}{4}{rred}
+\end{tikzpicture}\label{fig:heap3}
+\end{figure}\\
+
+We once again have the same issue arise that this can not be the top level of our configuration as $w$ would clearly have Property T on the top. Iterating this process we create the heap seen here
+\begin{figure}[h!] \centering
+\begin{tikzpicture}[scale=0.5] 
+	\heapblock{2}{10}{2}{teal}
+	\heapblock{1}{8}{1}{teal}
+	\heapblock{2}{6}{2}{teal}
+	\heapblock{0}{6}{0}{purple}
+	\heapblock{1}{4}{1}{purple}
+	\heapblock{3}{4}{3}{purple}
+	\heapblock{2}{2}{2}{rred}
+	\heapblock{3}{0}{3}{rred}
+	\heapblock{4}{2}{4}{rred}
+	\heapblock{5}{0}{5}{rred}
+	\heapblock{4}{-2}{4}{rred}
+	
+	\node[] at (7,-2){$\ddots$};
+	\node[] at (7,-4){$\ddots$};
+	
+	\heapblock{9}{-3}{n-3}{rred}
+	\heapblock{11}{-3}{n-1}{rred}
+	\heapblock{10}{-5}{n-2}{rred}
+	\heapblock{12}{-5}{n}{rred}
+	
+\end{tikzpicture}\label{fig:heap4}
+\end{figure}
+
+Notice that again if this were the bottom row of the heap we would have Property T. Thus our construction can not be done. With this in mind we add $s_{n-1}$ to the heap which will still have Property T. As a result we play this game again and create the heap seen here.\begin{figure}[h!] \centering
+\begin{tikzpicture}[scale=0.5] 
+	\heapblock{2}{10}{2}{teal}
+	\heapblock{1}{8}{1}{teal}
+	\heapblock{2}{6}{2}{teal}
+	\heapblock{0}{6}{0}{purple}
+	\heapblock{1}{4}{1}{purple}
+	\heapblock{3}{4}{3}{purple}
+	\heapblock{2}{2}{2}{rred}
+	\heapblock{3}{0}{3}{rred}
+	\heapblock{4}{2}{4}{rred}
+	\heapblock{5}{0}{5}{rred}
+	\heapblock{4}{-2}{4}{rred}
+	
+	\node[] at (7,-2){$\ddots$};
+	\node[] at (7,-4){$\ddots$};
+	
+	\heapblock{9}{-3}{n-3}{rred}
+	\heapblock{11}{-3}{n-1}{rred}
+	\heapblock{10}{-5}{n-2}{rred}
+	\heapblock{12}{-5}{n}{rred}
+	\heapblock{11}{-7}{n-1}{rred}
+	\heapblock{9}{-7}{n-3}{rred}
+	\heapblock{10}{-9}{n-2}{rred}
+	
+	\node[] at (7, -9){$\iddots$};
+	\node[] at (7,-11){$\iddots$};
+	
+	\heapblock{3}{-10}{3}{rred}
+	\heapblock{1}{-10}{1}{rred}
+	\heapblock{2}{-12}{2}{rred}
+	\heapblock{0}{-12}{0}{rred}
+	\heapblock{4}{-12}{4}{rred}
+\end{tikzpicture}\label{fig:heap5}
+\end{figure}
+	
+Recall that $v$ is FC by assumption, where $v$ is the \textcolor{rred}{red} in the above heap. In~\cite[Lemma 3.3]{Ernst2012c}	 Ernst classified that an FC element of this sort has the blank space in the middle filled in. This forces our heap to look like the one seen in Figure~\ref{fig:heap6} where all of the blocks in the middle of the red v are filled in. As a result of this we now have $s_0$ in our heap. After applying the braid move to the \textcolor{teal}{teal} braid in Figure~\ref{fig:heap6}. This leads to the heap seen in Figure~\ref{fig:heap7} where a new \textcolor{orange}{orange} braid appeared. This implies that for the fixed reduced product $w=u\textcolor{teal}{s_2s_1s_2}s_0s_1s_3s_2v$ there is a heap with a braid that is lower in the heap. A contradiction to the way in which we chose $w$. Thus $w$ can not have the reduced expression $w=u\textcolor{teal}{s_2s_1s_2}s_0s_1s_3s_2v$.
+
+\begin{figure}[h!]
+\begin{tabular}{m{9cm} m{9cm}}
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=0.45] 
+	\heapblock{2}{12}{}{white}
+	\heapblock{2}{10}{2}{teal}
+	\heapblock{1}{8}{1}{teal}
+	\heapblock{2}{6}{2}{teal}
+	\heapblock{0}{6}{0}{purple}
+	\heapblock{1}{4}{1}{purple}
+	\heapblock{3}{4}{3}{purple}
+	\heapblock{2}{2}{2}{rred}
+	\heapblock{3}{0}{3}{rred}
+	\heapblock{4}{2}{4}{rred}
+	\heapblock{5}{0}{5}{rred}
+	\heapblock{4}{-2}{4}{rred}
+	
+	\node[] at (7,-2){$\ddots$};
+	\node[] at (7,-4){$\ddots$};
+	
+	\heapblock{9}{-3}{n-3}{rred}
+	\heapblock{11}{-3}{n-1}{rred}
+	\heapblock{10}{-5}{n-2}{rred}
+	\heapblock{12}{-5}{n}{rred}
+	\heapblock{11}{-7}{n-1}{rred}
+	\heapblock{9}{-7}{n-3}{rred}
+	%\heapblock{10}{-7}{n-2}{rred}
+	
+	\node[] at (7, -7){$\iddots$};
+	\node[] at (7,-9){$\iddots$};
+	\node[] at (0,-4){$\vdots$};
+	
+	\heapblock{3}{-8}{3}{rred}
+	\heapblock{1}{-8}{1}{rred}
+	\heapblock{2}{-10}{2}{rred}
+	\heapblock{0}{-10}{0}{rred}
+	\heapblock{4}{-10}{4}{rred}
+\end{tikzpicture}
+\caption{}\label{fig:heap6}
+\end{subfigure}&
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=0.45] 
+	\heapblock{1}{12}{1}{teal}
+	\heapblock{2}{10}{2}{teal}
+	\heapblock{1}{8}{1}{orange}
+	\heapblock{0}{6}{0}{orange}
+	\heapblock{1}{4}{1}{orange}
+	\heapblock{3}{4}{3}{purple}
+	\heapblock{0}{2}{0}{orange}
+	\heapblock{2}{2}{2}{rred}
+	\heapblock{3}{0}{3}{rred}
+	\heapblock{4}{2}{4}{rred}
+	\heapblock{5}{0}{5}{rred}
+	\heapblock{4}{-2}{4}{rred}
+	
+	\node[] at (7,-2){$\ddots$};
+	\node[] at (7,-4){$\ddots$};
+	
+	\heapblock{9}{-3}{n-3}{rred}
+	\heapblock{11}{-3}{n-1}{rred}
+	\heapblock{10}{-5}{n-2}{rred}
+	\heapblock{12}{-5}{n}{rred}
+	\heapblock{11}{-7}{n-1}{rred}
+	\heapblock{9}{-7}{n-3}{rred}
+	%\heapblock{10}{-7}{n-2}{rred}
+	
+	\node[] at (7, -7){$\iddots$};
+	\node[] at (7,-9){$\iddots$};
+	\node[] at (0,-4){$\vdots$};
+	
+	\heapblock{3}{-8}{3}{rred}
+	\heapblock{1}{-8}{1}{rred}
+	\heapblock{2}{-10}{2}{rred}
+	\heapblock{0}{-10}{0}{rred}
+	\heapblock{4}{-10}{4}{rred}
+\end{tikzpicture}
+\caption{}\label{fig:heap7}	
+\end{subfigure}
+\end{tabular}
+\end{figure}
+
+
+	
+	Case 3: Suppose the braid contains $1$ or $n-1$. Without loss of generality we will assume the braid contains $1$ as the other argument is symmetric to the one presented here. Subcase a: Suppose $w$ has the reduced product $w=u\textcolor{orange}{s_0s_1s_0s_1}s_2v$ where $v$ is fully commutative and does not contain $s_0$ in the left descent set. Notice that the braid is highlighted in \textcolor{orange}{orange}. Applying the braid move leads to the reduced product $w=u\textcolor{orange}{s_1s_0s_1s_0}s_2v$. Notice that the braid is now able to be in the same level of the heap as $s_2$ whereas it previously was not. Visually this is seen in Figure~\ref{fig:Case3a}. Notice how the braid in Figure~\ref{fig:case3a2} is located next to the block for $s_2$ whereas in Figure~\ref{fig:case3a1} the braid is stuck above the block for $s_2$. This is a contradiction to picking the heap with the lowest braid. %Thus $w$ can not have the reduced product $w=u\textcolor{orange}{s_0s_1s_0s_1}s_2v$.
+	
+	\begin{figure}[h!]
+	\begin{tabular}{m{7cm} m{7cm}}
+	\begin{subfigure}{0.5\textwidth} \centering
+	\begin{tikzpicture}[scale=0.4]
+		\heapblock{0}{10}{0}{orange}
+		\heapblock{1}{8}{1}{orange}
+		\heapblock{0}{6}{0}{orange}
+		\heapblock{1}{4}{1}{orange}
+		\heapblock{2}{2}{2}{purple}
+		\dheapblock{0}{2}{}{black}
+	\end{tikzpicture}
+	\caption{}\label{fig:case3a1}
+	\end{subfigure} &
+
+	\begin{subfigure}{0.5\textwidth} \centering
+	\begin{tikzpicture}[scale=0.4]
+		\heapblock{0}{12}{}{white}
+		\heapblock{1}{10}{1}{orange}
+		\heapblock{0}{8}{0}{orange}
+		\heapblock{1}{6}{1}{orange}
+		\heapblock{0}{4}{0}{orange}
+		\heapblock{2}{4}{2}{purple}
+	\end{tikzpicture}
+	\caption{}\label{fig:case3a2}
+	\end{subfigure}
+	\end{tabular}
+	\caption{Visual representation of the heap configuration discussed in Case 3a.}\label{fig:Case3a}
+	\end{figure}
+	
+	Subcase b: Suppose $w$ has the reduced product $w=u\textcolor{teal}{s_1s_2s_1}s_0v$ where $v$ is fully commutative and does not contain $s_2$ in the left descent set. Notice that the braid is highlighted in \textcolor{teal}{teal}. Applying the braid move leads to the reduced product $w=u\textcolor{teal}{s_2s_1s_2}s_0v$. Notice that the braid is now able to be located in the same level of the heap as $s_0$ whereas it previously was not. Visually this is seen in Figure~\ref{fig:Case3b}. Notice how the braid in Figure~\ref{fig:case3b2} is located next to the block for $s_0$, but the braid in Figure~\ref{fig:case3b1} it is stuck above the block for $s_0$. This is a contradiction to the way in which we picked our heap. Thus $w$ can not have the reduced product $w=u\textcolor{teal}{s_1s_2s_1}s_0v$. 
+	
+	\begin{figure}[h!]
+	\begin{tabular}{m{7cm} m{7cm}}
+	\begin{subfigure}{0.5\textwidth} \centering
+	\begin{tikzpicture}[scale=0.40]
+		\heapblock{1}{8}{1}{teal}
+		\heapblock{2}{6}{2}{teal}
+		\heapblock{1}{4}{1}{teal}
+		\heapblock{0}{2}{0}{purple}
+		\dheapblock{2}{2}{}{black}
+	\end{tikzpicture}
+	\caption{}\label{fig:case3b1}
+	\end{subfigure} &
+
+	\begin{subfigure}{0.5\textwidth} \centering
+	\begin{tikzpicture}[scale=0.4]
+		\heapblock{0}{8}{}{white}
+		\heapblock{2}{6}{2}{teal}
+		\heapblock{1}{4}{1}{teal}
+		\heapblock{2}{2}{2}{teal}
+		\heapblock{0}{2}{0}{purple}
+	\end{tikzpicture}
+	\caption{}\label{fig:case3b2}
+	\end{subfigure}
+	\end{tabular}
+	\caption{Visual representation of the heap configuration discussed in Case 3b.}\label{fig:Case3b}
+	\end{figure}
+	
+	Case 4: Suppose the braid contains $0$ or $n$. Without loss of generality we will assume the braid contains $0$ as the other argument is symmetric to the one presented here. Suppose $w$ has the fixed reduced product $w=u\textcolor{orange}{s_1s_0s_1s_0}s_2s_1v$ where $v$ is an FC element. Notice that we have highlighted the braid in \textcolor{orange}{orange}.
+		\begin{figure}[h!]
+	\begin{tabular}{m{7cm} m{7cm}}
+	\begin{subfigure}{0.5\textwidth} \centering
+	\begin{tikzpicture}[scale=0.40]
+		\heapblock{0}{0}{}{white}
+		\heapblock{1}{10}{1}{orange}
+		\heapblock{0}{8}{0}{orange}
+		\heapblock{1}{6}{1}{orange}
+		\heapblock{0}{4}{0}{orange}
+		\heapblock{2}{4}{2}{purple}
+		\heapblock{1}{2}{1}{purple}
+	\end{tikzpicture}
+	\caption{}\label{fig:case4a}
+	\end{subfigure} &
+
+	\begin{subfigure}{0.5\textwidth} \centering
+	\begin{tikzpicture}[scale=0.40]
+		\heapblock{0}{10}{0}{orange}
+		\heapblock{1}{8}{1}{orange}
+		\heapblock{0}{6}{0}{orange}
+		\heapblock{1}{4}{1}{teal}
+		\heapblock{2}{2}{2}{teal}
+		\heapblock{1}{0}{1}{teal}
+	\end{tikzpicture}
+	\caption{}\label{fig:case4b}
+	\end{subfigure}
+	\end{tabular}
+	\caption{Visual representation of the heap configuration discussed in Case 4.}\label{fig:Case4}
+	\end{figure} Applying the braid move we obtain the fixed reduced product $w=us_0s_1s_0\textcolor{teal}{s_1s_2s_1}v$. In applying the braid the resulting reduced product now has the braid highlighted in \textcolor{teal}{teal}. Notice that this braid is located next to $v$ which is located lower in the heap than our original $w$. Visually we see this in Figure~\ref{fig:Case4}. We see in Figure~\ref{fig:case4b} the braid in \textcolor{teal}{teal} is located below the braid that stars in \textcolor{orange}{orange} and ends with the \textcolor{teal}{$s_1$}. It is clear that this braid is lower than the \textcolor{orange}{orange} braid seen in Figure~\ref{fig:case4a}. Thus $w$ can not have the reduced product $w=u\textcolor{orange}{s_1s_0s_1s_0}s_2s_1v$.
+	
+
+	
+	From this we see there is no possible way to find a reduced expression in $W(\C_n)/\FC(\Gamma)$ with full support and does not have Property T. Thus there are no non-trivial T-avoiding elements in $W(\C_n)/\FC(\Gamma)$.
+	\end{proof}
+\end{theorem}
+ 
+We have now shown that there are no non-trivial T-avoiding elements in $W(\C_n)/\FC(\Gamma)$. We now proceed in a parity argument. We first will classify non-trivial T-avoiding elements in $W(\C_n)$ for $n$ odd. First recall that $W(\C_n)$ for $n$ odd is a Star reducible Coxeter group. This implies that there are no non-trivial T-avoiding FC elements in $W(\C_n)$ for $n$ odd. This leads to the following Theorem.
+
+\begin{theorem}
+	There are no non-trivial T-avoiding elements in the Coxeter group of type $\C_n$ for $n$ odd.
+	\begin{proof}
+		Consider the Coxeter group of type $\C_n$. By Theorem~\ref{thm:TavoidC} we know that $W(\C_n)$ contains no non-trivial T-avoiding elements that are not FC. Also since $W(\C_n)$ is a star reducible Coxeter group, we know that $W(\C_n)$ contains no non-trivial T-avoiding elements that are FC. Thus $W(\C_n)$ has no non-trivial T-avoiding elements.
+	\end{proof}
+\end{theorem}
+
+We next will classify the non-trivial T-avoiding elements in the Coxeter group of type $\C_n$ for $n$ even. Recall that $W(\C_n)$ for $n$ even is not a Star reducible Coxeter group. In Theorem~\ref{thm:TavoidC} we showed that $W(\C_n)$ does not have non-trivial T-avoiding elements that are not FC. This leaves us with only the FC elements to check.
+
+\begin{theorem}
+	The only non-trivial T-avoiding elements in $W(\C_n)$ for $n$ odd are stacks of sandwich stacks.
+	\begin{proof}
+		Let $w \in W(\C_n)$. By Theorem~\ref{thm:TavoidC}, we know that $w$ is an FC element. We can restrict our search down to non-cancellable elements as they are not star reducible. In Section~\ref{sec:noncancel} we classified the only non-cancellable element with full support is a stack of sandwich stacks. Thus the only non-trivial T-avoiding elements in $W(\C_n)$ for $n$ odd are stacks of sandwich stacks.
+	\end{proof}
+\end{theorem}
+
+
+%%%%%%%%%%%%%%%%%%%%
+\section{Future Work}
+As there were open problems interspersed all through out we restate them here and add a few more open problems. We have shown the classification of non-trivial T-avoiding elements in Coxeter groups of Type $\widetilde{A}_n, A_n, D_n, F_4, F_5$, and $I_2(m)$. The classification of non-trivial T-avoiding elements of $W(F_n)$ for $n \geq 6$.
+
+We also mentioned several other groups in Figures~\ref{fig:fincoxgraphs} and~\ref{fig:infincoxgraphs}. The classification of non-trivial T-avoiding elements in the Coxeter groups of type $E_n$. We do know that if these groups were to have non-trivial T-avoiding elements they would have to have full support as $W(B_n)$ is a parabolic subgroup of $W(E_n)$. The classification of non-trivial T-avoiding elements in the Coxeter groups of type $H_n$. Again we know that if this group is to have non-trivial T-avoiding elements they will have full support as $W(A_n)$ is a parabolic subgroup of $W(H_n)$. 
+
+A majority of the irreducible affine Coxeter systems are also open for classification. Specifically, Coxeter systems of type $\widetilde{B}_n, \widetilde{D}_n, \widetilde{E}_6, \widetilde{E}_7, \widetilde{E}_8$, and $\widetilde{G}_4$ do not have a classification. Similar to those above we know already that some of them have non-trivial T-avoiding elements ($W(\widetilde{D}_n)$) as parabolic subgroups of them have non-trivial T-avoiding elements but it remains an open question if there are anymore. Future work could include classifying the non-trivial T-avoiding elements of the Coxeter systems mentioned above.

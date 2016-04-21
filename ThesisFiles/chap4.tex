@@ -1,4 +1,4 @@
-\chapter{Star Operations and Property T}
+\chapter{Star Reductions and Property T}
 
 
 \section{Star Operations}\label{sec:star}
@@ -8,10 +8,10 @@ The notion of a star operation was originally introduced by Kazhdan and Lusztig 
 Let $(W,S)$ be a Coxeter system of type $\Gamma$ and let $I=\{s,t\}\subseteq S$ be a pair of generators with $m(s,t) \geq 3$. Let $w \in W(\Gamma)$ such that $s \in \mathcal{L}(w)$. We define $w$ to be \emph{left star reducible by $s$ with respect to $t$} if there exists $t \in \mathcal{L}(sw)$. We analogously define $w$ to be \emph{right star reducible by $s$ with respect to $t$}. Observe that $w$ is left (respectively, right) star reducible if and only if $w=stu$ (respectively, $w=uts$), where the product on the right hand side of the equation is reduced and $m(s,t) \geq 3$. We say that $w$ is \emph{star reducible} if it is either left or right star reducible.
 
 \begin{example}\label{ex:starred}
-Let $\w=s_0s_1s_0s_2$ be a reduced expression for $w \in W(B_4)$. We see that $w$ is left star reducible by $s_0$ with respect to $s_1$ to $s_1s_0s_2$ since $m(s_0,s_1)=4$ and $s_0 \in \mathcal{L}(w)$ while $s_1 \in \mathcal{L}(s_0w)$. Notice that $w$ if FC. We see that $ws_2=s_0s_1s_0$ and $ws_0=s_0s_1s_2$. Note that in both instances $s_1 \notin \RD(ws_2)$ and $s_1 \notin \LD(ws_0)$. Because of this $w$ is not right star reducible. 
+Let $\w=s_0s_1s_0s_2$ be a reduced expression for $w \in W(B_4)$. We see that $w$ is left star reducible by $s_0$ with respect to $s_1$ to $s_1s_0s_2$ since $m(s_0,s_1)=4$ and $s_0 \in \mathcal{L}(w)$ while $s_1 \in \mathcal{L}(s_0w)$. Notice that $w$ is FC and $\RD(w)=\{s_2,s_0\}$. We see that $ws_2=s_0s_1s_0$ and $ws_0=s_0s_1s_2$. Note that in both instances $s_1 \notin \RD(ws_2)=\{s_0\}$ and $s_1 \notin \LD(ws_0)=\{s_2\}$. Because of this $w$ is not right star reducible. 
 \end{example}
 
-It may be helpful to visualize star reductions in terms of heaps. Let $(W,S)$ be a Coxeter system of type $\Gamma$ and let $I=\{s,t\}\subseteq S$ be a pair of generators with $m(s,t) \geq 3$. Suppose $w$ is left star reducible by $s$ with respect to $t$. Then there exists a heap for $w$ where the block for $s$ is fully exposed to the top. Removing the block for $s$ off of the top allows for $t$ to now be fully exposed to the top. Similarly if $w$ is right star reducible by $s$ with respect to $t$, then there exists a heap for $w$ where the block for $s$ is fully exposed to the bottom. Removing the block for $s$ off of the bottom allows for $t$ to now be fully exposed to the bottom. Conversely, if a heap for $w \in W(\Gamma)$ has this property, then $w$ is star reducible. In Figure~\ref{fig:heapwithT} we see the heap representation of an element that is left star reducible, where the dotted brick represents that there can not be an element there. Notice that flipping the heap upside in Figure~\ref{fig:heapwithT} will result in a heap being right star reducible. It is important to note that if the group element we are evaluating for Property T is not FC, then we must consider all heap representations for the element before concluding that an element does not have Property T. 
+It may be helpful to visualize star reductions in terms of heaps. Let $(W,S)$ be a Coxeter system of type $\Gamma$ and let $I=\{s,t\}\subseteq S$ be a pair of generators with $m(s,t) \geq 3$. Suppose $w$ is left star reducible by $s$ with respect to $t$. Then there exists a heap for $w$ where the block for $s$ is fully exposed to the top such that removing the block for $s$ off of the top allows for $t$ to now be fully exposed to the top of the heap. Similarly if $w$ is right star reducible by $s$ with respect to $t$, then there exists a heap for $w$ where the block for $s$ is fully exposed to the bottom of the heap. Removing the block for $s$ off of the bottom allows for $t$ to now be fully exposed to the bottom. Conversely, if a heap for $w \in W(\Gamma)$ has this property, then $w$ is star reducible. In Figure~\ref{fig:heapwithT} we see the two possible heap representation of an element that is left star reducible by $s$ with respect to $t$, where the dotted square represents that there can not be an element there. That is, in order for $w$ to be star reducible the block $s+2$ in Figure~\ref{fig:starleft} (respectively, $s-2$ in Figure~\ref{fig:starright}) do not appear fully exposed to the top of the heap.  Notice that flipping the heap upsidedown in Figure~\ref{fig:heapwithT} will result in a heap that is right star reducible. It is important to note that if the group element we are evaluating for star reducibility is not FC, then we must consider all heap representations for the element before concluding that an element does not have star reducibility. 
 
 \begin{figure*}[h!]
 \begin{tabular}{m{7cm} m{7cm}}
@@ -21,7 +21,7 @@ It may be helpful to visualize star reductions in terms of heaps. Let $(W,S)$ be
 	\heapblock{0}{2}{s}{purple}
 	\heapblock{1}{0}{t}{purple}
 \end{tikzpicture}
-\caption{}
+\caption{}\label{fig:starleft}
 \end{subfigure} &
 
 \begin{subfigure}{0.5\textwidth} \centering
@@ -30,16 +30,16 @@ It may be helpful to visualize star reductions in terms of heaps. Let $(W,S)$ be
 	\heapblock{1}{2}{s}{purple}
 	\heapblock{2}{0}{t}{purple}
 \end{tikzpicture}
-\caption{}	
+\caption{}\label{fig:starright}	
 \end{subfigure}
 \end{tabular}
-\caption{A visual representation of an element with Property T at the top.}\label{fig:heapwithT}
+\caption{A visual representation of an element that is star reducibile at the top.}\label{fig:heapwithT}
 \end{figure*} 
 
 The following example utilizes heaps to show that an element is star reducible.
 
 \begin{example}\label{ex:starredheap}
-Let $\w=s_0s_1s_0s_2$ be a reduced expression for $w \in W(B_4)$. Note that $w$ is FC. By Example~\ref{ex:starred} we know that $w$ is left star reducible by $s_0$ with respect to $s_1$. In Figure~\ref{fig:heapy}, we see the heap for $w$. Notice that the block for $s_0$ is fully exposed to the top of the heap. Removing the block for $s_0$ gives the heap in Figure~\ref{fig:multiplied}. Notice that the block for $s_1$ is now fully exposed to the top of the heap. However, notice that the block for $s_0$ and $s_2$ are fully exposed to the bottom. In removing either of these we are unable to fully expose $s_1$ to the bottom. Thus we can see that $w$ is not right star reducible.  
+Let $\w=s_0s_1s_0s_2$ be a reduced expression for $w \in W(B_4)$. Note that $w$ is FC. By Example~\ref{ex:starred} we know that $w$ is left star reducible by $s_0$ with respect to $s_1$. In Figure~\ref{fig:heapy}, we see the heap for $w$. Notice that the block for $s_0$ is fully exposed to the top of the heap. Removing the block for $s_0$ gives the heap in Figure~\ref{fig:multiplied}. Notice that the block for $s_1$ is now fully exposed to the top of the heap. However, notice that the blocks for $s_0$ and $s_2$ are fully exposed to the bottom. In removing either of these we are unable to fully expose $s_1$ to the bottom. Thus we can see that $w$ is not right star reducible.  
 \end{example}
 
 
@@ -74,7 +74,7 @@ Let $\w=s_0s_1s_0s_2$ be a reduced expression for $w \in W(B_4)$. Note that $w$ 
 Notice that if $w$ is not FC then we are not be able to say that $w$ is not star reducible as there could be a different heap for $w$ in which we are able to fully expose an element that was previously blocked.
 
 \begin{example}
-Let $\w_1=s_3s_1s_2s_1s_0s_1s_3s_0s_2s_4$ be a reduced expression for $w \in W(\C_3)$. The heap for $\w$ is given in Figure~\ref{fig:starrednfc1} where we have highlighted the braid in \textcolor{teal}{teal}. Notice that this heap appears to not be star reducible as if we were to remove the brick for $s_1$ or $s_3$ we would still not fully expose $s_2$ to the top of the heap. The same goes for fully exposing bricks in the bottom of the heap. However, when we perform the braid operation resulting in the heap seen in Figure~\ref{fig:starrednfc2} it is now obvious that the element is star reducible. Thus when considering a non-FC element for star reducibility via the heap, it is very important to consider all heaps for that element.
+Let $\w_1=s_3s_1s_2s_1s_0s_1s_3s_0s_2s_4$ be a reduced expression for $w \in W(\C_3)$. The heap for $\w$ is given in Figure~\ref{fig:starrednfc1}, where we have highlighted a braid in \textcolor{teal}{teal}. Notice that this heap appears to not be star reducible as if we were to remove the block for $s_1$ or $s_3$ we would still not fully expose $s_2$ to the top of the heap. The same goes for fully exposing blocks in the bottom of the heap. However, when we perform the braid move resulting in the heap seen in Figure~\ref{fig:starrednfc2} it is now obvious that the element is star reducible. Thus when considering a non-FC element for star reducibility via the heap, it is very important to consider all heaps for that element.
 
 \begin{figure}[h!]
 \begin{tabular}{m{7cm} m{7cm}}
@@ -115,21 +115,21 @@ Let $\w_1=s_3s_1s_2s_1s_0s_1s_3s_0s_2s_4$ be a reduced expression for $w \in W(\
 \end{example}
 
 
-Using the notion of star reduction we are now able to introduce the concept of a star reducible Coxeter group. We say that a Coxeter group $W(\Gamma)$, or its Coxeter graph $\Gamma$, is \emph{star reducible} if every element of $\FC(\Gamma)$ is star reducible to a product of commuting generators. That is, $W(\Gamma)$ is star reducible if when we apply star reductions repeatedly to $w \in \FC(\Gamma)$, eventually we obtain a product of commuting generators. Notice that in the previous definition we are restricting the elements that must be star reducible to a product of commuting generators to just the FC elements in $W(\Gamma)$. Visually a star reducible Coxeter group can be thought of in the following way, given a heap in $\FC(\Gamma)$, we are able to systematically remove a fully exposed block from the top or bottom of the heap and have a block that was previously not fully exposed become fully exposed until we are left with a heap that is one row in height. 
+Using the notion of star reduction we are now able to introduce the concept of a star reducible Coxeter group. Let $(W,S)$ be a Coxeter group of type $\Gamma$ we say that $W(\Gamma)$ is \emph{star reducible} if every element of $\FC(\Gamma)$ is star reducible to a product of commuting generators. That is, $W(\Gamma)$ is star reducible if when we apply star reductions on the left or right repeatedly to $w \in \FC(\Gamma)$, eventually we obtain a product of commuting generators. Notice that we are restricting to just the FC elements in $W(\Gamma)$. Visually a star reducible Coxeter group can be thought of in the following way. Given a heap in $\FC(\Gamma)$, we are able to systematically remove a fully exposed block from the top or bottom of the heap and have a block that was previously not fully exposed become fully exposed until we are left with a heap that can be drawn as a single row. 
 
 In~\cite{Green2006a}, Green classified all star reducible Coxeter groups.
 
 %we are able to pull the top or bottom most block off of the heap and have the heap decrease in height (the number of rows that it consists of) or have a new block come into the top or bottom most rows. We can perform this pulling of blocks off the top and bottom of the heap systematically until the heap consists of one row, corresponding to an element that is a product of commuting generators. For example in Figure~\ref{fig:heapy}, we were able to apply a star reduction to remove the topmost block corresponding to the generator $s_0$ and obtain the new heap seen in Figure~\ref{fig:multiplied}. We see that the heap in Figure~\ref{fig:multiplied} has one less row than Figure~\ref{fig:heapy}. We could do the same with the block on bottom of Figure~\ref{fig:multiplied} corresponding to $s_3$ and have the heap again decrease in the number of rows it has. Performing one more star reduction in pulling the brick off the top of Figure~\ref{fig:multiplied} which corresponds to $s_1$ in the reduced expression would leave us with a heap that is only 1 row which is a product of commuting generators. Thus Figure~\ref{fig:heapy} can be star reduced to a product of commuting generators.  In~\cite{Green2006a}, Green classified all star reducible Coxeter groups. 
 %The Coxeter groups $W(A_n)$, $W(B_n)$ and $W(\widetilde{C}_n)$ are star reducible. However, $W(A_n)$ and $W(B_n)$ don't have non-trivial T-avoiding elements, while $W(\widetilde{C}_n)$ in one parity does have non-trivial T-avoiding elements.
 \begin{theorem}[Green,~\cite{Green2006a}]
-	Let $(W,S)$ be a Coxeter system of type $\Gamma$. Then $(W,S)$ is star reducible if and only if each component of $\Gamma$ is either a complete graph with labels $m(s,t)\geq 3$, or is one of the following types: type $A_n$ $(n \geq 1)$, type $B_n$ $(n \geq 2)$, type $D_n$ $(n \geq 4)$, type $F_n$ $(n \geq 4)$, type $H_n$ $(n \geq 2)$, type $I_2(m)$ $(m \geq 3)$, type $\widetilde{A}_{n-1}$ $(n \geq 3 \textrm{ and } n \textrm{ odd })$, type $\widetilde{C}_{n-1}$ $(n\geq 4 \textrm{ and } n \textrm{ even })$, type $\widetilde{E}_6$, or type $\widetilde{F}_5$. \qed
+	Let $(W,S)$ be a Coxeter system of type $\Gamma$. Then $(W,S)$ is star reducible if and only if each component of $\Gamma$ is either a complete graph with labels $m(s,t)\geq 3$, or is one of the following types: type $A_n$ $(n \geq 1)$, type $B_n$ $(n \geq 2)$, type $D_n$ $(n \geq 4)$, type $F_n$ $(n \geq 4)$, type $H_n$ $(n \geq 2)$, type $I_2(m)$ $(m \geq 3)$, type $\widetilde{A}_{n}$ $(n \geq 3 \textrm{ and } n \textrm{ even })$, type $\widetilde{C}_{n}$ $(n\geq 3 \textrm{ and } n \textrm{ odd })$, type $\widetilde{E}_6$, or type $\widetilde{F}_5$. \qed
 \end{theorem}    
 
 %%%%%%%%%%%%%%%%%
 
 \section{Property T}\label{Tavoid}
 
-As previously mentioned Green classified all star reducible Coxeter groups. In~\cite{Green2006a}, Green utilizes the following theorem to help classify the star reducible Coxeter groups. 
+In~\cite{Green2006a}, Green utilizes the following theorem to help classify the star reducible Coxeter groups. 
 \begin{theorem}[Green,~\cite{Green2006a}]\label{thm:starred}
 	Let $(W,S)$ be a star reducible Coxeter system of type $\Gamma$, and let $w \in W$. Then one of the following possibilities occurs for some Coxeter generators s,t, u with $m(s,t) \neq 2$, $m(t,v) \neq 2$, and $m(s,u)=2$:
 	\begin{enumerate}[leftmargin=2cm]
@@ -140,66 +140,61 @@ As previously mentioned Green classified all star reducible Coxeter groups. In~\
 	\end{enumerate}
 \end{theorem}
 
-In the following discussion we will give name to elements that exhibit the properties above. However, first notice that Items~\ref{it:proptend} and~\ref{it:proptbeg} refer to an element that is star reducible. While Item~\ref{it:tavoid} refers to an element that is not star reducible provided no reduced expression for the element exhibits Items~\ref{it:proptend} and~\ref{it:proptbeg}.
+Notice that Items~\ref{it:proptend} and~\ref{it:proptbeg} indicate an element that is star reducible. Also notice that an element $w$ that has the form of Item~\ref{it:triv} does not meet the conditions of Items~\ref{it:proptend} and~\ref{it:proptbeg}. In particular, $w$ is not star reducible. Lastly, notice that if an element $w$ is of the form of Item~\ref{it:tavoid} and not of the form of Items~\ref{it:proptend} and~\ref{it:proptbeg}, then $w$ is not star reducible. Notice Items~\ref{it:proptend},~\ref{it:proptbeg}, and~\ref{it:tavoid} are not mutually exclusive.
 
-We first begin by defining the notion of Property T which is motivated by Items~\ref{it:proptend} and~\ref{it:proptbeg} above. Let $(W,S)$ be a Coxeter system of type $\Gamma$ and let $w \in W$. We say that $w$ has \emph{Property T} if and only if there exists a reduced product for $w$ such that $w=stu$ or $w=uts$ where $m(s,t)\geq 3$. That is, $w$ has Property T if there exists a reduced expression for $w$ that begins or ends with a product of non-commuting generators.
+Motivated by Items~\ref{it:triv} and~\ref{it:tavoid} above, we define the notions of Property T and T-avoiding. Let $(W,S)$ be a Coxeter system of type $\Gamma$ and let $w \in W$. We say that $w$ has \emph{Property T} if and only if there exists a reduced product for $w$ such that $w=stu$ or $w=uts$ where $m(s,t)\geq 3$. That is, $w$ has Property T if there exists a reduced expression for $w$ that begins or ends with a product of non-commuting generators. An element $w \in W(\Gamma)$ is called \emph{T-avoiding} if $w$ does not have Property T. This implies that a T-avoiding element is not star reducible.
 
-Recall the definition of star reducible from Section~\ref{sec:star}. Notice that if an element in a Coxeter group is star reducible, then it has Property T. The difference be between the two definitions is that when we call an element star reducible we are referring to being able to dismantle the heap in a specified manner. Whereas, when we refer to an element having Property T, we are referring to the element having a pair of non-commuting generators in the top or bottom of the heap. Since elements that are star reducible also have Property T we already know how to visualize Property T in terms of heaps. Recall that an element is star reducible if we can remove a fully exposed block from the top or bottom of a heap and have a new block become fully exposed. 
+ Since elements that are star reducible also have Property T we already know how to visualize Property T in terms of heaps. It is clear that a product of commuting generators is T-avoiding, which we state as a theorem. Visually a product of commuting generators is a one row heap (as in Figure~\ref{fig:heapnoT}), it is clear a one row heap will not portray the characteristic of Property T as seen in Figure~\ref{fig:heapwithT}.
 
-An element $w \in W(\Gamma)$ is called \emph{T-avoiding} if $w$ does not have Property T. This implies that a T-avoiding element is not star reducible.
+
 
 \begin{theorem}\label{thm:trivTavoid}
 Let $(W,S)$ be a Coxeter system of type $\Gamma$. If $w \in W(\Gamma)$ such that $w$ is a product of commuting generators, then $w$ is T-avoiding. \qed	
 \end{theorem}
 
-We will call an element that is a product of commuting generators \emph{trivially T-avoiding}. It is clear that a product of commuting generators is T-avoiding, which we state as a theorem. Visually a product of commuting generators is a one row heap (as in Figure~\ref{fig:heapnoT}), it is clear a one row heap will not portray the characteristic of Property T as seen in Figure~\ref{fig:heapwithT}. If $w$ is T-avoiding and not a product of commuting generators, we will say that $w$ is \emph{non-trivially T-avoiding.} 
+We will call an element that is a product of commuting generators \emph{trivially T-avoiding}. If $w$ is T-avoiding and not a product of commuting generators, we will say that $w$ is \emph{non-trivially T-avoiding.} It is not clear that such elements exist. Referring back to Green's classification (Theorem~\ref{thm:starred}) of what elements in star reducible Coxeter groups look like, we see that Item~\ref{it:triv} corresponds to an element $w$ being trivially T-avoiding, Items~\ref{it:proptend} and~\ref{it:proptbeg} refer to the element $w$ having Property T at the beginning and end respectively, and Item~\ref{it:tavoid} refers to an element being non-trivially T-avoiding provided no reduced expression for the element exhibits Items~\ref{it:proptend} and~\ref{it:proptbeg}. In star reducible Coxeter systems, every FC element is star reducible to a product of commuting generators, which implies that no FC element can be non-trivially T-avoiding. For example, as will be seen in the following sections, the Coxeter groups of type $A_n$ and $B_n$ have no non-trivial T-avoiding elements, while the Coxeter group of type $D_n$ does have non-trivial T-avoiding elements.
 
 %Visually this is seen in Example~\ref{fig:heapnoT} elements in $W(\Gamma)$ that are products of commuting generators are always going to be one row in the heap. This implies that we are not able to remove generators and have elements come into rows that they were previously in as the heap is only one row and there can be no lateral movement when we remove bricks. 
 
 \begin{example}\label{ex:tavoid}
-Let $w \in W(A_5)$ with reduced expression $\w=s_1s_3s_5$. It turns out that since $w$ is a product of commuting generators by Theorem~\ref{thm:trivTavoid} we know that $w$ is trivially T-avoiding.	
+Let $w \in W(A_5)$ with reduced expression $\w=s_1s_3s_5$. It turns out that since $w$ is a product of commuting generators by Theorem~\ref{thm:trivTavoid} we know that $w$ is trivially T-avoiding. %In Figure~\ref{fig:heapnoT} we see the heap for $w_2$. %Note that as the heap is only one row and $w_2$ is FC, it is clear that $w_2$ does not have Property T.
 \end{example}
-
 \begin{example}\label{ex:prop-T}
-Let $w \in W(A_5)$ with reduced expression $\w_1=s_1s_4s_2s_3s_5$. At first glance it may appear that $w$ does not have Property T, since both $s_1$ and $s_4$ commute as well as $s_3$ and $s_5$. However, note that applying a commutation move $s_4s_2 \mapsto s_2s_4$ results in $\w_2=s_1s_2s_4s_3s_5$. Hence $w$ has Property T, since $m(s_1,s_2)=3$ and there is a reduced expression for $w$ that begins with $s_1s_2$.	
+Let $w \in W(A_5)$ with reduced expression $\w_1=s_1s_4s_2s_3s_5$. At first glance it may appear that $w$ does not have Property T since both $s_1$ and $s_4$ commute as well as $s_3$ and $s_5$. However, note that applying the commutation move $s_4s_2 \mapsto s_2s_4$ results in $\w_2=s_1s_2s_4s_3s_5$. Hence $w$ has Property T since $m(s_1,s_2)=3$ and there is a reduced expression for $w$ that begins with $s_1s_2$. In Figure~\ref{fig:heapw/T} we see the heap for $w_1$. Note that we can see Property T in the bottom of the heap highlighted in \textcolor{orange}{orange}.
 \end{example}
 
-
-
-%As with star reducible elements it may be helpful to visualize Property T through heaps. Figure~\ref{fig:heapw/T} provides a representation of an element in $W(\Gamma)$ with Property T and Figure~\ref{fig:heapnoT} provides a representation of an element without Property T. Notice that if we were to remove the block for $s_1$ in the bottom row of Figure~\ref{fig:heapw/T}, the heap would become one less row in height and we would have a new bottom row in the heap. However, in Figure~\ref{fig:heapnoT}, we are not able to remove able to remove any bricks and have a new brick come to the top or bottom row as the heap is just one row. From this we can gather that when we are using heaps to visualize whether or not an element of $W(\Gamma)$ has Property T we must observe either of the following things. The first of these is that the heap decreased in height. That is, there is one less row than the original heap. The second thing that we could observe is that when we remove a block from the heap a new element, that was originally trapped in the second (respectively, second to last) row is now able to move into the first (respectively, last) row of the heap. This implies that an element that does not have Property-T, has every element in the second and second to last row of the heap blocked by two blocks in the first and last rows of the heap, as this would imply that we could not remove a block and have a new element come to the first or last row as it would still be blocked by the other element that remained.
-
-\begin{example}
-Let $\w_1=s_1s_4s_2s_3s_5$ be a reduced expression for $w_1 \in W(A_5)$ as seen in Example~\ref{ex:prop-T}	and let $\w_2=s_1s_3s_5$ be a reduced expression for $w_2 \in W(A_5)$. In Figure~\ref{fig:heapw/T} we see the heap for $w_1$. Note that we can see Property T in the bottom of the heap highlighted in \textcolor{orange}{orange}. In Figure~\ref{fig:heapnoT} we see the heap for $w_2$. Note that as the heap is only one row and $w_2$ is FC, it is clear that $w_2$ does not have Property T.
-\begin{figure}[h!]
-\begin{tabular}{m{7cm} m{7cm}}
-\begin{subfigure}{0.5\textwidth} \centering
-\begin{tikzpicture}[scale=0.5]
+\begin{figure}[h!]\centering
+%\begin{tabular}{m{7cm} m{7cm}}
+%\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=0.35]
 \heapblock{5}{6}{5}{purple}
 \heapblock{3}{6}{3}{purple}
 \heapblock{2}{4}{2}{orange}
 \heapblock{4}{4}{4}{purple}
 \heapblock{1}{2}{1}{orange}
 \end{tikzpicture}
-\caption{Heap of an element with Property T} \label{fig:heapw/T}	
-\end{subfigure}&
-
-\begin{subfigure}{0.5\textwidth} \centering
-\begin{tikzpicture}[scale=0.5]
-\heapblock{3}{4}{}{white}
-\heapblock{3}{8}{}{white}
-\heapblock{1}{6}{1}{purple}
-\heapblock{3}{6}{3}{purple}
-\heapblock{5}{6}{5}{purple}
-\end{tikzpicture}
-\caption{Heap of a T-Avoiding element}\label{fig:heapnoT}
-\end{subfigure}
-\end{tabular}
-\caption{Heaps of an element with Property T and a T-Avoiding element}\label{fig:prptheaps}
+\caption{Heap of an element with Property T.} \label{fig:heapw/T}	
 \end{figure}
-\end{example}
 
+%\begin{subfigure}{0.5\textwidth} \centering
+%\begin{tikzpicture}[scale=0.4]
+%\heapblock{3}{4}{}{white}
+%\heapblock{3}{8}{}{white}
+%\heapblock{1}{6}{1}{purple}
+%\heapblock{3}{6}{3}{purple}
+%\heapblock{5}{6}{5}{purple}
+%\end{tikzpicture}
+%\caption{Heap of a T-Avoiding element}\label{fig:heapnoT}
+%\end{subfigure}
+%\end{tabular}
+%\caption{Heaps of an element with Property T and a T-Avoiding element}\label{fig:prptheaps}
+%\end{figure}
+%As with star reducible elements it may be helpful to visualize Property T through heaps. Figure~\ref{fig:heapw/T} provides a representation of an element in $W(\Gamma)$ with Property T and Figure~\ref{fig:heapnoT} provides a representation of an element without Property T. Notice that if we were to remove the block for $s_1$ in the bottom row of Figure~\ref{fig:heapw/T}, the heap would become one less row in height and we would have a new bottom row in the heap. However, in Figure~\ref{fig:heapnoT}, we are not able to remove able to remove any bricks and have a new brick come to the top or bottom row as the heap is just one row. From this we can gather that when we are using heaps to visualize whether or not an element of $W(\Gamma)$ has Property T we must observe either of the following things. The first of these is that the heap decreased in height. That is, there is one less row than the original heap. The second thing that we could observe is that when we remove a block from the heap a new element, that was originally trapped in the second (respectively, second to last) row is now able to move into the first (respectively, last) row of the heap. This implies that an element that does not have Property-T, has every element in the second and second to last row of the heap blocked by two blocks in the first and last rows of the heap, as this would imply that we could not remove a block and have a new element come to the first or last row as it would still be blocked by the other element that remained.
 
-
+%\begin{example}
+%Let $\w_1=s_1s_4s_2s_3s_5$ be a reduced expression for $w_1 \in W(A_5)$ as seen in Example~\ref{ex:prop-T}	and let $\w_2=s_1s_3s_5$ be a reduced expression for $w_2 \in W(A_5)$.  
+%\end{example}
+%
 
 \begin{example}
 Let $w \in W(\widetilde{C}_4)$ with reduced expression $\w=s_0s_2s_4s_1s_3s_0s_2s_4$. It turns out that $w$ is FC and non-trivially T-avoiding. The heap for $w$ is seen in Figure~\ref{fig:sandwich1}. Notice that no matter which block we remove that is fully exposed to the top of the heap no new element becomes fully exposed. The same applies to the bottom of the heap. Thus, $w$ is non-trivially T-avoiding. 
@@ -219,13 +214,9 @@ Let $w \in W(\widetilde{C}_4)$ with reduced expression $\w=s_0s_2s_4s_1s_3s_0s_2
 \end{figure}
 \end{example}
 
-Referring back to Green's classification (Theorem~\ref{thm:starred}) of what elements in star reducible Coxeter groups look like, we see that Item~\ref{it:triv} corresponds to an element $w$ being trivially T-avoiding, Items~\ref{it:proptend} and~\ref{it:proptbeg} refer to the element $w$ having Property T at the beginning and end respectively, and Item~\ref{it:tavoid} refers to an element being non-trivially T-avoiding provided no reduced expression for the element exhibits Items~\ref{it:proptend} and~\ref{it:proptbeg}. In star reducible Coxeter groups, every FC element is star reducible to a product of commuting generators, which implies that no FC element can be non-trivially T-avoiding. For example, as will be seen in the following sections, the Coxeter groups of type $A_n$ and $B_n$ have no non-trivial T-avoiding elements, while the Coxeter group of type $D_n$ does have non-trivial T-avoiding elements. 
-
-
-
 %We will now extend the definition of Property T to Coxeter groups. Let $(W,S)$ be a Coxeter group of type $\Gamma$. We say that $W(\Gamma)$ has \emph{Property T} if all elements in $W(\Gamma)$ that are not the products of commuting generators have Property T. It is clear that if a Coxeter group has Property T, then it also has Property S. It remains an open question whether or not a Coxeter group with Property S, also has Property T, but we conjecture this is true. If this is the case, then by a remark following the definition of Property S in~\cite{Green2007}, the classification of the T-avoiding elements for any connected, nonbranching Coxeter graph of finite or affine type, except the Coxeter system of type $\widetilde{F}_4$, would be complete. 
 
-One thing to notice here is that all Coxeter groups have trivial T-avoiding elements as they all contain products of commuting generators. As a result of this we will avoid mentioning them in the following classification. The more interesting non-trivial T-avoiding elements do not appear in all Coxeter groups. Chapters~\ref{chap:TandTavoid} and~\ref{chap:BnandCn}  discusse what is currently known regarding T-avoiding elements in the irreducible finite Coxeter groups and the irreducible affine Coxeter groups. In Chapter~\ref{chap:TandTavoid} we will summarize what is known about the T-avoiding elements in Coxeter groups of types $\widetilde{A}_n$, $A_n$, $D_n$, $F_n$, and $I_2(m)$, and in Chapter~\ref{chap:BnandCn} we classify the T-avoiding elements in Coxeter groups of types $B_n$ and $\widetilde{C}_n$. 
+One thing to notice here is that all Coxeter groups have trivial T-avoiding elements as they all contain products of commuting generators. The more interesting non-trivial T-avoiding elements do not appear in all Coxeter groups. In Chapter~\ref{chap:TandTavoid} we will summarize what is known about the T-avoiding elements in Coxeter groups of types $\widetilde{A}_n$, $A_n$, $D_n$, $F_n$, and $I_2(m)$, and in Chapters~\ref{chap:BnandCn} and~\ref{chap:Cn} we classify the T-avoiding elements in Coxeter groups of types $B_n$ and $\widetilde{C}_n$. 
 
 
 %%%%%%%%%%%%%%

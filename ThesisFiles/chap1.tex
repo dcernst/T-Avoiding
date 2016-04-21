@@ -19,7 +19,7 @@ with $m(s,t) \geq 2$ factors. If $m(s,t)=2$, then $st=ts$ is called a \emph{comm
 We can represent a Coxeter system $(W,S)$ with a unique \emph{Coxeter graph} $\Gamma$ having
 \begin{enumerate}[leftmargin=2cm]
 \item vertex set $S$ and
-\item edges $\{s, t\}$ for each $m(s,t) \geq 3$ labeled by its corresponding bond strength $m(s,t)$ .	
+\item edges $\{s, t\}$ for each $m(s,t) \geq 3$ labeled by its corresponding bond strength.	
 \end{enumerate}
 
 Since $m(s,t)=3$ occurs frequently, it is customary to omit this label. Note that $s$ and $t$ are not connected by a single edge in the graph if and only if $m(s,t)=2$. There is a one-to-one correspondence between Coxeter systems and Coxeter graphs. That is, given a Coxeter graph $\Gamma$, we can uniquely reconstruct the corresponding Coxeter system. If $(W,S)$ is a Coxeter system with corresponding Coxeter graph $\Gamma$, we may denote the Coxeter group as $W(\Gamma)$ and the generating set as $S(\Gamma)$ for clarity. Also, the Coxeter system $(W,S)$ is said to be \emph{irreducible} if and only if $\Gamma$ is connected. If the graph $\Gamma$ is disconnected, the connected components correspond to factors in a direct product of the corresponding Coxeter groups~\cite{Humphreys1990}. The Coxeter graphs given in Figure~\ref{fig:labeledgraphs} correspond to the Coxeter systems that will be primarily addressed in this thesis. Notice here that the vertices are labeled with the corresponding generators to provide context when talking about the different generating sets $S(\Gamma)$. 
@@ -29,6 +29,7 @@ Since $m(s,t)=3$ occurs frequently, it is customary to omit this label. Note tha
 \begin{subfigure}{0.5\textwidth} \centering
 \begin{tikzpicture}[scale=1.0]%A_{n}
 \draw[fill=black] \foreach \x in {1,2,...,6} {(\x,10) circle (2pt)};
+\fill[fill=white] (2,11) circle (2pt);
 \draw {(.5,10) node{}
 (1.5,10) node[label=above:\textcolor{white}{$4$}]{}
 (4.5,10) node{$\cdots$}
@@ -70,8 +71,10 @@ Since $m(s,t)=3$ occurs frequently, it is customary to omit this label. Note tha
 \begin{subfigure}{0.5\textwidth} \centering
 \begin{tikzpicture}[scale=1.0]%B_{n}
 \draw [fill=black] \foreach \x in {1,2,...,6} {(\x,8.5) circle (2pt)};
+%\draw [fill=white] (1,10) circle(2pt);
 \draw {(.5,8.5) node{}
 (1.5,8.5) node[label=above:$4$]{}
+(6,8.5) node[label=above:\textcolor{white}{$4$}]{}
 (4.5,8.5) node{$\cdots$}
 (1,8.5) node[label=below:$s_0$]{}
 (2,8.5) node[label=below:$s_1$]{}
@@ -89,7 +92,7 @@ Since $m(s,t)=3$ occurs frequently, it is customary to omit this label. Note tha
 \begin{subfigure}{0.5\textwidth} \centering
 \begin{tikzpicture}[scale=1.0]
 \draw[fill=black] \foreach \x in {1,2,...,6} {(\x,5) circle (2pt)};%\widetild{C}_{n}
-\fill[white] (1,6) circle (2pt);
+%\fill[white] (1,6) circle (2pt);
 \draw {(.5,5) node{}
 (4.5,5) node{$\cdots$}
 (5.5,5) node[label=above:$4$]{}
@@ -169,6 +172,7 @@ Since $m(s,t)=3$ occurs frequently, it is customary to omit this label. Note tha
 \caption{A few labeled Coxeter graphs.}\label{fig:labeledgraphs}
 \end{figure}
 
+\newpage
 \begin{example}
 ~
 \begin{itemize}
@@ -537,7 +541,7 @@ The Coxeter graphs given in Figure~\ref{fig:fincoxgraphs} correspond to the coll
 \end{figure}
 
 
-Given a Coxeter system $(W,S)$, a word $s_{x_1}s_{x_2} \cdots s_{x_m}$ in the free monoid $S^*$ on $S$ is called an \emph{expression} for $w \in W$ if it is equal to $w$ when considered as a group element. If $m$ is minimal among all expressions for $w$, the corresponding word is called a \emph{reduced expression} for $w$. In this case, we define the \emph{length} of $w$ to be $l(w):= m$. Each element $w \in W$ may have multiple reduced expressions that represent it. If we wish to emphasize a specific, possibly reduced, expression for $w \in W$ we will represent $\w=s_{x_1}s_{x_2}\cdots s_{x_m}.$ using {\sf{sans serif font.}} If $u,v \in W(\Gamma)$, we say that the product of group elements $uv$ is \emph{reduced} if $l(uv)=l(u)+l(v)$. The following theorem tells us more about how reduced expressions for a given group element are related.
+Given a Coxeter system $(W,S)$, a word $s_{x_1}s_{x_2} \cdots s_{x_m}$ in the free monoid $S^*$ on $S$ is called an \emph{expression} for $w \in W$ if it is equal to $w$ when considered as a group element. If $m$ is minimal among all expressions for $w$, the corresponding word is called a \emph{reduced expression} for $w$. In this case, we define the \emph{length} of $w$ to be $l(w):= m$. Each element $w \in W$ may have multiple reduced expressions that represent it. If we wish to emphasize a specific, possibly reduced, expression for $w \in W$ we will represent $\w=s_{x_1}s_{x_2}\cdots s_{x_m}$ using ({\sf{sans serif font}}). If $u,v \in W(\Gamma)$, we say that the product of group elements $uv$ is \emph{reduced} if $l(uv)=l(u)+l(v)$. The following theorem tells us more about how reduced expressions for a given group element are related.
 
 \begin{theorem} [Matsumoto, \cite{Geck2000}]
 	Let $(W,S)$ be a Coxeter system. If $w \in W$, then given a reduced expression for $w$ we can obtain every other reduced expression for $w$ by a sequence of braid moves and commutations of the form

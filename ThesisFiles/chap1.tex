@@ -17,12 +17,12 @@ Since $s$ and $t$ are elements of order 2, the relation $(st)^{m(s,t)}=e$ can be
 with $m(s,t) \geq 2$ factors. If $m(s,t)=2$, then $st=ts$ is called a \emph{commutation relation}. Otherwise, if $m(s,t) \geq 3$, then the relation in \eqref{braid} is called a \emph{braid relation}. Replacing $\underbrace{sts\cdots}_{m(s,t)}$ with $\underbrace{tst\cdots}_{m(s,t)}$ will be referred to as a \emph{commutation} if $m(s,t)=2$ and a \emph{braid move} if $m(s,t) \geq 3$.\\
 
 We can represent a Coxeter system $(W,S)$ with a unique \emph{Coxeter graph} $\Gamma$ having
-\begin{enumerate}
+\begin{enumerate}[leftmargin=2cm]
 \item vertex set $S$ and
 \item edges $\{s, t\}$ for each $m(s,t) \geq 3$ labeled by its corresponding bond strength $m(s,t)$ .	
 \end{enumerate}
 
-Since $m(s,t)=3$ occurs frequently, it is customary to omit this label. Note that $s$ and $t$ are not connected by a single edge in the graph if and only if $m(s,t)=2$. There is a one-to-one correspondence between Coxeter systems and Coxeter graphs. That is, given a Coxeter graph $\Gamma$, we can uniquely reconstruct the corresponding Coxeter system. If $(W,S)$ is a Coxeter system with corresponding Coxeter graph $\Gamma$, we may denote the Coxeter group as $W(\Gamma)$ and the generating set as $S(\Gamma)$ for clarity. Also, the Coxeter system $(W,S)$ is said to be \emph{irreducible} if and only if $\Gamma$ is connected. If the graph $\Gamma$ is disconnected, the connected components correspond to factors in a direct product of the corresponding Coxeter groups~\cite{Humphreys1990}. The Coxeter graphs given in Figure~\ref{fig:labeledgraphs} correspond to the Coxeter systems that will be primarily addressed in this thesis. Notice here that the vertices are labeled with the corresponding generators to provide context when talking about the different generating sets $S(\Gamma)$. Complete figures of all irreducible finite and irreducible affine Coxeter graphs follows the next example.
+Since $m(s,t)=3$ occurs frequently, it is customary to omit this label. Note that $s$ and $t$ are not connected by a single edge in the graph if and only if $m(s,t)=2$. There is a one-to-one correspondence between Coxeter systems and Coxeter graphs. That is, given a Coxeter graph $\Gamma$, we can uniquely reconstruct the corresponding Coxeter system. If $(W,S)$ is a Coxeter system with corresponding Coxeter graph $\Gamma$, we may denote the Coxeter group as $W(\Gamma)$ and the generating set as $S(\Gamma)$ for clarity. Also, the Coxeter system $(W,S)$ is said to be \emph{irreducible} if and only if $\Gamma$ is connected. If the graph $\Gamma$ is disconnected, the connected components correspond to factors in a direct product of the corresponding Coxeter groups~\cite{Humphreys1990}. The Coxeter graphs given in Figure~\ref{fig:labeledgraphs} correspond to the Coxeter systems that will be primarily addressed in this thesis. Notice here that the vertices are labeled with the corresponding generators to provide context when talking about the different generating sets $S(\Gamma)$. 
 
 \begin{figure}[h!]
 \begin{tabular}{m{7cm} m{7cm}}
@@ -166,21 +166,21 @@ Since $m(s,t)=3$ occurs frequently, it is customary to omit this label. Note tha
 \caption{$I_{2}(m)$} \label{fig:labeledI}
 \end{subfigure}
 \end{tabular}
-\caption{Labeled Coxeter Graphs}\label{fig:labeledgraphs}
+\caption{A few labeled Coxeter graphs.}\label{fig:labeledgraphs}
 \end{figure}
 
 \begin{example}
 ~
 \begin{itemize}
 \item[(a)~] The Coxeter system of type $A_n$ is given by the graph in Figure~\ref{fig:labeledA}. We can construct the corresponding Coxeter group $W(A_n)$ with generating set $S(A_n)=\{s_1, s_2, \ldots ,s_n\}$ and defining relations
-\begin{enumerate}
+\begin{enumerate}[leftmargin=2cm]
 	\item $s_i^2=e$ for all $i$;
 	\item $s_is_j=s_js_i$ when $|i-j|>1$;
 	\item $s_is_js_i=s_js_is_j$ when $|i-j|=1.$
 \end{enumerate}
 The Coxeter group $W(A_n)$ is isomorphic to the symmetric group $\Sym_{n+1}$ under the correspondence $s_i \mapsto (i, i+1)$, where $(i, i+1)$ is the adjacent transposition that swaps $i$ and $i+1$.
 \item[(b)~]\label{ex:B} The Coxeter system of type $B_n$ is given by the graph in Figure~\ref{fig:labeledB}. We can construct the corresponding Coxeter group $W(B_n)$ with generating set $S(B_n)=\{s_0,s_1, \ldots ,s_{n-1}\}$ and defining relations
-\begin{enumerate}
+\begin{enumerate}[leftmargin=2cm]
 	\item $s_i^2=e$ for all $i$;
 	\item $s_is_j=s_js_i$  when $|i-j|>1$;
 	\item $s_is_js_i=s_js_is_j$ when $|i-j|=1$ for $i,j \in \{1,2,\ldots, n-1\}$;
@@ -188,7 +188,7 @@ The Coxeter group $W(A_n)$ is isomorphic to the symmetric group $\Sym_{n+1}$ und
 \end{enumerate}
 The Coxeter group $W(B_n)$ is isomorphic to $\Sym_n^B$, where $\Sym_n^B$ is the group of signed permutations on the set $\{1,2, \ldots,n\}$. 
 \item[(c)~] The Coxeter system of type $\widetilde C_n$ is seen in Figure~\ref{fig:labeledaffC}. We can construct the corresponding Coxeter group $W(\widetilde C_n)$ with generating set $S(\widetilde{C}_n)=~\{s_0, s_1, \ldots ,s_n\}$ and defining relations 
-\begin{enumerate}
+\begin{enumerate}[leftmargin=2cm]
 	\item $s_i^2=e$ for all $i$;
 	\item $s_is_j=s_js_i$ when $|i-j|>1$ for $i \in \{0,2, \ldots, n\}$;
 	\item $s_is_js_i=s_js_is_j$ 	when $|i-j|=1$ for $i \in \{1,2, \ldots, n-1\}$;
@@ -201,7 +201,7 @@ Note that $W(\widetilde{C}_n)$ has $n+1$ generators.
 
 
 
-The Coxeter graphs given in Figure~\ref{fig:fincoxgraphs} correspond to the collection of irreducible finite Coxeter groups, while the Coxeter graphs given in Figure~\ref{fig:infincoxgraphs} are the so-called irreducible \emph{affine Coxeter groups}, which are infinite~\cite{Humphreys1990}. Note that $W(\C_n)$ is one of the affine groups making it infinite. The irreducible affine Coxeter systems are unique in that if a vertex is removed along with the corresponding edges from the Coxeter graph, the newly created graph will result in a Coxeter system with a finite Coxeter group. 
+The Coxeter graphs given in Figure~\ref{fig:fincoxgraphs} correspond to the collection of irreducible finite Coxeter systems, whose corresponding Coxeter groups are finite, while the Coxeter graphs given in Figure~\ref{fig:infincoxgraphs} are the so-called irreducible \emph{affine Coxeter systems}, which are infinite~\cite{Humphreys1990}. Note that $W(B_n)$ is one of the irreducible finite Coxeter groups so it is finite while $W(\C_n)$ is one of the affine groups making it infinite. The irreducible affine Coxeter systems are unique in that if a vertex is removed along with the corresponding edges from the Coxeter graph, the newly created graph will result in a Coxeter system with a finite Coxeter group. 
 
 \begin{figure}[h!]
 \begin{tabular}{m{7cm} m{7cm}}
@@ -360,7 +360,7 @@ The Coxeter graphs given in Figure~\ref{fig:fincoxgraphs} correspond to the coll
 \caption{$H_{4}$} \label{fig:H}
 \end{subfigure}
 \end{tabular}
-\caption{Coxeter graphs corresponding to the irreducible finite Coxeter sytems.}
+\caption{Irreducible finite Coxeter systems.}
 \label{fig:fincoxgraphs}
 \end{figure}
 
@@ -532,12 +532,12 @@ The Coxeter graphs given in Figure~\ref{fig:fincoxgraphs} correspond to the coll
 \caption{$\widetilde{G}_{4}$} \label{fig:H}
 \end{subfigure}
 \end{tabular}
-\caption{Coxeter graphs corresponding to the irreducible affine Coxeter systems.}
+\caption{Irreducible affine Coxeter systems.}
 \label{fig:infincoxgraphs}
 \end{figure}
 
 
-Given a Coxeter system $(W,S)$, a word $s_{x_1}s_{x_2} \cdots s_{x_m}$ in the free monoid $S^*$ on $S$ is called an \emph{expression} for $w \in W$ if it is equal to $w$ when considered as a group element. If $m$ is minimal among all expressions for $w$, the corresponding word is called a \emph{reduced expression} for $w$. In this case, we define the \emph{length} of $w$ to be $l(w):= m$. Each element $w \in W$ may have multiple reduced expressions that represent it. If we wish to emphasize a specific, possibly reduced, expression for $w \in W$ we will represent it as $\w=s_{x_1}s_{x_2}\cdots s_{x_m}.$ The following theorem tells us more about how reduced expressions for a given group element are related.
+Given a Coxeter system $(W,S)$, a word $s_{x_1}s_{x_2} \cdots s_{x_m}$ in the free monoid $S^*$ on $S$ is called an \emph{expression} for $w \in W$ if it is equal to $w$ when considered as a group element. If $m$ is minimal among all expressions for $w$, the corresponding word is called a \emph{reduced expression} for $w$. In this case, we define the \emph{length} of $w$ to be $l(w):= m$. Each element $w \in W$ may have multiple reduced expressions that represent it. If we wish to emphasize a specific, possibly reduced, expression for $w \in W$ we will represent $\w=s_{x_1}s_{x_2}\cdots s_{x_m}.$ using {\sf{sans serif font.}} If $u,v \in W(\Gamma)$, we say that the product of group elements $uv$ is \emph{reduced} if $l(uv)=l(u)+l(v)$. The following theorem tells us more about how reduced expressions for a given group element are related.
 
 \begin{theorem} [Matsumoto, \cite{Geck2000}]
 	Let $(W,S)$ be a Coxeter system. If $w \in W$, then given a reduced expression for $w$ we can obtain every other reduced expression for $w$ by a sequence of braid moves and commutations of the form
@@ -547,7 +547,7 @@ Given a Coxeter system $(W,S)$, a word $s_{x_1}s_{x_2} \cdots s_{x_m}$ in the fr
  
 It follows from Matsumoto's Theorem that if a generator $s$ appears in a reduced expression for $w \in W$, then $s$ appears in all reduced expressions for $w$. Let $w \in W$ and define the \emph{support} of $w$, denoted $\supp(w)$, to be the set of all generators that appear in any reduced expression for $w$. If $\supp(w)=S$, we say that $w$ has \emph{full support}. 
 
-Given $w \in W$ and a fixed reduced expression $\w$ for $w$, any subsequence of $\w$ is called a \emph{subexpression} of $\w$. We will refer to a subexpression consisting of a consecutive subsequence of $\w$ as a \emph{subword} of $\w$. If $u,v \in W(\Gamma)$, we say that the product of group elements $uv$ is \emph{reduced} if $l(uv)=l(u)+l(v)$. \\
+Given $w \in W$ and a fixed reduced expression $\w$ for $w$, any subsequence of $\w$ is called a \emph{subexpression} of $\w$. We will refer to a subexpression consisting of a consecutive subsequence of $\w$ as a \emph{subword} of $\w$. 
 
 \begin{example}
 Let $w \in W(A_7)$ and let $\w=s_7s_2s_4s_5s_3s_2s_3s_6$ be a fixed expression for $w$. Then we have 
@@ -587,31 +587,29 @@ The set of FC elements of $W(\Gamma)$ is denoted by $\FC(\Gamma)$. Given some $w
 	Let $(W,S)$ be a Coxeter system. An element $w \in W$ is FC if and only if no reduced expression for $w$ contains $\underbrace{sts\cdots}_{m(s,t)}$ as a subword for all $m(s,t) \geq 3$. \qed
 \end{theorem}
 
-In other words, $w$ is FC if and only if no reduced expression provides the opportunity to apply a braid move. In particular, for a Coxeter group of type $B_n$ an element is $\FC$ if it does not contain the subwords $s_0s_1s_0s_1$, $s_1s_0s_1s_0$, $s_ks_{k+1}s_k$, and $s_{k+1}s_ks_{k+1}$ where $0<k<n-1$. In a Coxeter group of type $\C_n$, an element is $\FC$ if it does not contain the subwords seen above and does not contain the subwords $s_{n-1}s_ns_{n-1}s_n$ and $s_{n}s_{n-1}s_ns_{n-1}$.
+In other words, $w$ is FC if and only if no reduced expression provides the opportunity to apply a braid move. For example, for a Coxeter system of type $B_n$ an element is $\FC$ if no reduced expression contains the subwords $s_0s_1s_0s_1$, $s_1s_0s_1s_0$, $s_ks_{k+1}s_k$, and $s_{k+1}s_ks_{k+1}$ where $0<k<n-1$. In a Coxeter group of type $\C_n$, an element is $\FC$ if no reduced expression for the element contains the subwords seen above and does not contain the subwords $s_{n-1}s_ns_{n-1}s_n$ and $s_{n}s_{n-1}s_ns_{n-1}$.
 
 \begin{example}
-	Let $w \in W(\widetilde{C}_4)$ and let $\w=s_0s_1s_2s_0s_3s_1$ be a reduced expression for $w$. We see that
-	\[s_0s_1\textcolor{purple}{s_2s_0}s_3s_1=s_0s_1s_0s_2\textcolor{purple}{s_3s_1}=s_0s_1s_0s_2s_1s_3,\]
-	where the \textcolor{purple}{purple} highlighted text indicates applying a commutation. Although it is not immediately obvious, there is no possible way to perform a braid move in $w$. Hence $w$ is $\FC$.
+	Let $w \in W(\widetilde{C}_4)$ and let $\w=s_0s_1s_2s_0s_3s_1$ be a reduced expression for $w$. Although it is not immediately obvious, there is no possible way to perform a braid move in $w$. Hence $w$ is $\FC$.
 \end{example}
 
 \begin{example}
-Let $\w=s_1s_0s_4s_1s_3s_5s_2s_4s_6$ be a reduced expression for $w \in \FC(\widetilde{C}_6)$. Applying the commutation $s_4s_2=s_2s_4$, we can obtain another reduced expression for $w$, namely $\w_2=s_1s_0s_4s_1s_3s_5s_4s_2s_6$, which is in the same commutation class as $\w$. However, applying the braid move $s_2s_3s_2=s_3s_2s_3$, we obtain another reduced expression $\w=s_1s_3s_2s_3s_4s_0$. Note that since $\w_3$ was obtained by applying a braid move, $\w_3$ is in a different commutation class than $\w_1$ and $\w_2$. It turns out that $w$ has at least two commutation classes, one containing $\w_1$ and $\w_2$ and another containing $\w_3$. So $w$ is not FC by Theorem~\ref{thm:Stembridge}.
+Let $\w_1=s_1s_0s_4s_1s_3s_5s_2s_4s_6$ be a reduced expression for $w \in \FC(\widetilde{C}_6)$. Applying the commutation $s_4s_2 \mapsto s_2s_4$, we can obtain another reduced expression for $w$, namely $\w_2=s_1s_0s_4s_1s_3s_5s_4s_2s_6$, which is in the same commutation class as $\w$. However, applying the braid move $s_2s_3s_2 \mapsto s_3s_2s_3$, we obtain another reduced expression $\w=s_1s_3s_2s_3s_4s_0$. Note that since $\w_3$ was obtained by applying a braid move, $\w_3$ is in a different commutation class than $\w_1$ and $\w_2$. Since $w$ has at least two commutation classes, one containing $\w_1$ and $\w_2$ and another containing $\w_3$, $w$ is not FC by Theorem~\ref{thm:Stembridge}.
 \end{example}
 
-\begin{example}
-Let $w \in W(\widetilde{C}_4)$ and let $\w=s_0s_1s_2s_0s_1s_2$ be a reduced expression for $w$. We see that
-\[s_0s_1\textcolor{purple}{s_3s_0}s_1s_2=s_0s_1s_0\textcolor{purple}{s_3s_1}s_2=\textcolor{orange}{s_0s_1s_0s_1}s_3s_2,\]
-where the \textcolor{purple}{purple} highlighted text indicates applying a commutation and the \textcolor{orange}{orange} highlighted text indicates applying a braid move. Thus $w$ is not $\FC$ by Theorem~\ref{thm:Stembridge}.  	
-\end{example}
+%\begin{example}
+%Let $w \in W(\widetilde{C}_4)$ and let $\w=s_0s_1s_2s_0s_1s_2$ be a reduced expression for $w$. We see that
+%\[s_0s_1\textcolor{purple}{s_3s_0}s_1s_2=s_0s_1s_0\textcolor{purple}{s_3s_1}s_2=\textcolor{orange}{s_0s_1s_0s_1}s_3s_2,\]
+%where the \textcolor{purple}{purple} highlighted text indicates applying a commutation and the \textcolor{orange}{orange} highlighted text indicates applying a braid move. Thus $w$ is not $\FC$ by Theorem~\ref{thm:Stembridge}.  	
+%\end{example}
 
 Stembridge classified the Coxeter systems that contain a finite number of FC elements, the so-called \emph{FC-finite Coxeter groups}. Both $W(A_n)~\mathrm{and}~W(B_n)$ are finite Coxeter groups, and thus are $\FC$-finite. On the other hand, $W(\widetilde{C}_n)$ is infinite and happens to also contain infinitely many $\FC$ elements. However, there exist some infinite Coxeter groups that contain finitely many $\FC$ elements. For example, $W(E_n$) for $n \geq 9$ (see Figure~\ref{fig:FCfincoxgraphs}) is infinite, but contains only finitely many FC elements.
 
 \begin{theorem}[Stembridge,~\cite{Stembridge1996}]
-\label{thm:FCfinite} The FC-finite irreducible Coxeter systems are of type $A_n$ with $n \geq 1$, $B_n$ with $n \geq 2$, $D_n$ with $n \geq 4$, $E_n$ with $n \geq 6$, $F_n$ with $n \geq 4$, $H_n$ with $n \geq 3$, and $I_2(m)$ with $5 \leq m < \infty$. \qed
+\label{thm:FCfinite} The irreducible FC-finite Coxeter systems are of type $A_n$ with $n \geq 1$, $B_n$ with $n \geq 2$, $D_n$ with $n \geq 4$, $E_n$ with $n \geq 6$, $F_n$ with $n \geq 4$, $H_n$ with $n \geq 3$, and $I_2(m)$ with $5 \leq m < \infty$. \qed
 \end{theorem} 
  
-The irreducible FC-finite Coxeter graphs are given in Figure~\ref{fig:FCfincoxgraphs}. Note that in Figure~\ref{fig:fincoxgraphs} we classified the irreducible finite Coxeter systems, since these are finite Coxeter groups it is clear that they will have a finite number of FC elements. However, we have not yet encountered the Coxeter groups determined by graphs in Figures~\ref{fig:FCEn} for $n \geq 9$,~\ref{fig:FCFn} for $n \geq 5$,~\ref{fig:FCHn} for $n \geq 5$. All of these Coxeter systems are infinite for sufficiently large $n$, yet contain only finitely many FC elements.
+The irreducible FC-finite Coxeter graphs are given in Figure~\ref{fig:FCfincoxgraphs}. Note that the irreducible finite Coxeter systems given in Figure~\ref{fig:fincoxgraphs} certainly have only a finite number of FC elements. We have not yet encountered the Coxeter groups determined by graphs in Figures~\ref{fig:FCEn} for $n \geq 9$,~\ref{fig:FCFn} for $n \geq 5$,~\ref{fig:FCHn} for $n \geq 5$. All of these Coxeter systems are infinite for sufficiently large $n$, yet contain only finitely many FC elements.
 
 \begin{figure}[h!]
 \begin{tabular}{m{7cm} m{7cm}}
@@ -717,7 +715,7 @@ The irreducible FC-finite Coxeter graphs are given in Figure~\ref{fig:FCfincoxgr
 \caption{$I_{2}(m)$} \label{fig:FCI}
 \end{subfigure}
 \end{tabular}
-\caption{Coxeter graphs corresponding to the irreducible FC-finite Coxeter systems.}
+\caption{Irreducible FC-finite Coxeter systems.}
 \label{fig:FCfincoxgraphs}
 \end{figure}
 
@@ -727,9 +725,9 @@ The irreducible FC-finite Coxeter graphs are given in Figure~\ref{fig:FCfincoxgr
 
 We now discuss a visual representation of Coxeter group elements. Each reduced expression can be associated with a labeled partially ordered set (poset) called a heap.  Heaps provide a visual representation of a reduced expression while preserving the relations among the generators. We follow the development of heaps for straight line Coxeter groups found in~\cite{Billey2007},~\cite{Ernst2010}, and~\cite{Stembridge1996}. 
 
-Let $(W,S)$ be a Coxeter system of type $\Gamma$. Suppose $\w=s_{x_1}s_{x_2}\cdots s_{x_r}$ is a fixed reduced expression for $w \in W(\Gamma)$. As in~\cite{Stembridge1996}, we define a partial ordering on the indices $\{1, 2, \ldots, r\}$ by the transitive closure of the relation $\lessdot$ defined via $j \lessdot i$ if $i < j$ and $s_{x_i}$ and $s_{x_j}$ do not commute. In particular, since $\w$ is reduced, $j \lessdot i$ if $s_{x_i}=s_{x_j}$ by transitivity. This partial order is referred to as the \emph{heap} of $\w$, where $i$ is labeled by $s_{x_i}$. Note that for simplicity we are omitting the labels of the underlying poset but retaining the labels of the corresponding generators.
+Let $(W,S)$ be a Coxeter system of type $\Gamma$. Suppose $\w=s_{x_1}s_{x_2}\cdots s_{x_r}$ is a fixed reduced expression for $w \in W(\Gamma)$. As in~\cite{Stembridge1996}, we define a partial ordering on the indices $\{1, 2, \ldots, r\}$ by the transitive closure of the relation $\lessdot$ defined via $j \lessdot i$ if $i < j$ and $s_{x_i}$ and $s_{x_j}$ do not commute. In particular, since $\w$ is reduced, $j \lessdot i$ if $s_{x_i}=s_{x_j}$ by transitivity. This partial order is referred to as the \emph{heap} of $\w$, where $i$ is labeled by $s_{x_i}$. Note that for simplicity we are omitting the labels of the underlying poset yet retaining the labels of the corresponding generators.
 
-It follows from~\cite{Stembridge1996} that heaps are well-defined up to commutation class. That is, given two reduced expressions $\w_1$ and $\w_2$ for $w \in W$ that are in the same commutation class, the heaps for $\w_1$ and $\w_2$ will be equal. In particular, if $w \in \FC(\Gamma)$, then $w$ has one commutation class, and thus $w$ has a unique heap. Conversely, if $\w_1$ and $\w_2$ are in different commutation classes, then the heap for $\w_1$ will be distinct from the heap from $\w_2$.
+It follows from~\cite{Stembridge1996} that heaps are well-defined up to commutation class. That is, given two reduced expressions $\w_1$ and $\w_2$ for $w \in W$ that are in the same commutation class, the heaps for $\w_1$ and $\w_2$ will be equal. In particular, if $w \in \FC(\Gamma)$, then $w$ has one commutation class, and thus $w$ has a unique heap. Conversely, if $\w_1$ and $\w_2$ are in different commutation classes, then the heap for $\w_1$ will be distinct from the heap for $\w_2$.
 
 \begin{example}\label{ex:word}
 Let $\w=s_6s_4s_2s_5s_3s_1s_4s_0s_1$ be a reduced expression for $w \in \FC(\widetilde{C}_6).$ We see that $\w$ is indexed by $\{1,2,3,4,5,6,7,8,9\}$. As an example, $9 \lessdot 8$ since $8 <9$ and $s_0$ and $s_1$ do not commute. The labeled Hasse diagram for the heap poset is seen in Figure~\ref{fig:Hasse}.
@@ -755,7 +753,7 @@ Let $\w=s_6s_4s_2s_5s_3s_1s_4s_0s_1$ be a reduced expression for $w \in \FC(\wid
 \end{example}
 
 Let $\w$ be a reduced expression for an element $w \in W(\widetilde{C}_n)$. As in~\cite{Billey2007} and~\cite{Ernst2010} we can represent a heap for $\w$ as a set of lattice points embedded in $\{0,1,2,\ldots, n\} \times \mathbb{N}$. To do so, we assign coordinates (not unique) $(x,y) \in \{0,1,2,\ldots, n\} \times \mathbb{N}$ to each entry of the labeled Hasse diagram for the heap of $\w$ in such a way that:
-\begin{enumerate}
+\begin{enumerate}[leftmargin=2cm]
 \item An entry with coordinates $(x,y)$ is labeled $s_i$ (or $i$) in the heap if and only if $x = i$; 
 
 \item If an entry with coordinates $(x,y)$ is greater than an entry with coordinates $(x',y')$ in the heap then $y > y'$.
@@ -763,7 +761,7 @@ Let $\w$ be a reduced expression for an element $w \in W(\widetilde{C}_n)$. As i
 
 Although the above is specific to $W(\widetilde{C}_n)$, the same construction works for any straight line Coxeter graph with the appropriate adjustments made to the label set and assignment of coordinates. Specifically, for type $A_n$ our label set is $\{1,2, \ldots, n\}$ and for type $B_n$ our label set is $\{0,1, \ldots, n-1\}$.
 
-In the case of any straight line Coxeter graph it follows from the definition that $(x,y)$ covers $(x',y')$ in the heap if and only if $x = x' \pm 1$, $y'< y$, and there are no entries $(x'', y'')$ such that $x'' \in \{x, x'\}$ and $y'< y'' < y$. This implies that we can completely reconstruct the edges of the Hasse diagram and the corresponding heap poset from a lattice point representation. The lattice point representation can help us visualize arguments that are potentially complex. Note that in our heaps the entries in the top correspond to the generators occurring in the left descent set of the corresponding reduced expression.
+In the case of any straight line Coxeter graph it follows from the definition that $(x,y)$ covers $(x',y')$ in the heap if and only if $x = x' \pm 1$, $y'< y$, and there are no entries $(x'', y'')$ such that $x'' \in \{x, x'\}$ and $y'< y'' < y$. This implies that we can completely reconstruct the edges of the Hasse diagram and the corresponding heap poset from a lattice point representation. The lattice point representation can help us visualize arguments that are potentially complex. Note that in our heaps the entries at the top (respectively, bottom) correspond to the generators occurring in the left (respectively, right) descent set of the corresponding reduced expression.
 
 Let $\w$ be a reduced expression for $w \in W(\widetilde{C}_n)$. We denote the lattice representation of the heap poset in $\{0,1,2, \ldots n\} \times \mathbb{N}$ described in the preceding paragraphs via $H(\w)$. If $w$ is $\FC$, then the choice of reduced expression for $w$ is irrelevant and we will often write $H(w)$ and we refer to $H(w)$ as the heap of $w$. Note that we will use the same notation for heaps in Coxeter groups of all types with straightline Coxeter graphs.
 
@@ -773,7 +771,7 @@ There are potentially many ways to illustrate a heap of an arbitrary reduced exp
 
 
 \begin{example}
-	Let $\w=s_6s_4s_2s_5s_3s_1s_4s_0s_1$ be a reduced expression for $w \in \FC(\widetilde{C}_6)$ as seen in Example~\ref{ex:word}. Figure~\ref{fig:FC heap} shows a possible lattice point representation for $H(w)$. Since $w$ is FC this is the unique heap representation for $w$. Because $H(w)$ is the unique heap we can obtain $\LD(w)$ (respectively, $\RD(w)$) from the blocks that are exposed in the top (respectively, bottom) of the heap. Note that if we were to draw the heap differently the exposures we are looking for would change.
+	Let $\w=s_6s_4s_2s_5s_3s_1s_4s_0s_1$ be a reduced expression for $w \in \FC(\widetilde{C}_6)$ as seen in Example~\ref{ex:word}. Figure~\ref{fig:FC heap} shows a possible lattice point representation for $H(w)$. Since $w$ is FC this is the unique heap representation for $w$. Because $H(w)$ is the unique heap we can obtain $\LD(w)$ (respectively, $\RD(w)$) from the blocks that are exposed in the top (respectively, bottom) of the heap. From $H(w)$ we see that $\LD(w)=\{s_2,s_4,s_6\}$ since these are the bricks that are fully exposed to the top and $\RD(w)=\{s_1,s_4\}$ as these are the bricks that are fully exposed to the bottom of the heap.
 \begin{figure}[h]
 \centering
 \begin{tikzpicture}[scale=0.5]
@@ -793,7 +791,7 @@ There are potentially many ways to illustrate a heap of an arbitrary reduced exp
 \end{example}
 
 \begin{example}
-Let $\w_1=s_0s_2s_4s_3s_2s_1$ be a reduced expression for $w \in W(\widetilde{C}_4)$. Applying the commutation move $s_4s_2\mapsto s_2s_4$, we can obtain another reduced expression for $w$, namely $\w_2$, which is in the same commutation class as $\w_1$ and hence has the same heap. However, applying the braid move $s_2s_3s_2 \mapsto s_3s_2s_3$, we obtain another reduced expression $\w_3=s_0s_4s_3s_2s_3s_1$. Note that since $\w_3$ was obtained by applying a braid move, $\w_3$ is in a different commutation class than $\w_1$ and $\w_2$. Representations of $H(\w_1), H(\w_2)$, and $H(\w_3)$ are seen in Figure~\ref{fig:not FC}, where the braid relation is colored in \textcolor{teal}{teal}.
+Let $\w_1=s_0s_2s_4s_3s_2s_1$ be a reduced expression for $w \in W(\widetilde{C}_4)$. Applying the commutation move $s_2s_4\mapsto s_4s_2$, we can obtain another reduced expression for $w$, namely $\w_2=s_0s_4s_2s_3s_2s_1$, which is in the same commutation class as $\w_1$, and hence has the same heap. However, applying the braid move $s_2s_3s_2 \mapsto s_3s_2s_3$, we obtain another reduced expression $\w_3=s_0s_4s_3s_2s_3s_1$. Note that since $\w_3$ was obtained by applying a braid move, $\w_3$ is in a different commutation class than $\w_1$ and $\w_2$. Representations of $H(\w_1), H(\w_2)$, and $H(\w_3)$ are seen in Figure~\ref{fig:not FC}, where the braid relation is colored in \textcolor{teal}{teal}.
 
 \begin{figure}[h]
 \centering
@@ -821,15 +819,15 @@ Let $\w_1=s_0s_2s_4s_3s_2s_1$ be a reduced expression for $w \in W(\widetilde{C}
 \end{tikzpicture}
 \caption{$H(\w_3)$}
 \end{subfigure}
-\caption{Two heaps of a non-FC element in $W(\widetilde{C}_4)$}	
+\caption{Two heaps of a non-FC element in $W(\widetilde{C}_4)$.}	
 \label{fig:not FC}
 \end{figure}
 \end{example}
 
-It will be extremely useful for us to be able to quickly determine whether a heap corresponds to an element in $\FC(B_n)$ and $\FC(\widetilde{C}_n)$. The next proposition is a special case of \cite[Proposition 3.3]{Stembridge1996} and follows quickly when one considers the consecutive subwords that are impermissible in reduced expressions for elements in $\FC(B_n)$ and $\FC(\widetilde{C}_n)$ as discussed in Section~\ref{sec:FC}.
+It will be extremely useful for us to be able to quickly determine whether a heap corresponds to an element in $\FC(B_n)$ or $\FC(\widetilde{C}_n)$. The next proposition is a special case of \cite[Proposition 3.3]{Stembridge1996} and follows quickly when one considers the consecutive subwords that are impermissible in reduced expressions for elements in $\FC(B_n)$ and $\FC(\widetilde{C}_n)$ as discussed in Section~\ref{sec:FC}.
 
 \begin{theorem}
-If $w \in \FC(\widetilde{C}_n)$, then $H(w)$ cannot contain any of the configurations seen in Figure~\ref{fig:impermiss heaps}, where $0 < k < n-1$ and we use a square with a dotted boundary to emphasize that no element of the heap occupies the corresponding  position. \qed
+If $w \in \FC(\widetilde{C}_n)$, then $H(w)$ cannot contain any of the configurations seen in Figure~\ref{fig:impermiss heaps}, where $0 < k < n-1$ and we use a square with a dotted boundary to emphasize that no element of the heap may occupy the corresponding position. \qed
 \end{theorem}
 
 \begin{figure}[h]
@@ -905,5 +903,5 @@ If $w \in \FC(\widetilde{C}_n)$, then $H(w)$ cannot contain any of the configura
 \caption{Impermissible configurations for heaps of $\FC(\widetilde{C}_n)$.}\label{fig:impermiss heaps}
 \end{figure}
 
-Since $W(B_n)$ is parabolic subgroup of $W(\widetilde{C}_n)$, we can use Figure~\ref{fig:impermiss heaps} to classify the impermissible configurations for elements of $\FC(B_n)$. The impermissible configurations for elements of $\FC(B_n)$ are those seen in Figures~\ref{fig:C&B},~\ref{fig:C&B2}~\ref{fig:a,b,c}, and~\ref{fig:a,b,c2}. 
+Since $W(B_n)$ is parabolic subgroup of $W(\widetilde{C}_n)$, we can use Figure~\ref{fig:impermiss heaps} to classify the impermissible configurations for elements of $\FC(B_n)$. In particular, the impermissible configurations for elements of $\FC(B_n)$ are those seen in Figures~\ref{fig:C&B},~\ref{fig:C&B2}~\ref{fig:a,b,c}, and~\ref{fig:a,b,c2}. 
 

@@ -8,13 +8,13 @@ The notion of a star operation was originally introduced by Kazhdan and Lusztig 
 Let $(W,S)$ be a Coxeter system of type $\Gamma$ and let $I=\{s,t\}\subseteq S$ be a pair of generators with $m(s,t) \geq 3$. Let $w \in W(\Gamma)$ such that $s \in \mathcal{L}(w)$. We define $w$ to be \emph{left star reducible by $s$ with respect to $t$} if there exists $t \in \mathcal{L}(sw)$. We analogously define $w$ to be \emph{right star reducible by $s$ with respect to $t$}. Observe that $w$ is left (respectively, right) star reducible if and only if $w=stu$ (respectively, $w=uts$), where the product on the right hand side of the equation is reduced and $m(s,t) \geq 3$. We say that $w$ is \emph{star reducible} if it is either left or right star reducible.
 
 \begin{example}\label{ex:starred}
-Let $\w=s_0s_1s_0s_2$ be a reduced expression for $w \in W(B_4)$. We see that $w$ is left star reducible by $s_0$ with respect to $s_1$ to $s_1s_0s_2$ since $m(s_0,s_1)=4$ and $s_0 \in \mathcal{L}(w)$ while $s_1 \in \mathcal{L}(s_0w)$. Also, $w$ is not right star reducible since $s_1$ is not in $\RD(w)$ when $w$ is multiplied on the right by either $s_0$ or $s_2$. 
+Let $\w=s_0s_1s_0s_2$ be a reduced expression for $w \in W(B_4)$. We see that $w$ is left star reducible by $s_0$ with respect to $s_1$ to $s_1s_0s_2$ since $m(s_0,s_1)=4$ and $s_0 \in \mathcal{L}(w)$ while $s_1 \in \mathcal{L}(s_0w)$. Notice that $w$ if FC. We see that $ws_2=s_0s_1s_0$ and $ws_0=s_0s_1s_2$. Note that in both instances $s_1 \notin \RD(ws_2)$ and $s_1 \notin \LD(ws_0)$. Because of this $w$ is not right star reducible. 
 \end{example}
 
-It may be helpful to visualize star reductions in terms of heaps. Let $(W,S)$ be a Coxeter system of type $\Gamma$ and let $I=\{s,t\}\subseteq S$ be a pair of generators with $m(s,t) \geq 3$. Suppose $w$ is left star reducible by $s$ with respect to $t$. Then there exists a heap for $w$ where the block for $s$ is fully exposed to the top. Removing the block for $s$ off of the top allows for $t$ to now be fully exposed to the top. Similarly if $w$ is right star reducible by $s$ with respect to $t$, then there exists a heap for $w$ where the block for $s$ is fully exposed to the bottom. Removing the block for $s$ off of the bottom allows for $t$ to now be fully exposed to the bottom. This implies that if a heap for $w \in W(\Gamma)$ has this property, then $w$ is star reducible. The following example illustrates the above concept.
+It may be helpful to visualize star reductions in terms of heaps. Let $(W,S)$ be a Coxeter system of type $\Gamma$ and let $I=\{s,t\}\subseteq S$ be a pair of generators with $m(s,t) \geq 3$. Suppose $w$ is left star reducible by $s$ with respect to $t$. Then there exists a heap for $w$ where the block for $s$ is fully exposed to the top. Removing the block for $s$ off of the top allows for $t$ to now be fully exposed to the top. Similarly if $w$ is right star reducible by $s$ with respect to $t$, then there exists a heap for $w$ where the block for $s$ is fully exposed to the bottom. Removing the block for $s$ off of the bottom allows for $t$ to now be fully exposed to the bottom. Conversely, if a heap for $w \in W(\Gamma)$ has this property, then $w$ is star reducible. The following example illustrates the above concept.
 
 \begin{example}\label{ex:starredheap}
-Let $\w=s_0s_1s_0s_2s_3$ be a reduced expression for $w \in W(B_4)$. Note that $w$ if FC. By Example~\ref{ex:starred} we know that $w$ is left star reducible by $s_0$ with respect to $s_1$. In Figure~\ref{fig:heapy}, we see the heap for $w$. Notice that the block for $s_0$ is fully exposed to the top of the heap. Removing the block for $s_0$ gives the heap in Figure~\ref{fig:multiplied}. Notice that the block for $s_1$ is now fully exposed to the top of the heap. However, notice that the block for $s_0$ and $s_2$ are fully exposed to the bottom. In removing either of these we are unable to fully expose $s_1$ to the bottom. Thus we can see that $w$ is not right star reducible. If $w$ was not FC then we would not be able to say that $w$ is not right star reducible as there could be a different heap for $w$ in which we were able to fully expose an element that was previously blocked. 
+Let $\w=s_0s_1s_0s_2$ be a reduced expression for $w \in W(B_4)$. Note that $w$ is FC. By Example~\ref{ex:starred} we know that $w$ is left star reducible by $s_0$ with respect to $s_1$. In Figure~\ref{fig:heapy}, we see the heap for $w$. Notice that the block for $s_0$ is fully exposed to the top of the heap. Removing the block for $s_0$ gives the heap in Figure~\ref{fig:multiplied}. Notice that the block for $s_1$ is now fully exposed to the top of the heap. However, notice that the block for $s_0$ and $s_2$ are fully exposed to the bottom. In removing either of these we are unable to fully expose $s_1$ to the bottom. Thus we can see that $w$ is not right star reducible.  
 \end{example}
 
 
@@ -45,6 +45,49 @@ Let $\w=s_0s_1s_0s_2s_3$ be a reduced expression for $w \in W(B_4)$. Note that $
 \caption{Visualization of Example~\ref{ex:starred}.}
 \label{fig:starred}
 \end{figure}
+
+Notice that if $w$ is not FC then we are not be able to say that $w$ is not star reducible as there could be a different heap for $w$ in which we are able to fully expose an element that was previously blocked.
+
+\begin{example}
+Let $\w_1=s_3s_1s_2s_1s_0s_1s_3s_0s_2s_4$ be a reduced expression for $w \in W(\C_3)$. The heap for $\w$ is given in Figure~\ref{fig:starrednfc} where we have highlighted the braid in \textcolor{teal}{teal}. Notice that this heap appears to not be star reducible as if we were to remove the brick for $s_1$ or $s_3$ we would still not fully expose $s_2$ to the top of the heap. The same goes for fully exposing bricks in the bottom of the heap. However, when we perform the braid operation resulting in the heap seen in Figure~\ref{fig:starredfc2} it is now obvious that the element is star reducible. Thus when considering a non-FC element for star reducibility via the heap, it is very important to consider all heaps for that element.
+
+\begin{figure}[h!]
+\begin{tabular}{m{7cm} m{7cm}}
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=0.5]
+	\heapblock{1}{10}{1}{teal}
+	\heapblock{3}{10}{3}{purple}
+	\heapblock{2}{8}{2}{teal}
+	\heapblock{1}{6}{1}{teal}
+	\heapblock{0}{4}{0}{purple}
+	\heapblock{1}{2}{1}{purple}
+	\heapblock{3}{2}{3}{purple}
+	\heapblock{0}{0}{0}{purple}
+	\heapblock{2}{0}{2}{purple}
+	\heapblock{4}{0}{2}{purple}	
+\end{tikzpicture}
+\caption{}\label{fig:starredfc}	
+\end{subfigure}&
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=0.5]
+	\heapblock{2}{10}{2}{teal}
+	\heapblock{3}{12}{3}{purple}
+	\heapblock{1}{8}{1}{teal}
+	\heapblock{2}{6}{2}{teal}
+	\heapblock{0}{6}{0}{purple}
+	\heapblock{1}{4}{1}{purple}
+	\heapblock{3}{4}{3}{purple}
+	\heapblock{0}{2}{0}{purple}
+	\heapblock{2}{2}{2}{purple}
+	\heapblock{4}{2}{2}{purple}	
+\end{tikzpicture}
+\caption{}\label{fig:starredfc2}	
+\end{subfigure}
+\end{tabular}
+\end{figure}
+\end{example}
+
 
 Using the notion of star reduction we are now able to introduce the concept of a star reducible Coxeter group. We say that a Coxeter group $W(\Gamma)$, or it's Coxeter graph $\Gamma$, is \emph{star reducible} if every element of $\FC(\Gamma)$ is star reducible to a product of commuting generators. That is, $W(\Gamma)$ is star reducible if when we apply star reductions repeatedly to $w \in \FC(\Gamma)$, eventually we obtain a product of commuting generators. Using heaps to visualize a star reducible Coxeter group given a heap in $\FC(\Gamma)$, we are able to systematically remove a fully exposed block from the top or bottom of the heap and have a block that was previously not fully exposed become fully exposed until we are left with a heap that is one row in height. 
 

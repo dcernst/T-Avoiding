@@ -21,6 +21,7 @@
 \definecolor{purple}{RGB}{153,51,255}
 \definecolor{turq}{RGB}{72,209,204}
 \definecolor{gray}{RGB}{220,220,220}
+\definecolor{rred}{rgb}{0.9, 0.17, 0.31}
 
 \tikzset{arrow data/.style 2 args={%
       decoration={%
@@ -1243,6 +1244,354 @@ Labeled Coxeter Graphs that the thesis deals with
 \end{subfigure}
 \end{tabular}
 \caption{Labeled Coxeter Graphs}\label{}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{tabular}{m{7cm} m{7cm}}
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=0.5]
+	\heapblock{3}{-2}{}{white}
+	\heapblock{2}{6}{k}{teal}
+	\heapblock{3}{4}{k-1}{teal}
+	\heapblock{2}{2}{k}{teal}
+	\heapblock{4}{2}{k-2}{purple}
+	\heapblock{3}{0}{k-1}{purple}
+\end{tikzpicture}
+\caption{}\label{case:a1}
+\end{subfigure}&
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=0.5]
+	\heapblock{3}{8}{k-1}{purple}
+	\heapblock{2}{6}{k}{purple}
+	\heapblock{3}{4}{k-1}{teal}
+	\heapblock{4}{2}{k-2}{teal}
+	\heapblock{3}{0}{k-1}{teal}
+\end{tikzpicture}
+\caption{}\label{case:a2}
+\end{subfigure}	
+\end{tabular}
+\caption{Visual representation of the heap configuration discussed in Case 1a.}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{tabular}{m{7cm} m{7cm}}
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=0.5]
+	\heapblock{4}{4}{k}{teal}
+	\heapblock{3}{2}{k-1}{teal}
+	\dheapblock{2}{0}{}{black}
+	\heapblock{4}{0}{k}{teal}
+	\dheapblock{3}{-2}{}{black}
+	\heapblock{5}{-2}{k+1}{purple}
+\end{tikzpicture}
+\caption{}\label{fig:caseb1}
+\end{subfigure} &
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=0.5]
+	\heapblock{3}{6}{}{white}
+	\heapblock{3}{4}{k-1}{teal}
+	\heapblock{4}{2}{k}{teal}
+	\dheapblock{2}{2}{}{black}
+	\heapblock{3}{0}{k-1}{teal}
+	\heapblock{5}{0}{k+1}{purple}
+\end{tikzpicture}
+\caption{}\label{fig:caseb2}
+\end{subfigure}
+\end{tabular}
+\caption{Visual representation of the heap configuration discussed in Case 1b.}\label{fig:Case1b}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{tabular}{m{7cm} m{7cm}}
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=0.5]
+	\heapblock{0}{-2}{}{white}
+	\heapblock{2}{8}{2}{teal}
+	\heapblock{1}{6}{1}{teal}
+	\heapblock{2}{4}{2}{teal}
+	\heapblock{0}{4}{0}{purple}
+	\heapblock{1}{2}{1}{purple}
+	\heapblock{0}{0}{0}{purple}
+	\dheapblock{2}{0}{}{black}
+\end{tikzpicture}
+\caption{}\label{fig:case2b1}
+\end{subfigure} &
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=0.5]
+	\heapblock{1}{8}{1}{purple}
+	\heapblock{2}{6}{2}{purple}
+	\heapblock{1}{4}{1}{orange}
+	\heapblock{0}{2}{0}{orange}
+	\heapblock{1}{0}{1}{orange}
+	\heapblock{0}{-2}{0}{orange}
+	\dheapblock{2}{-2}{}{black}
+\end{tikzpicture}
+\caption{}\label{fig:case2b2}
+\end{subfigure}
+\end{tabular}
+\caption{Visual representation of the heap configuration discussed in Case 2a.}\label{fig:Case2a}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{tabular}{m{7cm} m{7cm}}
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=0.5]
+	\heapblock{0}{10}{0}{orange}
+	\heapblock{1}{8}{1}{orange}
+	\heapblock{0}{6}{0}{orange}
+	\heapblock{1}{4}{1}{orange}
+	\heapblock{2}{2}{2}{purple}
+	\dheapblock{0}{2}{}{black}
+\end{tikzpicture}
+\caption{}\label{fig:case3a1}
+\end{subfigure} &
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=0.5]
+	\heapblock{0}{12}{}{white}
+	\heapblock{1}{10}{1}{orange}
+	\heapblock{0}{8}{0}{orange}
+	\heapblock{1}{6}{1}{orange}
+	\heapblock{0}{4}{0}{orange}
+	\heapblock{2}{4}{2}{purple}
+\end{tikzpicture}
+\caption{}\label{fig:case3a2}
+\end{subfigure}
+\end{tabular}
+\caption{Visual representation of the heap configuration discussed in Case 3a.}\label{fig:Case3a}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{tabular}{m{7cm} m{7cm}}
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=0.5]
+	\heapblock{1}{8}{1}{teal}
+	\heapblock{2}{6}{2}{teal}
+	\heapblock{1}{4}{1}{teal}
+	\heapblock{0}{2}{0}{purple}
+	\dheapblock{2}{2}{}{black}
+\end{tikzpicture}
+\caption{}\label{fig:case3b1}
+\end{subfigure} &
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=0.5]
+	\heapblock{0}{8}{}{white}
+	\heapblock{2}{6}{2}{teal}
+	\heapblock{1}{4}{1}{teal}
+	\heapblock{2}{2}{2}{teal}
+	\heapblock{0}{2}{0}{purple}
+\end{tikzpicture}
+\caption{}\label{fig:case3b2}
+\end{subfigure}
+\end{tabular}
+\caption{Visual representation of the heap configuration discussed in Case 3b.}\label{fig:Case3b}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{tabular}{m{7cm} m{7cm}}
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=0.5]
+	\heapblock{0}{0}{}{white}
+	\heapblock{1}{10}{1}{orange}
+	\heapblock{0}{8}{0}{orange}
+	\heapblock{1}{6}{1}{orange}
+	\heapblock{0}{4}{0}{orange}
+	\heapblock{2}{4}{2}{purple}
+	\heapblock{1}{2}{1}{purple}
+\end{tikzpicture}
+\caption{}\label{fig:case4a}
+\end{subfigure} &
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=0.5]
+	\heapblock{0}{10}{0}{orange}
+	\heapblock{1}{8}{1}{orange}
+	\heapblock{0}{6}{0}{orange}
+	\heapblock{1}{4}{1}{teal}
+	\heapblock{2}{2}{2}{teal}
+	\heapblock{1}{0}{1}{teal}
+\end{tikzpicture}
+\caption{}\label{fig:case4b}
+\end{subfigure}
+\end{tabular}
+\caption{Visual representation of the heap configuration discussed in Case 4.}\label{fig:Case4}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{tabular}{m{7cm} m{7cm}}
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=0.5]
+	\heapblock{0}{12}{}{white}
+	\heapblock{2}{10}{2}{teal}
+	\heapblock{1}{8}{1}{teal}
+	\heapblock{2}{6}{2}{teal}
+	\heapblock{0}{6}{0}{purple}
+	\heapblock{1}{4}{1}{purple}
+	\heapblock{3}{4}{3}{purple}
+\end{tikzpicture}
+\caption{}\label{fig:caseb2a}
+\end{subfigure} &
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=0.5]
+	\heapblock{1}{10}{1}{teal}
+	\heapblock{2}{8}{2}{teal}
+	\heapblock{1}{6}{1}{teal}
+	\heapblock{0}{4}{0}{purple}
+	\heapblock{1}{2}{1}{purple}
+	\heapblock{3}{2}{3}{purple}
+\end{tikzpicture}
+\caption{}\label{fig:caseb2b}
+\end{subfigure}
+\end{tabular}
+\caption{Visual representation of the heap configuration discussed in Case 2b.}\label{fig:Case2}
+\end{figure}
+
+\begin{figure} \centering
+\begin{tikzpicture}[scale=0.5] 
+	\heapblock{2}{10}{2}{teal}
+	\heapblock{1}{8}{1}{teal}
+	\heapblock{2}{6}{2}{teal}
+	\heapblock{0}{6}{0}{purple}
+	\heapblock{1}{4}{1}{purple}
+	\heapblock{3}{4}{3}{purple}
+	\heapblock{2}{2}{2}{rred}
+\end{tikzpicture}\label{heap2}
+\end{figure}
+
+\begin{figure} \centering
+\begin{tikzpicture}[scale=0.5] 
+	\heapblock{2}{10}{2}{teal}
+	\heapblock{1}{8}{1}{teal}
+	\heapblock{2}{6}{2}{teal}
+	\heapblock{0}{6}{0}{purple}
+	\heapblock{1}{4}{1}{purple}
+	\heapblock{3}{4}{3}{purple}
+	\heapblock{2}{2}{2}{rred}
+	\heapblock{3}{0}{3}{rred}
+	\heapblock{4}{2}{4}{rred}
+\end{tikzpicture}\label{heap2}
+\end{figure}
+
+\begin{figure} \centering
+\begin{tikzpicture}[scale=0.5] 
+	\heapblock{2}{10}{2}{teal}
+	\heapblock{1}{8}{1}{teal}
+	\heapblock{2}{6}{2}{teal}
+	\heapblock{0}{6}{0}{purple}
+	\heapblock{1}{4}{1}{purple}
+	\heapblock{3}{4}{3}{purple}
+	\heapblock{2}{2}{2}{rred}
+	\heapblock{3}{0}{3}{rred}
+	\heapblock{4}{2}{4}{rred}
+	\heapblock{5}{0}{5}{rred}
+	\heapblock{4}{-2}{4}{rred}
+	
+	\node[] at (7,-2){$\ddots$};
+	\node[] at (7,-4){$\ddots$};
+	
+	\heapblock{9}{-3}{n-3}{rred}
+	\heapblock{11}{-3}{n-1}{rred}
+	\heapblock{10}{-5}{n-2}{rred}
+	\heapblock{12}{-5}{n}{rred}
+	
+\end{tikzpicture}\label{heap2}
+\end{figure}
+
+\begin{figure}[h!] \centering
+\begin{tikzpicture}[scale=0.5] 
+	\heapblock{2}{10}{2}{teal}
+	\heapblock{1}{8}{1}{teal}
+	\heapblock{2}{6}{2}{teal}
+	\heapblock{0}{6}{0}{purple}
+	\heapblock{1}{4}{1}{purple}
+	\heapblock{3}{4}{3}{purple}
+	\heapblock{2}{2}{2}{rred}
+	\heapblock{3}{0}{3}{rred}
+	\heapblock{4}{2}{4}{rred}
+	\heapblock{5}{0}{5}{rred}
+	\heapblock{4}{-2}{4}{rred}
+	
+	\node[] at (7,-2){$\ddots$};
+	\node[] at (7,-4){$\ddots$};
+	
+	\heapblock{9}{-3}{n-3}{rred}
+	\heapblock{11}{-3}{n-1}{rred}
+	\heapblock{10}{-5}{n-2}{rred}
+	\heapblock{12}{-5}{n}{rred}
+	\heapblock{11}{-7}{n-1}{rred}
+	\heapblock{9}{-7}{n-3}{rred}
+	%\heapblock{10}{-7}{n-2}{rred}
+	
+	\node[] at (7, -7){$\iddots$};
+	\node[] at (7,-9){$\iddots$};
+	\node[] at (4,-5){$\vdots$};
+	
+	\heapblock{3}{-8}{3}{rred}
+	\heapblock{1}{-8}{1}{rred}
+	\heapblock{2}{-10}{2}{rred}
+	\heapblock{0}{-10}{0}{rred}
+	\heapblock{4}{-10}{4}{rred}
+\end{tikzpicture}\label{heap2}
+\end{figure}
+
+\begin{figure}[h!] \centering
+\begin{tikzpicture}[scale=0.5] 
+	\heapblock{1}{12}{1}{teal}
+	\heapblock{2}{10}{2}{teal}
+	\heapblock{1}{8}{1}{orange}
+	\heapblock{0}{6}{0}{orange}
+	\heapblock{1}{4}{1}{orange}
+	\heapblock{3}{4}{3}{purple}
+	\heapblock{0}{2}{0}{orange}
+	\heapblock{2}{2}{2}{rred}
+	\heapblock{3}{0}{3}{rred}
+	\heapblock{4}{2}{4}{rred}
+	\heapblock{5}{0}{5}{rred}
+	\heapblock{4}{-2}{4}{rred}
+	
+	\node[] at (7,-2){$\ddots$};
+	\node[] at (7,-4){$\ddots$};
+	
+	\heapblock{9}{-3}{n-3}{rred}
+	\heapblock{11}{-3}{n-1}{rred}
+	\heapblock{10}{-5}{n-2}{rred}
+	\heapblock{12}{-5}{n}{rred}
+	\heapblock{11}{-7}{n-1}{rred}
+	\heapblock{9}{-7}{n-3}{rred}
+	%\heapblock{10}{-7}{n-2}{rred}
+	
+	\node[] at (7, -7){$\iddots$};
+	\node[] at (7,-9){$\iddots$};
+	\node[] at (0,-3){$\vdots$};
+	
+	\heapblock{3}{-8}{3}{rred}
+	\heapblock{1}{-8}{1}{rred}
+	\heapblock{2}{-10}{2}{rred}
+	\heapblock{0}{-10}{0}{rred}
+	\heapblock{4}{-10}{4}{rred}
+\end{tikzpicture}\label{heap2}
+\end{figure}
+
+\newpage
+
+\begin{figure}[h!] \centering
+\begin{tikzpicture}[scale=0.5]
+	\heapblock{1}{10}{1}{teal}
+	\heapblock{3}{10}{3}{purple}
+	\heapblock{2}{8}{2}{teal}
+	\heapblock{1}{6}{1}{teal}
+	\heapblock{0}{4}{0}{purple}
+	\heapblock{1}{2}{1}{purple}
+	\heapblock{3}{2}{3}{purple}
+	\heapblock{0}{0}{0}{purple}
+	\heapblock{2}{0}{2}{purple}
+	\heapblock{4}{0}{2}{purple}	
+\end{tikzpicture}	
 \end{figure}
 
 

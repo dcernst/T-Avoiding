@@ -12,7 +12,7 @@ There are no non-trivial T-avoiding elements in $W(\C_n)/\FC(\Gamma)$.
 \begin{proof}
 	Let $w$ be a reduced expression in $W(\C_n)$ such that $w$ has full support and $w$ does not have Property T. Consider all possible heaps for $w$ and choose a heap a bottom most braid. That is, choose a heap where the braid is as low as possible in the heap, which means the generators below the braid are FC.
 	
-	Case 1: Suppose the braid does not contain $0,1$ or$n-1,n$. Subcase a: Suppose $w$ has the fixed reduced product $w=u\textcolor{teal}{s_ks_{k-1}s_k}s_{k-1}s_{k-2}v$ or $w=u\textcolor{teal}{s_ks_{k-1}s_k}s_{k+1}s_{k-1}s_{k-2}v$ where $v$ is fully commutative, and the braid is highlighted in \textcolor{teal}{teal}. Applying the braid move we obtain the element $w=us_{k-1}s_k\textcolor{teal}{s_{k-1}s_{k-2}s_{k-1}}v$ or $w=us_{k-1}s_k\textcolor{teal}{s_{k-1}s_{k-2}s_{k-1}}s_{k+1}v$. Notice that the braid is now located next to $v$ having moved closer to the bottom in the heap. This is a contradiction to choosing a heap with the lowest braid. Therefore $w$ does not have the fixed reduced product $w=u\textcolor{teal}{s_ks_{k-1}s_k}s_{k-1}s_{k-2}v$ or $w=u\textcolor{teal}{s_ks_{k-1}s_k}s_{k+1}s_{k-1}s_{k-2}v$. Visually we see this in Figure~\ref{fig:Case1a}. Notice how there are two braids located in Figure~\ref{fig:case:a2}, the braid that starts in \textcolor{purple}{purple} and ends with \textcolor{teal}{teal} and the braid that is fully highlighted in \textcolor{teal}{teal}. 
+	Case 1: Suppose the braid does not contain $0,1$ or$n-1,n$. Subcase a: Suppose $w$ has the fixed reduced product $w=u\textcolor{teal}{s_ks_{k-1}s_k}s_{k-1}s_{k-2}v$ or $w=u\textcolor{teal}{s_ks_{k-1}s_k}s_{k+1}s_{k-1}s_{k-2}v$ where $v$ is fully commutative, and the braid is highlighted in \textcolor{teal}{teal}. Applying the braid move we obtain the element $w=us_{k-1}s_k\textcolor{teal}{s_{k-1}s_{k-2}s_{k-1}}v$ or $w=us_{k-1}s_k\textcolor{teal}{s_{k-1}s_{k-2}s_{k-1}}s_{k+1}v$. Notice that the braid is now located next to $v$ having moved closer to the bottom in the heap. This is a contradiction to choosing a heap with the lowest braid. Therefore $w$ does not have the fixed reduced product $w=u\textcolor{teal}{s_ks_{k-1}s_k}s_{k-1}s_{k-2}v$ or $w=u\textcolor{teal}{s_ks_{k-1}s_k}s_{k+1}s_{k-1}s_{k-2}v$. Visually we see this in Figure~\ref{fig:Case1a}, where $s_{k+1}$ is represented as a striped block. Notice how there are two braids located in Figure~\ref{fig:case:a2}, the braid that starts in \textcolor{purple}{purple} and ends with \textcolor{teal}{teal} and the braid that is fully highlighted in \textcolor{teal}{teal}. 
 		
 	\begin{figure}[h!]
 	\begin{tabular}{m{7cm} m{7cm}}
@@ -23,7 +23,7 @@ There are no non-trivial T-avoiding elements in $W(\C_n)/\FC(\Gamma)$.
 		\heapblock{3}{4}{k-1}{teal}
 		\heapblock{4}{2}{k}{teal}
 		\heapblock{2}{2}{k-2}{purple}
-		\dheapblock{5}{0}{k+1}{black}
+		\sheapblock{5}{0}{k+1}{purple}
 		\heapblock{3}{0}{k-1}{purple}
 	\end{tikzpicture}
 	\caption{}\label{fig:case:a1}
@@ -35,7 +35,7 @@ There are no non-trivial T-avoiding elements in $W(\C_n)/\FC(\Gamma)$.
 		\heapblock{4}{6}{k}{purple}
 		\heapblock{3}{4}{k-1}{teal}
 		\heapblock{2}{2}{k-2}{teal}
-		\dheapblock{5}{0}{k+1}{black}
+		\sheapblock{5}{0}{k+1}{purple}
 		\heapblock{3}{0}{k-1}{teal}
 	\end{tikzpicture}
 	\caption{}\label{fig:case:a2}
@@ -230,7 +230,7 @@ Notice that again if this were the bottom row of the heap we would have Property
 Recall that $v$ is FC by assumption, where $v$ is the \textcolor{rred}{red} in the above heap. In~\cite[Lemma 3.3]{Ernst2012c}	 Ernst classified that an FC element of this sort has the blank space in the middle filled in. This forces our heap to look like the one seen in Figure~\ref{fig:heap6} where all of the blocks in the middle of the red v are filled in. As a result of this we now have $s_0$ in our heap. After applying the braid move to the \textcolor{teal}{teal} braid in Figure~\ref{fig:heap6}. This leads to the heap seen in Figure~\ref{fig:heap7} where a new \textcolor{orange}{orange} braid appeared. This implies that for the fixed reduced product $w=u\textcolor{teal}{s_2s_1s_2}s_0s_1s_3s_2v$ there is a heap with a braid that is lower in the heap. A contradiction to the way in which we chose $w$. Thus $w$ can not have the reduced expression $w=u\textcolor{teal}{s_2s_1s_2}s_0s_1s_3s_2v$.
 
 \begin{figure}[h!]
-\begin{tabular}{m{9cm} m{9cm}}
+\begin{tabular}{m{7cm} m{7cm}}
 \begin{subfigure}{0.5\textwidth} \centering
 \begin{tikzpicture}[scale=0.45] 
 	\heapblock{2}{12}{}{white}
@@ -240,6 +240,7 @@ Recall that $v$ is FC by assumption, where $v$ is the \textcolor{rred}{red} in t
 	\heapblock{0}{6}{0}{purple}
 	\heapblock{1}{4}{1}{purple}
 	\heapblock{3}{4}{3}{purple}
+	\heapblock{0}{2}{0}{rred}
 	\heapblock{2}{2}{2}{rred}
 	\heapblock{3}{0}{3}{rred}
 	\heapblock{4}{2}{4}{rred}

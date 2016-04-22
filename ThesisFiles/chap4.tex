@@ -26,14 +26,14 @@ It may be helpful to visualize star reductions in terms of heaps. Let $(W,S)$ be
 
 \begin{subfigure}{0.5\textwidth} \centering
 \begin{tikzpicture}[scale=0.5]
-	\dheapblock{3}{2}{}{black}
-	\heapblock{1}{2}{s}{purple}
+	\dheapblock{1}{2}{}{black}
+	\heapblock{3}{2}{s}{purple}
 	\heapblock{2}{0}{t}{purple}
 \end{tikzpicture}
 \caption{}\label{fig:starright}	
 \end{subfigure}
 \end{tabular}
-\caption{A visual representation of an element that is star reducibile at the top.}\label{fig:heapwithT}
+\caption{A visual representation of an element that is star reducible at the top.}\label{fig:heapwithT}
 \end{figure*} 
 
 The following example utilizes heaps to show that an element is star reducible.
@@ -252,7 +252,7 @@ Again it might be useful to visualize the concept of weak star reducible in term
 \heapblock{0}{4}{0}{orange}
 \heapblock{1}{6}{1}{orange}
 \end{tikzpicture}
-\caption{Visualization of a weak star reducible element of $\FC(B_4)$.} \label{fig:noncancel}
+\caption{Heap of a weak star reducible element of $\FC(B_4)$.} \label{fig:noncancel}
 \end{figure*}
 
 \begin{example}
@@ -264,7 +264,7 @@ Let $w \in \FC(B_4)$ and let $\w=s_0s_1$ be a reduced expression for $w$. Note t
 \heapblock{0}{2}{0}{purple}
 \heapblock{1}{0}{1}{purple}	
 \end{tikzpicture}	
-\caption{Visualization of a non-cancellable element of $\FC(B_4)$.}\label{fig:noncancelvisual}
+\caption{Heap of a non-cancellable element of $\FC(B_4)$.}\label{fig:noncancelvisual}
 \end{figure*}
 
 In~\cite{Ernst2010}, Ernst classified the non-cancellable elements in Coxeter groups of type $W(B_n)$ and $W(\C_n)$. We will state part of the classification here as it is important to the development of the non-trivial T-avoiding elements in $W(\C_n)$. To see the full classification see~\cite[Sections 4.2 and 5]{Ernst2010}. 
@@ -288,7 +288,7 @@ Before we state the classification we first define a specific group element call
 	\heapblock{6}{0}{n-2}{purple}
 	\heapblock{8}{0}{n}{purple}
 \end{tikzpicture}
-\caption{A single sandwich stack in $W(\C_n)$.}\label{fig:singsandstack}
+\caption{Heap of a single sandwich stack in $W(\C_n)$.}\label{fig:singsandstack}
 \end{figure}
 
 We can stack single sandwich stacks together and get a ``stack of sandwich stacks." This is done by removing the top most layer of the heap and adding a new single bowtie to the stack. A stack of bowties is seen in Figure~\ref{fig:stacksandstack}. These heaps are referenced in the classification of non-trivial T-avoiding elements in $W(\C_n)$.
@@ -320,7 +320,7 @@ We can stack single sandwich stacks together and get a ``stack of sandwich stack
 	\heapblock{6}{-6}{n-2}{purple}
 	\heapblock{8}{-6}{n}{purple}
 \end{tikzpicture}	
-\caption{A stack of sandwich stacks in $W(\C_n)$.}\label{fig:stacksandstack}
+\caption{Heap of a stack of sandwich stacks in $W(\C_n)$.}\label{fig:stacksandstack}
 \end{figure}
 
 In~\cite{Ernst2010}, Ernst classified the sandwich stack as a non-cancellable element. Ernst also classified two other types of non-cancellable elements. The first does not have full support in $W(\C_n)$ and the second clearly has Property T. Thus from now on we will only consider stacks of sandwich stacks.

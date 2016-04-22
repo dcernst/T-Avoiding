@@ -34,21 +34,90 @@ Notice that the Coxeter graph of type $A_n$ can be obtained from the Coxeter gra
 
 %%%%%%%%%%%%%%%%
 
-\section{T-Avoiding Elements in Type $D_n$}
+\section{Type $D_n$}
 
 In this section we will classify the T-avoiding elements in Coxeter systems of type $D_n$. Recall that $W(D_n)$ is a star reducible Coxeter group and as a result of this any potential non-trivial T-avoiding elements are not FC.
 
 \begin{theorem}
- The only non-trivial T-avoiding elements in $W(D_n)$ for $n \geq 4$ are given by the heaps \textcolor{red}{Once we figure out the heap include it here.}.
+ The are non-trivial T-avoiding elements in $W(D_n)$ for $n \geq 4$.
 \begin{proof}
 	This is a consequence of~\cite[Section 2.2]{Gern2013a}. For the full details regarding this classification see~\cite{Gern2013a}. Note that in this classification, Gern  refers to non-trivially T-avoiding elements as ``bad."
 \end{proof}
 \end{theorem}
 
+We now will classify these elements as seen in~\cite{Gern2013a}. Before we do so we state interval notation useful to the classification from~\cite[Definition 2.3.1]{Gern2013a}. For $2 \leq i \leq j$ denote the element $s_{i}s_{i+1} \cdots s_{j-1}s_j$ by $[i,j]$. For $i \geq 3$, denote $s_1s_3s_4\cdots s_i$ by $[1,i]$ and for $j \geq 2$ denote $s_1s_2s_3 \cdots s_j$ by $[0,j]$. If $0 \leq j <i$ and $i \geq 2$ define $[j,i]=[i,j]^{-1}$. Finally, for $i \leq -3$ and $j \geq 3$ denote $s_1s_{i-1}s_{i-2} \cdots s_4s_3s_2s_3s_4 \cdots s_j$ by $[-i,j]$. The following is the classification for T-avoiding elements in $W(D_n)$. 
+
+\begin{proposition}
+	Let $w \in W(B_n)$ be non-trivially T-avoiding. Then $w$ has the signed permutation notation 
+	\[ w_m= \begin{cases}
+ 			[(-1)^{\frac{m}{2}},\underline{m},3, \underline{m-2}, 5, \ldots, \underline{4}, m-1, \underline{2}, m+1, m+2, \ldots, n] & \text{if, $m$ is even} \\
+ 			[(-1)^{\frac{m-1}{2}}, \underline{m-1}, 3, \underline{m-3}, 5, \ldots, \underline{4}, m-2, \underline{2}, m, m+1, \ldots n] & \text{if, $m$ is odd}	
+ \end{cases}
+\]
+Then $w=w_mu$ reduced for some $m \leq n$, where $u$ is a product of mutually commuting generators such that $\supp(u) \subset{s_{m+2}, s_{m+3}, s_{m+4}, \ldots s_n}$. Using the above notation, we can write $w$ as 
+\[ w_n=
+\begin{cases}
+	[2,0][4,0] \cdots [n-2,0][n,0][n-k,n-2k] \cdots [n-1,n-2][n,n] & \text{if, $n$ is even}\\
+	[2,0][4,0] \cdots [m-2,0][m,0][m-k,m-2k] \cdots [m-1,m-2][m,m] & \text{if, $n$ is odd}
+\end{cases}
+\] where $m=n-1$ and 
+\[
+k= 
+\begin{cases}
+\frac{n}{2}-2 & \text{if, $n$ is even}\\
+\frac{n-1}{2}-2 & \text{if, $n$ is odd}
+\end{cases}
+\].
+\begin{proof}
+	This is~\cite[Lemmas 2.2.18 and 2.3.4]{Gern2013a}. Although it is not immediately obvious $w$ is reduced and not FC.
+\end{proof}
+\end{proposition}
+
+In Figure~\ref{fig:Dtavoid}, we see two different elements that are T-avoiding in $W(D_5)$. Notice that the blocks that are highlighted in \textcolor{rred}{red} alternate, this prevents the \textcolor{teal}{teal} highlighted braid from forcing its way to the top or the bottom of the heap.  
+
+\begin{figure}[h!]
+\begin{tabular}{m{7cm} m{7cm}}
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=0.5]
+	\heapblock{1}{10}{}{white}
+	\heapblock{1}{12}{}{white}
+	\heapblock{1}{0}{}{white}
+	\heapblock{1}{8}{1}{rred}
+	\heapblock{3}{8}{3}{teal}
+	\heapblock{2}{6}{2}{teal}
+	\heapblock{1}{4}{0}{rred}
+	\heapblock{3}{4}{3}{teal}
+\end{tikzpicture}	
+\caption{}
+\end{subfigure} &
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=0.5]
+	\heapblock{1}{12}{0}{rred}
+	\heapblock{3}{12}{3}{purple}
+	\heapblock{5}{12}{5}{purple}
+	\heapblock{2}{10}{2}{purple}
+	\heapblock{4}{10}{4}{purple}
+	\heapblock{1}{8}{1}{rred}
+	\heapblock{3}{8}{3}{teal}
+	\heapblock{2}{6}{2}{teal}
+	\heapblock{1}{4}{0}{rred}
+	\heapblock{3}{4}{3}{teal}
+	\heapblock{2}{2}{2}{purple}
+	\heapblock{4}{2}{4}{purple}
+	\heapblock{1}{0}{1}{rred}
+	\heapblock{3}{0}{3}{purple}
+	\heapblock{5}{0}{5}{purple}
+\end{tikzpicture}
+\caption{}	
+\end{subfigure}
+\end{tabular}
+\caption{Visual representation of non-trivial T-avoiding elements in $W(D_5)$.}\label{fig:Dtavoid}
+\end{figure}
 
 %%%%%%%%%%%%%%%
 
-\section{T-Avoiding Elements in Type $F_n$}
+\section{Type $F_n$}
 
 In this section we classify what is known regarding the T-avoiding elements in the Coxeter groups of type $F_n$ for $n \geq 4$. Note that all of the following results are unpublished. %Recall that $W(F_n)$ is a star reducible Coxeter group so any non-trivial T-avoiding element in $W(F_n)$ will not be FC.
 
@@ -90,7 +159,7 @@ We start with the Coxeter system of type $F_5$.  Recall that $W(F_5)$ is a star 
 \caption{}\label{fig:singbowtiebraid}
 \end{subfigure}
 \end{tabular}
-\caption{A single bowtie in $W(F_5)$.}\label{fig:singbowtie}	
+\caption{Heap of a single bowtie in $W(F_5)$.}\label{fig:singbowtie}	
 \end{figure*}
 
 \begin{figure*}[h!] \centering
@@ -129,7 +198,7 @@ We start with the Coxeter system of type $F_5$.  Recall that $W(F_5)$ is a star 
 	\heapblock{3}{-18}{3}{orange}
 	\heapblock{5}{-18}{5}{purple}
 \end{tikzpicture}
-\caption{A stack of bowties in $W(F_5)$.}\label{fig:stackobowties}
+\caption{Heap of a stack of bowties in $W(F_5)$.}\label{fig:stackobowties}
 \end{figure*}
 
 \begin{theorem}
@@ -170,12 +239,12 @@ Cross et al. conjectured that in Coxeter systems of type $F_n$ for $n \geq 5$, a
 	\heapblock{4}{-6}{4}{purple}
 	\heapblock{6}{-6}{6}{purple}
 \end{tikzpicture}
-\caption{A non-trivial T-avoiding element in $W(F_6)$}\label{fig:f6bat}
+\caption{Heap of a non-trivial T-avoiding element in $W(F_6)$}\label{fig:f6bat}
 \end{figure}
 
 %%%%%%%%%%%%%%%%
 
-\section{T-Avoiding Elements in Type $I_2(m)$}
+\section{Type $I_2(m)$}
 
 We next will classify the T-avoiding elements in Coxeter groups of type $I_2(m)$. Note that in Coxeter groups of type $I_2(m)$, the only products of commuting generators have length 1. Although the following is a quick result, we believe that it does not already appear in the literature.
 \begin{theorem}

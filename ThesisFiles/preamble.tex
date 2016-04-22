@@ -26,9 +26,13 @@
 
 
 %%%%%%%%%%%%%% Heap Code %%%%%%%%%%%%%%
+\usetikzlibrary{patterns}
+
 \newcommand\heapblock[4]{\fill[fill=#4, fill opacity=0.35, draw=#4, line width=1.1pt, rounded corners,shift={(\xxaxis:#1)},shift={(\yyaxis:#2)}] (-1,-1) rectangle (1,1);\node at (#1,#2) {\footnotesize $#3$};}
 
 \newcommand\dheapblock[4]{\draw[dotted, draw=#4, line width=1.1pt, rounded corners,shift={(\xxaxis:#1)},shift={(\yyaxis:#2)}] (-1,-1) rectangle (1,1);\node at (#1,#2) {\footnotesize $#3$};}
+
+\newcommand\sheapblock[4]{\draw[pattern= north west lines, pattern color=#4, draw=#4, line width=1.1pt, rounded corners,shift={(\xxaxis:#1)},shift={(\yyaxis:#2)}] (-1,-1) rectangle (1,1);\node at (#1,#2) {\footnotesize $#3$};}
 
 \newcommand\xxaxis{0}
 \newcommand\yyaxis{90}
@@ -50,7 +54,7 @@
 \newcommand{\Sym}{\mathrm{Sym}}
 \newcommand{\w}{\mathsf{w}}
 \newcommand{\C}{\widetilde{C}}
-\newcommand{\sgn}{\mathrm{sign}}
+\newcommand{\sgn}{\mathrm{sgn}}
 \newcommand{\RD}{\mathcal{R}}
 \newcommand{\LD}{\mathcal{L}}
 

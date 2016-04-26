@@ -5,14 +5,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Classification of T-Avoiding Elements in Type $\C_n$}\label{sec:TAC}
 
-In this section we will classify the T-avoiding elements in Coxeter systems of type $\C_n$. Since $W(A_n)$ and $W(B_n)$ are parabolic subgroups of $W(\C_n)$ and these groups have no non-trivial T-avoiding elements,  any non-trivial T-avoiding elements of $W(\C_n)$ must have full support. We will first show that there are no non-trivial T-avoiding elements that are not FC in $W(\C_n)$.
+In this section we will classify the T-avoiding elements in Coxeter systems of type $\C_n$, a new result. Since $W(A_n)$ and $W(B_n)$ are parabolic subgroups of $W(\C_n)$ and these groups have no non-trivial T-avoiding elements,  any non-trivial T-avoiding elements of $W(\C_n)$ must have full support. We will first show that there are no non-trivial T-avoiding elements that are not FC in $W(\C_n)$.
 
-Before we begin the proof we must first define the notion of a pushed-down representation of a heap. First recall that there are potentially many ways to draw the lattice point representation of a heap, each differing by the amount of vertical space in between blocks. We wish to fix one such representation. Let $\w$ be a reduced expression for $w \in W(\C_n)$. We construct the \emph{pushed-down representation of a heap} of $H(\w)$ by placing all blocks in the lowest possible vertical position of the heap. Loosely speaking, the heap has been constructed by first giving all blocks fully exposed to the bottom the same vertical position, and then all blocks are as low as possible in the heap. Notice that we can now label the rows in the heap from bottom to top where the bottom-most row is row 1 and proceeding naturally upward from there. 
+Before we begin the proof we must first define the notion of a pushed-down representation of a heap. First recall that there are potentially many ways to draw the lattice point representation of a heap, each differing by the amount of vertical space between blocks. We wish to fix one such representation. Let $\w$ be a reduced expression for $w \in W(\C_n)$. We construct the \emph{pushed-down representation of a heap} of $H(\w)$ by first giving all blocks fully exposed to the bottom the same vertical position, and then all blocks are as low as possible in the heap. Loosely speaking the heap has been constructed by placing all blocks have been pushed down into the lowest possible vertical position of the heap. Notice that we can now label the rows in the heap from bottom to top where the bottom-most row is row 1 and proceeding naturally upward from there. 
 
-We now define the height of a braid. Given the presence of braid in the heap for an element $\w$, we say that the \emph{height of the braid} is the row number in which the uppermost block involved in the braid is located in the pushed-down representation. It is important to note that in the pushed-down representation a braid may not appear in consecutive rows. That is, some of the blocks may be lower in the heap and the braid may not be immediately apparent. 
+We now define the height of a braid. Given the presence of a braid in the heap of an element $\w$, we say that the \emph{height of the braid} is the row number in which the uppermost block involved in the braid is located in the pushed-down representation. It is important to note that in the pushed-down representation a braid may not appear in consecutive rows. That is, some of the blocks may be lower in the heap and the braid may not be immediately apparent. 
 
 \begin{example}
-Let $\w=s_0s_1s_3s_2s_1s_0s_1s_3$ be a reduced expression for $w \in W(C_3)$. The pushed-down representation of a heap for $\w$ is given in Figure~\ref{fig:pusheddownheap}. The height of the braid $s_1s_2s_1$ which is highlighted in \textcolor{teal}{teal} in Figure~\ref{fig:pusheddownheap} is 5 since the upper block for $s_1$ is located in the fifth row of the pushed-down representation heap. Notice that the block for $s_3$ can slide up higher in the heap. If we were to slide the block for $s_3$ up until it hit the block for $s_2$ we would obtain the braid $s_3s_2s_3$ in the heap. In this case, the height for the braid $s_3s_2s_3$ is also 5.   
+Let $\w=s_0s_1s_3s_2s_1s_0s_1s_3$ be a reduced expression for $w \in W(C_3)$. The pushed-down representation of a heap of $\w$ is given in Figure~\ref{fig:pusheddownheap}. The height of the braid $s_1s_2s_1$ which is highlighted in \textcolor{teal}{teal} in Figure~\ref{fig:pusheddownheap} is 5 since the upper block for $s_1$ is located in the fifth row of the pushed-down representation heap. Notice that the block for $s_3$ can slide up higher in the heap. If we were to slide the block for $s_3$ up until it hit the block for $s_2$ we would obtain the braid $s_3s_2s_3$ in the heap. In this case, the height for the braid $s_3s_2s_3$ is also 5.   
 
 \begin{figure}[h!] \centering
 \begin{tikzpicture}[scale=0.45]
@@ -28,7 +28,7 @@ Let $\w=s_0s_1s_3s_2s_1s_0s_1s_3$ be a reduced expression for $w \in W(C_3)$. Th
 %	\heapblock{2}{0}{2}{purple}
 %	\heapblock{4}{0}{4}{purple}
 \end{tikzpicture}	
-\caption{pushed-down representation of a heap}\label{fig:pusheddownheap}
+\caption{Pushed-down representation of a heap}\label{fig:pusheddownheap}
 \end{figure}
 
 	
@@ -62,9 +62,9 @@ There are no non-trivial T-avoiding elements in $W(\C_n)\backslash \FC(\C_n)$.
  	\end{center}
 	which clearly has Property T since $s_{i-1}$ is now in the 1st row of the pushed-down representation. This is a contradiction to the way in which we chose $w$. T For the rest of the cases we will assume that $k \geq 4$.
 	
-	Case (2): Suppose the braid has height $k$ and assume the braid does not contain $s_0, s_1, s_{n-1}$ or $s_n$. Without loss of generality assume $s_i$ is in the $(k)th$ row of the heap and if necessary we have brought the blocks for $s_{i-1}$ and $s_i$ up next to $s_i$ in row $k$. We now consider what can be in the $(k-3)$th row of the heap in two cases. 
+	Case (2): Suppose the braid has height $k$ and assume the braid does not contain $s_0, s_1, s_{n-1}$ or $s_n$. Without loss of generality assume $s_i$ is in the $k$th row of the heap and if necessary we have brought the blocks for $s_{i-1}$ and $s_i$ up next to $s_i$ in row $k$. We now consider what can be in the $(k-3)$th row of the heap in two cases. 
 	
-	Subcase (a): Assume that the block for $s_{i-1}$ is in the heap in $(k-3)$th and we allow for the block for $s_{i+1}$ to be in the same row as well, but it does not necessarily have to be. In the following pictures the block for $s_{i+1}$ will be represented in a purple striped block to indicate that it could be present but it does not have to be. The following is the subheap that we are considering
+	Subcase (a): Assume that the block for $s_{i-1}$ is in the heap in the $(k-3)$th row and we allow for the block for $s_{i+1}$ to be in the same row as well, but it does not necessarily have to be. In the following pictures the block for $s_{i+1}$ will be represented in a purple striped block to indicate that it could be present but it does not have to be. The following is the subheap that we are considering
 	\begin{center}
 	\begin{tikzpicture}[scale=0.45]
 		\heapblock{2}{0}{s_{i-1}}{purple}
@@ -75,7 +75,7 @@ There are no non-trivial T-avoiding elements in $W(\C_n)\backslash \FC(\C_n)$.
 		\heapblock{3}{6}{s_i}{teal}
 	\end{tikzpicture}
 	\end{center}
-	where we have highlighted the braid in \textcolor{teal}{teal}. Notice that the block for $s_{i-2}$ is present in the row $(k-2)$th. If it was not there, $w$ would have had the braid $s_{i-1}s_{i}s_{i-1}$ since $m(s_{i-1},s_i)=3$ and we would have had a heap with a lower braid to choose. Applying the braid move to the heap we get the following subheap
+	where we have highlighted the braid in \textcolor{teal}{teal}. Notice that the block for $s_{i-2}$ is present in the $(k-2)$th row. If it was not there, $w$ would have had the braid $s_{i-1}s_{i}s_{i-1}$ since $m(s_{i-1},s_i)=3$ and we would have had a heap with a lower braid to choose. Applying the braid move to the heap we get the following subheap
 	\begin{center}
 	\begin{tikzpicture}[scale=0.45]
 		\heapblock{2}{0}{s_{i-1}}{rred}
@@ -88,7 +88,7 @@ There are no non-trivial T-avoiding elements in $W(\C_n)\backslash \FC(\C_n)$.
 	\end{center}
 	which has a new braid in it. This braid which we have highlighted in \textcolor{rred}{red} for emphasis has height $k-1$. In applying the braid move we have obtained a subheap which has a braid that has a lower height than our original choice. This is a contradiction to the way in which we chose our heap.
 	
-	Subcase (b): Assume that the block for $s_{i+1}$ is in the $(k-3)$th row of the heap and the block for $s_{i-1}$ does not appear in the $(k-3)$th and $s_{k-2}$ does not appear in the $(k-2)$th. The following is the subheap we are considering
+	Subcase (b): Assume that the block for $s_{i+1}$ is in the $(k-3)$th row of the heap and the block for $s_{i-1}$ does not appear in the $(k-3)$th row and $s_{k-2}$ does not appear in the $(k-2)$th. The following is the subheap we are considering
 	\begin{center}
 	\begin{tikzpicture}[scale=0.45]
 		\heapblock{3}{0}{s_{i+1}}{purple}
@@ -108,7 +108,7 @@ There are no non-trivial T-avoiding elements in $W(\C_n)\backslash \FC(\C_n)$.
  		\heapblock{0}{4}{s_{i-1}}{teal}
  	\end{tikzpicture}
  	\end{center}
-	where the braid now occurs in the $(k-1)$th. This contradicts the way in which we chose the heap for $w$. From this we gather that the braid must contain $s_0,s_1, s_{n-1}$ or $s_n$.
+	where the braid now occurs in the $(k-1)$th row. This contradicts the way in which we chose the heap of $w$. From this we gather that the braid must contain $s_0,s_1, s_{n-1},$ or $s_n$.
 	
 	Case 3: Suppose the braid is located in the $k$th row and assume the braid contains $s_2$ or $s_{n-2}$. Without loss of generality we assume that the braid contains $s_2$ as the other argument is symmetric to the one presented here, and assume $s_2$ is in the $k$th row. Notice that if the braid contains $s_2s_3s_2$, we are in Case (2), as a result we assume our braid is not of the form $s_2s_3s_2$. Assume that if necessary the blocks $s_1$ and $s_2$ have been brought up next to $s_2$ in row $k$. We now consider what can be in the $(k-3)$th and $(k-4)$th rows of the heap in two cases. 
 	
@@ -344,7 +344,7 @@ There are no non-trivial T-avoiding elements in $W(\C_n)\backslash \FC(\C_n)$.
 		\heapblock{0}{10}{0}{orange}
 	\end{tikzpicture}
 	\end{center}
-	where again there are no new braids present. However, the bottom row of the subheap is not the bottom row of the heap for $w$ since otherwise $w$ would have Property T. Using this notion we extend our heap to look like
+	where again there are no new braids present. However, the bottom row of the subheap is not the bottom row of the heap of $w$ since otherwise $w$ would have Property T. Using this notion we extend our heap to look like
 	\begin{center}
 	\begin{tikzpicture}[scale=0.45]
 		\dheapblock{2}{0}{}{black}
@@ -358,7 +358,7 @@ There are no non-trivial T-avoiding elements in $W(\C_n)\backslash \FC(\C_n)$.
 		\heapblock{0}{12}{0}{orange}
 	\end{tikzpicture}
 	\end{center} 
-	where again we see no new braids. Again, we know that the bottom row of the subheap is not the bottom row of the heap for $w$ since otherwise $w$ would have Property T. Iterating this process we obtain a heap that looks like
+	where again we see no new braids. Again, we know that the bottom row of the subheap is not the bottom row of the heap of $w$ since otherwise $w$ would have Property T. Iterating this process we obtain a heap that looks like
 	\begin{center}
 	\begin{tikzpicture}[scale=0.45]
 		\heapblock{0}{12}{0}{orange}

@@ -6,7 +6,7 @@ In mathematics, one uses groups to study symmetry.  In particular, a reflection 
 
 In his PhD thesis~\cite{Gern2013a}, Gern classified the T-avoiding elements in Coxeter groups of type $D_n$. Unlike in types $A_n$ and $B_n$, it turns out that the classification in type $D_n$ includes non-trivial T-avoiding elements. The T-avoiding elements are rich in combinatorics and are interesting in their own right. The focus of this thesis is identifying T-avoiding elements in certain Coxeter groups.
 
-This thesis is organized as follows. After necessary background information is presented in Section~\ref{sec:coxeter}, we then introduce the class of fully commutative elements in Section~\ref{sec:FC}. Then in Section~\ref{sec:Heaps} we discuss a visual representation for elements of Coxeter groups, called heaps. In Section~\ref{sec:star}, we introduce the concept of a star reducible Coxeter group and in Section~\ref{sec:Tavoid} we introduce the notion of a T-avoiding element, which is exactly an element that does not begin or end with a product of noncommuting generators. In Section~\ref{sec:noncancel} we state the classification of elements that are non-cancellable in Coxeter systems of type $\C_n$. We then state classifications and conjectures regarding T-avoiding elements in several Coxeter systems in Chapter~\ref{chap:TandTavoid}. All of these results barring Section~\ref{sec:tavoidI} are previously known. Following this we introduce the main results of this thesis, namely the classification of T-avoiding elements in Coxeter systems of type $B_n$ and $\C_n$ which are new results. In Section~\ref{sec:Btools}, we introduce the necessary lemmas and definitions for the classification in Section~\ref{sec:TAB}, in which we show there are no non-trivial T-avoiding elements in Coxeter systems of type $B_n$. In Section~\ref{sec:TAC} we classify the non-trivial T-avoiding elements in Coxeter systems of type $\C_n$. We conclude with some open questions in Section~\ref{sec:open}.
+This thesis is organized as follows. After necessary background information is presented in Section~\ref{sec:coxeter}, we then introduce the class of fully commutative elements in Section~\ref{sec:FC}. Then in Section~\ref{sec:Heaps} we discuss a visual representation for elements of Coxeter groups, called heaps. In Section~\ref{sec:star}, we introduce the concept of a star reducible Coxeter group and in Section~\ref{sec:Tavoid} we formally introduce the notion of a T-avoiding element. In Section~\ref{sec:noncancel} we define the notion of a non-cancellable element in Coxeter groups as well as remarking upon a specific family of non-cancellable elements in $W(\C_n)$. We then state classifications and conjectures regarding T-avoiding elements in several Coxeter groups in Chapter~\ref{chap:TandTavoid}. All of these results, barring Section~\ref{sec:tavoidI}, are previously known. Following this we introduce the main results of this thesis, namely the classification of T-avoiding elements in Coxeter groups of type $B_n$ and $\C_n$ which are new results. In Section~\ref{sec:Btools}, we introduce the necessary lemmas and definitions for the classification in Section~\ref{sec:TAB}, in which we show there are no non-trivial T-avoiding elements in Coxeter groups of type $B_n$. In Section~\ref{sec:TAC}, we classify the non-trivial T-avoiding elements in Coxeter groups of type $\C_n$. We conclude with some open questions in Section~\ref{sec:open}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -782,8 +782,6 @@ Let $\w=s_{x_1}s_{x_2}\cdots s_{x_r}$ be a reduced expression for $w \in W(\wide
 
 There are potentially many ways to illustrate a heap of an arbitrary reduced expression, each differing by the vertical placement of the blocks. For example, we can place blocks in vertical positions as high as possible, as low as possible, or some combination of low/high. In this thesis, we choose what we view to be the best representation of the heap of each example and when illustrating the heaps of arbitrary reduced expressions we will discuss the relative position of the entries but never the absolute coordinates. 
 
-Similar to when we defined reduced expressions it will be helpful to have the notion of a subheap. Let $\w=s_{x_1}s_{x_2} \cdots s_{x_r}$ be a reduced expression 
-
 \begin{example}
 	Let $\w=s_6s_4s_2s_5s_3s_1s_4s_0s_1$ be a reduced expression for $w \in \FC(\widetilde{C}_6)$ as seen in Example~\ref{ex:word}. Figure~\ref{fig:FC heap} shows a possible lattice point representation for $H(w)$. Since $w$ is FC this is the unique heap representation for $w$. Because $H(w)$ is the unique heap we can obtain $\LD(w)$ (respectively, $\RD(w)$) from the blocks that are fully exposed to the top (respectively, bottom) of the heap. We see that $\LD(w)=\{s_2,s_4,s_6\}$ and $\RD(w)=\{s_1,s_4\}$.
 \begin{figure}[h]
@@ -837,6 +835,44 @@ Let $\w_1=s_0s_2s_4s_3s_2s_1$ be a reduced expression for $w \in W(\widetilde{C}
 \label{fig:not FC}
 \end{figure}
 \end{example}
+
+Similar to when we defined reduced expressions it will be helpful to have the notion of a subheap. Let $\w=s_{x_1}s_{x_2} \cdots s_{x_r}$ be a reduced expression for $w \in W(\Gamma)$. We define a heap $H'$ to be a \emph{subheap} of $H(\w)$ if $H'=H(\w')$ where $w'=s_{y_1}s_{y_2} \cdots s_{y_k}$ is a subexpression of $\w$. We emphasize that the subexpression need not be a subword (i.e., a consecutive subexpression).
+
+Recall that a subposet $Q$ of $P$ is called convex if $y \in Q$ whenever $x< y<z$ in $P$ and $x,z \in Q$. We will refer to a subheap as a \emph{convex subheap} if the underlying subposet is convex.
+
+\begin{example}
+Let $\w=s_3s_2s_1s_2s_5s_4s_6s_5$ be a reduced expression for $w \in W(\C_7)$. Now let $\w'=s_5s_4s_5$ be the subexpression of $\w$ that results from deleting all but the fifth, sixth, and last generators of $\w$. Then $H(\w')$ is seen in Figure~\ref{fig:subheap} and $H(\w')$ is a subheap of $H(w)$. However, $H(w')$ is not convex since there is an entry in $H(w)$ labeled by $s_6$ occurring between the the two consecutive occurrences of $s_5$ that does not occur in $H(w')$. However, if we do include the entry labeled by $s_6$, then we get the subheap seen in Figure~\ref{fig:convex} and this new subheap is convex.
+
+\begin{figure}[h]
+\centering
+\begin{subfigure}[b]{0.3\textwidth}	
+\centering
+\begin{tikzpicture}[scale=0.4]
+%	\heapblock{0}{6}{0}{purple}
+%	\heapblock{2}{6}{2}{teal}
+%	\heapblock{4}{6}{4}{purple}	
+	\heapblock{3}{4}{5}{purple}
+	\heapblock{2}{2}{4}{purple}
+	\heapblock{3}{0}{5}{purple}
+\end{tikzpicture}
+\caption{}\label{fig:subheap}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}	
+\centering
+\begin{tikzpicture}[scale=0.4]
+%	\heapblock{10}{6}{0}{purple}
+%	\heapblock{14}{6}{4}{purple}
+	\heapblock{13}{4}{5}{purple}
+	\heapblock{12}{2}{4}{purple}
+	\heapblock{14}{2}{6}{purple}
+	\heapblock{13}{0}{5}{purple}
+\end{tikzpicture}
+\caption{}\label{fig:convex}
+\end{subfigure}
+\caption{Subheap and Convex subheap of an element in $W(\C_7)$.}	
+\end{figure}
+\end{example}
+
 
 It will be extremely useful for us to be able to quickly determine whether a heap corresponds to an element in $\FC(B_n)$ or $\FC(\widetilde{C}_n)$. The next proposition is a special case of \cite[Proposition 3.3]{Stembridge1996} and follows quickly when one considers the consecutive subwords that are impermissible in reduced expressions for elements in $\FC(B_n)$ and $\FC(\widetilde{C}_n)$ as discussed in Section~\ref{sec:FC}.
 

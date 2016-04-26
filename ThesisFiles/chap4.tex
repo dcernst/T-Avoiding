@@ -270,7 +270,7 @@ Let $w \in \FC(B_4)$ and let $\w=s_0s_1$ be a reduced expression for $w$. Note t
 
 In~\cite{Ernst2010}, Ernst classified the non-cancellable elements in Coxeter groups of type $W(B_n)$ and $W(\C_n)$. We will state part of the classification here as it is important to the development of the non-trivial T-avoiding elements in $W(\C_n)$. To see the full classification see~\cite[Sections 4.2 and 5]{Ernst2010}. 
 
-Before we state the classification we first define a specific group element in $W(\C_n)$ which we will refer to as a single \emph{sandwich stack}, which is seen in Figure~\ref{fig:singsandstack}.
+Before we state the classification we first define a specific group element in $W(\C_n)$ which we will refer to as a \emph{sandwich stack}, which is seen in Figure~\ref{fig:singsandstack}. Notice that this element is has full support, is FC and is non-trivial T-avoiding.
 
 \begin{figure}[h!] \centering
 \begin{tikzpicture}[scale=0.5]
@@ -292,7 +292,7 @@ Before we state the classification we first define a specific group element in $
 \caption{Heap of a single sandwich stack in $W(\C_n)$.}\label{fig:singsandstack}
 \end{figure}
 
-We can stack single sandwich stacks together and get a sandwich stack. This is done by removing the top most layer of the heap and adding a new single sandwich stack to the stack. A sandwich stack is seen in Figure~\ref{fig:stacksandstack}. These heaps are referenced in the classification of non-trivial T-avoiding elements in $W(\C_n)$.
+We can extend this pattern to the heap seen in Figure~\ref{fig:stacksandstack}. Like the smaller example above the element that corresponds to this heap has full support, is FC and is non-trivial T-avoiding. 
 
 \begin{figure}[h!] \centering
 \begin{tikzpicture}[scale=0.5]
@@ -324,7 +324,10 @@ We can stack single sandwich stacks together and get a sandwich stack. This is d
 \caption{Heap of a stack of sandwich stacks in $W(\C_n)$.}\label{fig:stacksandstack}
 \end{figure}
 
-In~\cite{Ernst2010}, Ernst completely classified the non-cancellable elements in Coxeter systems of types $B_n$ and $\C_n$. In the type $\C_n$ case, the sandwich stacks are the only T-avoiding elements with full support. There are two other types of non-cancellable elements that were classified in~\cite{Ernst2010}. The first does not have full support which is important to our later classification. The second clearly has Property-T on the top.
+\begin{remark}\label{rem:noncancel}
+	In~\cite{Ernst2010}, Ernst completely classified the non-cancellable elements in Coxeter systems of types $B_n$ and $\C_n$. In the type $\C_n$ case, the sandwich stacks are the only non-trivial T-avoiding elements with full support. There are two other types of non-cancellable elements that were classified in~\cite{Ernst2010}. The first does not have full support which is important to our later classification. The second clearly has Property-T on the top.
+\end{remark}
+
 
 
 %\begin{theorem}

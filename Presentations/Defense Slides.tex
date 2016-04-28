@@ -329,6 +329,8 @@ Any two reduced expressions for $w\in W$ differ by a sequence of commutations an
 	We define $\supp(w)$ to be the set of generators appearing in any reduced expression for $w$. This is well-defined by Matsumoto's Theorem.
 \end{definition}
 
+\pause
+
 \begin{definition}
  We define the \alert{left descent set} (respectively, right) $w$ as follows:
 \[\mathcal{L}(w):=\{s \in S \mid l(sw) < l(w)\} \qquad \RD(W):=\{s \in S \mid l(ws)< l(w)\}\]
@@ -351,9 +353,13 @@ Let $\w=s_2s_1s_2s_3s_1$ be a fixed expression for $w \in W(A_3)$. We see that
 Let $(W,S)$ be a Coxeter system of type $\Gamma$. We say that $w \in W(\Gamma)$ is \alert{fully commutative} (\alert{FC}) if any two reduced expressions for $w$ can be transformed into each other via iterated commutations. The set of FC elements is denoted $\FC(\Gamma)$.	
 \end{definition}
 
+\pause
+
 \begin{block}{Theorem (Stembridge)}
 $w \in \FC(\Gamma)$ if and only if no reduced expression for $w$ contains a braid.
 \end{block}
+
+\pause
 
 \begin{block}{Comment}
 	It follows from Stembridge that $W(\C_n)$ contains an infinite number of FC elements, while $W(A_n)$ and $W(B_n)$ do not. 
@@ -589,11 +595,11 @@ Let $w \in \FC(\C_n)$. Then $H(w)$ can not contain any of the following convex s
 	\vspace{1em}
 	We say $w$ is \alert{T-avoiding} if $w$ does not have Property T.
 	\end{block}
-
+\pause
 \begin{block}{Proposition}
 A product of commuting generators is T-avoiding.	
 \end{block}
-
+\pause
 \begin{block}{Definition}
 	We define $w$ to be a \alert{trivial T-avoiding} element if $w$ is a product of commuting generators. Otherwise, we say $w$ is a \alert{non-trivially T-avoiding} element.
 \end{block}
@@ -657,7 +663,7 @@ The only non-trivial T-avoiding elements of $W(\widetilde{A}_n)$ for $n$ odd are
 \begin{block}{Corollary}
 There are no non-trivial T-avoiding elements in $W(A_n)$.	
 \end{block}
-
+\pause
 \begin{block}{Theorem (Laird?)}
 	There are no non-trivial T-avoiding elements in $W(I_2(m))$.
 \end{block}
@@ -673,7 +679,7 @@ There are no non-trivial T-avoiding elements in $W(A_n)$.
 \begin{block}{Theorem (Gern)}
 The only non-trivial T-avoiding elements in $W(D_n)$ have this pattern	
 \end{block}
-\pause
+
 \begin{figure}
 \begin{tikzpicture}[scale=0.4]
 	\heapblock{1}{12}{0}{rred}
@@ -779,6 +785,7 @@ There are no non-trivial T-avoiding elements in $F_4$.
 	\heapblock{6}{-6}{6}{purple}
 \end{tikzpicture}
 \end{figure}
+\pause
 Classifying non-trivial T-avoiding elements in $F_n$ for $n \geq 6$ gets very difficult.
 \end{frame}
 
@@ -873,6 +880,7 @@ Through a series of lemmas we were to determine if a reduced product ends or beg
 \begin{block}{Theorem (Laird)}
 	If $n$ is even, then the only non-trivial T-avoiding elements in Coxeter systems of type $\C_n$ are sandwich stacks.
 \end{block}
+
 	
 \end{frame}
 

@@ -1,0 +1,1374 @@
+\documentclass[9pt]{beamer}
+%\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+%\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\usepackage{amsmath,amssymb,amsfonts,amscd,array,amsthm}
+\usepackage{subcaption}
+\usepackage{array}
+\usepackage{pgf,tikz}
+    \usetikzlibrary{arrows}
+    \usetikzlibrary{shapes}
+    \usetikzlibrary{patterns}
+    \usetikzlibrary{calc}
+    \usetikzlibrary{decorations.markings}
+    \usetikzlibrary{3d}
+\usepackage{graphicx}
+\usepackage{xcolor}
+%\usepackage[arrow,matrix,poly,curve,cmtip,color]{xy}
+\usepackage{float}
+%\xyoption{frame}
+%\xyoption{all}
+\definecolor{orange}{RGB}{255,102,0}
+\definecolor{ggreen}{RGB}{0,153,0}
+\definecolor{darkblue}{RGB}{0,0,255}
+\definecolor{purple}{RGB}{153,51,255}
+\definecolor{turq}{RGB}{72,209,204}
+\definecolor{gray}{RGB}{220,220,220}
+
+\newcommand{\gen}[1]{\langle #1 \rangle}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\w}{{\textsf{w}}}
+\newcommand{\y}{{\textsf{y}}}
+\newcommand{\u}{{\textsf{u}}}
+\renewcommand{\mapsto}{\longmapsto}
+\newcommand{\FC}{\mathrm{FC}}
+\newcommand{\CFC}{\mathrm{CFC}}
+\renewcommand{\hat}[1]{\widehat{#1}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\usepackage{epsfig,psfrag}
+\usepackage{pdiag}
+\usepackage{mathdots}
+\usefonttheme{serif}
+
+\usetheme{Pittsburgh}
+%\usecolortheme{seahorse}
+\useoutertheme{split}
+
+\setbeamertemplate{footline}[split, frame number]
+\setbeamertemplate{enumerate items}[default]
+\setbeamertemplate{itemize items}[circle]
+
+\setbeamersize{text margin left=6mm}
+\setbeamersize{text margin right=6mm}
+\setbeamersize{sidebar width right=0mm}
+\setbeamersize{sidebar width left=0mm}
+\setbeamertemplate{navigation symbols}{}
+
+\newcommand*\oldmacro{}
+\let\oldmacro\insertshorttitle
+\renewcommand*\insertshorttitle{
+\oldmacro\hfill
+\insertframenumber\,/\,\inserttotalframenumber}
+
+\setbeamercolor{alerted text}{fg=ggreen}
+
+\newcommand\xxaxis{0}
+\newcommand\yyaxis{90}
+\newcommand\sq[2]{
+    \fill[fill=gray!25, draw=black, rounded corners, line width=1pt, shift={(\xxaxis:#1)}, shift={(\yyaxis:#2)}] 
+    (0,0) -- (1,0) -- (1,-1) -- (0,-1) -- cycle; }
+
+\newcommand\sqor[2]{
+    \fill[draw=orange, fill=orange!10, line width=1.1pt, rounded corners, shift={(\xxaxis:#1)}, shift={(\yyaxis:#2)}]
+    (0,0) -- (1,0) -- (1,-1) -- (0,-1) -- cycle; }
+\newcommand\sqorhash[2]{
+    \fill[pattern=north east lines, pattern color=orange!35, draw=orange, line width=1.1pt, rounded corners, shift={(\xxaxis:#1)}, shift={(\yyaxis:#2)}]
+    (0,0) -- (1,0) -- (1,-1) -- (0,-1) -- cycle; }
+\newcommand\sqorcheck[2]{
+    \fill[pattern=checkerboard, pattern color=orange!06, draw=orange, line width=1.1pt, rounded corners, shift={(\xxaxis:#1)}, shift={(\yyaxis:#2)}]
+    (0,0) -- (1,0) -- (1,-1) -- (0,-1) -- cycle; }
+
+\newcommand\sqgr[2]{
+    \fill[draw=ggreen, fill=ggreen!05, line width=1.1pt, rounded corners, shift={(\xxaxis:#1)}, shift={(\yyaxis:#2)}]
+    (0,0) -- (1,0) -- (1,-1) -- (0,-1) -- cycle; }
+\newcommand\sqgrhash[2]{
+    \fill[pattern=north east lines, pattern color=ggreen!35, draw=ggreen, line width=1.1pt, rounded corners, shift={(\xxaxis:#1)}, shift={(\yyaxis:#2)}]
+    (0,0) -- (1,0) -- (1,-1) -- (0,-1) -- cycle; }
+\newcommand\sqgrcheck[2]{
+    \fill[pattern=checkerboard, pattern color=ggreen!06, draw=ggreen, line width=1.1pt, rounded corners, shift={(\xxaxis:#1)}, shift={(\yyaxis:#2)}]
+    (0,0) -- (1,0) -- (1,-1) -- (0,-1) -- cycle; }
+
+\newcommand\sqp[2]{
+    \fill[draw=purple, fill=purple!08, line width=1.1pt, rounded corners, shift={(\xxaxis:#1)}, shift={(\yyaxis:#2)}]
+    (0,0) -- (1,0) -- (1,-1) -- (0,-1) -- cycle; }
+\newcommand\sqphash[2]{
+    \fill[pattern=north east lines, pattern color=purple!35, draw=purple, line width=1.1pt, rounded corners, shift={(\xxaxis:#1)}, shift={(\yyaxis:#2)}]
+    (0,0) -- (1,0) -- (1,-1) -- (0,-1) -- cycle; }
+\newcommand\sqpcheck[2]{
+    \fill[pattern=checkerboard, pattern color=purple!06, draw=purple, line width=1.1pt, rounded corners, shift={(\xxaxis:#1)}, shift={(\yyaxis:#2)}]
+    (0,0) -- (1,0) -- (1,-1) -- (0,-1) -- cycle; }
+
+\newcommand\sqbl[2]{
+    \fill[draw=darkblue, fill=darkblue!05, line width=1.1pt, rounded corners, shift={(\xxaxis:#1)}, shift={(\yyaxis:#2)}]
+    (0,0) -- (1,0) -- (1,-1) -- (0,-1) -- cycle; }
+\newcommand\sqblhash[2]{
+    \fill[pattern=north east lines, pattern color=darkblue!35, draw=darkblue, line width=1.1pt, rounded corners, shift={(\xxaxis:#1)}, shift={(\yyaxis:#2)}]
+    (0,0) -- (1,0) -- (1,-1) -- (0,-1) -- cycle; }
+\newcommand\sqblcheck[2]{
+    \fill[pattern=checkerboard, pattern color=darkblue!06, draw=darkblue, line width=1.1pt, rounded corners, shift={(\xxaxis:#1)}, shift={(\yyaxis:#2)}]
+    (0,0) -- (1,0) -- (1,-1) -- (0,-1) -- cycle; }
+    
+\newcommand\sqm[2]{
+    \fill[draw=magenta, fill=magenta!08, line width=1.1pt, rounded corners, shift={(\xxaxis:#1)}, shift={(\yyaxis:#2)}]
+    (0,0) -- (1,0) -- (1,-1) -- (0,-1) -- cycle; }
+\newcommand\sqmhash[2]{
+    \fill[pattern=north east lines, pattern color=magenta!35, draw=magenta, line width=1.1pt, rounded corners, shift={(\xxaxis:#1)}, shift={(\yyaxis:#2)}]
+    (0,0) -- (1,0) -- (1,-1) -- (0,-1) -- cycle; }
+
+% The empty square
+\newcommand\bsq[2]{
+    \fill[fill=white, dotted, draw=black, line width=0.5pt, rounded corners, shift={(\xxaxis:#1)},shift={(\yyaxis:#2)}]
+    (0.05,-0.05) -- (0.95,-0.05) -- (0.95,-0.95) -- (0.05,-0.95) -- cycle; }
+    
+    
+    
+    
+
+\usetheme{Pittsburgh}
+\title[]{Conjugacy classes of cyclically fully commutative elements in Coxeter groups of type $A$}
+\author[]{Brooke Fox}
+\date{
+  22 April 2014 \\ 
+  Department of Mathematics \& Statistics \\
+  Northern Arizona University}
+
+\begin{document}
+\begin{frame} \maketitle \end{frame}
+%\begin{frame}{Coxeter systems}
+%A \alert{Coxeter system} is a pair $(W,S)$ consisting of a finite set $S$ of generating involutions and a group $W$, called a \alert{Coxeter group}, with presentation
+%    $$W = \gen{S \mid (st)^{m(s,t)} = e ~\text{for}~ m(s,t) < \infty },$$
+%    where $e$ is the identity, $m(s,t) = 1$ if and only if $s = t$, and $m(s,t) = m(t,s)$.
+%    
+%    It follows that the elements of $S$ are distinct as group elements and that $m(s,t)$ is the order of $st$.
+%    We call $m(s,t)$ the \alert{bond strength} of $s$ and $t$.
+%\end{frame}
+
+\begin{frame}{Coxeter groups}
+%    The relation $(st)^{m(s,t)} = e$ can be written as
+%\begin{equation}\label{braid} \underbrace{sts \cdots}_{m(s,t)} = \underbrace{tst \cdots}_{m(s,t)} \end{equation}
+%    with $m(s,t) \geq 2$ factors.\\~\\
+%
+%    If $m(s,t) = 2$, then $st = ts$ is called a \alert{commutation}. If $m(s,t) \geq 3$, then the relation in \eqref{braid} is called a \alert{braid relation}.
+%    We will write $\gen{st}_{m(s,t)}$ to denote the word $sts \cdots$ consisting of $m(s,t)$ factors.
+\begin{block}{Definition} A \alert{Coxeter system} consists of a group $W$ (called a \alert{Coxeter group}) together with a set $S$ of generating involutions having presentation
+    $$W= \gen{S \mid s^2=e,(st)^{m(s,t)}=e},$$
+where $m(s,t)\geq 2$ for $s \neq t$.
+\end{block} ~\\
+    \pause
+Since $s$ and $t$ are involutions, the relation $(st)^{m(s,t)}=e$ can be rewritten as
+\begin{center}
+\begin{tabular}{ll}
+$\left.\begin{array}{lcc}m(s,t)=2 & \implies &\ \ \, st=ts\ \
+\end{array} \right\}$ & \alert{commutations}\\ \\
+$\left.\begin{array}{lcc}m(s,t)=3 & \implies & sts=tst \\ & & \\ m(s,t)=4 & \implies & stst=tsts \\ & \vdots & \end{array} \right\}$ & \alert{braid relations}
+\end{tabular}
+\end{center}
+\end{frame}
+
+\begin{frame}{Coxeter graphs}
+\begin{definition} We can represent $(W,S)$ with a unique \alert{Coxeter graph} $\Gamma$ having \begin{enumerate}
+    \item[(a)] vertex set $S$ and
+    \item[(b)] edges $\{s,t\}$ labeled $m(s,t)$ whenever $m(s,t)\geq 3$.
+\end{enumerate}
+\end{definition}
+    \pause
+\begin{block}{Comments}
+\begin{itemize}
+\item Typically labels of $m(s,t)=3$ are omitted.
+\item Edges correspond to non-commuting pairs of generators.
+\item Given $\Gamma$, we can uniquely reconstruct the corresponding $(W,S)$.
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+
+\begin{frame}{Example of a Coxeter group}
+\begin{block}{Example}
+    The Coxeter group of type $A_3$ is defined by the graph
+\begin{center} \begin{tikzpicture}
+\draw[fill=black] \foreach \x in {1,2,3} {(\x,10) circle (1pt)};
+\draw \foreach \x in {1,2,3} {(\x,10) node[label=below:$s_{\x}$]{}};
+\draw (1,10) -- (3,10);
+\end{tikzpicture}
+\end{center}
+
+    Then $W(A_{3})$ is subject to
+\begin{itemize}
+\item $s_{i}^{2}=e$ for all $i$
+\item $s_{1}s_{2}s_{1}=s_{2}s_{1}s_{2}$,~ $s_{2}s_{3}s_{2}=s_{3}s_{2}s_{3}$
+\item $s_{1}s_{3}=s_{3}s_{1}$.
+\end{itemize}
+
+    \pause
+    In general, the Coxeter group of type $A_n$ is defined by the graph
+\begin{center}
+\begin{tikzpicture}
+\draw[fill=black] \foreach \x in {1,2,...,6} {(\x,10) circle (1pt)};
+\draw {(.5,10) node{} (4.5,10) node{$\cdots$} [-] (1,10) -- (4,10) [-] (5,10) -- (6,10) (1,10) node{}};
+\draw \foreach \x in {1,2,3,4} {(\x,10) node[label=below:$s_{\x}$]{}};
+\draw node[label=below:$s_{n-1}$] at (5,10) {};
+\draw node[label=below:$s_{n}$] at (6,10) {};
+\end{tikzpicture}
+\end{center}
+
+    $W(A_n)$ is isomorphic to $S_{n+1}$ under the correspondence $$s_i \longleftrightarrow (i~i+1).$$
+\end{block}
+\end{frame}
+
+
+%\begin{frame}
+%    Let $S^*$ denote the free monoid over $S$. If a word $\w=s_{x_1}s_{x_2}\cdots s_{x_m}\in S^*$ is equal to $w$ when considered as an element of $W$, we say that $\w$ is an \alert{expression} for $w$.
+%    Expressions will be written in {\sf sans serif} font for clarity. \\~\\
+%    
+%    Furthermore, if $m$ is minimal, we say that $\w$ is a \alert{reduced expression} for $w$, and we call $m$ the \alert{length} of $w$, denoted $\ell(w)$.
+%\end{frame}
+%
+%\begin{frame} \begin{theorem}[Matsumoto] \label{thm:matsumoto} In a Coxeter group $W$, any two reduced expressions for the same group element differ by a sequence of commutations and braid relations. 
+%\end{theorem}
+%~\\
+%    It follows from Matsumoto's Theorem that all reduced expressions for $w \in W$ have the same number of generators appearing in the expression.
+%    Let $w \in W$ and let $\w$ be a reduced expression for $w$. Then the \alert{support} of $\w$, denoted $\supp(\w)$, is the set of generators that appear in $\w$.
+%\end{frame}
+%
+%\begin{frame}
+%    Given a reduced expression $\w$ for $w \in W$, we define a \alert{subexpression} of $\w$ to be any expression obtained by deleting some subsequence of generators in the expression for $\w$. We will refer to a consecutive subexpression of $\w$ as a \alert{subword}.
+%\end{frame}
+
+
+\begin{frame}{Reduced expressions \& Matsumoto's theorem}
+
+\begin{definition}
+A word $\w = s_{x_1}s_{x_2}\cdots s_{x_m}\in S^{*}$ (the free monoid) is called an \alert{expression} for $w\in W$ if it is equal to $w$ when considered as a group element. We will use {\textsf{sans serif}} to denote expressions.
+    If $m$ is minimal among all expressions for $w$, $\w$ is a \alert{reduced expression}, and the \alert{length} of $w$ is $\ell(w)=m$.
+\end{definition}
+
+\pause
+    
+\begin{block}{Example}
+Consider the expression $\w = s_1s_3s_2s_1s_2$ for $w \in W(A_3)$. We see that
+	$$s_1s_3{\color{blue}s_2s_1s_2}={\color{magenta}s_1s_3}s_1s_2s_1=s_3{\color{turq}s_1s_1}s_2s_1=s_3s_2s_1\,.$$
+    Therefore, $s_1s_3s_2s_1s_2$ is not reduced. However, the expression on the right is reduced, so $\ell(w)=3$.
+\end{block}
+
+\pause
+
+\begin{theorem}[Matsumoto]
+Any two reduced expressions for $w\in W$ differ by a sequence of commutations and braid relations.
+\end{theorem}
+\end{frame}
+
+\begin{frame}{Subwords and subexpressions}
+\begin{definition} We define $\supp(w)$ to be the set of generators appearing in any reduced expression for $w$. This is well-defined by Matsumoto's Theorem.
+\end{definition}
+
+\begin{definition} Given a reduced expression $\w$ for $w \in W$, we define a \alert{subexpression} of $\w$ to be any expression obtained by deleting some subsequence from $\w$. We will refer to a consecutive subexpression of $\w$ as a \alert{subword}.
+\end{definition}
+    \pause
+\begin{block}{Example} Let $W$ be the Coxeter group of type $A_6$ and let $w \in W$ have reduced expression $\w = s_1s_3s_4s_2s_5s_6$.
+    Then $s_1s_4s_6$ is a subexpression of $\w$ and $s_4s_2s_5$ is a subword.
+\end{block}
+\end{frame}
+
+
+%\begin{frame}
+%\begin{example} Let $w \in W(A_6)$ and let $\w = s_1 s_2 s_4 s_5 s_2 s_6 s_5$ be an expression for $w$. Then we have $$s_1 \textcolor{magenta}{s_2 s_4} s_5 s_2 s_6 s_5
+%    = s_1 s_4 \textcolor{magenta}{s_2 s_5} s_2 s_6 s_5
+%    = s_1 s_4 s_5 \textcolor{ggreen}{s_2 s_2} s_6 s_5
+%    = s_1 s_4 s_5 s_6 s_5.$$
+%%    where the \textcolor{magenta}{pink} subword denotes applying a commutation to the corresponding generators in the next expression and the \textcolor{ggreen}{green} subword denotes canceling two adjacent occurrences of the same generator.
+%    So, $\w$ is not reduced and $$\supp(w) = \{s_1,s_2,s_4,s_5,s_6\}.$$ It turns out that $s_1 s_4 s_5 s_6 s_5$ is a reduced expression for $w$. Hence $\ell(w) = 5$.
+%\end{example}
+%\end{frame}
+
+\begin{frame}
+\begin{definition} A \alert{Coxeter element} is an element $w \in W$ for which every generator appears exactly once in each reduced expression for $w$.
+\end{definition}
+    \pause
+\begin{block}{Example} Let $W$ be the Coxeter group of type $A_4$. Then  
+%$${\footnotesize \begin{array}{llllllll}
+%    s_1s_2s_3s_4 & s_4s_3s_2s_1 & s_1s_2s_4s_3 & s_2s_1s_3s_4 & s_3s_4s_2s_1 & s_4s_3s_1s_2 & s_1s_3s_2s_4 & s_2s_1s_4s_3 \\
+%    
+%         &      & s_1s_4s_2s_3 & s_2s_3s_1s_4 & s_3s_2s_4s_1 & s_4s_1s_3s_2 & s_3s_1s_2s_4 & s_2s_4s_1s_3 \\
+%         
+%         &      & s_4s_1s_2s_3 & s_2s_3s_4s_1 & s_3s_2s_1s_4 & s_1s_4s_3s_2 & s_1s_3s_4s_2 & s_2s_4s_3s_1 \\
+%         
+%         &      &      &      &      &      & s_3s_1s_4s_2 & s_4s_2s_1s_3 \\
+%         
+%         &      &      &      &      &      & s_3s_4s_1s_2 & s_4s_2s_3s_1
+%\end{array}}$$
+$${\footnotesize \begin{array}{cccc}
+    \boxed{\begin{array}{c} \\ \\ s_1s_2s_3s_4 \\ \\ \\\end{array}} &
+    \boxed{\begin{array}{c} \\ \\ s_4s_3s_2s_1 \\ \\ \\\end{array}} & 
+    \boxed{\begin{array}{c} \\ s_1s_2s_4s_3 \\ s_1s_4s_2s_3 \\ s_4s_1s_2s_3 \\ \\ \end{array}} & 
+    \boxed{\begin{array}{c} \\ s_2s_1s_3s_4 \\ s_2s_3s_1s_4 \\ s_2s_3s_4s_1 \\ \\ \end{array}} \\ &&& \\
+    \boxed{\begin{array}{c} \\ s_3s_4s_2s_1 \\ s_3s_2s_4s_1 \\ s_3s_2s_1s_4 \\ \\ \end{array}} & 
+    \boxed{\begin{array}{c} \\ s_4s_3s_1s_2 \\ s_4s_1s_3s_2 \\ s_1s_4s_3s_2 \\ \\ \end{array}} &
+    \boxed{\begin{array}{c} s_1s_3s_2s_4 \\ s_3s_1s_2s_4 \\ s_1s_3s_4s_2 \\ s_3s_1s_4s_2 \\ s_3s_4s_1s_2 \end{array}} &
+    \boxed{\begin{array}{c} s_2s_1s_4s_3 \\ s_2s_4s_1s_3 \\ s_2s_4s_3s_1 \\   s_4s_2s_1s_3 \\ s_4s_2s_3s_1 \end{array}}
+\end{array}}$$
+    are the Coxeter elements of $W$.
+\end{block}
+\end{frame}
+
+\begin{frame}{Commutation classes}
+\begin{definition} Let $w \in W$ have reduced expressions $\w_1,\w_2$. Then $\w_1$ and $\w_2$ are \alert{commutation equivalent} if we can apply a sequence of commutations to $\w_1$ to obtain $\w_2$.
+\end{definition} ~\\
+
+    The corresponding equivalence classes are called \alert{commutation classes}. \\~\\ \pause
+
+\begin{block}{Example} Let $W$ be the Coxeter group of type $A_4$ and let $w \in W$ have reduced expression $$\w = s_1 s_2 s_3 s_2 s_4.$$ %~\text{and}~ \w' = s_1 s_3 s_2 s_3 s_4.$$
+    The commutation classes are $$\{s_1s_2s_3s_2s_4, s_1s_2s_3s_4s_2\} ~\text{and}~ \{s_1s_3s_2s_3s_4, s_3s_1s_2s_3s_4\}.$$
+\end{block}
+\end{frame}
+
+
+\begin{frame}{Fully commutative elements}
+%\begin{definition}
+%We say that $w \in W$ is \alert{fully commutative} (or \alert{FC}) if any two reduced expressions for $w$ can be transformed into each other via iterated commutations. The set of FC elements is denoted by \alert{$\FC(W)$}.
+%\end{definition}
+\begin{definition} If $w$ has exactly one commutation class, then we say that $w$ is \alert{fully commutative}, or just \alert{FC}. The set of FC elements is denoted $\FC(\Gamma)$, where $\Gamma$ is the corresponding Coxeter graph.
+\end{definition}
+
+\pause
+
+\begin{theorem}[Stembridge]
+$w \in \FC(\Gamma)$ iff no reduced expression for $w$ contains an opportunity to apply a braid relation.
+\end{theorem}
+
+\pause
+
+\begin{block}{Example} Let $W$ be the Coxeter group of type $A_5$. Let $w \in W$ have reduced expression $\w = s_1 s_4 s_3 s_5 s_2 s_1 s_3 s_4$. Then we have 
+    $$s_1 s_4 \textcolor{magenta}{s_3 s_5} s_2 s_1 s_3 s_4 = s_1 s_4 s_5 s_3 s_2 \textcolor{magenta}{s_1 s_3} s_4 = s_1 s_4 s_5 \textcolor{blue}{s_3 s_2 s_3} s_1 s_4.$$
+%    where the \textcolor{magenta}{pink} subword denotes applying a commutation to the corresponding generators in the next expression.
+    So, $w$ is not FC because there is opportunity to apply a braid relation.
+\end{block}
+\end{frame}
+
+
+%\begin{frame}{Heaps}
+%    Each reduced expression is associated with a partially ordered set called a heap.\\~\\
+%
+%    Let $(W,S)$ be a Coxeter system. Suppose $\w = s_{x_1} s_{x_2} \cdots s_{x_k}$ is a reduced expression for $w \in W$, and define a partial ordering $\prec$ on the indices $\{1,\ldots,k\}$ by the transitive closure of the relation $j \prec i$ if $i < j$ and $s_{x_i}$ and $s_{x_j}$ do not commute.
+%    In particular, $j \prec i$ if $i < j$ and $s_{x_i} = s_{x_j}$. This partial order is called the \alert{heap} of $\w$ where $i$ is labeled by $s_{x_i}$.
+%\end{frame}
+
+%\begin{frame}{Heaps}
+%\begin{example} Let $\w = s_2 s_1 s_3 s_2 s_4 s_5$ be a reduced expression for $w \in W(A_5)$.  We see that $\w$ is indexed by $\{1, 2, 3, 4, 5, 6\}$ because $\ell(w)=6$. We see that $4 \prec 3$ since $3 < 4$ and $s_4$ and $s_3$ do not commute. \\~\\
+%%    The labeled Hasse diagram for the unique heap poset of $\w$ is shown in Figure~\ref{fig:hasse}.
+%    The labeled Hasse for the unique heap poset of $\w$ is
+%\begin{center} \begin{tikzpicture}[scale=0.8]
+%\draw (0,2)--(-1,1); \draw (0,2)--(1,1); \draw (-1,1)--(0,0); \draw (0,0)--(1,1); \draw (1,1)--(2,0); \draw (2,0)--(3,-1);
+%\draw [fill=black] (0,2) circle (1.5pt); \draw[color=black] (0,2.4) node {$s_2$};
+%\draw [fill=black] (-1,1) circle (1.5pt); \draw[color=black] (-1.4,1.2) node {$s_1$};
+%\draw [fill=black] (1,1) circle (1.5pt); \draw[color=black] (1.3,1.2) node {$s_3$};
+%\draw [fill=black] (0,0) circle (1.5pt); \draw[color=black] (0,0.5) node {$s_2$};
+%\draw [fill=black] (2,0) circle (1.5pt); \draw[color=black] (2.4,0.1) node {$s_4$};
+%\draw [fill=black] (3,-1) circle (1.5pt); \draw[color=black] (3.4,-0.8) node {$s_5$};
+%\end{tikzpicture} \end{center}
+%\end{example}
+%\end{frame}
+
+\begin{frame}{Heaps}
+    We now introduce \alert{heaps} through an example. \pause
+\begin{block}{Example} Let $W$ be the Coxeter group of type $A_5$ and let $\w = s_1s_2s_3s_1s_2s_4s_5$ be a reduced expression for $w \in W$.
+\begin{center} \begin{tikzpicture}[scale=0.75]
+    \node at (0.5,-1.5) {$s_1$}; \node at (1,-1.5) {$s_2$}; \node at (1.5,-1.5) {$s_3$}; \node at (2,-1.5) {$s_4$}; \node at (2.5,-1.5) {$s_5$};
+    \draw[dotted, line width=0.5pt] (0.5,-1.2) -- (0.5,4.2);
+    \draw[dotted, line width=0.5pt] (1,-1.2)   -- (1,4.2);
+    \draw[dotted, line width=0.5pt] (1.5,-1.2) -- (1.5,4.2);
+    \draw[dotted, line width=0.5pt] (2,-1.2)   -- (2,4.2);
+    \draw[dotted, line width=0.5pt] (2.5,-1.2) -- (2.5,4.2); \pause
+    \sq{2}{0};   \node at (2.5,-0.5) {$5$}; \pause
+    \sq{1.5}{1}; \node at (2,0.5)    {$4$}; \pause
+    \sq{0.5}{1}; \node at (1,0.5)    {$2$}; \pause
+    \sq{0}{2};   \node at (0.5,1.5)  {$1$}; \pause
+    \sq{1}{2};   \node at (1.5,1.5)  {$3$}; \pause
+    \sq{0.5}{3}; \node at (1,2.5)    {$2$}; \pause
+    \sq{0}{4};   \node at (0.5,3.5)  {$1$};
+\end{tikzpicture} \end{center}
+\end{block}
+
+    Any element of the commutation class containing $\w$ has the heap above.
+\end{frame}
+
+
+\begin{frame}{Heaps}
+Another heap for $w$ corresponding to $\w' = 2123245$ is
+\begin{center} \begin{tabular}{m{2cm} m{0.5cm}}
+\begin{tikzpicture}[scale=0.75]
+    \sq{2}{0};   \node at (2.5,-0.5) {$5$};
+    \sq{1.5}{1}; \node at (2,0.5)    {$4$};
+    \sq{0.5}{1}; \node at (1,0.5)    {$2$};
+    \sq{1}{2};   \node at (1.5,1.5)  {$3$};
+    \sq{0.5}{3}; \node at (1,2.5)    {$2$};
+    \sq{0}{4};   \node at (0.5,3.5)  {$1$};
+    \sq{0.5}{5}; \node at (1,4.5)    {$2$};
+\end{tikzpicture} & . \end{tabular} \end{center}
+
+\begin{block}{Proposition}
+    There is a 1-1 correspondence between heaps and commutation classes. In particular, an element $w \in W$ is FC if and only if there is a unique heap for $w$.
+\end{block}
+\end{frame}
+
+
+\begin{frame}{Subheaps}
+%    Recall that a subposet $Q$ of a poset $P$ is called \alert{convex} if $y \in Q$ whenever $x < y < z$ in $P$ and $x, z \in Q$. We will refer to a subheap as a \alert{convex subheap} if the underlying subposet is convex.
+\begin{block}{Example} Let $w \in W(A_6)$ have reduced expression $\w = s_2 s_3 \textcolor{blue}{s_5 s_4} s_6 \textcolor{blue}{s_5}$. Since there is no opportunity to apply a braid relation, $w$ is FC, and so there is a unique heap.
+    \pause
+\begin{center} \begin{tabular}{ccccc}
+\begin{tikzpicture}[scale=0.85]
+    \sq{0.5}{0}; \node at (1,-0.5)  {\footnotesize $5$};
+    \sq{1}{1};   \node at (1.5,0.5) {\footnotesize $6$};
+    \sq{0}{1};   \node at (0.5,0.5) {\footnotesize $4$};
+    \sq{0.5}{2}; \node at (1,1.5)   {\footnotesize $5$};
+    \sq{-0.5}{2};\node at (0,1.5)   {\footnotesize $3$};
+    \sq{-1}{3};  \node at (-0.5,2.5){\footnotesize $2$};
+\end{tikzpicture} && 
+\begin{tikzpicture}[scale=0.85]
+    \sq{0.5}{2}; \node at (1,1.5)   {\footnotesize $5$};
+    \sq{0}{1};   \node at (0.5,0.5) {\footnotesize $4$};
+    \sq{0.5}{0}; \node at (1,-0.5)  {\footnotesize $5$};
+\end{tikzpicture} && 
+\begin{tikzpicture}[scale=0.85]
+    \sq{0.5}{2}; \node at (1,1.5)   {\footnotesize $5$};
+    \sq{0}{1};   \node at (0.5,0.5) {\footnotesize $4$};
+    \sq{0.5}{0}; \node at (1,-0.5)  {\footnotesize $5$};
+    \sq{1}{1};   \node at (1.5,0.5) {\footnotesize $6$};
+\end{tikzpicture} \\
+    original heap && a subheap && a convex subheap
+\end{tabular} \end{center}
+\end{block}
+\end{frame}
+
+\begin{frame}{Subheaps}
+\begin{proposition} Let $w \in \FC(A_n)$. Then $H(w)$ cannot contain either of the following convex subheaps
+\begin{center} \begin{tabular}{m{2cm} m{0.75cm} m{2cm} m{0.5cm}}
+\begin{tikzpicture}[scale=0.85]
+    \sq{0.5}{2}; \node at (1,1.5) {\footnotesize $i+1$};
+    \sq{0}{1}; \node at (0.5,0.5) {\footnotesize $i$};
+    \sq{0.5}{0}; \node at (1,-0.5) {\footnotesize $i+1$};
+    \bsq{1}{1};
+\end{tikzpicture} & and &
+\begin{tikzpicture}[scale=0.85]
+    \sq{0}{2}; \node at (0.5,1.5) {\footnotesize $i$};
+    \sq{0.5}{1}; \node at (1,0.5) {\footnotesize $i+1$};
+    \sq{0}{0}; \node at (0.5,-0.5) {\footnotesize $i$};
+    \bsq{-0.5}{1};
+\end{tikzpicture} & ,
+\end{tabular} \end{center}
+    where $1 \leq i \leq n-1$ and \begin{tabular}{m{0.5cm}} \begin{tikzpicture}[scale=0.7] \bsq{0}{0}; \end{tikzpicture} \end{tabular} is used to emphasize the absence of a block in the corresponding position in $H(w)$.
+\end{proposition}
+\end{frame}
+
+\begin{frame}{Cyclically reduced}
+\begin{definition} Conjugating an expression by an initial generator results in a \alert{cyclic shift} of the word:
+    $$s_{x_1}(s_{x_1}s_{x_2}\cdots s_{x_m})s_{x_1}= \textcolor{turq}{s_{x_1}s_{x_1}}s_{x_2}s_{x_3}\cdots s_{x_m}s_{x_1}= s_{x_2}s_{x_3}\cdots s_{x_m}s_{x_1}.$$
+\end{definition} ~\\
+%    \pause
+%
+%    Two group elements $w$ and $y$ are \alert{cyclically equivalent} if there exist reduced expressions $\w$ and $\y$ of $w$ and $y$, respectively, that differ by a sequence of commutations, braid relations, and cyclic shifts of initial generators and there is no collapse in length.
+    \pause
+    Let $(W,S)$ be a Coxeter system and let $\w$ be a reduced expression for some $w \in W$. If every cyclic shift of $\w$ is a reduced expression for some element in $W$, then we say that $\w$ is \alert{cyclically reduced}. \\~\\
+    \pause
+    A group element $w \in W$ is \alert{cyclically reduced} if every reduced expression for $w$ is cyclically reduced.
+    These are the group elements whose reduced expressions when written in a circle do not collapse in length.
+\end{frame}
+
+
+%\begin{frame}{Cyclically reduced}
+%    Two group elements $w$ and $y$ are \alert{cyclically equivalent} if there exist reduced expressions $\w$ and $\y$ of $w$ and $y$, respectively, that differ by a sequence of commutations, braid relations, and cyclic shifts of initial generators and there is no collapse in length. \pause
+
+%\begin{block}{Example} Let $W$ be the Coxeter group of type $A_4$ and let $w, y \in W$ have reduced expressions $\w = 12342$ and $\y = 32134$, respectively. Then we have
+%    $$123\textcolor{magenta}{42} = 1\textcolor{blue}{232}4 = 13234 \overset{1}{\mapsto} 323\textcolor{magenta}{41} = 32314.$$
+%\end{block} \pause
+%\begin{frame}{Cyclically reduced}
+%
+%\end{frame}
+
+
+\begin{frame}{Cyclically reduced}
+\begin{block}{Example} Consider the Coxeter group of type $A_4$. Let $w \in W$ have reduced expressions $\w = 342132$.
+%    We see that $$324132 \overset{3}{\longmapsto} 241323.$$
+\begin{center} \begin{tabular}{m{2cm} m{0.2cm} m{2cm} m{0.2cm} m{2cm} m{0.2cm} m{2cm}}
+\begin{tikzpicture}[scale=0.5]
+    \draw[decoration={markings, mark=at position 0.05 with {\arrow{<}}},postaction={decorate}]
+        (0,0) circle (2cm);
+    \draw[decoration={markings, mark=at position 0.05 with {\arrow{<}}},postaction={decorate}]
+        (0,0) circle (1cm);
+    \draw (0,0)        node {$w$};
+    \draw (90:1.5)     node {\textcolor{blue}{3}};
+    \draw (30:1.5)     node {4};
+    \draw (330:1.5)    node {2};
+    \draw (270.71:1.5) node {1};
+    \draw (210.28:1.5) node {\textcolor{blue}{3}};
+    \draw (150.85:1.5) node {\textcolor{blue}{2}};
+\end{tikzpicture} \pause & = &
+\begin{tikzpicture}[scale=0.5]
+    \draw[decoration={markings, mark=at position 0.05 with {\arrow{<}}},postaction={decorate}]
+        (0,0) circle (2cm);
+    \draw[decoration={markings, mark=at position 0.05 with {\arrow{<}}},postaction={decorate}]
+        (0,0) circle (1cm);
+    \draw (0,0)        node {$w$};
+    \draw (90:1.5)     node {2};
+    \draw (30:1.5)     node {\textcolor{magenta}{4}};
+    \draw (330:1.5)    node {\textcolor{magenta}{2}};
+    \draw (270:1.5)    node {1};
+    \draw (210:1.5)    node {2};
+    \draw (150:1.5)    node {3};
+\end{tikzpicture} \pause & = &
+\begin{tikzpicture}[scale=0.5]
+    \draw[decoration={markings, mark=at position 0.05 with {\arrow{<}}},postaction={decorate}]
+        (0,0) circle (2cm);
+    \draw[decoration={markings, mark=at position 0.05 with {\arrow{<}}},postaction={decorate}]
+        (0,0) circle (1cm);
+    \draw (0,0)        node {$w$};
+    \draw (90:1.5)     node {\textcolor{turq}{2}};
+    \draw (30:1.5)     node {\textcolor{turq}{2}};
+    \draw (330:1.5)    node {4};
+    \draw (270:1.5)    node {1};
+    \draw (210:1.5)    node {2};
+    \draw (150:1.5)    node {3};
+\end{tikzpicture} \pause & = &
+\begin{tikzpicture}[scale=0.5]
+    \draw[decoration={markings, mark=at position 0.05 with {\arrow{<}}},postaction={decorate}]
+        (0,0) circle (2cm);
+    \draw[decoration={markings, mark=at position 0.05 with {\arrow{<}}},postaction={decorate}]
+        (0,0) circle (1cm);
+    \draw (0,0)        node {$w$};
+    \draw (90:1.5)     node {3};
+    \draw (0:1.5)      node {4};
+    \draw (270.71:1.5) node {1};
+    \draw (180.28:1.5) node {2};
+\end{tikzpicture}
+\end{tabular} \end{center}
+    Thus, $w$ is not cyclically reduced.
+\end{block}
+\end{frame}
+
+\begin{frame}
+%\begin{theorem}[Matsumoto] \label{thm:matsumoto} In a Coxeter group $W$, any two reduced expressions for the same group element differ by a sequence of commutations and braid relations.
+%\end{theorem}
+%~\\
+\begin{block}{Question}
+Do two cyclically reduced expressions for conjugate group elements differ by a sequence of commutations, braid relations, and cyclic shifts?
+\end{block} ~\\
+    \pause
+
+    Unfortunately the answer is ``no" in general, but it is often true. Dana's research includes trying to understand when the answer is ``yes."
+    
+\begin{block}{Example} In $W(A_3)$, $s_1$ and $s_2$ do not differ by cyclic shifts, but
+$$s_1s_2(s_1)s_2s_1=s_1{\color{blue}s_2s_1s_2}s_1={\color{turq}s_1s_1}s_2{\color{turq}s_1s_1}=s_2\,.$$
+\end{block}
+    \pause
+
+\begin{definition} Let $W$ be a Coxeter group. We say that a conjugacy class $C$ satisfies the \alert{cyclic version of Matsumoto's Theorem}, or CVMT, if any two cyclically reduced expressions of elements in $C$ differ by a sequence of commutations, braid relations, and cyclic shifts.
+\end{definition}
+\end{frame}
+
+\begin{frame}
+    Note that the following result is the CVMT applied to Coxeter elements.
+
+\begin{theorem}[Eriksson--Eriksson] Let $W$ be a Coxeter group and let $c$ and $c'$ be Coxeter elements. Then $c$ and $c'$ are conjugate iff $c$ and $c'$ are cyclically equivalent.
+\end{theorem} ~\\
+%\end{frame}
+    \pause
+
+%\begin{frame}{Cyclically fully commutative}
+    Unfortunately, FC-ness is not necessarily preserved under cyclic shifts. This motivates the following definition.
+
+\begin{definition} An element $w \in W$ is \alert{cyclically fully commutative}, or CFC, if every cyclic shift of every reduced expression for $w$ is a reduced expression for an FC element.
+\end{definition}
+
+    These are elements whose reduced expressions do not collapse and avoid braid relations when written in a circle.
+\end{frame}
+
+
+\begin{frame}
+\begin{block}{Example} Let $W$ be the Coxeter group of type $A_4$ and let $w, y \in W$ have reduced expressions $\w = 1243$ and $\y = 21324$, respectively. Then both $w$ and $y$ are FC, but, when we write each reduced expression in a circle, we have
+\end{block}
+
+\begin{center} \begin{tikzpicture}[scale=0.5]
+    \draw[decoration={markings, mark=at position 0.08 with {\arrow{<}}},postaction={decorate}]
+        (0,0) circle (2cm);
+    \draw[decoration={markings, mark=at position 0.08 with {\arrow{<}}},postaction={decorate}]
+        (0,0) circle (1cm);
+    \draw (0,0)    node {$w$};
+    \draw (0,1.5)  node {1};
+    \draw (1.5,0)  node {2};
+    \draw (0,-1.5) node {4};
+    \draw (-1.5,0) node {3};
+\end{tikzpicture}
+\end{center}
+    \pause
+\begin{center} \begin{tabular}{m{2cm} m{0.3cm} m{2cm} m{0.3cm} m{2cm}}\begin{tikzpicture}[scale=0.5]
+    \draw[decoration={markings, mark=at position 0.08 with {\arrow{<}}},postaction={decorate}]
+        (0,0) circle (2cm);
+    \draw[decoration={markings, mark=at position 0.08 with {\arrow{<}}},postaction={decorate}]
+        (0,0) circle (1cm);
+    \draw (0,0)     node {$y$};
+    \draw (90:1.5)  node {\textcolor{magenta}{2}};
+    \draw (18:1.5)  node {1};
+    \draw (234:1.5) node {2};
+    \draw (306:1.5) node {3};
+    \draw (162:1.5) node {\textcolor{magenta}{4}};
+\end{tikzpicture} \pause & = &
+\begin{tikzpicture}[scale=0.5]
+    \draw[decoration={markings, mark=at position 0.08 with {\arrow{<}}},postaction={decorate}]
+        (0,0) circle (2cm);
+    \draw[decoration={markings, mark=at position 0.08 with {\arrow{<}}},postaction={decorate}]
+        (0,0) circle (1cm);
+    \draw (0,0)     node {$y$};
+    \draw (90:1.5)  node {4};
+    \draw (18:1.5)  node {1};
+    \draw (234:1.5) node {\textcolor{turq}{2}};
+    \draw (306:1.5) node {3};
+    \draw (162:1.5) node {\textcolor{turq}{2}};
+\end{tikzpicture} \pause & = &
+\begin{tikzpicture}[scale=0.5]
+    \draw[decoration={markings, mark=at position 0.08 with {\arrow{<}}},postaction={decorate}]
+        (0,0) circle (2cm);
+    \draw[decoration={markings, mark=at position 0.08 with {\arrow{<}}},postaction={decorate}]
+        (0,0) circle (1cm);
+    \draw (0,0)      node {$y$};
+    \draw (90:1.5)   node {4};
+    \draw (330:1.5)  node {1};
+    \draw (210:1.5)  node {3};
+\end{tikzpicture}
+\end{tabular} \end{center}
+%    so $w$ is CFC because there are no braid relations or collapses created in the circle, but $y$ is not CFC since the two occurrences of 2 will collapse after commuting 2 and 4.
+    So, $w$ is CFC but $y$ is not.
+\end{frame}
+
+\begin{frame}{Cyclically fully commutative}
+\begin{proposition}[Boothby, et al.] Let $w \in W(A_n)$. Then $w$ is CFC if and only if each generator in $\supp(w)$ appears exactly once.
+\end{proposition}
+    ~\\ \pause
+\begin{example} Let $W$ be the Coxeter group of type $A_3$. All of the CFC elements of $W$ are   
+$$\begin{array}{lllllll} e & 1 & 2 & 3 & 13 & 12 & 21 \\ 23 & 32 & 123 & 321 & 132 & 213 & \end{array}.$$
+\end{example}
+\end{frame}
+
+
+\begin{frame}{Cyclic shifts of heaps}
+\begin{block}{Example} The group element corresponding to the heap
+\begin{center} \begin{tabular}{m{1.75cm}} \begin{tikzpicture}[scale=0.75]
+    \sq{0.5}{2}; \node at (1,1.5)   {\footnotesize $2$};
+    \sq{0}{1};   \node at (0.5,0.5) {\footnotesize $1$};
+    \sq{1}{1};   \node at (1.5,0.5) {\footnotesize $3$};
+    \sq{0.5}{0}; \node at (1,-0.5)  {\footnotesize $2$};
+\end{tikzpicture} \end{tabular} \end{center}
+    is FC because there is no opportunity to apply a braid relation, \pause but it is not CFC since
+\begin{center} \begin{tabular}{m{1.75cm} m{0.75cm} m{1.75cm} m{0.75cm} m{1.75cm} m{0.5cm}}
+\begin{tikzpicture}[scale=0.75]
+    \sq{0.5}{2}; \node at (1,1.5)   {\footnotesize $2$};
+    \sq{0}{1};   \node at (0.5,0.5) {\footnotesize $1$};
+    \sq{1}{1};   \node at (1.5,0.5) {\footnotesize $3$};
+    \sq{0.5}{0}; \node at (1,-0.5)  {\footnotesize $2$};
+\end{tikzpicture} & $\overset{2}{\longmapsto}$ &
+\begin{tikzpicture}[scale=0.75]
+    \sq{0.5}{-1}; \node at (1,-1.5)  {\footnotesize $2$};
+    \sq{0}{1};    \node at (0.5,0.5) {\footnotesize $1$};
+    \sq{1}{1};    \node at (1.5,0.5) {\footnotesize $3$};
+    \sq{0.5}{0};  \node at (1,-0.5)  {\footnotesize $2$};
+\end{tikzpicture} & $\equiv$ &
+\begin{tikzpicture}[scale=0.75]
+    \sq{0}{1}; \node at (0.5,0.5) {\footnotesize $1$};
+    \sq{1}{1}; \node at (1.5,0.5) {\footnotesize $3$};
+\end{tikzpicture} & .
+\end{tabular} \end{center}
+\end{block}
+\end{frame}
+
+
+\begin{frame}{Cyclic shifts of heaps}
+\begin{definition} Let $w \in W(A_n)$ have reduced expression $\w$ and suppose $\w$ is commutation equivalent to a reduced expression that begins with $i$. Then a block labeled by $i$ occurs at the top of the heap $H(\w)$.
+    A \alert{cyclic shift} of $H(\w)$ with respect to $i$ is the heap that results from removing the block labeled by $i$ from the top of the heap and appending it to the bottom.
+\end{definition}~\\
+
+%    Consider the equivalence relation $\approx_\kappa$ generated by cyclic shifts of heaps.
+    Let $w, w' \in \CFC(A_n)$. Then $H(w)$ and $H(w')$ are \alert{cyclically equivalent} if $H(w)$ and $H(w')$ differ by a sequence of cyclic shifts of blocks.
+\end{frame}
+
+
+%\begin{frame}{Cyclic shifts of heaps}
+%\begin{block}{Example}
+%\end{block}
+%\end{frame}
+
+
+\begin{frame}{Cylindrical heaps}
+\begin{definition} We let $\hat{H}(w)$ represent the equivalence class (generated by cyclic shifts) of cyclically equivalent CFC heaps, which we visualize by wrapping representatives on a cylinder.
+    We call $\hat{H}(w)$ a \alert{cylindrical heap}.
+\end{definition}
+
+\begin{example} Let $w \in \CFC(A_4)$ have reduced expression $1324$. Then $\hat{H}(w)$ can be represented by
+\begin{center} \begin{tabular}{m{3cm} m{0.5cm}}
+\begin{tikzpicture}[scale=0.85]
+\draw[line width=1.5pt,->] (-0.5,1)--(2.75,1); \draw[line width=1.5pt,->] (-0.5,-1)--(2.75,-1);
+    \sq{0}{1};   \node at (0.5,0.5) {\footnotesize $1$};
+    \sq{1}{1};   \node at (1.5,0.5) {\footnotesize $3$};
+    \sq{0.5}{0}; \node at (1,-0.5)  {\footnotesize $2$};
+    \sq{1.5}{0}; \node at (2,-0.5)  {\footnotesize $4$};
+\end{tikzpicture} & .
+\end{tabular} \end{center}
+\end{example}
+\end{frame}
+
+\begin{frame}{Cylindrical heaps}
+    The elements of the equivalence class $\hat{H}(w)$ are
+$$\begin{array}{cccccccc}
+\begin{tikzpicture}[scale=0.75]
+    \sq{0}{1};   \node at (0.5,0.5) {\footnotesize $1$};
+    \sq{1}{1};   \node at (1.5,0.5) {\footnotesize $3$};
+    \sq{0.5}{0}; \node at (1,-0.5)  {\footnotesize $2$};
+    \sq{1.5}{0}; \node at (2,-0.5)  {\footnotesize $4$};
+\end{tikzpicture} &&
+\begin{tikzpicture}[scale=0.75]
+    \sq{0}{1};   \node at (0.5,0.5) {\footnotesize $1$};
+    \sq{1}{-1};  \node at (1.5,-1.5){\footnotesize $3$};
+    \sq{0.5}{0}; \node at (1,-0.5)  {\footnotesize $2$};
+    \sq{1.5}{0}; \node at (2,-0.5)  {\footnotesize $4$};
+\end{tikzpicture} &&
+\begin{tikzpicture}[scale=0.75]
+    \sq{0}{-1};  \node at (0.5,-1.5){\footnotesize $1$};
+    \sq{1}{-1};  \node at (1.5,-1.5){\footnotesize $3$};
+    \sq{0.5}{0}; \node at (1,-0.5)  {\footnotesize $2$};
+    \sq{1.5}{0}; \node at (2,-0.5)  {\footnotesize $4$};
+\end{tikzpicture} &&
+\begin{tikzpicture}[scale=0.75]
+    \sq{0}{-1};  \node at (0.5,-1.5){\footnotesize $1$};
+    \sq{1}{-1};  \node at (1.5,-1.5){\footnotesize $3$};
+    \sq{0.5}{0}; \node at (1,-0.5)  {\footnotesize $2$};
+    \sq{1.5}{-2};\node at (2,-2.5)  {\footnotesize $4$};
+\end{tikzpicture} \\ &&&&&& \\ \pause
+\begin{tikzpicture}[scale=0.75]
+    \sq{0}{2};   \node at (0.5,1.5) {\footnotesize $1$};
+    \sq{1}{0};   \node at (1.5,-0.5){\footnotesize $3$};
+    \sq{0.5}{1}; \node at (1,0.5)   {\footnotesize $2$};
+    \sq{1.5}{-1};\node at (2,-1.5)  {\footnotesize $4$};
+\end{tikzpicture} &&
+\begin{tikzpicture}[scale=0.75]
+    \sq{1.5}{3}; \node at (2,2.5)   {\footnotesize $4$};
+    \sq{0}{2};   \node at (0.5,1.5) {\footnotesize $1$};
+    \sq{1}{2};   \node at (1.5,1.5) {\footnotesize $3$};
+    \sq{0.5}{1}; \node at (1,0.5)   {\footnotesize $2$};
+\end{tikzpicture} &&
+\begin{tikzpicture}[scale=0.75]
+    \sq{1}{3};   \node at (1.5,2.5) {\footnotesize $3$};
+    \sq{0.5}{2}; \node at (1,1.5)   {\footnotesize $2$};
+    \sq{1.5}{2}; \node at (2,1.5)   {\footnotesize $4$};
+    \sq{0}{1};   \node at (0.5,0.5) {\footnotesize $1$};
+\end{tikzpicture} &&
+\begin{tikzpicture}[scale=0.75]
+    \sq{0}{1};   \node at (0.5,0.5) {\footnotesize $1$};
+    \sq{0.5}{2}; \node at (1,1.5)   {\footnotesize $2$};
+    \sq{1}{3};   \node at (1.5,2.5) {\footnotesize $3$};
+    \sq{1.5}{4}; \node at (2,3.5)   {\footnotesize $4$};
+\end{tikzpicture}
+\end{array}$$
+%\end{tabular} \end{center}
+\end{frame}
+
+\begin{frame}{The symmetric group}
+    Recall that $W(A_n)$ is isomorphic to the symmetric group $S_{n+1}$ via the mapping that sends $i$ to the adjacent transposition $(i~i+1)$.\\~\\
+    
+    If $w \in S_n$, then $[w(1)~w(2) \cdots w(n)]$ is the \alert{one-line notation} corresponding to $w$.\\~\\
+    
+\begin{block}{Example} Let $W$ be the Coxeter graph of type $A_4$. Let $w \in W$ have reduced expression $\w = 12342$.
+    Then the corresponding permutation in $S_5$ is $$(12)(23)(34)(45)(23) = (1245).$$
+    Then, in one-line notation, we have $(1245) = [24351]$.
+\end{block}
+\end{frame}
+
+\begin{frame}{Permutation line graphs}
+    A \alert{permutation line graph} has line segments joining $(i,w(i))$ to $(i+1,w(i+1))$ for each $1 \leq i \leq n-1$.
+\begin{block}{Example} Consider the permutation $w = [315462]$.
+\begin{center}
+\begin{tikzpicture}[scale=0.65] \begin{scriptsize}
+\draw (0,0)--(6.5,0); \draw (0,0)--(0,6.5);
+\foreach \x in {1,2,3,4,5,6} \draw[shift={(\x,0)},color=black] (0pt,2pt)--(0pt,-2pt);
+\foreach \y in {1,2,3,4,5,6} \draw[shift={(0,\y)},color=black] (2pt,0pt)--(-2pt,0pt);
+    \draw (1,-0.25) node {$1$};
+    \draw (2,-0.25) node {$2$};
+    \draw (3,-0.25) node {$3$};
+    \draw (4,-0.25) node {$4$};
+    \draw (5,-0.25) node {$5$};
+    \draw (6,-0.25) node {$6$};
+    \draw (-0.25,1) node {$1$};
+    \draw (-0.25,2) node {$2$};
+    \draw (-0.25,3) node {$3$};
+    \draw (-0.25,4) node {$4$};
+    \draw (-0.25,5) node {$5$};
+    \draw (-0.25,6) node {$6$};
+    \draw[fill=black]   (1,3) circle (1pt); \pause
+    \draw[fill=black]   (2,1) circle (1pt); \pause
+    \draw[fill=black]   (3,5) circle (1pt); \pause
+    \draw[fill=black]   (4,4) circle (1pt); \pause
+    \draw[fill=black]   (5,6) circle (1pt); \pause
+    \draw[fill=black]   (6,2) circle (1pt); \pause
+%    \draw[color=ggreen] (3,5) circle (4pt);
+%    \draw[color=ggreen] (4,4) circle (4pt);
+%    \draw[color=ggreen] (6,2) circle (4pt);
+    \draw (1,3)--(2,1)--(3,5)--(4,4)--(5,6)--(6,2);
+\end{scriptsize} \end{tikzpicture} \end{center}
+\end{block}
+\end{frame}
+
+
+\begin{frame}{Pattern avoidance}
+%    If $w \in W(A_n)$, then $w$ avoids the pattern $321$ if there is no subset $\{i,j,k\} \subseteq \{1,\ldots,n+1\}$ with $i < j < k$ and $w(k) < w(j) < w(i)$.\\~\\
+%
+%    Similarly, a permutation $w$ avoids the pattern $3412$ if there is no subset $\{i,j,k,\ell\} \subseteq \{1,\ldots,n+1\}$ with $i < j < k < \ell$ and $w(k) < w(\ell) < w(i) < w(j)$.
+\begin{center} \begin{figure}[h!] \centering
+\begin{tabular}{cc}
+\begin{subfigure}{0.4\textwidth} \centering
+\begin{tikzpicture}[scale=0.75]
+\draw (0,0)--(3.5,0); \draw (0,0)--(0,3.5);
+\foreach \x in {1,2,3} \draw[shift={(\x,0)},color=black] (0pt,2pt)--(0pt,-2pt);
+\foreach \y in {1,2,3} \draw[shift={(0,\y)},color=black] (2pt,0pt)--(-2pt,0pt);
+\begin{scriptsize}
+    \draw (1,-0.3) node {$i$};
+    \draw (2,-0.3) node {$j$};
+    \draw (3,-0.3) node {$k$};
+    \draw (-0.4,1) node {$w(k)$};
+    \draw (-0.4,2) node {$w(j)$};
+    \draw (-0.4,3) node {$w(i)$};
+    \draw[fill=black] (1,3) circle (1.5pt);
+    \draw[fill=black] (2,2) circle (1.5pt);
+    \draw[fill=black] (3,1) circle (1.5pt);
+    \draw (0.5,-0.3) node {$\cdots$};
+    \draw (1.5,-0.3) node {$\cdots$};
+    \draw (2.5,-0.3) node {$\cdots$};
+    \draw (-0.4,0.5) node {$\vdots$};
+    \draw (-0.4,1.55) node {$\vdots$};
+    \draw (-0.4,2.55) node {$\vdots$};
+\end{scriptsize}\end{tikzpicture}
+\caption{The pattern 321}\label{fig:321}
+\end{subfigure} & \pause
+
+\begin{subfigure}{0.4\textwidth} \centering
+\begin{tikzpicture}[scale=0.6]
+\draw (0,0)--(4.5,0); \draw (0,0)--(0,4.5);
+\foreach \x in {1,2,3,4} \draw[shift={(\x,0)},color=black] (0pt,2pt)--(0pt,-2pt);
+\foreach \y in {1,2,3,4} \draw[shift={(0,\y)},color=black] (2pt,0pt)--(-2pt,0pt);
+\begin{scriptsize}
+    \draw (1,-0.3) node {$i$};
+    \draw (2,-0.3) node {$j$};
+    \draw (3,-0.3) node {$k$};
+    \draw (4,-0.3) node {$\ell$};
+    \draw (-0.5,1) node {$w(k)$};
+    \draw (-0.5,2) node {$w(\ell)$};
+    \draw (-0.5,3) node {$w(i)$};
+    \draw (-0.5,4) node {$w(j)$};
+    \draw[fill=black] (1,3) circle (2pt);
+    \draw[fill=black] (2,4) circle (2pt);
+    \draw[fill=black] (3,1) circle (2pt);
+    \draw[fill=black] (4,2) circle (2pt);
+    \draw (0.5,-0.3) node {$\cdots$};
+    \draw (1.5,-0.3) node {$\cdots$};
+    \draw (2.5,-0.3) node {$\cdots$};
+    \draw (3.5,-0.3) node {$\cdots$};
+    \draw (-0.5,0.5) node {$\vdots$};
+    \draw (-0.5,1.55) node {$\vdots$};
+    \draw (-0.5,2.55) node {$\vdots$};
+    \draw (-0.5,3.55) node {$\vdots$};
+\end{scriptsize} \end{tikzpicture}
+\caption{The pattern 3412}\label{fig:3412}
+\end{subfigure}
+\end{tabular}
+\caption{The permutation line graphs of the 321 and 3412 patterns.} \label{fig:patternmountains}
+\end{figure} \end{center}
+
+    We say that $w$ is 321-avoiding or 3412-avoiding if these patterns do not appear in the permutation line graph of $w$.
+\end{frame}
+
+
+\begin{frame}{Pattern avoidance}
+\begin{block}{Example} Let $w \in W(A_5)$ have reduced expression $\w = 234513$. Then $w$ corresponds to $$(23)(34)(45)(56)(12)(34) = (13562)$$ in $S_6$. The one-line notation for $w$ is $[31\textcolor{ggreen}{54}6\textcolor{ggreen}{2}]$. 
+    There is a 321 pattern in the one-line notation, but there is no 3412 pattern.
+    \pause
+\begin{center}
+\begin{tikzpicture}[scale=0.65] \begin{scriptsize}
+\draw (0,0)--(6.5,0); \draw (0,0)--(0,6.5);
+\foreach \x in {1,2,3,4,5,6} \draw[shift={(\x,0)},color=black] (0pt,2pt)--(0pt,-2pt);
+\foreach \y in {1,2,3,4,5,6} \draw[shift={(0,\y)},color=black] (2pt,0pt)--(-2pt,0pt);
+    \draw (1,-0.25) node {$1$};
+    \draw (2,-0.25) node {$2$};
+    \draw (3,-0.25) node {$3$};
+    \draw (4,-0.25) node {$4$};
+    \draw (5,-0.25) node {$5$};
+    \draw (6,-0.25) node {$6$};
+    \draw (-0.25,1) node {$1$};
+    \draw (-0.25,2) node {$2$};
+    \draw (-0.25,3) node {$3$};
+    \draw (-0.25,4) node {$4$};
+    \draw (-0.25,5) node {$5$};
+    \draw (-0.25,6) node {$6$};
+    \draw[fill=black]   (1,3) circle (1pt);
+    \draw[fill=black]   (2,1) circle (1pt);
+    \draw[fill=black]   (3,5) circle (1pt);
+    \draw[fill=black]   (4,4) circle (1pt);
+    \draw[fill=black]   (5,6) circle (1pt);
+    \draw[fill=black]   (6,2) circle (1pt);
+    \draw[color=ggreen, line width=1pt] (3,5) circle (4pt);
+    \draw[color=ggreen, line width=1pt] (4,4) circle (4pt);
+    \draw[color=ggreen, line width=1pt] (6,2) circle (4pt);
+    \draw (1,3)--(2,1)--(3,5)--(4,4)--(5,6)--(6,2);
+\end{scriptsize} \end{tikzpicture}
+\end{center}
+    So, $w$ is 3412-avoiding but not 321-avoiding.
+\end{block}
+\end{frame}
+
+\begin{frame}{Pattern avoidance}
+\begin{proposition}[Billey]\label{prop:321FC} An element $w \in W(A_n)$ is FC if and only if $w$ is 321-avoiding.
+\end{proposition}~\\
+    \pause
+\begin{proposition}[Boothby, et al.] An element $w \in W(A_n)$ is CFC if and only if $w$ is $321$- and $3412$-avoiding.
+\end{proposition}
+\end{frame}
+
+\begin{frame}{Pattern avoidance}
+\begin{block}{Example} Let $W$ be the Coxeter group of type $A_3$. Then $W \cong S_4$. Let $w \in W$ have reduced expression $\w = 3213$. Then, in cycle and one-line notations, we have that $w$ corresponds to $$(34)(23)(12)(34) = (124) = [2431]$$ in $S_4$. \pause
+%    Since $431$ in the one-line notation is a 321 pattern, $[2431]$ is not 321-avoiding.
+\begin{center} \begin{tabular}{ccccc}
+\begin{tikzpicture}[scale=0.65] \begin{scriptsize}
+\draw (0,0)--(4.5,0); \draw (0,0)--(0,4.5);
+\foreach \x in {1,2,3,4} \draw[shift={(\x,0)},color=black] (0pt,2pt)--(0pt,-2pt);
+\foreach \y in {1,2,3,4} \draw[shift={(0,\y)},color=black] (2pt,0pt)--(-2pt,0pt);
+    \draw (1,-0.25) node {$1$};
+    \draw (2,-0.25) node {$2$};
+    \draw (3,-0.25) node {$3$};
+    \draw (4,-0.25) node {$4$};
+    \draw (-0.8,1)  node {$1$};
+    \draw (-0.8,2)  node {$2$};
+    \draw (-0.8,3)  node {$3$};
+    \draw (-0.8,4)  node {$4$};
+    \draw[fill=black] (1,2) circle (1pt);
+    \draw[fill=black] (2,4) circle (1pt);
+    \draw[fill=black] (3,3) circle (1pt);
+    \draw[fill=black] (4,1) circle (1pt);
+    \draw (1,2)--(2,4)--(3,3)--(4,1);
+    \draw[color=ggreen, line width=1pt] (2,4) circle (4pt);
+    \draw[color=ggreen, line width=1pt] (3,3) circle (4pt);
+    \draw[color=ggreen, line width=1pt] (4,1) circle (4pt);
+\end{scriptsize} \end{tikzpicture} &&
+\begin{tikzpicture}[scale=0.75]
+    \sq{1}{2};   \node at (1.5,1.5) {$3$};
+    \sq{0.5}{1}; \node at (1,0.5)   {$2$};
+    \sq{0}{0};   \node at (0.5,-0.5){$1$};
+    \sq{1}{0};   \node at (1.5,-0.5){$3$};
+\end{tikzpicture} &&
+\begin{tikzpicture}[scale=0.75]
+    \sq{0.5}{3}; \node at (1,2.5)   {$2$};
+    \sq{1}{2};   \node at (1.5,1.5) {$3$};
+    \sq{0.5}{1}; \node at (1,0.5)   {$2$};
+    \sq{0}{0};   \node at (0.5,-0.5){$1$};
+\end{tikzpicture}
+\end{tabular} \end{center}
+    So, $w$ is not FC and hence not CFC.
+\end{block}
+\end{frame}
+
+
+\begin{frame}{}
+\begin{block}{Example} Let $w \in W(A_4)$ have reduced expression $\w = 1234$. Then $w$ is FC and the heap of $w$ is
+\begin{center} \begin{tabular}{m{2cm} m{0.5cm}} \centering \begin{tikzpicture}[scale=0.75]
+    \sq{0}{2};    \node at (0.5,1.5)  {\footnotesize $1$};
+    \sq{0.5}{1};  \node at (1,0.5)    {\footnotesize $2$};
+    \sq{1}{0};    \node at (1.5,-0.5) {\footnotesize $3$};
+    \sq{1.5}{-1}; \node at (2,-1.5)   {\footnotesize $4$};
+\end{tikzpicture} & . \end{tabular} \end{center}
+    Then $w$ corresponds to $(12)(23)(34)(45) = (12345)$. %Consider all possible sequences of cyclic shifts of $H(w)$ and their corresponding permutations in $S_5$. We have
+\end{block}
+\end{frame}
+
+
+\begin{frame}{Conjecture}
+%Let $w \in W(A_4)$ have reduced expression $\w = 1234$.
+\begin{columns}[c] 
+\column{0.5\textwidth}
+\centering
+\begin{tabular}{@{}m{2cm} @{}m{0.75cm} @{}m{1cm}} \centering
+\begin{tikzpicture}[scale=0.5]
+    \sq{0}{0};    \node at (0.5,-0.5) {\footnotesize $1$};
+    \sqm{0.5}{1}; \node at (1,0.5)    {\footnotesize $2$};
+    \sq{1}{0};    \node at (1.5,-0.5) {\footnotesize $3$};
+    \sq{1.5}{-1}; \node at (2,-1.5)   {\footnotesize $4$};
+\end{tikzpicture} & $\mapsto$ &
+    $(13452)$ \\ && \\
+\begin{tikzpicture}[scale=0.5]
+    \sq{0}{0};    \node at (0.5,-0.5) {\footnotesize $1$};
+    \sq{0.5}{-1}; \node at (1,-1.5)   {\footnotesize $2$};
+    \sqm{1}{0};   \node at (1.5,-0.5) {\footnotesize $3$};
+    \sq{1.5}{-1}; \node at (2,-1.5)   {\footnotesize $4$};
+\end{tikzpicture} & $\mapsto$ &
+    $(12453)$ \\ && \\
+\begin{tikzpicture}[scale=0.5]
+    \sqm{0}{0};   \node at (0.5,-0.5) {\footnotesize $1$};
+    \sq{0.5}{-1}; \node at (1,-1.5)   {\footnotesize $2$};
+    \sq{1}{-2};   \node at (1.5,-2.5) {\footnotesize $3$};
+    \sq{1.5}{-1}; \node at (2,-1.5)   {\footnotesize $4$};
+\end{tikzpicture} & $\mapsto$ &
+    $(12354)$ \\ && \\
+\begin{tikzpicture}[scale=0.5]
+    \sq{0}{0};    \node at (0.5,-0.5) {\footnotesize $1$};
+    \sqm{0.5}{1}; \node at (1,0.5)    {\footnotesize $2$};
+    \sq{1}{0};    \node at (1.5,-0.5) {\footnotesize $3$};
+    \sq{1.5}{1};  \node at (2,0.5)    {\footnotesize $4$};
+\end{tikzpicture} & $\mapsto$ &
+    $(13542)$
+\end{tabular}
+
+\column{0.5\textwidth}
+\centering
+\begin{tabular}{@{}m{2cm} @{}m{0.75cm} @{}m{1cm}} \centering
+\begin{tikzpicture}[scale=0.5]
+    \sqm{0}{0};   \node at (0.5,-0.5) {\footnotesize $1$};
+    \sq{0.5}{-1}; \node at (1,-1.5)   {\footnotesize $2$};
+    \sq{1}{0};    \node at (1.5,-0.5) {\footnotesize $3$};
+    \sq{1.5}{1};  \node at (2,0.5)    {\footnotesize $4$};
+\end{tikzpicture} & $\mapsto$ &
+    $(14532)$ \\ && \\
+\begin{tikzpicture}[scale=0.5]
+    \sq{0}{-2};   \node at (0.5,-2.5) {\footnotesize $1$};
+    \sq{0.5}{-1}; \node at (1,-1.5)   {\footnotesize $2$};
+    \sq{1}{0};    \node at (1.5,-0.5) {\footnotesize $3$};
+    \sqm{1.5}{1}; \node at (2,0.5)    {\footnotesize $4$};
+\end{tikzpicture} & $\mapsto$ &
+    $(15432)$ \\ && \\
+\begin{tikzpicture}[scale=0.5]
+    \sq{0}{0};    \node at (0.5,-0.5) {\footnotesize $1$};
+    \sq{0.5}{1};  \node at (1,0.5)    {\footnotesize $2$};
+    \sq{1}{2};    \node at (1.5,1.5)  {\footnotesize $3$};
+    \sq{1.5}{1};  \node at (2,0.5)    {\footnotesize $4$};
+\end{tikzpicture} & $\mapsto$ &
+    $(14532)$
+\end{tabular}
+\end{columns}
+%\end{block}
+\end{frame}
+
+
+\begin{frame}{Conjecture}
+\begin{block}{Conjecture} Let $w \in W(A_n)$ correspond to a permutation with disjoint cycles $c_1, c_2, \ldots, c_k$ in $S_{n+1}$. Assume each $c_j$ is written with the smallest number first.
+    Then $w \in \CFC(A_n)$ if and only if %there does not exist an $i \in \cyclesupp(w_j)$ such that $i > w_j(i)$ and $w_j(i) < w_j^2(i)$, where each $w_j$ has support $\{k,\ldots,k+\ell\}$.
+    each $c_j$ has ``connected support" and has at most one ``direction change."
+\end{block}
+\end{frame}
+
+
+%\begin{frame}{Conjecture}
+%    Given a product of disjoint cycles, we want to be able to determine if the group element corresponding to the permutation is a CFC element.
+%    For example, which 4-cycles in $S_4$ correspond to CFC elements in $A_3$?\\~\\
+%    
+%    Let $(\cdots i~w(i)~w^2(i) \cdots)$ be a disjoint cycle in the permutation corresponding to $w \in W(A_n)$. Then there is a \alert{direction change at $w(i)$} if $i < w(i)$ and $w(i) > w^2(i)$ or $i > w(i)$ and $w(i) < w^2(i)$.\\~\\
+%    
+%    We say a cycle $w$ has \alert{connected support} if the support of $w$ is a set of consecutive numbers.
+%\end{frame}
+%
+%
+%\begin{frame}{Conjecture}
+%\begin{block}{Conjecture} Let $w \in W(A_n)$ correspond to a permutation with disjoint cycles $c_1, c_2, \ldots, c_k$ in $S_{n+1}$. Assume each $c_j$ is written with the smallest number first.
+%    Then $w \in \CFC(A_n)$ if and only if %there does not exist an $i \in \cyclesupp(w_j)$ such that $i > w_j(i)$ and $w_j(i) < w_j^2(i)$, where each $w_j$ has support $\{k,\ldots,k+\ell\}$.
+%    each $c_j$ has connected support and has at most one direction change.
+%\end{block}
+%\end{frame}
+
+
+%\begin{frame}{Chunks}
+%    Let $w \in \CFC(W)$. Then we refer to a \alert{diagonal heap of size $m+1$} as one of the form
+%\begin{center} \begin{tikzpicture}[scale=0.75]
+%    \sq{0}{2};    \node at (0.5,1.5)   {\scalebox{0.8}{$k$}};
+%    \sq{0.5}{1};  \node at (1,0.5)     {\scalebox{0.8}{$k+1$}};
+%                  \node at (1.5,-0.35) {$\ddots$};
+%    \sq{1.5}{-1}; \node at (2,-1.5)    {\scalebox{0.8}{$k'$}};
+%\end{tikzpicture} \end{center}
+%    for $1 \leq k \leq n$ and $0 \leq m \leq n-k$, where $k'=k+m$.
+%%    We call a heap of a CFC element, or a subheap of a heap of a CFC element, a \alert{chunk of size $k$} is it is a maximal connected component of the underlying Hasse diagram.
+%\end{frame}
+
+\begin{frame}{Chunks}
+\begin{block}{Example} Consider the Coxeter group $W$ of type $A_6$. Let $w \in \CFC(A_6)$ have reduced expression $\w = 12356$.
+\begin{center} %\begin{tabular}{ccc}
+\begin{tikzpicture}[scale=0.75]
+    \sqm{0}{3};   \node at (0.5,2.5) {\footnotesize $1$};
+    \sqm{0.5}{2}; \node at (1,1.5)   {\footnotesize $2$};
+    \sqm{1}{1};   \node at (1.5,0.5) {\footnotesize $3$};
+    \sqbl{2}{1};   \node at (2.5,0.5) {\footnotesize $5$};
+    \sqbl{2.5}{0}; \node at (3,-0.5)  {\footnotesize $6$};
+    \draw[dotted, line width=1.5pt] (2,-1.2)--(2,3.2);
+\end{tikzpicture}
+%\begin{tikzpicture}[scale=0.75]
+%\draw (-1,2)--(0,1)--(1,0); \draw (3,1)--(4,0);
+%\begin{scriptsize}
+%    \draw [fill=black] (-1,2) circle (1.5pt);
+%    \draw (-0.8,2.2) node {1};
+%    \draw [fill=black] (0,1) circle (1.5pt);
+%    \draw (0.2,1.2) node {2};
+%    \draw [fill=black] (1,0) circle (1.5pt);
+%    \draw (1.2,0.2) node {3};
+%    \draw [fill=black] (3,1) circle (1.5pt);
+%    \draw (3.2,1.2) node {5};
+%    \draw [fill=black] (4,0) circle (1.5pt);
+%    \draw (4.2,0.2) node {6};
+%\end{scriptsize}
+%\end{tikzpicture}
+%\end{tabular}
+\end{center}
+    \pause
+    We say that $H(w)$ consists of a \textcolor{magenta}{chunk} of size 3 and a \textcolor{blue}{chunk} of size 2.
+\end{block}
+\end{frame}
+
+
+\begin{frame}{Rings}
+\begin{definition} A \alert{ring} is a chunk wrapped on a cylinder.
+\begin{center} \begin{tikzpicture}[scale=0.65]
+\draw[line width=1.5pt,->] (-0.5,2)--(2.75,2); \draw[line width=1.5pt,->] (-0.5,-2)--(2.75,-2);
+    \sq{0}{2};    \node at (0.5,1.5)   {\scalebox{0.7}{$k$}};
+    \sq{0.5}{1};  \node at (1,0.5)     {\scalebox{0.7}{$k+1$}};
+                  \node at (1.5,-0.35) {$\ddots$};
+    \sq{1.5}{-1}; \node at (2,-1.5)    {\scalebox{0.7}{$k'$}};
+\end{tikzpicture} \end{center}
+\end{definition}
+
+\begin{definition} We say two rings are \alert{equivalent} if they have the same number of blocks. %we can add some $j \in \Z$ to the label of each block of one ring to obtain the other ring.
+\end{definition}
+
+\begin{definition} Two cylindrical heaps are \alert{ring equivalent} if we can ``slide" and ``permute" rings of one cylindrical heap to obtain the other cylindrical heap.
+\end{definition}
+\end{frame}
+
+
+\begin{frame}{Ring equivalence}
+\begin{block}{Example} Consider the Coxeter group $W$ of type $A_6$. Let $w, y \in W$ have reduced expressions $\w = 12356$ and $\y = 12456$. %Then $w$ is CFC, and its heap is
+\begin{center} \begin{tabular}{m{1cm} m{3.5cm} m{1cm} m{3.5cm}}
+    $\hat{H}(w) = $ &
+\begin{tikzpicture}[scale=0.75]
+\draw[->, line width=1.2pt] (-0.5,3)--(4,3); \draw[->, line width=1.2pt] (-0.5,-1)--(4,-1);
+    \sq{0}{3};   \node at (0.5,2.5) {\footnotesize $1$};
+    \sq{0.5}{2}; \node at (1,1.5)   {\footnotesize $2$};
+    \sq{1}{1};   \node at (1.5,0.5) {\footnotesize $3$};
+    \sq{2}{1};   \node at (2.5,0.5) {\footnotesize $5$};
+    \sq{2.5}{0}; \node at (3,-0.5)  {\footnotesize $6$};
+\end{tikzpicture} & \pause
+    $\hat{H}(y) = $ &
+\begin{tikzpicture}[scale=0.75]
+\draw[->, line width=1.2pt] (-0.5,3)--(4,3); \draw[->, line width=1.2pt] (-0.5,-1)--(4,-1);
+    \sq{0}{3};   \node at (0.5,2.5) {\footnotesize $1$};
+    \sq{0.5}{2}; \node at (1,1.5)   {\footnotesize $2$};
+    \sq{1.5}{2}; \node at (2,1.5)   {\footnotesize $4$};
+    \sq{2}{1};   \node at (2.5,0.5) {\footnotesize $5$};
+    \sq{2.5}{0}; \node at (3,-0.5)  {\footnotesize $6$};
+\end{tikzpicture}
+\end{tabular} \end{center}
+    \pause
+\begin{center} \begin{tabular}{ccccccc}
+\begin{tikzpicture}[scale=0.75]
+\draw[line width=1.5pt,->] (-0.5,3)--(2.25,3); \draw[line width=1.5pt,->] (-0.5,0)--(2.25,0);
+    \sq{0}{3};   \node at (0.5,2.5) {\footnotesize $1$};
+    \sq{0.5}{2}; \node at (1,1.5)   {\footnotesize $2$};
+    \sq{1}{1};   \node at (1.5,0.5) {\footnotesize $3$};
+\end{tikzpicture} &
+\begin{tikzpicture}[scale=0.75]
+\draw[line width=1.5pt,->] (-0.5,1)--(1.75,1); \draw[line width=1.5pt,->] (-0.5,-1)--(1.75,-1);
+    \sq{0}{1};   \node at (0.5,0.5) {\footnotesize $5$};
+    \sq{0.5}{0}; \node at (1,-0.5)  {\footnotesize $6$};
+\end{tikzpicture} &&&& \pause
+\begin{tikzpicture}[scale=0.75]
+\draw[line width=1.5pt,->] (-0.5,1)--(1.75,1); \draw[line width=1.5pt,->] (-0.5,-1)--(1.75,-1);
+    \sq{0}{1};   \node at (0.5,0.5) {\footnotesize $1$};
+    \sq{0.5}{0}; \node at (1,-0.5)  {\footnotesize $2$};
+\end{tikzpicture} &
+\begin{tikzpicture}[scale=0.75]
+\draw[line width=1.5pt,->] (-0.5,3)--(2.25,3); \draw[line width=1.5pt,->] (-0.5,0)--(2.25,0);
+    \sq{0}{3};    \node at (0.5,2.5)   {\footnotesize $4$};
+    \sq{0.5}{2};  \node at (1,1.5)     {\footnotesize $5$};
+    \sq{1}{1};    \node at (1.5,0.5)   {\footnotesize $6$};
+\end{tikzpicture}
+\end{tabular} \end{center}
+\end{block}
+\end{frame}
+
+
+%\begin{frame}
+%%    The rings in $\hat{H}(w)$ and $\hat{H}(y)$ are not equivalent to each other.
+%    We see that $\hat{H}(w)$ and $\hat{H}(y)$ are ring equivalent since
+%    \pause
+%\begin{block}{Example} The ring
+%\begin{center} \begin{tabular}{m{2cm} m{3.5cm} m{2cm} m{0.5cm}}
+%\begin{tikzpicture}[scale=0.75]
+%\draw[line width=1.5pt,->] (-0.5,3)--(2.25,3); \draw[line width=1.5pt,->] (-0.5,0)--(2.25,0);
+%    \sq{0}{3};   \node at (0.5,2.5) {\footnotesize $1$};
+%    \sq{0.5}{2}; \node at (1,1.5)   {\footnotesize $2$};
+%    \sq{1}{1};   \node at (1.5,0.5) {\footnotesize $3$};
+%\end{tikzpicture}
+%    & $\equiv$ &
+%\begin{tikzpicture}[scale=0.75]
+%\draw[line width=1.5pt,->] (-0.5,3)--(2.25,3); \draw[line width=1.5pt,->] (-0.5,0)--(2.25,0);
+%    \sq{0}{3};   \node at (0.5,2.5) {\footnotesize $4$};
+%    \sq{0.5}{2}; \node at (1,1.5)   {\footnotesize $5$};
+%    \sq{1}{1};   \node at (1.5,0.5) {\footnotesize $6$};
+%\end{tikzpicture} & . 
+%\end{tabular} \end{center}
+%\end{block}
+%\end{frame}
+
+%\begin{frame}
+%    The cylindrical heap of $H(w)$ is shown in Figure~\ref{fig:cylheap}.
+%\begin{center} \begin{figure}[h!] \centering
+%\begin{tikzpicture}
+%\draw[line width=1.5pt,->] (-0.5,3)--(3.75,3);
+%    \sq{0}{3};   \node at (0.5,2.5) {\footnotesize $1$};
+%    \sq{0.5}{2}; \node at (1,1.5)   {\footnotesize $2$};
+%    \sq{1}{1};   \node at (1.5,0.5) {\footnotesize $3$};
+%    \sq{2}{1};   \node at (2.5,0.5) {\footnotesize $5$};
+%    \sq{2.5}{0}; \node at (3,-0.5)  {\footnotesize $6$};
+%\draw[line width=1.5pt,->] (-0.5,-1)--(3.75,-1);
+%\end{tikzpicture}
+%\caption{The cylindrical heap for $w = 12356$ in $W(A_6)$.} \label{fig:cylheap}
+%\end{figure} \end{center}
+%\end{frame}
+
+\begin{frame}{Conjugacy classes of CFC elements in $W(A_n)$}
+\begin{theorem}[Fox] Two CFC elements are conjugate if and only if the corresponding cylindrical heaps are ring equivalent.
+\end{theorem}
+%    ~\\
+%
+%    We prove the theorem through a series of lemmas.\\~\\
+%
+%\begin{lemma} Let $w \in \CFC(A_n)$ and let $H(w)$ be the heap for $w$. Then every chunk of $H(w)$ is cyclically equivalent to a diagonal heap.
+%\end{lemma}
+\end{frame}
+
+%\begin{frame}{Slide via conjugation}
+%\begin{lemma}\label{lem:translate} Let $w \in \CFC(W)$. We can slide a chunk of $H(w)$ one space to the right via conjugation. That is, we can slide
+%\begin{center} \begin{tabular}{m{2.5cm} m{0.5cm} m{2.5cm} m{0.5cm}}
+%\begin{tikzpicture}[scale=0.8]
+%    \sq{0}{2};    \node at (0.5,1.5)   {\scalebox{0.8}{$k$}};
+%    \sq{0.5}{1};  \node at (1,0.5)     {\scalebox{0.8}{$k+1$}};
+%                  \node at (1.5,-0.35) {$\ddots$};
+%    \sq{1.5}{-1}; \node at (2,-1.5)    {\scalebox{0.8}{$k'$}};
+%\end{tikzpicture} & to &
+%\begin{tikzpicture}[scale=0.8]
+%    \sq{0}{2};    \node at (0.5,1.5)   {\scalebox{0.8}{$k+1$}};
+%    \sq{0.5}{1};  \node at (1,0.5)     {\scalebox{0.8}{$k+2$}};
+%                  \node at (1.5,-0.35) {$\ddots$};
+%    \sq{1.5}{-1}; \node at (2,-1.5)    {\scalebox{0.8}{$k'+1$}};
+%\end{tikzpicture} & ,
+%\end{tabular} \end{center}
+%    where $k' = k+m$ via conjugation.
+%\end{lemma}
+%~\\
+%    Conjugate $(k)(k+1) \cdots (k')$ by $(k) \cdots (k')(k'+1)$.
+%\end{frame}
+%
+%\begin{frame}{Slide via conjugation}
+%\begin{example} Let $w \in W(A_7)$ have reduced expression $\w = 3456$. We want to slide the ring corresponding to $\w$ to $\y = 4567$.
+%\end{example}
+%\end{frame}
+%
+%\begin{frame}{Permute via conjugation}
+%\begin{lemma} Let $w \in W$ have heap $H(w)$. We can permute two chunks in the heap of $w$ by conjugation.
+%\end{lemma}~\\
+%
+%    We conjugate the subheap containing the two chunks by $x$, the expression in $W$ that is $m+1$ ascending subwords of $k+1$ generators each, starting with $(m+1)(m+2) \cdots (k'+1)$ and being such that the sequence of first generators of each subword descends to 1.
+%    Then we have $${\scriptsize x = \underbrace{(m+1)(m+2) \cdots (k'+1)}_{1} \underbrace{(m)(m+1) \cdots (k')}_{2} \cdots \underbrace{(2)(3) \cdots (k)}_{m} \underbrace{(1)(2) \cdots (k+1)}_{m+1}.}$$
+%\end{frame}
+%
+%\begin{frame}{Permute via conjugation}
+%\begin{example}\label{ex:swap} Let $w \in W(A_6)$ have reduced expression $\w = 12356$. %Then, $w$ is CFC, so there is a unique heap. The heap of $w$ has two chunks, which are
+%%    We have two chunks
+%\begin{center} \begin{tabular}{m{2cm} m{1cm} m{1.5cm}}
+%\begin{tikzpicture}[scale=0.85]
+%    \sq{0}{2};    \node at (0.5,1.5) {\footnotesize $1$};
+%    \sq{0.5}{1};  \node at (1,0.5)   {\footnotesize $2$};
+%    \sq{1}{0};    \node at (1.5,-0.5){\footnotesize $3$};
+%\end{tikzpicture} & and &
+%\begin{tikzpicture}[scale=0.85]
+%    \sq{0}{1};    \node at (0.5,0.5) {\footnotesize $5$};
+%    \sq{0.5}{0};  \node at (1,-0.5)  {\footnotesize $6$};
+%\end{tikzpicture}
+%\end{tabular} \end{center}
+%    \pause
+%%    and we want to obtain two chunks of the form
+%\begin{center} \begin{tabular}{m{1.5cm} m{1cm} m{2cm}}
+%\begin{tikzpicture}[scale=0.85]
+%    \sq{0}{2};    \node at (0.5,1.5) {\footnotesize $1$};
+%    \sq{0.5}{1};  \node at (1,0.5)   {\footnotesize $2$};
+%\end{tikzpicture} & and &
+%\begin{tikzpicture}[scale=0.85]
+%    \sq{-0.5}{2}; \node at (0,1.5)   {\footnotesize $4$};
+%    \sq{0}{1};    \node at (0.5,0.5) {\footnotesize $5$};
+%    \sq{0.5}{0};  \node at (1,-0.5)  {\footnotesize $6$};
+%\end{tikzpicture} \end{tabular} \end{center}
+%\end{example}
+%
+%    We need to conjugate $H(w)$ by $345623451234$.
+%\end{frame}
+
+
+\begin{frame}{An example of the theorem}
+\begin{block}{Example} Let $W$ be the Coxeter group of type $A_{12}$. Then the element $w \in \CFC(A_{12})$ that corresponds to the heap
+\begin{center} \begin{tabular}{m{1cm} m{1cm} m{1cm}}
+\begin{tikzpicture}[scale=0.65]
+    \sq{0}{2};    \node at (0.5,1.5) {\footnotesize $1$};
+    \sq{0.5}{1};  \node at (1,0.5)   {\footnotesize $2$};
+\end{tikzpicture} &
+\begin{tikzpicture}[scale=0.65]
+    \sq{-0.5}{2}; \node at (0,1.5)   {\footnotesize $4$};
+    \sq{0}{1};    \node at (0.5,0.5) {\footnotesize $5$};
+    \sq{0.5}{0};  \node at (1,-0.5)  {\footnotesize $6$};
+\end{tikzpicture} &
+\begin{tikzpicture}[scale=0.65]
+    \sq{0}{2};    \node at (0.5,1.5) {\footnotesize $8$};
+    \sq{0.5}{1};  \node at (1,0.5)   {\footnotesize $9$};
+\end{tikzpicture}
+\end{tabular} \end{center}
+    is conjugate to the group element $y \in \CFC(A_{12})$ that corresponds to the heap 
+\begin{center} \begin{tabular}{m{1cm} m{1cm} m{1cm} m{0.5cm}}
+\begin{tikzpicture}[scale=0.65]
+    \sq{-0.5}{0}; \node at (0,-0.5)  {\footnotesize $1$};
+    \sq{0}{1};    \node at (0.5,0.5) {\footnotesize $2$};
+    \sq{0.5}{0};  \node at (1,-0.5)  {\footnotesize $3$};
+\end{tikzpicture} &
+\begin{tikzpicture}[scale=0.65]
+    \sq{0}{2};    \node at (0.5,1.5) {\footnotesize $6$};
+    \sq{0.5}{1};  \node at (1,0.5)   {\footnotesize $7$};
+\end{tikzpicture} &
+\begin{tikzpicture}[scale=0.65]
+    \sq{0.5}{2};  \node at (1,1.5)   {\footnotesize $12$};
+    \sq{0}{1};    \node at (0.5,0.5) {\footnotesize $11$};
+\end{tikzpicture} & .
+\end{tabular} \end{center}
+\end{block}
+\end{frame}
+
+%\begin{frame}
+%\end{frame}
+%
+%\begin{frame}
+%\end{frame}
+%
+%\begin{frame}
+%\end{frame}
+%
+%\begin{frame}
+%\end{frame}
+%
+%\begin{frame}
+%\end{frame}
+%
+%\begin{frame}
+%\end{frame}
+%
+%\begin{frame}
+%\end{frame}
+
+
+\end{document}

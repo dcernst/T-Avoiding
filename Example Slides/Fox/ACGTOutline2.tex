@@ -1,0 +1,129 @@
+\documentclass{article}
+\pagenumbering{gobble}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+\newcommand{\gen}[1]{\langle #1 \rangle}
+\newcommand{\CFC}{\text{CFC}(W)}
+\providecommand{\abs}[1]{\left\lvert#1\right\rvert}
+\usepackage{setspace}
+\doublespacing
+\usepackage{enumerate}
+\usepackage{enumitem}
+\setenumerate{listparindent=\parindent}
+\usepackage{pgf,tikz}
+	\usetikzlibrary{arrows}
+	\usetikzlibrary{shapes}
+	\usetikzlibrary{patterns}
+	\usetikzlibrary{calc}
+\usepackage{graphicx}
+\usepackage[arrow,matrix,poly,curve,cmtip]{xy}
+\usepackage{float}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
+
+\theoremstyle{definition}
+    \newtheorem*{Lemma}{Lemma}
+    \newtheorem*{note}{Note}
+    \newtheorem*{ex}{Example(s)}
+\theoremstyle{theorem}
+    \newtheorem*{theorem}{Theorem}
+    \newtheorem*{prop}{Proposition}
+
+\begin{document}
+\noindent Brooke Fox \\
+ACGT Outline \\
+28 January 2014 \\
+
+\section{Review}
+\begin{enumerate}[label=(\alph*)]
+\item A \emph{word} is any written product $\textsf{w} = s_{x_1} s_{x_2} \cdots s_{x_m}$ of elements of $S$.
+\item If $m$ is minimal, then we say $\textsf{w}$ is a \emph{reduced expression} for $w$, and we call $m$ the \emph{length} of $w$, denoted $\ell(w)$.
+
+\item Theorem (Matsumoto). In a Coxeter group $W$, any two reduced expressions for the same group element differ by commutations and braid relations.
+	That is, given any two reduced expressions for $w \in W$, we can obtain one from the other by a sequence of commutations and braid relations.
+	
+	\underline{Observation}: Matsumoto's theorem implies that all reduced expressions for a word have the same length.
+	
+\item If every cyclic shift of $\textsf{w}$ is a reduced expression for some element $w \in W$, then $\textsf{w}$ is \emph{cyclically reduced}. Furthermore, a group element $w \in W$ is \emph{cyclically reduced} if every reduced expression for $w$ is cyclically reduced.
+
+\item A \emph{Coxeter element} is an element $w \in W$ for which every generator appears exactly once in each reduced expression for $w$.
+
+\item An element $w \in W$ is \emph{fully commutative} (FC) iff all of its reduced expressions are commutation equivalent. That is, for any two reduced expressions for $w$, we can obtain one from the other via commutations.
+
+    Theorem. An element $w \in W$ is FC if and only if no reduced expression for $w$ contains a braid relation.
+
+	\underline{Observation}: The definition for FC says that you only HAVE to do commutations to get to another reduced expression, but the theorem says that you only CAN do commuations to get to another reduced expression.
+	
+	Theorem. \circled{1} There exists one heap for each commutation class. \circled{2} An element $w \in W$ is FC if and only if its heap is unique.
+
+\item An element $w \in W$ is \emph{cyclically fully commutative} (CFC) iff every cyclic shift of every reduced expression for $w$ is a reduced expression for an FC element.
+
+\item $w \sim_\kappa w'$ if and only if there exists a reduced expression for $w$ such that a sequence of cyclic shifts yields a reduced expression for $w'$. That is, a reduced expression for $w$, when written in a circle, looks like a reduced expression for $w'$ written in a circle. We say $w$ and $w'$ are kappa-equivalent.
+
+\item We say that a conjugacy class $C$ satisfies the \emph{cyclic version of Matsumoto's theorem} (CVMT) if any two cycically reduced expressions of elements in $C$ differ by braid relations and cyclic shifts.
+
+\item Theorem (Eriksson--Eriksson). Two Coxeter elements are conjugate if and only if they are kappa-equivalent.
+
+	\underline{Observation}: The Erikssons' result is the cyclic version of Matsumoto's Theorem applied to Coxeter elements.
+	
+\item (Draw sectioned box.) Start with all reduced expressions. Then Matsumoto's sections it into blocks. Then $\sim_\kappa$ glues boxes togther.
+\end{enumerate}
+
+
+\section{CFC elements in $A_n$}
+	The CFC elements in $A_n$ are Coxeter elements on a subset of the full support. That is, a \emph{CFC element in $A_n$} is an element $w \in W$ for which every generator appears at most once in each reduced expression for $w$.
+%	We're using CFC elements to try to extend the Erikssons' result.
+
+    \underline{Block type}:\\
+    \vspace{0.75in}
+    $$(1,1,2) \hspace{1.2in} (2) \hspace{1.2in} (1,1,2,3) \hspace{1.2in} ??$$
+	
+\begin{theorem} In $A_n$, an element $w \in W$ is CFC if and only if it is 321-avoiding and 3412-avoiding.
+\end{theorem}
+
+    \underline{Diagrams}: \vspace{2in}
+
+    Examples: \begin{enumerate}[label=(\alph*)]
+\item Heap \hspace{1.5in} \vspace{0.2in}; $(12)(34)(23) = (1243) = [2413]$; \\ string diagram \vspace{1in}
+
+	Notice that the string diagram looks like the heap, and we had no choices for crossings, so there is only one heap.
+	
+	Consider the one line notation, $[2413]$. It is clearly 3412-avoiding because it isn't $[3412]$ exactly. It's also 321-avoiding. This implies that it is CFC.
+	
+\item $[2\underline{431}] = (124)$ is not 321-avoiding, but it is 3412-avoiding.
+	There are two choices for crossings, so there should be two heaps. This implies that it is not CFC (and not even FC). \vspace{1.2in}
+
+\item $[\cdots \underline{5}1\underline{83}2\underline{4} \cdots]$ is not 3412-avoiding.
+	The elements that constitute the 3412 or 321 pattern need not be consecutive.
+	
+\item Heap \hspace{1.5in} is FC but not CFC because we have $(23)(12)(34)(23) = (13)(24) = [3412]$ which is clearly not 3412-avoiding but is 321-avoiding.
+\end{enumerate}
+
+	\underline{Observation}: The 321-avoiding provides the FC-ness; we aren't sure what 3412-avoiding provides.
+	
+	We know that ``same $A_n$ block type $\Rightarrow$ same $S_{n+1}$ cycle type." Cycle type addresses our goal for type $A$ but does not generalize.
+	
+	
+\section{Theorem}
+\begin{Lemma} Every CFC chunk is cyclically equivalent to a diagonal heap. \end{Lemma}
+\begin{Lemma}[Squeeze operation] Starting from the left, determine the first two elements which commute. (They should be $k+m+1$ and $k$.) Move the higher element, by commutation, as far to the right as possible. Now find the rightmost occurrence of that element, and move it, by commutation, as far to the left as possible. \end{Lemma}
+\begin{Lemma} If $m(s,t)=3$, then $stst = ts$. Proof; $stst \Rightarrow tstt \Rightarrow ts$. \end{Lemma}
+\begin{note} Squeeze is used to create long braids. \end{note}
+\begin{Lemma} To translate a diagonal CFC chunk by one space -- that is, to move $k \, \cdots \, k+m$ to $k+1 \, \cdots \, k+m+1$ -- conjugate by $k \, \cdots \, k+m+1$. \end{Lemma}
+\begin{Lemma} To permute two diagonal and ``tight" CFC chunks -- say, $1 \, \cdots \, k \,\, k+2 \, \cdots k+m$ to $1 \, \cdots \, k-m \,\, k-m+2 \, \cdots \, k+m$ -- conjugate by $k-1 \, \cdots \, k+m \,\, k-2 \, \cdots \, k+m-1 \,\, 1 \, \cdots \, m+2$. \end{Lemma}
+
+
+\section{Open problems and to do}
+\begin{enumerate}[label=(\alph*)]
+\item If $w \in \CFC$, then is $xwx^{-1} \in \CFC$ (if not, ignore) not on our list? Data says no, but we need to finish the proof.
+	(Take the ``simple" (diagonal, tight) CFC heap of that block type. Then shift, translate, swap.)
+\item Theorem in other types? $B_n$?
+\item How many block types?
+\item Size of conjugacy class for each block type?
+\end{enumerate}
+
+
+
+\end{document}

@@ -1,5 +1,5 @@
-%\documentclass[9pt,handout]{beamer}
-\documentclass{beamer}
+\documentclass[9pt,handout]{beamer}
+%\documentclass{beamer}
 
 \usepackage{amsmath, epsfig, subfigure, psfrag, amssymb, amsfonts, array, amsthm}
 \usepackage{tikz}
@@ -44,6 +44,8 @@
 \newcommand{\C}{\widetilde{C}}
 \DeclareMathOperator{\Sym}{Sym}
 \DeclareMathOperator{\supp}{supp}
+\newcommand{\LD}{\mathcal{L}}
+\newcommand{\RD}{\mathcal{R}}
 
 %%%%%%%%%%%%%% Heap Code %%%%%%%%%%%%%%
 \usetikzlibrary{patterns}
@@ -325,12 +327,18 @@ Any two reduced expressions for $w\in W$ differ by a sequence of commutations an
 	We define $\supp(w)$ to be the set of generators appearing in any reduced expression for $w$. This is well defined by Matsumoto's theorem.
 \end{definition}
 
+\begin{definition}
+ We define the \alert{left descent set} $w$ as follows:
+\[\mathcal{L}(w):=\{s \in S \mid l(sw) < l(w)\}\]
+\end{definition}
+
+
 \pause
 
 \begin{example}
 Let $\w=s_2s_1s_2s_3s_1$ be a fixed expression for $w \in W(A_3)$. We see that
 \[\alert{s_2s_1s_2}s_3s_1 \pause =s_1s_2s_1\alert{s_3s_1} \pause =s_1s_2\alert{s_1s_1}s_3\pause=s_1s_2s_3\]	
-This implies that $\w$ was not reduced. However, it turns out that $s_1s_2s_3$ is a reduced expression for $w$. Then $\supp(w)=\{s_1s_2s_3\}$ and $\ell(w)=3$.
+%This implies that $\w$ was not reduced. However, it turns out that $s_1s_2s_3$ is a reduced expression for $w$. Then $\supp(w)=\{s_1s_2s_3\}$ and $\ell(w)=3$.
 \end{example}
 
 \end{frame}
@@ -372,7 +380,7 @@ $w \in \FC(\Gamma)$ if and only if no reduced expression for $w$ contains a brai
 %% -------------------------------------------------------------------
 
 \begin{frame}{Heaps}
-We introduce \alert{heaps} through an example.
+Every reduced expression $\w$ can be represented with a labeled partially ordered set (poset) called a heap, denoted $H(\w)$. Heaps provide a visual representation of a reduced expression while preserving the relations among the generators.
 
 \pause
 
@@ -389,19 +397,19 @@ Let $\w=s_4s_5s_1s_0s_2s_4s_1$ be a reduced expression for $w \in W(B_6)$.
 \node at (3,-1.5) {$s_3$};
 \node at (4,-1.5) {$s_4$};
 \node at (5,-1.5) {$s_5$};
-\draw[dotted, line width=0.5pt] (1,-1.2) -- (1,7.2);
-\draw[dotted, line width=0.5pt] (2,-1.2)   -- (2,7.2);
-\draw[dotted, line width=0.5pt] (3,-1.2) -- (3,7.2);
-\draw[dotted, line width=0.5pt] (4,-1.2)   -- (4,7.2);
-\draw[dotted, line width=0.5pt] (5,-1.2) -- (5,7.2);
-\draw[dotted, line width=0.5pt] (0,-1.2) -- (0, 7.2); \pause
+\draw[dotted, line width=0.5pt] (1,-1.2) -- (1,5.2);
+\draw[dotted, line width=0.5pt] (2,-1.2)   -- (2,5.2);
+\draw[dotted, line width=0.5pt] (3,-1.2) -- (3,5.2);
+\draw[dotted, line width=0.5pt] (4,-1.2)   -- (4,5.2);
+\draw[dotted, line width=0.5pt] (5,-1.2) -- (5,5.2);
+\draw[dotted, line width=0.5pt] (0,-1.2) -- (0, 5.2); 
 
-\heapblock{1}{0}{1}{purple}\pause
-\heapblock{0}{2}{0}{purple}\pause
-\heapblock{2}{2}{2}{purple}\pause
-\heapblock{4}{0}{4}{purple}\pause
-\heapblock{1}{4}{1}{purple}\pause
-\heapblock{5}{2}{5}{purple}\pause
+\heapblock{1}{0}{1}{purple}
+\heapblock{0}{2}{0}{purple}
+\heapblock{2}{2}{2}{purple}
+\heapblock{4}{0}{4}{purple}
+\heapblock{1}{4}{1}{purple}
+\heapblock{5}{2}{5}{purple}
 \heapblock{4}{4}{4}{purple}
 
 \end{tikzpicture}	
@@ -418,12 +426,12 @@ Let $\w=s_4s_5s_1s_0s_2s_4s_1$ be a reduced expression for $w \in W(B_6)$.
 \node at (3,-1.5) {$s_3$};
 \node at (4,-1.5) {$s_4$};
 \node at (5,-1.5) {$s_5$};
-\draw[dotted, line width=0.5pt] (1,-1.2) -- (1,7.2);
-\draw[dotted, line width=0.5pt] (2,-1.2)   -- (2,7.2);
-\draw[dotted, line width=0.5pt] (3,-1.2) -- (3,7.2);
-\draw[dotted, line width=0.5pt] (4,-1.2)   -- (4,7.2);
-\draw[dotted, line width=0.5pt] (5,-1.2) -- (5,7.2);
-\draw[dotted, line width=0.5pt] (0,-1.2) -- (0, 7.2); 
+\draw[dotted, line width=0.5pt] (1,-1.2) -- (1,5.2);
+\draw[dotted, line width=0.5pt] (2,-1.2)   -- (2,5.2);
+\draw[dotted, line width=0.5pt] (3,-1.2) -- (3,5.2);
+\draw[dotted, line width=0.5pt] (4,-1.2)   -- (4,5.2);
+\draw[dotted, line width=0.5pt] (5,-1.2) -- (5,5.2);
+\draw[dotted, line width=0.5pt] (0,-1.2) -- (0, 5.2); 
 
 \heapblock{1}{0}{1}{purple}
 \heapblock{0}{2}{0}{purple}
@@ -441,6 +449,378 @@ Let $\w=s_4s_5s_1s_0s_2s_4s_1$ be a reduced expression for $w \in W(B_6)$.
 \end{frame}
 
 %% -------------------------------------------------------------------
+
+\begin{frame}{Heaps}
+\begin{block}{Theorem (Stembridge)}
+	There is a unique heap for $w$ if and only if $w$ is FC.
+\end{block}
+
+\begin{block}{Lemma}
+Let $w \in \FC(\C_n)$. Then $H(w)$ can not contain any of the following convex subheaps
+\begin{columns}
+	\begin{column}{0.1\textwidth}
+	\begin{figure}{} \centering
+	\begin{tikzpicture}[scale=0.4]
+		\heapblock{1}{6}{1}{purple}
+		\dheapblock{2}{4}{}{black}
+		\heapblock{0}{4}{0}{purple}
+		\heapblock{1}{2}{1}{purple}
+		\heapblock{0}{0}{0}{purple}
+	\end{tikzpicture}
+	\end{figure} 
+	\end{column}
+	
+	\begin{column}{0.1\textwidth}
+	\begin{figure}{} \centering
+	\begin{tikzpicture}[scale=0.4]
+		\heapblock{0}{6}{0}{purple}
+		\heapblock{1}{4}{1}{purple}
+		\heapblock{0}{2}{0}{purple}
+		\dheapblock{2}{2}{}{black}
+		\heapblock{1}{0}{1}{purple}
+	\end{tikzpicture}
+	\end{figure} 
+	\end{column}
+
+\begin{column}{0.1\textwidth}
+	\begin{figure} {} \centering
+	\begin{tikzpicture}[scale=0.4]
+		\heapblock{1}{8}{}{white}
+		\heapblock{1}{6}{k+1}{purple}
+		\heapblock{0}{4}{k}{purple}
+		\dheapblock{2}{4}{}{black}
+		\heapblock{1}{2}{k+1}{purple}
+	\end{tikzpicture}
+	\end{figure}
+	\end{column}
+	
+	\begin{column}{0.1\textwidth}
+	\begin{figure}{} \centering
+	\begin{tikzpicture}[scale=0.4]
+		\heapblock{1}{8}{}{white}
+		\heapblock{2}{6}{k}{purple}
+		\heapblock{3}{4}{k+1}{purple}
+		\dheapblock{1}{4}{}{black}
+		\heapblock{2}{2}{k}{purple}
+	\end{tikzpicture}
+	\end{figure}
+	\end{column}
+	
+	\begin{column}{0.1\textwidth}
+	\begin{figure}{} \centering
+	\begin{tikzpicture}[scale=0.4]
+		\heapblock{2}{6}{n}{purple}
+		\heapblock{1}{4}{n-1}{purple}
+		\heapblock{2}{2}{n}{purple}
+		\dheapblock{0}{2}{}{black}
+		\heapblock{1}{0}{n-1}{purple}
+	\end{tikzpicture}
+	\end{figure}
+	\end{column} 
+	
+	\begin{column}{0.1\textwidth}
+	\begin{figure}{} \centering
+	\begin{tikzpicture}[scale=0.4]
+		\heapblock{1}{6}{n-1}{purple}
+		\dheapblock{0}{4}{}{black}
+		\heapblock{2}{4}{n}{purple}
+		\heapblock{1}{2}{n-1}{purple}
+		\heapblock{2}{0}{n}{purple}
+	\end{tikzpicture}	
+	\end{figure}
+	\end{column}	
+\end{columns}
+\end{block}
+	
+\end{frame}
+
+%% -------------------------------------------------------------------
+
+\begin{frame}{Star Reductions}
+\begin{block}{Definition}
+	We define $w$ to be \alert{left star reducible by $s$ with respect to $t$} if $m(s,t) \geq 3$, $s \in \LD(w)$ and $ t \in \LD(sw)$.
+\end{block}
+
+\pause
+
+\begin{columns}
+\begin{column}{0.4\textwidth}
+\begin{figure} \centering
+\begin{tikzpicture}[scale=0.4]
+	\dheapblock{2}{2}{}{black}
+	\heapblock{0}{2}{s}{purple}
+	\heapblock{1}{0}{t}{purple}
+\end{tikzpicture}
+\end{figure}	
+\end{column}
+	
+\begin{column}{0.4\textwidth}	
+\begin{figure}
+\begin{tikzpicture}[scale=0.4]
+	\dheapblock{1}{2}{}{black}
+	\heapblock{3}{2}{s}{purple}
+	\heapblock{2}{0}{t}{purple}
+\end{tikzpicture}	
+\end{figure}
+\end{column}
+\end{columns}
+
+\pause
+
+\begin{block}{Definition}
+	We define $W(\Gamma)$ to be \alert{star reducible} if every element of $\FC(\Gamma)$ is star reducible to a product of commuting generators.
+\end{block}
+
+\pause
+
+\begin{block}{Theorem (Green)}
+	Coxeter systems of type $A_n$ $(n \geq 1)$, type $B_n$ $(n \geq 2)$, type $D_n$ $(n \geq 4)$, type $F_n$ $(n \geq 4)$, type $H_n$ $(n \geq 2)$, type $I_2(m)$ $(m \geq 3)$, type $\widetilde{A}_{n}$ $(n \geq 3 \text{ and } n \text{ even })$, type $\widetilde{C}_{n}$ $(n\geq 3 \text{ and } n \text{ odd })$, type $\widetilde{E}_6$, or type $\widetilde{F}_5$, are star reducible.
+\end{block}
+	
+\end{frame}
+
+
+%% -------------------------------------------------------------------
+
+\begin{frame}{Property T}
+	\begin{block}{Definition}
+	We define $w$ to have \alert{Property T} if and only if there exists a reduced product for $w$ such that $w=stu$ or $w=uts$ where $m(s,t) \geq 3$. \pause 
+	
+	We say $w$ is \alert{T-avoiding} if $w$ does not have Property T.
+	\end{block}
+
+\begin{block}{Proposition}
+A product of commuting generators is T-avoiding.	
+\end{block}
+
+\begin{block}{Definition}
+	We define $w$ to be \alert{trivially T-avoiding} if $w$ is a product of commuting generators. Otherwise, we say $w$ is \alert{non-trivially T-avoiding}.
+\end{block}
+
+\end{frame}
+
+
+%% -------------------------------------------------------------------
+
+
+\begin{frame}{Examples of Property T and T-avoiding}
+
+\begin{block}{Example}
+Let $\w_1=s_5s_3s_2s_4s_1$ be a reduced expression for $w \in W(A_5)$. 
+\pause
+\begin{figure}
+\begin{tikzpicture}[scale=0.35]
+\heapblock{5}{6}{5}{purple}
+\heapblock{3}{6}{3}{purple}
+\heapblock{2}{4}{2}{orange}
+\heapblock{4}{4}{4}{purple}
+\heapblock{1}{2}{1}{orange}
+\end{tikzpicture}	
+\end{figure}
+\end{block}
+
+\pause
+
+\begin{block}{Example}
+Let $\w_2=s_0s_2s_4s_1s_3s_0s_2s_4$ be a reduced expression for $w \in W(\C_4)$.
+\begin{figure}
+\begin{tikzpicture}[scale=0.35]
+\heapblock{0}{6}{0}{purple}
+\heapblock{2}{6}{2}{purple}
+\heapblock{4}{6}{4}{purple}
+\heapblock{1}{4}{1}{purple}
+\heapblock{3}{4}{3}{purple}
+\heapblock{0}{2}{0}{purple}
+\heapblock{2}{2}{2}{purple}
+\heapblock{4}{2}{4}{purple}
+\end{tikzpicture}	
+\end{figure}
+\end{block}
+
+\end{frame}
+
+
+%% -------------------------------------------------------------------
+
+
+\begin{frame}{Classification of T-Avoiding Elements: Already Known $\widetilde{A}_n$}
+
+\begin{block}{Theorem (Fan)}
+	If $n$ is odd, and $n \geq 2$ there are no non-trivial T-avoiding elements in $W(\widetilde{A}_n)$. If $n$ is even, and $n \geq 2$ then $W(\widetilde{A}_n)$ contains non-trivial T-avoiding elements.
+\end{block}
+\pause
+\begin{block}{Conjecture}
+The only non-trivial T-avoiding elements of $W(\widetilde{A}_n)$ for $n$ odd are of the form $w=(s_0s_2 \cdots s_{n-2}s_ns_1s_3 \cdots s_{n-3}s_{n-1})^k$  for $k \in \mathbb{Z}^+$.	
+\end{block}
+\pause
+\begin{block}{Theorem}
+There are no non-trivial T-avoiding elements in $W(A_n)$.	
+\end{block}
+
+\end{frame}
+
+
+%% -------------------------------------------------------------------
+
+
+\begin{frame}{Classification of T-Avoiding Elements : Already Known $D_n$}
+
+\begin{block}{Theorem (Gern)}
+There are non-trivial T-avoiding elements in $W(D_n)$.	
+\end{block}
+\pause
+\begin{figure}
+\begin{tikzpicture}[scale=0.4]
+	\heapblock{1}{12}{0}{rred}
+	\heapblock{3}{12}{3}{purple}
+	\heapblock{5}{12}{5}{purple}
+	\heapblock{2}{10}{2}{purple}
+	\heapblock{4}{10}{4}{purple}
+	\heapblock{1}{8}{1}{rred}
+	\heapblock{3}{8}{3}{teal}
+	\heapblock{2}{6}{2}{teal}
+	\heapblock{1}{4}{0}{rred}
+	\heapblock{3}{4}{3}{teal}
+	\heapblock{2}{2}{2}{purple}
+	\heapblock{4}{2}{4}{purple}
+	\heapblock{1}{0}{1}{rred}
+	\heapblock{3}{0}{3}{purple}
+	\heapblock{5}{0}{5}{purple}
+\end{tikzpicture}
+\end{figure}
+	
+\end{frame}
+
+
+%% -------------------------------------------------------------------
+
+
+\begin{frame}{Classification of T-Avoiding Elements: Already Known $F_n$}
+
+\begin{block}{Theorem (Cross, Ernst, Hills-Kimball, Quaranta)}
+The only non-trivial T-avoiding elements in $F_5$ are stacks of bowties.	
+\end{block}
+
+\begin{figure}
+\begin{tikzpicture}[scale=0.2]
+\heapblock{1}{10}{1}{purple}
+	\heapblock{3}{10}{3}{orange}
+	\heapblock{5}{10}{5}{purple}
+	\heapblock{2}{8}{2}{orange}
+	\heapblock{4}{8}{4}{purple}
+	\heapblock{3}{6}{3}{orange}
+	\heapblock{2}{4}{2}{orange}
+	\heapblock{4}{4}{4}{purple}
+	\heapblock{1}{2}{1}{purple}
+	\heapblock{3}{2}{3}{orange}
+	\heapblock{5}{2}{5}{purple}
+	\heapblock{2}{0}{2}{orange}
+	\heapblock{4}{0}{4}{purple}
+	\heapblock{3}{-2}{3}{orange}
+	\heapblock{2}{-4}{2}{orange}
+	\heapblock{4}{-4}{4}{purple}
+	\heapblock{1}{-6}{1}{purple}
+	\heapblock{3}{-6}{3}{orange}
+	\heapblock{5}{-6}{5}{purple}
+	
+	\node[] at (3,-8){$\vdots$};
+	
+	\heapblock{1}{-10}{1}{purple}
+	\heapblock{3}{-10}{3}{orange}
+	\heapblock{5}{-10}{5}{purple}
+	\heapblock{2}{-12}{2}{orange}
+	\heapblock{4}{-12}{4}{purple}
+	\heapblock{3}{-14}{3}{orange}
+	\heapblock{2}{-16}{2}{orange}
+	\heapblock{4}{-16}{4}{purple}
+	\heapblock{1}{-18}{1}{purple}
+	\heapblock{3}{-18}{3}{orange}
+	\heapblock{5}{-18}{5}{purple}
+\end{tikzpicture}
+\end{figure}
+ 	
+\end{frame}
+
+
+%% -------------------------------------------------------------------
+
+\begin{frame}{Classification of T-Avoiding Elements: Already Known $F_n$}
+
+\begin{block}{Corollary (Cross, Ernst, Hills-Kimball, Quaranta)}
+There are no non-trivial T-avoiding elements in $F_4$.	
+\end{block}
+\pause
+Classifying non-trivial T-avoiding elements in $F_n$ for $n \geq 6$ gets very difficult.
+\pause
+\begin{figure}\centering
+\begin{tikzpicture}[scale=0.3]
+	\heapblock{2}{10}{2}{orange}
+	\heapblock{4}{10}{4}{purple}
+	\heapblock{6}{10}{6}{purple}
+	\heapblock{3}{8}{3}{orange}
+	\heapblock{5}{8}{5}{purple}
+	\heapblock{2}{6}{2}{orange}
+	\heapblock{4}{6}{4}{purple}
+	\heapblock{1}{4}{1}{purple}
+	\heapblock{3}{4}{3}{orange}
+	\heapblock{2}{2}{2}{orange}
+	\heapblock{1}{0}{1}{purple}
+	\heapblock{3}{0}{3}{orange}
+	\heapblock{2}{-2}{2}{orange}
+	\heapblock{4}{-2}{4}{purple}
+	\heapblock{3}{-4}{3}{orange}
+	\heapblock{5}{-4}{5}{purple}
+	\heapblock{2}{-6}{2}{orange}
+	\heapblock{4}{-6}{4}{purple}
+	\heapblock{6}{-6}{6}{purple}
+\end{tikzpicture}
+\end{figure}
+
+\end{frame}
+
+
+%% -------------------------------------------------------------------
+
+
+\begin{frame}{Classification of T-Avoiding Elements: $I_2(m)$}
+
+\begin{block}{Theorem}
+	There are no non-trivial T-avoiding elements in $W(I_2(m))$.
+\end{block}
+
+\end{frame}
+
+
+%% -------------------------------------------------------------------
+
+
+\begin{frame}{Signed Permutation Representation}
+
+Since $W(B_n) \cong \Sym_n^B$, we can write $w \in W(B_n)$ as a signed permutation 
+\[[w(1), w(2), \ldots, w(n)]\] where we write a bar underneath a number in place of a negative sign.
+
+\pause
+
+\begin{block}{Definition}
+	We 
+\end{block}
+
+	
+\end{frame}
+
+
+%% -------------------------------------------------------------------
+
+
+\begin{frame}{Classification of T-Avoiding Elements: $B_n$}
+
+\begin{block}{Theorem (Laird)}
+	There are no non-trivial T-avoiding elements in $W(B_n)$.
+\end{block}
+
+\end{frame}
+
+
 
 
 \end{document}

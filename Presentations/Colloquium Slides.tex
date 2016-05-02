@@ -87,8 +87,8 @@ Department of Mathematics and Statistics}
 
 \vspace{1em}
 
-\date[NAU]{\textbf{NAU Thesis Defense}\\
-April 29, 2016}
+\date[NAU]{\textbf{Colloquium}\\
+May 3, 2016}
 
 \frame{\titlepage}
 
@@ -150,7 +150,7 @@ We can encode $(W,S)$ with a unique \alert{Coxeter graph} $\Gamma$ having:
 \begin{block}{Comments}
 \begin{itemize}
 
-\item if $m(s,t)=3$, we omit label.
+\item If $m(s,t)=3$, we omit label.
 
 \item If $s$ and $t$ are not connected in $\Gamma$, then $s$ and $t$ 
 commute.
@@ -345,68 +345,29 @@ Let $\w=s_2s_1s_2s_3s_1$ be a fixed expression for $w \in W(A_3)$. We see that
 
 \end{frame}
 
-
-%% -------------------------------------------------------------------
-\begin{frame}{\textbf{Fully Commutative Elements}}
-\begin{definition}
-Let $(W,S)$ be a Coxeter system of type $\Gamma$. We say that $w \in W(\Gamma)$ is \alert{fully commutative} (\alert{FC}) if any two reduced expressions for $w$ can be transformed into each other via iterated commutations. The set of FC elements is denoted $\FC(\Gamma)$.	
-\end{definition}
-
-\pause
-
-\begin{block}{Theorem (Stembridge)}
-$w \in \FC(\Gamma)$ if and only if no reduced expression for $w$ contains a braid.
-\end{block}
-
-\pause
-
-\begin{block}{Comment}
-	It follows from Stembridge that $W(\C_n)$ contains an infinite number of FC elements, while $W(A_n)$ and $W(B_n)$ do not. 
-\end{block}
-
-\end{frame}
-
 %% -------------------------------------------------------------------
 
-\begin{frame}{Fully Commutative Elements}
-\begin{block}{Comment}
-	The elements of $\FC(\C_n)$ are precisely those whose reduced expressions avoid the consecutive subwords $s_is_js_i$ for $m(s_i,s_j)=3$, $s_0s_1s_0s_1$, and $s_{n-1}s_ns_{n-1}s_n$.
-\end{block}
-
-\pause
-
-\begin{block}{Example}
-	Let $\w=s_0s_2s_4s_3s_2s_1$ be a reduced expression for $w \in W(\C_4)$. We see that
-	\[s_0\alert{s_2s_4}s_3s_2s_1=s_0s_4\alert{s_2s_3s_2}s_1.\]
-	Since $w$ has one of the forbidden consecutive subwords, $w$ is \alert{not} FC.
-\end{block}
-		
-\end{frame}
-
-%% -------------------------------------------------------------------
-
-\begin{frame}{Heaps}
+\begin{frame}{\textbf{Heaps}}
 Every reduced expression $\w$ can be represented by a labeled partially ordered set (poset) called a heap, denoted $H(\w)$. Heaps provide a visual representation of a reduced expression while preserving the relations among the generators.
 
 \pause
 
 \begin{block}{Example}
-Let $\w=s_4s_5s_1s_0s_2s_4s_1$ be a reduced expression for $w \in W(B_6)$.
+Let $\w=s_3s_2s_1s_0s_2s_1s_3s_0s_2s_4$ be a reduced expression for $w \in W(B_6)$. \pause
 \begin{columns}
 \begin{column}{0.4\textwidth}
 \begin{figure}\centering
 \begin{tikzpicture}[scale=0.3]
-	\heapblock{1}{10}{1}{teal}
+	\heapblock{4}{0}{4}{purple}\pause
+	\heapblock{2}{0}{2}{purple}\pause
+	\heapblock{0}{0}{0}{purple}\pause	
+	\heapblock{3}{2}{3}{purple}\pause
+	\heapblock{1}{2}{1}{purple}\pause
+	\heapblock{0}{4}{0}{purple}\pause
+	\heapblock{1}{6}{1}{teal}\pause
+	\heapblock{2}{8}{2}{teal}\pause
+	\heapblock{1}{10}{1}{teal}\pause
 	\heapblock{3}{10}{3}{purple}
-	\heapblock{2}{8}{2}{teal}
-	\heapblock{1}{6}{1}{teal}
-	\heapblock{0}{4}{0}{purple}
-	\heapblock{1}{2}{1}{purple}
-	\heapblock{3}{2}{3}{purple}
-	\heapblock{0}{0}{0}{purple}
-	\heapblock{2}{0}{2}{purple}
-	\heapblock{4}{0}{4}{purple}
-
 \end{tikzpicture}	
 \end{figure}
 \end{column}
@@ -432,12 +393,35 @@ Let $\w=s_4s_5s_1s_0s_2s_4s_1$ be a reduced expression for $w \in W(B_6)$.
 	
 \end{frame}
 
+
+%% -------------------------------------------------------------------
+\begin{frame}{\textbf{Fully Commutative Elements}}
+\begin{definition}
+Let $(W,S)$ be a Coxeter system of type $\Gamma$. We say that $w \in W(\Gamma)$ is \alert{fully commutative} (\alert{FC}) if any two reduced expressions for $w$ can be transformed into each other via iterated commutations. The set of FC elements is denoted $\FC(\Gamma)$.	
+\end{definition}
+
+\pause
+
+\begin{block}{Theorem (Stembridge)}
+$w \in \FC(\Gamma)$ if and only if no reduced expression for $w$ contains a braid.
+\end{block}
+
+\pause
+
+\begin{block}{Comment}
+	It follows from Stembridge that $W(\C_n)$ contains an infinite number of FC elements, while $W(A_n)$ and $W(B_n)$ do not. 
+\end{block}
+
+\end{frame}
+
 %% -------------------------------------------------------------------
 
-\begin{frame}{Heaps}
-\begin{block}{Theorem (Stembridge)}
-	There is a unique heap for $w$ if and only if $w$ is FC.
+\begin{frame}{\textbf{Fully Commutative Elements}}
+\begin{block}{Comment}
+	The elements of $\FC(\C_n)$ are precisely those whose reduced expressions avoid the consecutive subwords $s_is_js_i$ for $m(s_i,s_j)=3$, $s_0s_1s_0s_1$, and $s_{n-1}s_ns_{n-1}s_n$.
 \end{block}
+
+\pause
 
 \begin{block}{Lemma}
 Let $w \in \FC(\C_n)$. Then $H(w)$ can not contain any of the following convex subheaps
@@ -515,12 +499,60 @@ Let $w \in \FC(\C_n)$. Then $H(w)$ can not contain any of the following convex s
 	\end{column}	
 \end{columns}
 \end{block}
+
+		
+\end{frame}
+
+%% -------------------------------------------------------------------
+
+\begin{frame}{\textbf{Fully Commutative}}
+\begin{block}{Theorem (Stembridge)}
+	There is a unique heap for $w$ if and only if $w$ is FC.
+\end{block}
+
+\begin{block}{Example}
+	Let $\w=s_0s_2s_4s_3s_2s_1$ be a reduced expression for $w \in W(\C_4)$. We see that
+	\[s_0\alert{s_2s_4}s_3s_2s_1=s_0s_4\alert{s_2s_3s_2}s_1.\]
+	Since $w$ has one of the forbidden consecutive subwords, $w$ is \alert{not} FC.
+	
+\begin{columns}
+\begin{column}{0.4\textwidth}
+\begin{figure}\centering
+\begin{tikzpicture}[scale=0.4]
+	\heapblock{1}{0}{1}{purple}
+	\heapblock{2}{2}{2}{teal}
+	\heapblock{3}{4}{3}{teal}
+	\heapblock{4}{6}{4}{purple}
+	\heapblock{2}{6}{2}{teal}
+	\heapblock{0}{6}{0}{purple}	
+\end{tikzpicture}
+\end{figure}
+\end{column}
+
+\begin{column}{0.4\textwidth}
+\begin{figure}\centering
+\begin{tikzpicture}[scale=0.4]
+	\heapblock{1}{0}{1}{purple}
+	\heapblock{3}{0}{3}{teal}
+	\heapblock{2}{2}{2}{teal}
+	\heapblock{4}{6}{4}{purple}
+	\heapblock{3}{4}{3}{teal}
+	\heapblock{0}{6}{0}{purple}	
+\end{tikzpicture}
+\end{figure}
+\end{column}
+\end{columns}
+
+
+\end{block}
+
+
 	
 \end{frame}
 
 %% -------------------------------------------------------------------
 
-\begin{frame}{Star Reductions}
+\begin{frame}{\textbf{Star Reductions}}
 \begin{block}{Definition}
 	We define $w$ to be \alert{left star reducible by $s$ with respect to $t$} if $m(s,t) \geq 3$, $s \in \LD(w)$ and $ t \in \LD(sw)$. Analogous definition for \alert{right star reducible}.
 \end{block}
@@ -557,6 +589,43 @@ Let $w \in \FC(\C_n)$. Then $H(w)$ can not contain any of the following convex s
 	We define $W(\Gamma)$ to be \alert{star reducible} if every element of $\FC(\Gamma)$ can be reduced to a product of commuting generators via a sequence of star reductions.
 \end{block}
 
+\end{frame}
+
+
+
+%% -------------------------------------------------------------------
+\begin{frame}{\textbf{Star Reductions}}
+\begin{block}{Example}
+Let $\w=s_0s_1s_0s_2$ be a reduced expression for $w \in W(B_4)$.
+
+\begin{columns}
+\begin{column}{0.4\textwidth}
+\begin{figure} \centering
+\begin{tikzpicture}[scale=0.4]
+\heapblock{2}{2}{2}{purple}
+\heapblock{0}{2}{0}{purple}
+\heapblock{1}{4}{1}{purple}
+\heapblock{0}{6}{0}{purple}
+\end{tikzpicture}
+\end{figure}
+\end{column}
+
+\pause
+
+\begin{column}{0.4\textwidth}
+\begin{figure} \centering
+\begin{tikzpicture}[scale=0.4]
+\heapblock{2}{2}{2}{purple}
+\heapblock{0}{2}{0}{purple}
+\heapblock{0}{6}{}{white}
+\heapblock{1}{4}{1}{purple}
+\end{tikzpicture}
+\end{figure}
+\end{column}
+\end{columns}
+	
+\end{block}
+
 \pause
 
 \begin{block}{Theorem (Green)}
@@ -565,10 +634,9 @@ Let $w \in \FC(\C_n)$. Then $H(w)$ can not contain any of the following convex s
 	
 \end{frame}
 
-
 %% -------------------------------------------------------------------
 
-\begin{frame}{Property T}
+\begin{frame}{\textbf{Property T}}
 	\begin{block}{Definition}
 	We define $w$ to have \alert{Property T} if and only if there exists a reduced product for $w$ such that $w=stu$ or $w=uts$ where $m(s,t) \geq 3$.\\ \pause 
 	\vspace{1em}
@@ -589,7 +657,7 @@ A product of commuting generators is T-avoiding.
 %% -------------------------------------------------------------------
 
 
-\begin{frame}{Examples of Property T and T-avoiding}
+\begin{frame}{\textbf{Examples of Property T and T-avoiding}}
 
 \begin{block}{Example}
 Let $\w=s_5s_3s_2s_4s_1$ be a reduced expression for $w \in W(A_5)$. 
@@ -629,7 +697,7 @@ Let $\w=s_0s_2s_4s_1s_3s_0s_2s_4$ be a reduced expression for $w \in W(\C_4)$.
 %% -------------------------------------------------------------------
 
 
-\begin{frame}{Known Classifications}
+\begin{frame}{\textbf{Known Classifications}}
 
 \begin{block}{Theorem (Fan, Green)}
 	If $n$ is odd and $n \geq 2$, then there are no non-trivial T-avoiding elements in $W(\widetilde{A}_n)$. If $n$ is even and $n \geq 2$, then $W(\widetilde{A}_n)$ contains non-trivial T-avoiding elements.
@@ -653,7 +721,7 @@ There are no non-trivial T-avoiding elements in $W(A_n)$.
 %% -------------------------------------------------------------------
 
 
-\begin{frame}{Known Classifications}
+\begin{frame}{\textbf{Known Classifications}}
 
 \begin{block}{Theorem (Gern)}
 The only non-trivial T-avoiding elements in $W(D_n)$ have this pattern:	
@@ -685,7 +753,7 @@ The only non-trivial T-avoiding elements in $W(D_n)$ have this pattern:
 %% -------------------------------------------------------------------
 
 
-\begin{frame}{Known Classifications}
+\begin{frame}{\textbf{Known Classifications}}
 
 \begin{block}{Theorem (Cross, Ernst, Hills-Kimball, Quaranta)}
 The only non-trivial T-avoiding elements in $F_5$ are stacks of bowties:	
@@ -734,7 +802,7 @@ The only non-trivial T-avoiding elements in $F_5$ are stacks of bowties:
 
 %% -------------------------------------------------------------------
 
-\begin{frame}{Known Classifications}
+\begin{frame}{\textbf{Known Classifications}}
 
 \begin{block}{Corollary (Cross, Ernst, Hills-Kimball, Quaranta)}
 There are no non-trivial T-avoiding elements in $F_4$.	
@@ -790,7 +858,7 @@ Classifying non-trivial T-avoiding elements in $F_n$ for $n \geq 6$ gets very di
 %% -------------------------------------------------------------------
 
 
-\begin{frame}{Signed Permutation Representation}
+\begin{frame}{\textbf{Signed Permutation Representation}}
 
 Since $W(B_n) \cong \Sym_n^B$, we can write $w \in W(B_n)$ as a signed permutation 
 \[[w(1), w(2), \ldots, w(n)]\] where we write a bar underneath a number in place of a negative sign.
@@ -808,17 +876,18 @@ Since $W(B_n) \cong \Sym_n^B$, we can write $w \in W(B_n)$ as a signed permutati
 %% -------------------------------------------------------------------
 
 
-\begin{frame}{Signed Permutation Representation}
-
+\begin{frame}{\textbf{Signed Permutation Representation}}
+\onslide<1->
 \begin{block}{Example}
 	Let $\w=s_0s_1s_3s_4s_5s_2$ be a reduced expression for $w \in B_6$. We see that
+	\onslide<2->
 	\begin{align*}
-	[1,2,3,4,5,6] &= [\underline{1},2,3,4,5,6]\\
-	&=[2,\underline{1},3,4,5,6]\\	
-	&=[2,\underline{1},4,3,5,6]\\
-	&=[2,\underline{1},4,5,3,6]\\
-	&=[2,\underline{1},4,5,6,3]\\
-	&=[2,4,\underline{1},5,6,3]
+	\onslide<2->{[1,2,3,4,5,6] &= [\underline{1},2,3,4,5,6]\\}
+	 \onslide<3->{&=[2,\underline{1},3,4,5,6]\\ 	}
+	 \onslide<4->{&=[2,\underline{1},4,3,5,6]\\ }
+	 \onslide<5->{&=[2,\underline{1},4,5,3,6]\\ }
+	 \onslide<6->{&=[2,\underline{1},4,5,6,3]\\ }
+	 \onslide<7>{&=[2,4,\underline{1},5,6,3]}
 	\end{align*}
 
 \end{block}
@@ -829,7 +898,7 @@ Since $W(B_n) \cong \Sym_n^B$, we can write $w \in W(B_n)$ as a signed permutati
 %% -------------------------------------------------------------------
 
 
-\begin{frame}{Classification of T-Avoiding Elements: $B_n$}
+\begin{frame}{\textbf{Classification of T-Avoiding Elements: $B_n$}}
 
 \begin{block}{Theorem (Laird)}
 	There are no non-trivial T-avoiding elements in $W(B_n)$.
@@ -846,7 +915,7 @@ Since $W(B_n) \cong \Sym_n^B$, we can write $w \in W(B_n)$ as a signed permutati
 \hline
 \cellcolor{blue!60}$213$ & \cellcolor{yellow!90}$\underline{2}13$ & \cellcolor{brown!90}$2\underline{1}3$ & \cellcolor{turq!90}$21\underline{3}$ & \cellcolor{yellow!90}$\underline{21}3$ & \cellcolor{red!55}$\underline{2}1\underline{3}$ & \cellcolor{turq!90}$2\underline{13}$ & \cellcolor{red!55}$\underline{213}$ \\
 \hline
-\cellcolor{red!55}$231$ & \cellcolor{purple2!90}$\underline{2}31$ & \cellcolor{ggreen!90}$2\underline{3}1$ & \cellcolor{red!55}$23\underline{1}$ & \cellcolor{brown!90}$\underline{23}1$ & \cellcolor{purple2!90}$\underline{2}3\underline{1}$ & \cellcolor{ggreen!90}$2\underline{31}$ & \cellcolor{brown!90}$\underline{231}$ \\
+\cellcolor{red!55}$231$ & \cellcolor{purple2!70}$\underline{2}31$ & \cellcolor{ggreen!90}$2\underline{3}1$ & \cellcolor{red!55}$23\underline{1}$ & \cellcolor{brown!90}$\underline{23}1$ & \cellcolor{purple2!70}$\underline{2}3\underline{1}$ & \cellcolor{ggreen!90}$2\underline{31}$ & \cellcolor{brown!90}$\underline{231}$ \\
 \hline
 \cellcolor{ggreen!90}$312$ & \cellcolor{yellow!90}$\underline{3}12$ & \cellcolor{ggreen!90}$3\underline{1}2$ &\cellcolor{turq!90}$31\underline{2}$ & \cellcolor{yellow!90}$\underline{31}2$ & \cellcolor{yellow!90}$\underline{3}1\underline{2}$ & \cellcolor{turq!90}$3\underline{12}$ & \cellcolor{yellow!90}$\underline{312}$ \\
 \hline
@@ -863,7 +932,7 @@ Through a series of lemmas we were able to determine if a reduced product ends o
 %% -------------------------------------------------------------------
 
 
-\begin{frame}{Classification of T-Avoiding Elements: $\C_n$}
+\begin{frame}{\textbf{Classification of T-Avoiding Elements: $\C_n$}}
 
 \begin{block}{Theorem (Laird)}
 	There are no non-trivial T-avoiding elements in $W(\C_n)\backslash\FC(\C_n)$.
@@ -883,7 +952,7 @@ Through a series of lemmas we were able to determine if a reduced product ends o
 %% -------------------------------------------------------------------
 
 
-\begin{frame}{Interesting Fact}
+\begin{frame}{\textbf{Interesting Fact}}
 \begin{block}{Comment}
 Recall that Coxeter systems of Type $D_n$ and $F_n$ have non-trivial T-avoiding elements that are not FC. Also Coxeter systems of Type $\widetilde{A}_n$ and $\C_n$ for appropriate choice of $n$ have non-trivial T-avoiding elements that are FC. \\
 \vspace{1em}

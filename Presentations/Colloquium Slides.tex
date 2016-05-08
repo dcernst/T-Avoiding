@@ -80,7 +80,7 @@
 \def\newblock{\hskip .11em plus .33em minus .07em}
 
 \title[A Study of T-Avoiding Elements in Coxeter Groups]
-{\textbf{A Study of T-Avoiding Elements in Coxeter Groups}}
+{\textbf{A Study of T-Avoiding Elements\\ in Coxeter Groups}}
 \author[T.M.~Laird]{Taryn Laird}
 \institute[NAU]{Northern Arizona University\\
 Department of Mathematics and Statistics}
@@ -353,7 +353,7 @@ Every reduced expression $\w$ can be represented by a labeled partially ordered 
 \pause
 
 \begin{block}{Example}
-Let $\w=s_3s_2s_1s_0s_2s_1s_3s_0s_2s_4$ be a reduced expression for $w \in W(B_6)$. \pause
+Let $\w=s_3s_1s_2s_1s_0s_1s_3s_0s_2s_4$ be a reduced expression for $w \in W(B_6)$. \pause
 \begin{columns}
 \begin{column}{0.4\textwidth}
 \begin{figure}\centering
@@ -409,7 +409,7 @@ $w \in \FC(\Gamma)$ if and only if no reduced expression for $w$ contains a brai
 \pause
 
 \begin{block}{Comment}
-	It follows from Stembridge that $W(\C_n)$ contains an infinite number of FC elements, while $W(A_n)$ and $W(B_n)$ do not. 
+	It turns out that $W(\C_n)$ contains an infinite number of FC elements, while $W(A_n)$ and $W(B_n)$ do not. 
 \end{block}
 
 \end{frame}
@@ -423,7 +423,7 @@ $w \in \FC(\Gamma)$ if and only if no reduced expression for $w$ contains a brai
 
 \pause
 
-\begin{block}{Lemma}
+\begin{block}{Theorem}
 Let $w \in \FC(\C_n)$. Then $H(w)$ can not contain any of the following convex subheaps
 \begin{columns}
 	\begin{column}{0.1\textwidth}
@@ -509,12 +509,12 @@ Let $w \in \FC(\C_n)$. Then $H(w)$ can not contain any of the following convex s
 \begin{block}{Theorem (Stembridge)}
 	There is a unique heap for $w$ if and only if $w$ is FC.
 \end{block}
-
+\pause
 \begin{block}{Example}
 	Let $\w=s_0s_2s_4s_3s_2s_1$ be a reduced expression for $w \in W(\C_4)$. We see that
-	\[s_0\alert{s_2s_4}s_3s_2s_1=s_0s_4\alert{s_2s_3s_2}s_1.\]
+	\[s_0\alert{s_2s_4}s_3s_2s_1=s_0s_4\alert{s_2s_3s_2}s_1=s_0s_4s_3s_2s_1s_3.\]
 	Since $w$ has one of the forbidden consecutive subwords, $w$ is \alert{not} FC.
-	
+\pause
 \begin{columns}
 \begin{column}{0.4\textwidth}
 \begin{figure}\centering
@@ -629,7 +629,7 @@ Let $\w=s_0s_1s_0s_2$ be a reduced expression for $w \in W(B_4)$.
 \pause
 
 \begin{block}{Theorem (Green)}
-	There is a complete list of star reducible Coxeter systems. These include Coxeter systems of type $A_n$ $(n \geq 1)$, type $B_n$ $(n \geq 2)$, type $D_n$ $(n \geq 4)$, type $F_n$ $(n \geq 4)$, type $I_2(m)$ $(m \geq 3)$, type $\widetilde{A}_{n}$ $(n \geq 3 \text{ and } n \text{ even })$, and type $\widetilde{C}_{n}$ $(n\geq 3 \text{ and } n \text{ odd })$.
+	There is a complete list of star reducible Coxeter systems. These include Coxeter systems of type $A_n$ $(n \geq 1)$, type $B_n$ $(n \geq 2)$, type $D_n$ $(n \geq 4)$, type $F_n$ $(n \geq 4)$, type $I_2(m)$ $(m \geq 3)$, type $\widetilde{A}_{n}$ $(n \geq 3 \text{ and } n \text{ even})$, and type $\widetilde{C}_{n}$ $(n\geq 3 \text{ and } n \text{ odd})$.
 \end{block}
 	
 \end{frame}
@@ -703,13 +703,14 @@ Let $\w=s_0s_2s_4s_1s_3s_0s_2s_4$ be a reduced expression for $w \in W(\C_4)$.
 	If $n$ is odd and $n \geq 2$, then there are no non-trivial T-avoiding elements in $W(\widetilde{A}_n)$. If $n$ is even and $n \geq 2$, then $W(\widetilde{A}_n)$ contains non-trivial T-avoiding elements.
 \end{block}
 \pause
-\begin{block}{Conjecture}
-The only non-trivial T-avoiding elements of $W(\widetilde{A}_n)$ for $n$ odd are of the form $w=(s_0s_2 \cdots s_{n-2}s_ns_1s_3 \cdots s_{n-3}s_{n-1})^k$  for $k \in \mathbb{Z}^+$.	
-\end{block}
-\pause
 \begin{block}{Corollary}
 There are no non-trivial T-avoiding elements in $W(A_n)$.	
 \end{block}
+\pause
+\begin{block}{Conjecture}
+The only non-trivial T-avoiding elements of $W(\widetilde{A}_n)$ for $n$ odd are of the form $w=(s_0s_2 \cdots s_{n-2}s_ns_1s_3 \cdots s_{n-3}s_{n-1})^k$  for $k \in \mathbb{Z}^+$.	
+\end{block}
+
 \pause
 \begin{block}{Theorem (Laird?)}
 	There are no non-trivial T-avoiding elements in $W(I_2(m))$.
@@ -855,44 +856,44 @@ Classifying non-trivial T-avoiding elements in $F_n$ for $n \geq 6$ gets very di
 %\end{frame}
 
 
-%% -------------------------------------------------------------------
-
-
-\begin{frame}{\textbf{Signed Permutation Representation}}
-
-Since $W(B_n) \cong \Sym_n^B$, we can write $w \in W(B_n)$ as a signed permutation 
-\[[w(1), w(2), \ldots, w(n)]\] where we write a bar underneath a number in place of a negative sign.
-
-\pause
-
-\begin{block}{Definition}
-	We say that $w$ has the \alert{signed consecutive pattern $abc$} if there is some $i \in \{1,2, \ldots, n-2\}$ such that $\left(|w(i)|, |w(i+1)|, |w(i+2)|\right)$ is in the same relative order as $\left(|a|, |b|, |c| \right)$ and such that $\sgn(w(i))=\sgn(a)$, $\sgn(w(i+1))=\sgn(b)$, and $\sgn(w(i+2))=\sgn(c)$.\\
-	\vspace{1em} \pause
-	 We say that $w$ \alert{avoids the signed consecutive pattern $abc$} if there is no such $i$ as above.
-\end{block}
-
-\end{frame}
-
-%% -------------------------------------------------------------------
-
-
-\begin{frame}{\textbf{Signed Permutation Representation}}
-\onslide<1->
-\begin{block}{Example}
-	Let $\w=s_0s_1s_3s_4s_5s_2$ be a reduced expression for $w \in B_6$. We see that
-	\onslide<2->
-	\begin{align*}
-	\onslide<2->{[1,2,3,4,5,6] &= [\underline{1},2,3,4,5,6]\\}
-	 \onslide<3->{&=[2,\underline{1},3,4,5,6]\\ 	}
-	 \onslide<4->{&=[2,\underline{1},4,3,5,6]\\ }
-	 \onslide<5->{&=[2,\underline{1},4,5,3,6]\\ }
-	 \onslide<6->{&=[2,\underline{1},4,5,6,3]\\ }
-	 \onslide<7>{&=[2,4,\underline{1},5,6,3]}
-	\end{align*}
-
-\end{block}
-	
-\end{frame}
+%%% -------------------------------------------------------------------
+%
+%
+%\begin{frame}{\textbf{Signed Permutation Representation}}
+%
+%Since $W(B_n) \cong \Sym_n^B$, we can write $w \in W(B_n)$ as a signed permutation 
+%\[[w(1), w(2), \ldots, w(n)]\] where we write a bar underneath a number in place of a negative sign.
+%
+%\pause
+%
+%\begin{block}{Definition}
+%	We say that $w$ has the \alert{signed consecutive pattern $abc$} if there is some $i \in \{1,2, \ldots, n-2\}$ such that $\left(|w(i)|, |w(i+1)|, |w(i+2)|\right)$ is in the same relative order as $\left(|a|, |b|, |c| \right)$ and such that $\sgn(w(i))=\sgn(a)$, $\sgn(w(i+1))=\sgn(b)$, and $\sgn(w(i+2))=\sgn(c)$.\\
+%	\vspace{1em} \pause
+%	 We say that $w$ \alert{avoids the signed consecutive pattern $abc$} if there is no such $i$ as above.
+%\end{block}
+%
+%\end{frame}
+%
+%%% -------------------------------------------------------------------
+%
+%
+%\begin{frame}{\textbf{Signed Permutation Representation}}
+%\onslide<1->
+%\begin{block}{Example}
+%	Let $\w=s_0s_1s_3s_4s_5s_2$ be a reduced expression for $w \in B_6$. We see that
+%	\onslide<2->
+%	\begin{align*}
+%	\onslide<2->{[1,2,3,4,5,6] &= [\underline{1},2,3,4,5,6]\\}
+%	 \onslide<3->{&=[2,\underline{1},3,4,5,6]\\ 	}
+%	 \onslide<4->{&=[2,\underline{1},4,3,5,6]\\ }
+%	 \onslide<5->{&=[2,\underline{1},4,5,3,6]\\ }
+%	 \onslide<6->{&=[2,\underline{1},4,5,6,3]\\ }
+%	 \onslide<7>{&=[2,4,\underline{1},5,6,3]}
+%	\end{align*}
+%
+%\end{block}
+%	
+%\end{frame}
 
 
 %% -------------------------------------------------------------------

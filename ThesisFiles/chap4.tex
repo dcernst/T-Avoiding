@@ -5,13 +5,13 @@
 
 The notion of a star operation was originally introduced by Kazhdan and Lusztig in~\cite{Kazhdan1979} for simply-laced Coxeter systems (i.e., $m(s,t) \leq 3$ for all $s,t \in S$), and was later generalized to all Coxeter systems in~\cite{Lusztig1985}. If $I=\{s,t\}$ is a pair of non-commuting generators of a Coxeter group $W$, then $I$ induces four partially defined maps from $W$ to itself, known as \emph{star operations}. A star operation, when it is defined, increases or decreases the length of an element to which it is applied by 1. For our purposes it is enough to only define the star operations that decrease the length of an element by 1, and as a result we will not develop the notion in full generality.
 
-Let $(W,S)$ be a Coxeter system of type $\Gamma$ and let $I=\{s,t\}\subseteq S$ be a pair of generators with $m(s,t) \geq 3$. Let $w \in W(\Gamma)$ such that $s \in \mathcal{L}(w)$. We \textcolor{green}{say} $w$ \textcolor{green}{is} \emph{left star reducible by $s$ with respect to $t$} \textcolor{green}{if $m(s,t) \geq 3$, $s \in \LD(w)$, and} $t \in \mathcal{L}(sw)$. We analogously define $w$ to be \emph{right star reducible by $s$ with respect to $t$}. Observe that $w$ is left (respectively, right) star reducible if and only if $w=stu$ (respectively, $w=uts$), where the product on the right hand side of the equation is reduced and $m(s,t) \geq 3$. We say that $w$ is \emph{star reducible} if it is either left or right star reducible.
+Let $(W,S)$ be a Coxeter system of type $\Gamma$ and let $I=\{s,t\}\subseteq S$ be a pair of generators with $m(s,t) \geq 3$. Let $w \in W(\Gamma)$ such that $s \in \mathcal{L}(w)$. We say $w$ is \emph{left star reducible by $s$ with respect to $t$} if $m(s,t) \geq 3$, $s \in \LD(w)$, and $t \in \mathcal{L}(sw)$. We analogously define $w$ to be \emph{right star reducible by $s$ with respect to $t$}. Observe that $w$ is left (respectively, right) star reducible if and only if $w=stu$ (respectively, $w=uts$), where the product on the right hand side of the equation is reduced and $m(s,t) \geq 3$. We say that $w$ is \emph{star reducible} if it is either left or right star reducible.
 
 \begin{example}\label{ex:starred}
 Let $\w=s_0s_1s_0s_2$ be a reduced expression for $w \in W(B_3)$. We see that $w$ is left star reducible by $s_0$ with respect to $s_1$ to $s_1s_0s_2$ since $m(s_0,s_1)=4$ and $s_0 \in \mathcal{L}(w)$ while $s_1 \in \mathcal{L}(s_0w)$. Notice that $w$ is FC and $\RD(w)=\{s_2,s_0\}$ since $s_0$ and $s_2$ commute. We see that $ws_2=s_0s_1s_0$ and $ws_0=s_0s_1s_2$. Note that in both instances $s_1 \notin \RD(ws_2)=\{s_0\}$ and $s_1 \notin \LD(ws_0)=\{s_2\}$. Because of this $w$ is not right star reducible. 
 \end{example}
 
-It may be helpful to visualize star reductions in terms of heaps. Let $(W,S)$ be a Coxeter system with straight-line Coxeter graph $\Gamma$ and let $I=\{s,t\}\subseteq S$ be a pair of generators with $m(s,t) \geq 3$. Suppose $w$ is left star reducible by $s$ with respect to $t$. Then there exists a heap of $w$ where the block for $s$ is fully exposed to the top such that removing the block for $s$ off of the top allows for $t$ to now be fully exposed to the top of the heap. Similarly, if $w$ is right star reducible by $s$ with respect to $t$, then there exists a heap of $w$ where the block for $s$ is fully exposed to the bottom of the heap such that removing the block for $s$ off of the bottom allows for $t$ to now be fully exposed to the bottom. Conversely, if a heap of $w \in W(\Gamma)$ has this property, then $w$ is star reducible. In Figure~\ref{fig:heapwithT} we see the top portion of two possible heap representations of an element that is left star reducible by $s$ with respect to $t$, where the dotted square \textcolor{green}{indicates that} no block may occupy this position.  Notice that flipping the heap upside down in Figure~\ref{fig:heapwithT} will result in a heap that is right star reducible. It is important to note that \textcolor{green}{for non-FC group elements, when} we are evaluating for star reducibility we must consider all heap representations for the element before concluding that \textcolor{green}{it} is not star reducible. 
+It may be helpful to visualize star reductions in terms of heaps. Let $(W,S)$ be a Coxeter system with straight-line Coxeter graph $\Gamma$ and let $I=\{s,t\}\subseteq S$ be a pair of generators with $m(s,t) \geq 3$. Suppose $w$ is left star reducible by $s$ with respect to $t$. Then there exists a heap of $w$ where the block for $s$ is fully exposed to the top such that removing the block for $s$ off of the top allows for $t$ to now be fully exposed to the top of the heap. Similarly, if $w$ is right star reducible by $s$ with respect to $t$, then there exists a heap of $w$ where the block for $s$ is fully exposed to the bottom of the heap such that removing the block for $s$ off of the bottom allows for $t$ to now be fully exposed to the bottom. Conversely, if a heap of $w \in W(\Gamma)$ has this property, then $w$ is star reducible. In Figure~\ref{fig:heapwithT} we see the top portion of two possible heap representations of an element that is left star reducible by $s$ with respect to $t$, where the dotted square indicates that no block may occupy this position.  Notice that flipping the heap upside down in Figure~\ref{fig:heapwithT} will result in a heap that is right star reducible. It is important to note that for non-FC group elements, when we are evaluating for star reducibility we must consider all heap representations for the element before concluding that it is not star reducible. 
 
 \begin{figure*}[h!]
 \begin{tabular}{m{7cm} m{7cm}}
@@ -33,7 +33,7 @@ It may be helpful to visualize star reductions in terms of heaps. Let $(W,S)$ be
 \caption{}\label{fig:starright}	
 \end{subfigure}
 \end{tabular}
-\caption{A visual representation of an element that is left star reducible \textcolor{green}{by $s$ with respect to $t$}.}\label{fig:heapwithT}
+\caption{A visual representation of an element that is left star reducible by $s$ with respect to $t$.}\label{fig:heapwithT}
 \end{figure*}   
 
 The following example utilizes heaps to show that an element is star reducible.
@@ -115,14 +115,14 @@ Let $\w=s_3s_1s_2s_1s_0s_1s_3s_0s_2s_4$ be a reduced expression for $w \in W(\C_
 \end{example}
 
 
-\textcolor{green}{We say that $w \in W(\Gamma)$ is \emph{star reducible to a product of commuting generators} if there is a sequence
+We say that $w \in W(\Gamma)$ is \emph{star reducible to a product of commuting generators} if there is a sequence
 \[w_1=w \mapsto w_2 \mapsto \cdots \mapsto w_n\]
-where for each $1 \leq i \leq n$, $w_{i}$ is left star reducible or right star reducible to $w_{i+1}$ with respect to some pair $\{s_i, t_i\}$, and $w_n$ is a product of commuting generators.} Using the notion of star reduction we are now able to introduce the concept of a star reducible Coxeter group. Let $(W,S)$ be a Coxeter group of type $\Gamma$. We say that $(W,S)$ or $W(\Gamma)$ is \emph{star reducible} if every element of $\FC(\Gamma)$ is star reducible to a product of commuting generators. Notice that we are restricting to just the FC elements in $W(\Gamma)$. Visually a star reducible Coxeter group can be thought of in the following way. Given a heap in $\FC(\Gamma)$, we are able to systematically remove fully exposed blocks from the top or bottom of the heap and have a block that was previously not fully exposed become fully exposed until we are left with a heap that can be drawn as a single row. 
+where for each $1 \leq i \leq n$, $w_{i}$ is left star reducible or right star reducible to $w_{i+1}$ with respect to some pair $\{s_i, t_i\}$, and $w_n$ is a product of commuting generators. Using the notion of star reduction we are now able to introduce the concept of a star reducible Coxeter group. Let $(W,S)$ be a Coxeter group of type $\Gamma$. We say that $(W,S)$ or $W(\Gamma)$ is \emph{star reducible} if every element of $\FC(\Gamma)$ is star reducible to a product of commuting generators. Notice that we are restricting to just the FC elements in $W(\Gamma)$. Visually a star reducible Coxeter group can be thought of in the following way. Given a heap in $\FC(\Gamma)$, we are able to systematically remove fully exposed blocks from the top or bottom of the heap and have a block that was previously not fully exposed become fully exposed until we are left with a heap that can be drawn as a single row. 
 
 In~\cite{Green2006a}, Green classified all star reducible Coxeter groups.
 
 %we are able to pull the top or bottom most block off of the heap and have the heap decrease in height (the number of rows that it consists of) or have a new block come into the top or bottom most rows. We can perform this pulling of blocks off the top and bottom of the heap systematically until the heap consists of one row, corresponding to an element that is a product of commuting generators. For example in Figure~\ref{fig:heapy}, we were able to apply a star reduction to remove the topmost block corresponding to the generator $s_0$ and obtain the new heap seen in Figure~\ref{fig:multiplied}. We see that the heap in Figure~\ref{fig:multiplied} has one less row than Figure~\ref{fig:heapy}. We could do the same with the block on bottom of Figure~\ref{fig:multiplied} corresponding to $s_3$ and have the heap again decrease in the number of rows it has. Performing one more star reduction in pulling the brick off the top of Figure~\ref{fig:multiplied} which corresponds to $s_1$ in the reduced expression would leave us with a heap that is only 1 row which is a product of commuting generators. Thus Figure~\ref{fig:heapy} can be star reduced to a product of commuting generators.  In~\cite{Green2006a}, Green classified all star reducible Coxeter groups. 
-%The Coxeter groups $W(A_n)$, $W(B_n)$ and $W(\widetilde{C}_n)$ are star reducible. However, $W(A_n)$ and $W(B_n)$ don't have type II T-avoiding elements, while $W(\widetilde{C}_n)$ in one parity does have type II T-avoiding elements.
+%The Coxeter groups $W(A_n)$, $W(B_n)$ and $W(\widetilde{C}_n)$ are star reducible. However, $W(A_n)$ and $W(B_n)$ don't have $\tII$ elements, while $W(\widetilde{C}_n)$ in one parity does have $\tII$ elements.
 \begin{proposition}[Green,~\cite{Green2006a}]
 	Let $(W,S)$ be a Coxeter system of type $\Gamma$. Then $(W,S)$ is star reducible if and only if each component of $\Gamma$ is either a complete graph with labels $m(s,t)\geq 3$ or is one of the following types: type $A_n$ $(n \geq 1)$, type $B_n$ $(n \geq 2)$, type $D_n$ $(n \geq 4)$, type $F_n$ $(n \geq 4)$, type $H_n$ $(n \geq 2)$, type $I_2(m)$ $(m \geq 3)$, type $\widetilde{A}_{n}$ $(n \geq 3 \textrm{ and } n \textrm{ even})$, type $\widetilde{C}_{n}$ $(n\geq 3 \textrm{ and } n \textrm{ odd})$, type $\widetilde{E}_6$, or type $\widetilde{F}_5$. \qed
 \end{proposition}    
@@ -133,37 +133,37 @@ In~\cite{Green2006a}, Green classified all star reducible Coxeter groups.
 
 In~\cite{Green2006a}, Green utilizes the following theorem to help classify the star reducible Coxeter groups. 
 \begin{proposition}[Green,~\cite{Green2006a}, Theorem 4.1]\label{thm:starred}
-	Let $(W,S)$ be a star reducible Coxeter system of type $\Gamma$, and let $w \in W$. Then one of the following possibilities occurs for some Coxeter generators $s,t, u$ with $m(s,t) \neq 2$, $m(t,\textcolor{green}{u}) \neq 2$, and $m(s,u)=2$:
+	Let $(W,S)$ be a star reducible Coxeter system of type $\Gamma$, and let $w \in W$. Then one of the following possibilities occurs for some Coxeter generators $s,t, u$ with $m(s,t) \neq 2$, $m(t,u) \neq 2$, and $m(s,u)=2$:
 	\begin{enumerate}[leftmargin=2cm]
 	\item $w$ is a product of commuting generators;\label{it:triv}
 	\item $w$ has a reduced product $w=stu$;\label{it:proptend}
 	\item $w$ has a reduced product $w=uts$;\label{it:proptbeg}
-	\item $w$ has a reduced product $w=\textcolor{green}{sutv}$.\label{it:tavoid}	\qed
+	\item $w$ has a reduced product $w=sutv$.\label{it:tavoid}	\qed
 	\end{enumerate}
 \end{proposition}
 
-Notice that Items~\ref{it:proptend} and~\ref{it:proptbeg} indicate an element that is left or right star reducible, respectively. Also notice that an element $w$ that has the form of Item~\ref{it:triv} does not meet the conditions of Items~\ref{it:proptend} and~\ref{it:proptbeg}. In particular, $w$ is not star reducible if \textcolor{green}{it satisfies} the condition of Item~\ref{it:triv}. Lastly, notice that if an element $w$ is of the form of Item~\ref{it:tavoid} and not of the form of Items~\ref{it:proptend} and~\ref{it:proptbeg}, then $w$ is not star reducible. Notice that Items~\ref{it:proptend},~\ref{it:proptbeg}, and~\ref{it:tavoid} are not mutually exclusive.
+Notice that Items~\ref{it:proptend} and~\ref{it:proptbeg} indicate an element that is left or right star reducible, respectively. Also notice that an element $w$ that has the form of Item~\ref{it:triv} does not meet the conditions of Items~\ref{it:proptend} and~\ref{it:proptbeg}. In particular, $w$ is not star reducible if it satisfies the condition of Item~\ref{it:triv}. Lastly, notice that if an element $w$ is of the form of Item~\ref{it:tavoid} and not of the form of Items~\ref{it:proptend} and~\ref{it:proptbeg}, then $w$ is not star reducible. Notice that Items~\ref{it:proptend},~\ref{it:proptbeg}, and~\ref{it:tavoid} are not mutually exclusive.
 
 Motivated by Items~\ref{it:triv} and~\ref{it:tavoid} above, we define the notions of Property T and T-avoiding. Let $(W,S)$ be a Coxeter system of type $\Gamma$ and let $w \in W$. We say that $w$ has \emph{Property T} if and only if there exists a reduced product for $w$ such that $w=stu$ or $w=uts$ where $m(s,t)\geq 3$ and $u \in W$. That is, $w$ has Property T if there exists a reduced expression for $w$ that begins or ends with a product of non-commuting generators. An element $w \in W(\Gamma)$ is called \emph{T-avoiding} if $w$ does not have Property T. This implies that a T-avoiding element is not star reducible.
 
  Since elements that are star reducible also have Property T we already know how to visualize Property T in terms of heaps.
  
- Visually a product of commuting generators \textcolor{green}{can be made into a single row heap by pushing all the blocks into the same vertical position. It} is clear \textcolor{green}{that} a single row heap will not portray the characteristic of Property T as seen in Figure~\ref{fig:heapwithT} and thus a product of commuting generators is T-avoiding, which we state as a proposition.
+ Visually a product of commuting generators be made into a single row heap by pushing all the blocks into the same vertical position. It is clear that a single row heap will not portray the characteristic of Property T as seen in Figure~\ref{fig:heapwithT} and thus a product of commuting generators is T-avoiding, which we state as a proposition.
 
 
 \begin{proposition}\label{thm:trivTavoid}
 Let $(W,S)$ be a Coxeter system of type $\Gamma$. If $w \in W(\Gamma)$ such that $w$ is a product of commuting generators, then $w$ is T-avoiding. \qed	
 \end{proposition}
 
-We will call \textcolor{green}{the identity or} an element that is a product of commuting generators \emph{\textcolor{green}{type I} T-avoiding}. If $w$ is T-avoiding and not a of type I, we will say that $w$ is \emph{\textcolor{green}{type II} T-avoiding.} It is not clear that such elements exist. Referring back to Green's classification (Proposition~\ref{thm:starred}) of what elements in star reducible Coxeter groups look like, we see that Item~\ref{it:triv} corresponds to an element $w$ being type I T-avoiding, Items~\ref{it:proptend} and~\ref{it:proptbeg} refer to the element $w$ having Property T on the left and right, respectively and Item~\ref{it:tavoid} refers to an element being type II T-avoiding provided no reduced expression for the element exhibits Items~\ref{it:proptend} and~\ref{it:proptbeg}. In star reducible Coxeter systems, every FC element is star reducible to a product of commuting generators, which implies that no FC element can be type II T-avoiding in such groups. For example, as will be seen in Chapters~\ref{chap:TandTavoid} and~\ref{chap:BnandCn}, the Coxeter systems of type $A_n$ and $B_n$ have no type II T-avoiding elements, while the Coxeter systems of type $D_n$ do.
+We will call the identity or an element that is a product of commuting generators \emph{type I T-avoiding}, which we abbreviate as $\tI$. If $w$ is T-avoiding and not a of type I, we will say that $w$ is \emph{type II} T-avoiding, which we abbreviate as $\tII$. It is not clear that such elements exist. Referring back to Green's classification (Proposition~\ref{thm:starred}) of what elements in star reducible Coxeter groups look like, we see that Item~\ref{it:triv} corresponds to an element $w$ being $\tI$, Items~\ref{it:proptend} and~\ref{it:proptbeg} refer to the element $w$ having Property T on the left and right, respectively and Item~\ref{it:tavoid} refers to an element being $\tII$ provided no reduced expression for the element exhibits Items~\ref{it:proptend} and~\ref{it:proptbeg}. In star reducible Coxeter systems, every FC element is star reducible to a product of commuting generators, which implies that no FC element can be $\tII$ in such groups. For example, as will be seen in Chapters~\ref{chap:TandTavoid} and~\ref{chap:BnandCn}, the Coxeter systems of type $A_n$ and $B_n$ have no $\tII$ elements, while the Coxeter systems of type $D_n$ do.
 
 %Visually this is seen in Example~\ref{fig:heapnoT} elements in $W(\Gamma)$ that are products of commuting generators are always going to be one row in the heap. This implies that we are not able to remove generators and have elements come into rows that they were previously in as the heap is only one row and there can be no lateral movement when we remove bricks. 
 
 \begin{example}\label{ex:tavoid}
-Let $\w=s_1s_3s_5$ be a reduced expression for $w \in W(A_5)$.  Since $w$ is a product of commuting generators, by Proposition~\ref{thm:trivTavoid} we know that $w$ is type I T-avoiding. %In Figure~\ref{fig:heapnoT} we see the heap for $w_2$. %Note that as the heap is only one row and $w_2$ is FC, it is clear that $w_2$ does not have Property T.
+Let $\w=s_1s_3s_5$ be a reduced expression for $w \in W(A_5)$.  Since $w$ is a product of commuting generators, by Proposition~\ref{thm:trivTavoid} we know that $w$ is $\tI$. %In Figure~\ref{fig:heapnoT} we see the heap for $w_2$. %Note that as the heap is only one row and $w_2$ is FC, it is clear that $w_2$ does not have Property T.
 \end{example}
 \begin{example}\label{ex:prop-T}
-Let $\w_1=s_5s_3s_2s_4s_1$ be a reduced expression for $w \in W(A_5)$. At first glance it may appear that $w$ does not have Property T since both $s_1$ and $s_4$ commute as well as $s_3$ and $s_5$. However, note that applying the commutation move $s_4s_2 \mapsto s_2s_4$ results in $\w_2=s_1s_2s_4s_3s_5$. Hence $w$ has Property T since $m(s_1,s_2)=3$ and there is a reduced expression for $w$ that begins with $s_1s_2$. In Figure~\ref{fig:heapw/T} we see the heap of $w$. Note that we can see Property T in the bottom of the heap highlighted in \textcolor{orange}{orange}. \textcolor{green}{In addition to the \textcolor{orange}{orange} highlighted subheap, $w$ also has Property T with respect to $s_3$ and $s_2$ in the top of the heap, and $s_4$ and $s_5$ in the bottom of the heap.}
+Let $\w_1=s_5s_3s_2s_4s_1$ be a reduced expression for $w \in W(A_5)$. At first glance it may appear that $w$ does not have Property T since both $s_1$ and $s_4$ commute as well as $s_3$ and $s_5$. However, note that applying the commutation move $s_4s_2 \mapsto s_2s_4$ results in $\w_2=s_1s_2s_4s_3s_5$. Hence $w$ has Property T since $m(s_1,s_2)=3$ and there is a reduced expression for $w$ that begins with $s_1s_2$. In Figure~\ref{fig:heapw/T} we see the heap of $w$. Note that we can see Property T in the bottom of the heap highlighted in \textcolor{orange}{orange}. In addition to the \textcolor{orange}{orange} highlighted subheap, $w$ also has Property T with respect to $s_3$ and $s_2$ in the top of the heap, and $s_4$ and $s_5$ in the bottom of the heap.
 \end{example}
 
 \begin{figure}[h!]\centering
@@ -200,7 +200,7 @@ Let $\w_1=s_5s_3s_2s_4s_1$ be a reduced expression for $w \in W(A_5)$. At first 
 %
 
 \begin{example}
-Let $\w=s_0s_2s_4s_1s_3s_0s_2s_4$ be a reduced expression for $w \in W(\C_4)$. It turns out that $w$ is FC and type II T-avoiding. The heap of $w$ is seen in Figure~\ref{fig:sandwich1}. Notice that no matter which block we remove that is fully exposed to the top of the heap no new element becomes fully exposed. The same applies to the bottom of the heap. Thus, $w$ is type II T-avoiding. 
+Let $\w=s_0s_2s_4s_1s_3s_0s_2s_4$ be a reduced expression for $w \in W(\C_4)$. It turns out that $w$ is FC and $\tII$. The heap of $w$ is seen in Figure~\ref{fig:sandwich1}. Notice that no matter which block we remove that is fully exposed to the top of the heap no new element becomes fully exposed. The same applies to the bottom of the heap. Thus, $w$ is $\tII$. 
 \begin{figure}[h!]
 \centering
 \begin{tikzpicture}[scale=0.45]
@@ -213,13 +213,13 @@ Let $\w=s_0s_2s_4s_1s_3s_0s_2s_4$ be a reduced expression for $w \in W(\C_4)$. I
 \heapblock{2}{2}{2}{purple}
 \heapblock{4}{2}{4}{purple}
 \end{tikzpicture}
-\caption{Heap of a type II T-avoiding element in $W(\widetilde{C}_4)$.}\label{fig:sandwich1}	
+\caption{Heap of a $\tII$ element in $W(\widetilde{C}_4)$.}\label{fig:sandwich1}	
 \end{figure}
 \end{example}
 
 %We will now extend the definition of Property T to Coxeter groups. Let $(W,S)$ be a Coxeter group of type $\Gamma$. We say that $W(\Gamma)$ has \emph{Property T} if all elements in $W(\Gamma)$ that are not the products of commuting generators have Property T. It is clear that if a Coxeter group has Property T, then it also has Property S. It remains an open question whether or not a Coxeter group with Property S, also has Property T, but we conjecture this is true. If this is the case, then by a remark following the definition of Property S in~\cite{Green2007}, the classification of the T-avoiding elements for any connected, nonbranching Coxeter graph of finite or affine type, except the Coxeter system of type $\widetilde{F}_4$, would be complete. 
 
-One thing to notice here is that all Coxeter groups have type I T-avoiding elements \textcolor{green}{as the identity is type I T-avoiding} and  they also contain products of commuting generators, \textcolor{green}{since individual elements of $S$ are considered products of commuting generators}. The more interesting type II T-avoiding elements do not appear in all Coxeter groups. In Chapter~\ref{chap:TandTavoid} we will summarize what is known about the T-avoiding elements in Coxeter systems of types $\widetilde{A}_n$, $A_n$, $D_n$, $F_n$, and $I_2(m)$, and in Chapters~\ref{chap:BnandCn} and~\ref{chap:Cn} we classify the T-avoiding elements in Coxeter systems of types $B_n$ and $\widetilde{C}_n$. 
+One thing to notice here is that all Coxeter groups have $\tI$ elements as the identity is $\tI$ and  they also contain products of commuting generators, since individual elements of $S$ are considered products of commuting generators. The more interesting $\tII$ elements do not appear in all Coxeter groups. In Chapter~\ref{chap:TandTavoid} we will summarize what is known about the T-avoiding elements in Coxeter systems of types $\widetilde{A}_n$, $A_n$, $D_n$, $F_n$, and $I_2(m)$, and in Chapters~\ref{chap:BnandCn} and~\ref{chap:Cn} we classify the T-avoiding elements in Coxeter systems of types $B_n$ and $\widetilde{C}_n$. 
 
 
 %%%%%%%%%%%%%%
@@ -232,7 +232,7 @@ We now introduce the concept of weak star reducible, which is related to the not
 \item $w$ is left star reducible by $s$ with respect to $t$, and
 \item $tw \notin \FC(\Gamma)$.	
 \end{enumerate}
-Notice that Condition (2) implies that $l(tw)>l(w)$. Also note that we are restricting \textcolor{green}{our} definition of weak star reducible to the set of $\FC$ elements of $W(\Gamma)$. We analogously define \emph{right weak star reducible by $s$ with respect to $t$ to $ws$}. We say that $w$ is \emph{weak star reducible} if $w$ is either left or right weak star reducible. Otherwise, we say that $w$ is \emph{non-cancellable}. Notice that from this we know that weak star reducible implies star reducible. However, $w$ being star reducible does not imply that $w$ is weak star reducible.
+Notice that Condition (2) implies that $l(tw)>l(w)$. Also note that we are restricting our definition of weak star reducible to the set of $\FC$ elements of $W(\Gamma)$. We analogously define \emph{right weak star reducible by $s$ with respect to $t$ to $ws$}. We say that $w$ is \emph{weak star reducible} if $w$ is either left or right weak star reducible. Otherwise, we say that $w$ is \emph{non-cancellable}. Notice that from this we know that weak star reducible implies star reducible. However, $w$ being star reducible does not imply that $w$ is weak star reducible.
 
 \begin{example}\label{ex:noncancel}
  Let $\w=s_0s_1s_0s_2$ be a reduced expression for $w \in W(B_4)$. From Example~\ref{ex:starred} we know that $w$ is left star reducible. However, $tw=s_1s_0s_1s_0s_2$, which is not in $\FC(B_4)$. Thus, we see that $w$ is left weak star reducible by $s_0$ with respect to $s_1$ to $s_1s_0s_2$. In addition, Example~\ref{ex:starred} showed that $w$ is not right star reducible and hence $w$ is not right weak star reducible. 
@@ -286,9 +286,9 @@ Let $w \in \FC(B_4)$ and let $\w=s_0s_1$ be a reduced expression for $w$. Note t
 \caption{Heap of a non-cancellable element of $\FC(B_4)$.}\label{fig:noncancelvisual}
 \end{figure*}
 
-In~\cite{Ernst2010}, Ernst classified the non-cancellable elements in Coxeter systems of type $W(B_n)$ and $W(\C_n)$. We will state part of the classification here as it is important to the development of the type II T-avoiding elements in $W(\C_n)$ for $n$ odd. For the full classification see~\cite[Sections 4.2 and 5]{Ernst2010}. 
+In~\cite{Ernst2010}, Ernst classified the non-cancellable elements in Coxeter systems of type $W(B_n)$ and $W(\C_n)$. We will state part of the classification here as it is important to the development of the $\tII$ elements in $W(\C_n)$ for $n$ odd. For the full classification see~\cite[Sections 4.2 and 5]{Ernst2010}. 
 
-Before we state the classification we first define a specific group element in $W(\C_n)$ for $n$ odd which we will refer to as a \emph{sandwich stack}, an example of which is seen in Figure~\ref{fig:singsandstack}. Notice that this element has full support, is FC, and is type II T-avoiding.
+Before we state the classification we first define a specific group element in $W(\C_n)$ for $n$ odd which we will refer to as a \emph{sandwich stack}, an example of which is seen in Figure~\ref{fig:singsandstack}. Notice that this element has full support, is FC, and is $\tII$.
 
 \begin{figure}[h!] \centering
 \begin{tikzpicture}[scale=0.45]
@@ -310,7 +310,7 @@ Before we state the classification we first define a specific group element in $
 \caption{Heap of a single sandwich stack in $W(\C_n)$ for $n$ odd.}\label{fig:singsandstack}
 \end{figure}
 
-We can extend this pattern to the heap seen in Figure~\ref{fig:stacksandstack}. Like the smaller example above the element that corresponds to this heap has full support, is FC and is type II T-avoiding. 
+We can extend this pattern to the heap seen in Figure~\ref{fig:stacksandstack}. Like the smaller example above the element that corresponds to this heap has full support, is FC and is $\tII$. 
 
 \begin{figure}[h!] \centering
 \begin{tikzpicture}[scale=0.45]
@@ -343,7 +343,7 @@ We can extend this pattern to the heap seen in Figure~\ref{fig:stacksandstack}. 
 \end{figure}
 
 \begin{remark}\label{rem:noncancel}
-	 In Coxeter systems of type $\C_n$, the sandwich stacks are the only type II T-avoiding elements with full support. There are two other types of non-cancellable elements that were classified in~\cite{Ernst2010}. The first does not have full support, which is important to our later classification and the second clearly has Property T.
+	 In Coxeter systems of type $\C_n$, the sandwich stacks are the only $\tII$ elements with full support. There are two other types of non-cancellable elements that were classified in~\cite{Ernst2010}. The first does not have full support, which is important to our later classification and the second clearly has Property T.
 \end{remark}
 
 

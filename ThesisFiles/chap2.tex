@@ -1,6 +1,6 @@
 \chapter{T-Avoiding Elements in Type $B_n$}\label{chap:BnandCn}
 
-In this chapter we classify the \textcolor{green}{T-avoiding} elements in Coxeter systems of type $B_n$, which has not yet appeared in the literature. We start by introducing some combinatorial tools for type $B_n$ and then finish with a proof of the classification in type $B_n$. Note that the proof for Coxeter systems of type $B_n$ closely follows the classification of T-avoiding elements of type $D_n$ seen in~\cite{Gern2013a}. 
+In this chapter we classify the \textcolor{green}{T-avoiding} elements in Coxeter systems of type $B_n$, \textcolor{green}{a new result}. We start by introducing some combinatorial tools for type $B_n$ and then finish with a proof of the classification in type $B_n$. Note that the proof for Coxeter systems of type $B_n$ closely follows the classification of T-avoiding elements of type $D_n$ seen in~\cite{Gern2013a}. 
 
 \section{Tools for the Classification}\label{sec:Btools}
 
@@ -65,7 +65,7 @@ Occasionally, we will need to factor $w \in W(B_n)$ in a specific manner. Let $I
 
 %\textcolor{red}{Time permitting we will streamline the corollaries into the lemmas themselves or as a remark at the end of the lemmas}
 
-In this section we will classify the T-avoiding elements in Coxeter systems of type $B_n$. Our main result in this section is Theorem~\ref{thm:classificationofB}. \textcolor{green}{Notice that if $n=2$, $W(B_2) \cong I_2(4)$, which by Section~\ref{sec:tavoidI} we know has no non-trivial T-avoiding elements. We proceed for $n \geq 3$.} First we need some preparatory lemmas. 
+In this section we will classify the T-avoiding elements in Coxeter systems of type $B_n$. Our main result in this section is Theorem~\ref{thm:classificationofB}. \textcolor{green}{Notice that if $n=2$, $W(B_2) \cong I_2(4)$, which by Section~\ref{sec:tavoidI} we know has no type II T-avoiding elements. We proceed for $n \geq 3$.} First we need some preparatory lemmas. 
 
 \begin{lemma}\label{lem:sts}
 Let $s,t \in S(B_n)$ such that $m(s,t)=3$. Then $w$ has a reduced expression ending in $sts$ if and only if $w$ has the consecutive pattern $321$.
@@ -93,7 +93,7 @@ If $i \neq 0$, then $w$ has a reduced expression ending in $s_is_{i+1}$ if and o
 	
 	 Conversely, suppose that $w$ has a reduced expression ending in $s_is_{i+1}$. Then $w(i+2)<w(i+1)$ and $w(i)<w(i+1)$. Since $s_i \in \mathcal{R}(ws_{i+1})$ we have $w(i+2)=ws_{i+1}(i+1)<ws_{i+1}(i)=w(i)$. Thus we have that $w(i+1) > w(i) > w(i+2)$. Hence $w$ has the consecutive pattern 231.
 	
-	Therefore, $w$ has a reduced expression ending in $st$ if and only if $w$ has the consecutive pattern $231$.
+	Therefore, $w$ has a reduced expression ending in \textcolor{green}{$s_is_{i+1}$} if and only if $w$ has the consecutive pattern $231$.
 \end{proof}	
 \end{lemma}
 
@@ -111,7 +111,7 @@ If $i \neq 0$, then $w$ has a reduced expression ending in $s_{i+1}s_i$ if and o
 	
 	Conversely suppose $w$ ends in a reduced expression with $s_{i+1}s_i$ Then $w_I=s_{i+1}s_i$. We see that $w(i)>w(i+1)$ and $w(i+2)>w(i+1)$. Since $s_{i+1} \in \mathcal{R}(ws_i)$, we have $w(i+2)=ws_i(i+2)<ws_i(i+1)=w(i)$. From this we have $w(i)>w(i+2)$, so $w(i)>w(i+2)>w(i+1)$. Hence, $w$ has the consecutive pattern $312$. 
 	
-	Therefore, $w$ has a reduced expression ending in $ts$ if and only if $w$ has the consecutive pattern $312$.
+	Therefore, $w$ has a reduced expression ending in \textcolor{green}{$s_{i+1}s_i$} if and only if $w$ has the consecutive pattern $312$.
 \end{proof}
 \end{lemma}
 
@@ -166,7 +166,7 @@ Let $w \in W(B_n)$ such that each entry for $w$ in the signed permutation notati
 \end{lemma}
 
 \begin{lemma}\label{lem:prodofCommB}
-Let $w \in W(B_n)$ be trivially T-avoiding and let $i \in \{1,2, \ldots, n\}$. Then $w$ satisfies all the following conditions:
+Let $w \in W(B_n)$ be type Ily T-avoiding and let $i \in \{1,2, \ldots, n\}$. Then $w$ satisfies all the following conditions:
 \begin{enumerate}[leftmargin=2cm]
 \item $w(j) > \min\{w(i-1), w(i)\}$ for all $j >i$;\label{it:trivT1}
 \item $w(k) < \max\{w(i-1), w(i)\}$ for all $k < i-1$;\label{it:trivT2}
@@ -174,9 +174,9 @@ Let $w \in W(B_n)$ be trivially T-avoiding and let $i \in \{1,2, \ldots, n\}$. T
 \item If $w(i), w(i+1) < 0$, then $w(j)<0$ for all $j \leq i+1$.\label{it:trivT4}
 \end{enumerate}
 \begin{proof}
-	Suppose there is some least $j>i$ such that $w(j) \leq \min\{w(i-1), w(i)\}$. Note that $j>i$ so $j \neq i$, and $j \neq i-1$ so $w(j) < \min\{w(i-1), w(i)\})$. Note that $j$ is the least so $w(j-2) \geq \min\{w(i+1), w(i)\}>w(j)$. This implies that either $w(j-1)>w(j-2)>w(j)$ or $w(j-2)>w(j-1)>w(j)$, which implies $w$ has the consecutive pattern $231$ or $321$, which is a contradiction to $w$ being a non-trivial T-avoiding element by Lemmas~\ref{lem:sts} and~\ref{lem:st}. Thus proving~\ref{it:trivT1}.
+	Suppose there is some least $j>i$ such that $w(j) \leq \min\{w(i-1), w(i)\}$. Note that $j>i$ so $j \neq i$, and $j \neq i-1$ so $w(j) < \min\{w(i-1), w(i)\})$. Note that $j$ is the least so $w(j-2) \geq \min\{w(i+1), w(i)\}>w(j)$. This implies that either $w(j-1)>w(j-2)>w(j)$ or $w(j-2)>w(j-1)>w(j)$, which implies $w$ has the consecutive pattern $231$ or $321$, which is a contradiction to $w$ being a type II T-avoiding element by Lemmas~\ref{lem:sts} and~\ref{lem:st}. Thus proving~\ref{it:trivT1}.
 	
-	Suppose there exists a maximal $k<i-1$ such that $w \geq \max\{w(i-1), w(i)\}$. Note that $k < i-1$ so $k \neq i$ and $k \neq i-1$. Then $w(k)> \max\{w(i-1), w(i)\}$. Since $k$ is maximal $w(k+1) \leq  \max\{w(i-1), w(i)\}$ and $w(k+2) \leq \max\{w(i-1), w(i)\}$. This implies that either $w(k+2)<w(k+1)<w(k)$ or $w(k+1)<w(k+2)<w(k)$, which implies $w$ has the consecutive pattern $321$ or $312$, which is a contradiction to $w$ being a non-trivial T-avoiding element by Lemmas~\ref{lem:sts} and~\ref{lem:ts}. Thus proving~\ref{it:trivT2}.
+	Suppose there exists a maximal $k<i-1$ such that $w \geq \max\{w(i-1), w(i)\}$. Note that $k < i-1$ so $k \neq i$ and $k \neq i-1$. Then $w(k)> \max\{w(i-1), w(i)\}$. Since $k$ is maximal $w(k+1) \leq  \max\{w(i-1), w(i)\}$ and $w(k+2) \leq \max\{w(i-1), w(i)\}$. This implies that either $w(k+2)<w(k+1)<w(k)$ or $w(k+1)<w(k+2)<w(k)$, which implies $w$ has the consecutive pattern $321$ or $312$, which is a contradiction to $w$ being a type II T-avoiding element by Lemmas~\ref{lem:sts} and~\ref{lem:ts}. Thus proving~\ref{it:trivT2}.
 	
 	It is easy to see that \textcolor{green}{Assertion~\ref{it:trivT1} implies~\ref{it:trivT3} and Assertion~\ref{it:trivT2} implies~\ref{it:trivT4}.}
 \end{proof}	
@@ -217,11 +217,11 @@ Let $w \in W(B_n)$ such that $w$ has the consecutive pattern $\underline{2}3\und
 \end{lemma}
 
 \begin{lemma}\label{lem:123}
-Let $w \in W(B_n)$ such that $w$ has the consecutive pattern $\underline{1}23$. Then either $w$ has Property T or is a trivial T-avoiding element.
+Let $w \in W(B_n)$ such that $w$ has the consecutive pattern $\underline{1}23$. Then either $w$ has Property T or is a type I T-avoiding element.
 \begin{proof}
 	Let $w \in W(B_n)$ such that $w$ has the consecutive pattern $\underline{1}23$.
 	
-	Case (1): Suppose $w$ has the signed permutation notation $w=[\underline{1}23]$. This implies that $w=s_0$. Clearly, $w$ is a trivial T-avoiding element as it is a single generator.
+	Case (1): Suppose $w$ has the signed permutation notation $w=[\underline{1}23]$. This implies that $w=s_0$. Clearly, $w$ is a type I T-avoiding element as it is a single generator.
 	
 	Case (2): Suppose that $w$ has the signed permutation notation $w=[\underline{a},b,c, \ast, \ldots, \ast]$ where $\underline{a}bc$ corresponds to the signed consecutive pattern $\underline{1}23$, and $\ast$ indicates unknown values for $w(i)$ for $i=4,5, \ldots n$. We now consider the possible signed consecutive patterns $bc \ast$. The following are the possibilities: $231$, $23 \underline{1}$, $132$, $13 \underline{2}$, $123$, $12 \underline{3}$. We know that $b$ and $c$ are positive, and we also know that $|b|<|c|$ by the original signed consecutive pattern. Note that by Lemmas~\ref{lem:sts},~\ref{lem:ts}, and~\ref{lem:endswiths0} all of these patterns imply that $w$ ends or begins with a product of noncommuting generators. Thus $w$ has Property T.
 	
@@ -229,16 +229,16 @@ Let $w \in W(B_n)$ such that $w$ has the consecutive pattern $\underline{1}23$. 
 	
 	Case (4): Suppose that $w$ has the signed permutation notation $w=[\ast, \ldots, \ast, \underline{a},b,c, \ast, \ldots, \ast]$ where $\underline{a}bc$ corresponds to the signed consecutive pattern $\underline{1}23$, and $\ast$ indicates unknown values for $w(i)$ for $|w(i)|\neq a,b,c$. In this case we can apply either Case (2) or Case (3) and we can conclude that $w$ ends or begins with a product of noncommuting generators. Thus $w$ has Property T.
 
-	Therefore, if $w \in W(B_n)$ contains the consecutive pattern $\underline{1}23$, then $w$ has Property T or is a trivial T-avoiding element.
+	Therefore, if $w \in W(B_n)$ contains the consecutive pattern $\underline{1}23$, then $w$ has Property T or is a type I T-avoiding element.
 \end{proof}	
 \end{lemma}
 
 \begin{lemma}\label{lem:132}
-Let $w \in W(B_n)$ such that $w$ has the consecutive pattern $\underline{1}32$. Then either $w$ has Property T or is a trivial T-avoiding element.
+Let $w \in W(B_n)$ such that $w$ has the consecutive pattern $\underline{1}32$. Then either $w$ has Property T or is a type I T-avoiding element.
 \begin{proof}
 	Let $w \in W(B_n)$ such that $w$ has the consecutive pattern $\underline{1}32$.
 	
-	Case (1): Suppose $w$ has the signed permutation notation $w=[\underline{1}32]$. This implies that $w=s_0s_2$. Clearly, $w$ is a trivial T-avoiding element as it is a product of commuting generators.
+	Case (1): Suppose $w$ has the signed permutation notation $w=[\underline{1}32]$. This implies that $w=s_0s_2$. Clearly, $w$ is a type I T-avoiding element as it is a product of commuting generators.
 	
 	Case (2): Suppose that $w$ has the signed permutation notation $w=[\underline{a},b,c, \ast, \ldots, \ast]$ where $\underline{a}bc$ corresponds to the signed consecutive pattern $\underline{1}32$, and $\ast$ indicates unknown values for $w(i)$ for $i=4,5, \ldots n$. We now consider the possible signed consecutive pattern $bc \ast$. The following are the possibilities: $231$, $23 \underline{1}$, $13 2$, $13 \underline{2}$, $123$, or $12\underline{3}$. We know that $b$ and $c$ are positive, and we also know that $|b|<|c|$ by the original signed consecutive pattern. Note that by Lemmas~\ref{lem:sts},~\ref{lem:ts}, and~\ref{lem:endswiths0} all of these patterns imply that $w$ ends or begins with a product of noncommuting generators. Thus $w$ has Property T.
 	
@@ -246,18 +246,18 @@ Let $w \in W(B_n)$ such that $w$ has the consecutive pattern $\underline{1}32$. 
 	
 	Case (4): Suppose that $w$ has the signed permutation notation $w=[\ast, \ldots, \ast, \underline{a},b,c, \ast, \ldots, \ast]$ where $\underline{a}bc$ corresponds to the signed consecutive pattern $\underline{1}32$, and $\ast$ indicates unknown values for $w(i)$ for $w(i)\neq a,b,c$. In this case we can apply either Case (2) or Case (3) and we can conclude that $w$ ends or begins with a product of noncommuting generators. Thus $w$ has Property T.
 	
-	Therefore, if $w \in W(B_n)$ contains the consecutive pattern $\underline{1}32$, then $w$ has Property T or is a trivial T-avoiding element.
+	Therefore, if $w \in W(B_n)$ contains the consecutive pattern $\underline{1}32$, then $w$ has Property T or is a type I T-avoiding element.
 \end{proof}	
 \end{lemma}
 
 We now are ready to tackle one of the main results of this thesis.
 
 \begin{theorem}\label{thm:classificationofB}
-There are no non-trivial T-avoiding elements in $W(B_n)$.	
+There are no type II T-avoiding elements in $W(B_n)$.	
 
 
 \begin{proof}
-We proceed by contradiction. Suppose that $w \in W(B_n)$ is a non-trivial T-avoiding element. There are $2^3 \cdot 3!=48$ possible choices of signed consecutive patterns for $w(1)w(2)w(3)$ where $w=[w(1), w(2), w(3), \ast, \ldots, \ast]$. These 48 signed consecutive patterns are seen in the table below. We only consider these signed consecutive patterns in the first three entries of the signed permutation representation, \textcolor{green}{as} if we can eliminate all possibilities we have a contradiction to $w$ being a non-trivial T-avoiding element.
+We proceed by contradiction. Suppose that $w \in W(B_n)$ is a type II T-avoiding element. There are $2^3 \cdot 3!=48$ possible choices of signed consecutive patterns for $w(1)w(2)w(3)$ where $w=[w(1), w(2), w(3), \ast, \ldots, \ast]$. These 48 signed consecutive patterns are seen in the table below. We only consider these signed consecutive patterns in the first three entries of the signed permutation representation, \textcolor{green}{as} if we can eliminate all possibilities we have a contradiction to $w$ being a type II T-avoiding element.
 
 \begin{center}
 \begin{tabular}{|l|l|l|l|l|l|l|l|}
@@ -277,7 +277,7 @@ We proceed by contradiction. Suppose that $w \in W(B_n)$ is a non-trivial T-avoi
 \end{tabular}
 \end{center}
 
-We can use Lemma~\ref{lem:sts} and Corollary~\ref{lem:endswithsts} to eliminate the signed consecutive patterns highlighted in \textcolor{turq}{turquoise}. In addition, using Lemma~\ref{lem:st} and Corollary~\ref{lem:endswithst} to eliminate the signed consecutive patterns highlighted in \textcolor{red}{red}. From Lemma~\ref{lem:ts} and Corollary~\ref{lem:endswithts} we eliminate the consecutive patterns highlighted in \textcolor{ggreen}{green}.  Using Lemma~\ref{lem:endswiths0} and Corollary~\ref{lem:beginswiths0} we are able to eliminate the signed consecutive patterns highlighted in \textcolor{yellow}{yellow}. Also Lemma~\ref{lem:endswiths_1} and Corollary~\ref{lem:beginswiths1} show that $w$ will not have the signed consecutive patterns highlighted in \textcolor{brown}{brown}. We also use Lemma~\ref{lem:prodofcommA} to eliminate the signed consecutive patterns highlighted in \textcolor{blue}{blue}. From Lemmas~\ref{lem:231} and~\ref{lem:2312} we are able to eliminate signed consecutive patterns highlighted in \textcolor{purple}{purple}. Finally, we can use Lemmas~\ref{lem:123} and~\ref{lem:132} to eliminate signed consecutive patterns highlighted in \textcolor{orange2}{orange}. Since all of the above patterns are eliminated as possibilities for $w(1)w(2)w(3)$ and there are no other signed consecutive patterns that are possible for these positions, and hence $w$ is not a non-trivial T-avoiding element in the Coxeter group of type $B_n$.
+We can use Lemma~\ref{lem:sts} and Corollary~\ref{lem:endswithsts} to eliminate the signed consecutive patterns highlighted in \textcolor{turq}{turquoise}. In addition, using Lemma~\ref{lem:st} and Corollary~\ref{lem:endswithst} to eliminate the signed consecutive patterns highlighted in \textcolor{red}{red}. From Lemma~\ref{lem:ts} and Corollary~\ref{lem:endswithts} we eliminate the consecutive patterns highlighted in \textcolor{ggreen}{green}.  Using Lemma~\ref{lem:endswiths0} and Corollary~\ref{lem:beginswiths0} we are able to eliminate the signed consecutive patterns highlighted in \textcolor{yellow}{yellow}. Also Lemma~\ref{lem:endswiths_1} and Corollary~\ref{lem:beginswiths1} show that $w$ will not have the signed consecutive patterns highlighted in \textcolor{brown}{brown}. We also use Lemma~\ref{lem:prodofcommA} to eliminate the signed consecutive patterns highlighted in \textcolor{blue}{blue}. From Lemmas~\ref{lem:231} and~\ref{lem:2312} we are able to eliminate signed consecutive patterns highlighted in \textcolor{purple}{purple}. Finally, we can use Lemmas~\ref{lem:123} and~\ref{lem:132} to eliminate signed consecutive patterns highlighted in \textcolor{orange2}{orange}. Since all of the above patterns are eliminated as possibilities for $w(1)w(2)w(3)$ and there are no other signed consecutive patterns that are possible for these positions, and hence $w$ is not a type II T-avoiding element in the Coxeter group of type $B_n$.
 \end{proof}
 \end{theorem}
 

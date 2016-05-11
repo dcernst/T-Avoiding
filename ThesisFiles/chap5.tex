@@ -1,11 +1,11 @@
 \chapter{T-Avoiding Elements in Types $\widetilde{A}_n, A_n, D_n, F_n$, and $I_2(m)$}\label{chap:TandTavoid}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
-In this chapter we classify the T-avoiding elements of Coxeter systems of types $\widetilde{A}_n, A_n, D_n, F_n$ and $I_2(m)$.
+In this chapter we classify the T-avoiding elements of Coxeter systems of types $\widetilde{A}_n, A_n, D_n, F_n$, and $I_2(m)$.
 
 
 \section{Types $\widetilde{A}_n$ and $A_n$}\label{sec:tavoidA}
-In this section we state the already known classification regarding T-avoiding elements in Coxeter systems of type $\widetilde{A}_n$ and $A_n$. We first focus on $\tII$ elements in $W(\widetilde{A}_n)$.
+In this section we state the already known classification regarding T-avoiding elements in Coxeter systems of type $\widetilde{A}_n$ and $A_n$. We first focus on $W(\widetilde{A}_n)$.
 
 \begin{proposition}
  If $n \geq 2$ and $n$ is odd, then there are no $\tII$ elements in $W(\widetilde{A}_n)$. Otherwise, if $n \geq 2$ and $n$ is even, then $W(\widetilde{A}_n)$ contains $\tII$ elements.
@@ -18,27 +18,29 @@ In this section we state the already known classification regarding T-avoiding e
 
 %We will now proceed into the classification of T-avoiding elements in $W(\widetilde{A}_n)$. Similar to $W(A_n)$, $W(\widetilde{A}_n)$ will also have $\tI$ elements since $W(\widetilde{A}_n)$ contains elements that are products of commuting generators. We will now proceed to classifying $\tII$ elements in $W(\widetilde{A_n})$. The following classification is a result from~\cite{Fan1999}.
 
-The classification seen in~\cite{Fan1999} did not specifically classify the $\tII$ elements for type $\widetilde{A}_n$ for $n$ even. Since $W(\widetilde{A}_n)$ for $n$ even is not star reducible, the $\tII$ elements could be FC. The following is our conjecture regarding what the $\tII$ elements are in $W(\widetilde{A}_n)$ for $n$ even.
+The classification seen in~\cite{Fan1999} did not specifically classify the $\tII$ elements for type $\widetilde{A}_n$ for $n$ even. The following is our conjecture regarding what the $\tII$ elements are in $W(\widetilde{A}_n)$ for $n$ even.
 \begin{conjecture}
-	The only $\tII$ elements in $W(\widetilde{A}_n)$ for $n$ odd are of the form $\w=(s_0s_2 \cdots s_{n-2}s_ns_1s_3 \cdots s_{n-3}s_{n-1})^k$  for $k \in \mathbb{Z}^+$. 
+	The only $\tII$ elements in $W(\widetilde{A}_n)$ for $n$ odd are of the form $(s_0s_2 \cdots s_{n-2}s_ns_1s_3 \cdots s_{n-3}s_{n-1})^k$  for $k \in \mathbb{Z}^+$. 
 \end{conjecture} 
 
-Recall that $W(\widetilde{A}_n)$, for $n$ even, is not a star reducible Coxeter group. Hence it makes sense that the T-avoiding elements in $W(\widetilde{A}_n)$, for $n$ even, can be FC. Further, as $W(A_n)$ is a parabolic subgroup of $W(\widetilde{A}_n)$ and $W(A_n)$ is a star reducible Coxeter group, any FC $\tII$ elements must have full support. First notice that \[\w=(s_0s_2 \cdots s_{n-2}s_ns_1s_3 \cdots s_{n-3}s_{n-1})^k\] is a reduced product, FC, and has full support. In addition, $w$ is in fact T-avoiding. Since $W(\widetilde{A}_n)$ does not have a straight-line Coxeter graph, the heaps for $W(\widetilde{A}_n)$ are more appropriately viewed as three dimensional as a result providing visual representation for these heaps is difficult. However, we can envision the element above as a ``castle turret" in which every block is in the wall or as a sandwich stack that has been made circular and the holes that appeared in the sandwich stack when it was rolled have been patched with an appropriate generator. As stated in the conjecture we believe that these are the only $\tII$ elements. However, it is not immediately obvious that there are no $\tII$ elements in $W(\widetilde{A}_n)\setminus \FC(\widetilde{A}_n)$. Classifying these $\tII$ elements remains an open problem. We now proceed with the classification of T-avoiding elements in Coxeter groups of type $A_n$. 
+Recall that $W(\widetilde{A}_n)$, for $n$ even, is not a star reducible Coxeter group (Proposition~\ref{prop:starredcoxgrp}). Hence it is possible that the T-avoiding elements in $W(\widetilde{A}_n)$, for $n$ even, are FC. Further, as $W(A_n)$ is a parabolic subgroup of $W(\widetilde{A}_n)$ and $W(A_n)$ is a star reducible Coxeter group, any FC $\tII$ elements must have full support. First notice that 
+\[w=(s_0s_2 \cdots s_{n-2}s_ns_1s_3 \cdots s_{n-3}s_{n-1})^k\] 
+is a reduced product, is FC, and has full support. In addition, $w$ is in fact T-avoiding. Since $W(\widetilde{A}_n)$ does not have a straight-line Coxeter graph, the heaps in $W(\widetilde{A}_n)$ are more appropriately viewed as three-dimensional. We can envision the element above as a ``castle turret" in which every block is in the wall. As stated in the conjecture we believe that these are the only $\tII$ elements. However, it remains an open question as to whether there are any $\tII$ elements in $W(\widetilde{A}_n)\setminus \FC(\widetilde{A}_n)$. Classifying these $\tII$ elements remains an open problem. We now proceed with the classification of T-avoiding elements in Coxeter groups of type $A_n$. 
 
-\begin{corollary}
+\begin{theorem}
 There are no $\tII$ elements in $W(A_n)$. 
 \begin{proof}
-Notice that the Coxeter graph of type $A_n$ can be obtained from the Coxeter graph of type $\widetilde{A}_k$, for $k > n$. This is done by removing the appropriate number of vertices and edges from the Coxeter graph of type $\widetilde{A}_k$. Since $W(\widetilde{A}_k)$ for $k$ even has no $\tII$ elements this forces $W(A_n)$ to not have $\tII$ elements. Thus $W(A_n)$ does not have any $\tII$ elements.  
+Notice that the Coxeter graph of type $A_n$ can be obtained from the Coxeter graph of type $\widetilde{A}_k$, for $k > n$. This is done by removing the appropriate number of vertices and edges from the Coxeter graph of type $\widetilde{A}_k$. Since $W(\widetilde{A}_k)$ for $k$ even has no $\tII$ elements, this forces $W(A_n)$ to not have $\tII$ elements. Thus $W(A_n)$ does not have any $\tII$ elements.  
 %Since $W(A_n)$ is a parabolic subgroup of $W(\widetilde{A}_n)$ this is a consequence of~\cite[Proposition 3.1.2.]{Fan1999}. Specifically, we can obtain the Coxeter graph of type $A_n$ from the Coxeter graph of type $\widetilde{A}_n$ for $n$ even by removing the appropriate number of vertices and edges. From this we can see that if $W(A_n)$ was to have $\tII$ elements, this would imply that $W(\widetilde{A}_n)$ for $n$ even would also have $\tII$ elements as well. Thus $W(A_n)$ can not have bad elements.
 \end{proof}
-\end{corollary}
+\end{theorem}
 
 
 %%%%%%%%%%%%%%%%
 
 \section{Type $D_n$}
 
-In this section we summarize the already known classification of the T-avoiding elements in Coxeter systems of type $D_n$ seen in~\cite{Gern2013a}. Recall that $W(D_n)$ is a star reducible Coxeter group and as a result any potential $\tII$ elements are not FC.
+In this section we summarize the previously known classification of the T-avoiding elements in Coxeter systems of type $D_n$, seen in~\cite{Gern2013a}. Recall that $W(D_n)$ is a star reducible Coxeter group and as a result any potential $\tII$ elements are not FC.
 
 \begin{proposition}
  There are $\tII$ elements in $W(D_n)$ for $n \geq 4$.
@@ -47,7 +49,7 @@ In this section we summarize the already known classification of the T-avoiding 
 \end{proof}
 \end{proposition}
 
-We now will classify these elements as seen in~\cite{Gern2013a}. Before we do so we define interval notation useful to the classification from~\cite[Definition 2.3.1]{Gern2013a}. For $2 \leq i \leq j$ denote the element $s_{i}s_{i+1} \cdots s_{j-1}s_j$ by $[i,j]$. For $i \geq 3$, denote $s_1s_3s_4\cdots s_i$ by $[1,i]$ and for $j \geq 2$ denote $s_1s_2s_3 \cdots s_j$ by $[0,j]$. If $0 \leq j <i$ and $i \geq 2$ define $[j,i]=[i,j]^{-1}$. Finally, for $i \leq -3$ and $j \geq 3$ denote $s_is_{i-1}s_{i-2} \cdots s_4s_3s_2s_3s_4 \cdots s_j$ by $[-i,j]$. The following determines the classification for T-avoiding elements in $W(D_n)$. 
+We now will classify these elements as seen in~\cite{Gern2013a}. Before we do so we define interval notation useful to the classification from~\cite[Definition 2.3.1]{Gern2013a}. For $2 \leq i \leq j$ denote the element $s_{i}s_{i+1} \cdots s_{j-1}s_j$ by $[i,j]$. For $i \geq 3$, denote $s_1s_3s_4\cdots s_i$ by $[1,i]$ and for $j \geq 2$ denote $s_1s_2s_3 \cdots s_j$ by $[0,j]$. If $0 \leq j <i$ and $i \geq 2$ define $[j,i]=[i,j]^{-1}$. Finally, for $i,j \geq 3$ denote $s_is_{i-1}s_{i-2} \cdots s_4s_3s_1s_2s_3s_4 \cdots s_j$ by $[-i,j]$. The following determines the classification for T-avoiding elements in $W(D_n)$. 
 
 \begin{proposition}
 	Let $w \in W(D_n)$ be $\tII$. 
@@ -78,24 +80,24 @@ k=
 
 In Figure~\ref{fig:Dtavoid}, we see two different elements that are T-avoiding in $W(D_5)$. Notice that the blocks that are highlighted in \textcolor{rred}{red} alternate, this prevents the \textcolor{teal}{teal}-highlighted braid from forcing its way to the top or the bottom of the heap. Due to the fork in the graph we must make slight alterations to heaps for $W(D_n)$. Specifically we allow $s_0$ and $s_1$ to occupy the same horizontal placement. 
 
-\begin{figure}[h!]
-\begin{tabular}{m{7cm} m{7cm}}
-\begin{subfigure}{0.5\textwidth} \centering
-\begin{tikzpicture}[scale=0.5]
-	\heapblock{1}{10}{}{white}
-	\heapblock{1}{12}{}{white}
-	\heapblock{1}{0}{}{white}
-	\heapblock{1}{8}{1}{rred}
-	\heapblock{3}{8}{3}{teal}
-	\heapblock{2}{6}{2}{teal}
-	\heapblock{1}{4}{0}{rred}
-	\heapblock{3}{4}{3}{teal}
-\end{tikzpicture}	
-\caption{}
-\end{subfigure} &
+\begin{figure}[h!]\centering
+%\begin{tabular}{m{7cm} m{7cm}}
+%\begin{subfigure}{0.5\textwidth} \centering
+%\begin{tikzpicture}[scale=0.45]
+%	\heapblock{1}{10}{}{white}
+%	\heapblock{1}{12}{}{white}
+%	\heapblock{1}{0}{}{white}
+%	\heapblock{1}{8}{1}{rred}
+%	\heapblock{3}{8}{3}{teal}
+%	\heapblock{2}{6}{2}{teal}
+%	\heapblock{1}{4}{0}{rred}
+%	\heapblock{3}{4}{3}{teal}
+%\end{tikzpicture}	
+%\caption{}
+%\end{subfigure} &
 
-\begin{subfigure}{0.5\textwidth} \centering
-\begin{tikzpicture}[scale=0.5]
+%\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=0.45]
 	\heapblock{1}{12}{0}{rred}
 	\heapblock{3}{12}{3}{purple}
 	\heapblock{5}{12}{5}{purple}
@@ -112,9 +114,9 @@ In Figure~\ref{fig:Dtavoid}, we see two different elements that are T-avoiding i
 	\heapblock{3}{0}{3}{purple}
 	\heapblock{5}{0}{5}{purple}
 \end{tikzpicture}
-\caption{}	
-\end{subfigure}
-\end{tabular}
+%\caption{}	
+%\end{subfigure}
+%\end{tabular}
 \caption{Visual representation of $\tII$ elements in $W(D_5)$.}\label{fig:Dtavoid}
 \end{figure}
 
@@ -122,14 +124,14 @@ In Figure~\ref{fig:Dtavoid}, we see two different elements that are T-avoiding i
 
 \section{Type $F_n$}
 
-In this section we state the known but unpublished classification of T-avoiding elements in Coxeter systems of type $F_n$ for $n \geq 4$. Note that these results are not needed in Chapters~\ref{chap:BnandCn} and~\ref{chap:Cn}. %Note that all of the following results are unpublished. %Recall that $W(F_n)$ is a star reducible Coxeter group so any $\tII$ element in $W(F_n)$ will not be FC.
+In this section we state the known but unpublished classification of T-avoiding elements in Coxeter systems of type $F_4$ and $F_5$. Note that these results are not needed in Chapters~\ref{chap:BnandCn} and~\ref{chap:Cn}. %Note that all of the following results are unpublished. %Recall that $W(F_n)$ is a star reducible Coxeter group so any $\tII$ element in $W(F_n)$ will not be FC.
 
-We start with the Coxeter system of type $F_5$.  Recall that $W(F_5)$ is a star reducible Coxeter group so any $\tII$ elements will not be FC. Before we begin the classification we introduce the notion of a specific element in $W(F_5)$ called a \emph{bowtie}, which is given by the heap in Figure~\ref{fig:singbowtie}. Note that in Figure~\ref{fig:singbowtie4}, the \textcolor{orange}{orange} blocks correspond to the elements that have bond strength 4. It turns out that the expression determined by this heap is in fact reduced. Looking at the heap in Figure~\ref{fig:singbowtiebraid}, we have highlighted a braid in \textcolor{teal}{teal}. We can obtain a ``stack of bowties" by removing the top most layer of the given heap of the bowtie and adding a new single bowtie to the stack. Doing this repeatedly results in the heap seen in Figure~\ref{fig:stackobowties}. Similar to a single bowtie, the expression that corresponds to a stack of bowties is reduced and not FC. These heaps are referenced in the following unpublished theorem by Cross, Ernst, Hills-Kimball, and Quaranta in 2012, which classifies the T-avoiding elements in the Coxeter systems of type $F_5$.
+We start with the Coxeter system of type $F_5$.  Recall that $W(F_5)$ is a star reducible Coxeter group so any $\tII$ elements will not be FC. Before we begin the classification we introduce the notion of a specific element in $W(F_5)$ called a \emph{bowtie}, which is given by the heap in Figure~\ref{fig:singbowtie}. Note that in Figure~\ref{fig:singbowtie4}, the \textcolor{orange}{orange} blocks correspond to the elements that have bond strength 4. It turns out that the expression determined by this heap is in fact reduced. Looking at the heap in Figure~\ref{fig:singbowtiebraid}, we have highlighted a braid in \textcolor{teal}{teal}. We can obtain a ``stack of bowties" by removing the top-most layer of the given heap of the bowtie and adding a new bowtie to the stack. Doing this repeatedly results in the heap seen in Figure~\ref{fig:stackobowties}. Similar to a single bowtie, the expression that corresponds to a stack of bowties is reduced and not FC. These heaps are referenced in the following unpublished theorem by Cross, Ernst, Hills-Kimball, and Quaranta (2012), which classifies the T-avoiding elements in the Coxeter systems of type $F_5$.
 
 \begin{figure*}[h!]
 \begin{tabular}{m{7cm} m{7cm}}
 \begin{subfigure}{0.5\textwidth} \centering
-\begin{tikzpicture}[scale=0.5]
+\begin{tikzpicture}[scale=0.45]
 	\heapblock{1}{10}{1}{purple}
 	\heapblock{3}{10}{3}{orange}
 	\heapblock{5}{10}{5}{purple}
@@ -146,7 +148,7 @@ We start with the Coxeter system of type $F_5$.  Recall that $W(F_5)$ is a star 
 \end{subfigure}&
 
 \begin{subfigure}{0.5\textwidth}\centering
-\begin{tikzpicture}[scale=0.5]
+\begin{tikzpicture}[scale=0.45]
 	\heapblock{1}{10}{1}{purple}
 	\heapblock{3}{10}{3}{purple}
 	\heapblock{5}{10}{5}{purple}
@@ -166,7 +168,7 @@ We start with the Coxeter system of type $F_5$.  Recall that $W(F_5)$ is a star 
 \end{figure*}
 
 \begin{figure*}[h!] \centering
-\begin{tikzpicture}[scale=0.5]
+\begin{tikzpicture}[scale=0.45]
 \heapblock{1}{10}{1}{purple}
 	\heapblock{3}{10}{3}{orange}
 	\heapblock{5}{10}{5}{purple}
@@ -209,19 +211,19 @@ The only $\tII$ elements in $W(F_5)$ are stacks of bowties. \qed
 \end{proposition}
 
 
-As a result of the classification in type $F_5$, Cross et al. were also able to classify the T-avoiding elements in $W(F_4)$. 
+As a result of the classification in type $F_5$, Cross et al.~were also able to classify the T-avoiding elements in $W(F_4)$. 
 
 \begin{corollary}
-There are no $\tII$ elements in the Coxeter system of type $F_4$. \qed	
+There are no $\tII$ elements in the Coxeter system of type $F_4$. 
 \begin{proof}
 	Since there are no $\tII$ elements in $W(F_5)$ that do not have full support, we know that there are not any $\tII$ elements in $W(F_4)$. Because if there were $\tII$ elements they would also be $\tII$ in $W(F_5)$.
 \end{proof}
 \end{corollary}
 
-Cross et al. conjectured that in Coxeter systems of type $F_n$ for $n \geq 5$, an element is $\tII$ if and only if it is a stack of bowties multiplied by a product of commuting generators. In 2013, Gilbertson and Ernst worked with this conjecture and quickly found it to be false. The heap seen in Figure~\ref{fig:f6bat} corresponds to a $\tII$ element in the Coxeter group of type $F_6$ that is not a bowtie. It turns out that like the bowties discussed above these elements can also be stacked to create an infinite number of $\tII$ elements. In addition, as $n$ gets large there are a number of modifications that can be made that result in additional $\tII$ elements. From this we conjecture that the classification of T-avoiding elements in Coxeter systems of type $F_n$ for $n \geq 6$ gets complicated very quickly. Classifying T-avoiding elements in $W(F_n)$ for $n \geq 6$ remains an open problem. 
+Cross et al.~conjectured that in Coxeter systems of type $F_n$ for $n \geq 5$, an element is $\tII$ if and only if it is a stack of bowties multiplied by a product of commuting generators. In 2013, Gilbertson and Ernst worked with this conjecture and quickly found it to be false. The heap seen in Figure~\ref{fig:f6bat} corresponds to a $\tII$ element in the Coxeter group of type $F_6$ that is not a bowtie. It turns out that like the bowties discussed above these elements can also be stacked to create an infinite number of $\tII$ elements. In addition, as $n$ gets large there are a number of modifications that can be made that result in additional $\tII$ elements. From this we conjecture that the classification of T-avoiding elements in Coxeter systems of type $F_n$ for $n \geq 6$ gets complicated very quickly. Classifying T-avoiding elements in $W(F_n)$ for $n \geq 6$ remains an open problem. 
 
 \begin{figure}[h!]\centering
-\begin{tikzpicture}[scale=0.5]
+\begin{tikzpicture}[scale=0.45]
 	\heapblock{2}{10}{2}{orange}
 	\heapblock{4}{10}{4}{purple}
 	\heapblock{6}{10}{6}{purple}
@@ -249,11 +251,11 @@ Cross et al. conjectured that in Coxeter systems of type $F_n$ for $n \geq 5$, a
 
 \section{Type $I_2(m)$}\label{sec:tavoidI}
 
-In this section, we next classify the T-avoiding elements in Coxeter systems of type $I_2(m)$. Note that in Coxeter systems of type $I_2(m)$, the only products of commuting generators have length 1. Although the following is a quick result, we believe that it does not already appear in the literature.
-\begin{theorem}
+In this section, we classify the T-avoiding elements in Coxeter systems of type $I_2(m)$. Note that in Coxeter systems of type $I_2(m)$, the only products of commuting generators have length 1. Although the following is a quick result, we believe that it does not already appear in the literature.
+\begin{theorem}\label{thm:i2m}
 There are no $\tII$ elements in Coxeter systems of type $I_2(m)$.
 \begin{proof}
-	The graph for the Coxeter system of $I_2(m)$ appears in Figure~\ref{fig:I}. Note that the graph consists of two vertices, namely, $s_1$ and $s_2$, and a single edge with weight $m$. Also, recall that $W(I_2(m))$ is a star reducible Coxeter group. This implies that any $\tII$ elements in $W(I_2(m))$ must not be FC, as all of the FC elements have Property T or are $\tI$. The only non-FC element in $W(I_2(m))$ is the element of length $m$ that has exactly two reduced expressions consisting of alternating products of $s_1$ and $s_2$. Cleary, this element begins and ends with a product of noncommuting generators. Thus, this element has Property T. Hence $W(I_2(m))$ has no $\tII$ elements. 
+	The graph for the Coxeter system of $I_2(m)$ appears in Figure~\ref{fig:I}. Note that the graph consists of two vertices, namely, $s_1$ and $s_2$, and a single edge with weight $m$. Also, recall that $W(I_2(m))$ is a star reducible Coxeter group. This implies that any $\tII$ elements in $W(I_2(m))$ must not be FC, as all of the FC elements have Property T or are $\tI$. The only non-FC element in $W(I_2(m))$ is the element of length $m$ that has exactly two reduced expressions consisting of alternating products of $s_1$ and $s_2$. Cleary, this element begins and ends with a product of non-commuting generators. Thus, this element has Property T. Hence $W(I_2(m))$ has no $\tII$ elements. 
 \end{proof}	
 \end{theorem}
  

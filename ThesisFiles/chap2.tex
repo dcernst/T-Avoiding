@@ -1,23 +1,21 @@
 \chapter{T-Avoiding Elements in Type $B_n$}\label{chap:BnandCn}
 
-In this chapter we classify the T-avoiding elements in Coxeter systems of type $B_n$, a new result. We start by introducing some combinatorial tools for type $B_n$ and then finish with a proof of the classification in type $B_n$. Note that the proof for Coxeter systems of type $B_n$ closely follows the classification of T-avoiding elements of type $D_n$ seen in~\cite{Gern2013a}. 
+In this chapter we classify the T-avoiding elements in Coxeter systems of type $B_n$, which is an original result. We start by introducing some combinatorial tools for type $B_n$ and then finish with a proof of the classification in type $B_n$. Note that the proof for Coxeter systems of type $B_n$ closely follows the classification of T-avoiding elements of type $D_n$ seen in~\cite{Gern2013a}. 
 
 \section{Tools for the Classification}\label{sec:Btools}
 
-Recall from Example~\ref{ex:B} that $W(B_n) \cong \Sym_n^B$ (also called the hyperoctahedral group). We define $\Sym_n^B$ to be the group of all bijections $w$ of the set $\{-n, \ldots, 0, 1, 2, \ldots, n\}$ in itself such that 
-\[w(-a)=-w(a)\] for all $a \in \{-n, -n-1, \ldots, 0, 1, 2, \ldots, n\}$ where the group operation is composition. For $w \in \Sym_n^B$ we write $w=[a_1, a_2, \ldots, a_n]$, to mean that $w(i)=a_i$ for $i \in \{1,2, \ldots n\}$ and call this the signed permutation notation of $w$. That is we can write $w \in W(B_n)$ using signed permutation notation 
+Recall from Example~\ref{ex:B} that $W(B_n) \cong \Sym_n^B$ (also called the hyperoctahedral group). We define $\Sym_n^B$ to be the group of all bijections $w$ of the set $\{-n, \ldots, -1, 0, 1, 2, \ldots, n\}$ such that 
+\[w(-a)=-w(a)\] for all $a \in \{-n, \ldots, -1, 0, 1, 2, \ldots, n\}$. For $w \in \Sym_n^B$ we write $w=[a_1, a_2, \ldots, a_n]$, to mean that $w(i)=a_i$ for $i \in \{1,2, \ldots n\}$ and call this the signed permutation notation of $w$. That is, we can write $w \in W(B_n)$ using signed permutation notation 
 \[ w=[w(1),w(2), \ldots, w(n-1), w(n)], \]
 where we write a bar underneath a number in place of a negative sign in order to simplify notation. 
 
-As a set of generators for $\Sym_n^B$ we take $S_B=\{s_1,s_2, \ldots, s_{n-1},s_0\}$, where for each $i \in \{1,2,\ldots n-1\}$, we have
+As a set of generators for $\Sym_n^B$ we take $S_B=\{s_0,s_1,s_2, \ldots, s_{n-1}\}$, where for each $i \in \{1,2,\ldots n-1\}$, we have
 \[s_i=[1,2, \ldots i-1, i+1,i,i+2, \ldots, n-1,n] \] and we identify $s_0$ with
-\[s_0=[\underline{1}, 2 \ldots, n].\] Further $w(-i)=-w(i)$ for $|i| \in \{1,2, \ldots, n\}$. The following propositions provide insight into what happens to a given one-line notation when we multiply by $s_i$ on the right or the left.
+\[s_0=[\underline{1}, 2 \ldots, n].\] Further $w(-i)=-w(i)$ for $|i| \in \{1,2, \ldots, n\}$. The following propositions provide insight into what happens to a given signed permutation when we multiply by $s_i$ on the right or the left.
 
 \begin{proposition}
 	Let $w \in W(B_n)$ with corresponding signed permutation 
-	\[w=[w(1),w(2), \ldots ,w(n)].\]
-	
-	Suppose $s_i \in S(B_n)$. If $i \geq 1$, then multiplying $w$ on the right by $s_i$ has the effect of interchanging $w(i)$ and $w(i+1)$ in  the signed permutation notation. If $i=0$, then multiplying $w$ on the right by $s_i$ has the effect of switching the sign of $w(1)$. 	
+	\[w=[w(1),w(2), \ldots ,w(n)].\] Suppose $s_i \in S(B_n)$. If $i \geq 1$, then multiplying $w$ on the right by $s_i$ has the effect of interchanging $w(i)$ and $w(i+1)$ in  the signed permutation notation. If $i=0$, then multiplying $w$ on the right by $s_i$ has the effect of switching the sign of $w(1)$. 	
 	\begin{proof}
 	This follows from~\cite[Section 8.1 and A3.1]{Bjorner2005}.	
 	\end{proof}
@@ -25,9 +23,7 @@ As a set of generators for $\Sym_n^B$ we take $S_B=\{s_1,s_2, \ldots, s_{n-1},s_
 
 \begin{proposition}
 Let $w \in W(B_n)$ with corresponding signed permutation 
-	\[w=[w(1),w(2), \ldots ,w(n)].\]
-	
-	Suppose $s_i \in S(B_n)$. If $i \geq 1$, then multiplying on the left by $s_i$ has the effect of interchanging the entries whose absolute values are $i$ and $i+1$ in the signed permutation notation. If $i=0$, then multiplying $w$ on the left by $s_i$ has the effect of switching the sign of the entry whose absolute value is $1$.
+	\[w=[w(1),w(2), \ldots ,w(n)].\] Suppose $s_i \in S(B_n)$. If $i \geq 1$, then multiplying on the left by $s_i$ has the effect of interchanging the entries whose absolute values are $i$ and $i+1$ in the signed permutation notation. If $i=0$, then multiplying $w$ on the left by $s_i$ has the effect of switching the sign of the entry whose absolute value is $1$.
 	\begin{proof}
 	This follows from~\cite[Section 8.1 and A3.1]{Bjorner2005}.	
 	\end{proof}
@@ -38,7 +34,7 @@ Suppose $w \in W(B_n)$ has reduced expression $\w=s_{x_1}s_{x_2}\cdots s_{x_n}$.
 \begin{example}
 Let $w \in W(B_6)$ with a given reduced expression $\w=s_0s_1s_3s_4s_5s_2$. Then we iteratively build the signed permutation as follows. First, $s_0=[\underbar{1},2,3,4,5,6]$ by definition. Next $s_0s_1=[2,\underbar{1},3,4,5,6]$ since multiplying by $s_1$ on the right hand side switches the values in position 1 and position 2. Repeating this we get $s_0s_1s_3=[2,\underbar{1},4,3,5,6]$ and ultimately we end with $w=[2,4,\underbar{1},5,6,3]$. 
 
-Notice that if we were to construct the signed permutation for $w$ from right to left, we would start with $s_2=[1,3,2,4,5,6]$. Next we would have $s_5s_2=[1,3,2,4,6,5]$. However, $s_4s_5s_2=[1,3,2,5,6,4]$. Notice this time we were not able to just switch $w(i)$ and $w(i+1)$ instead we found $4$ and $5$ and switched their relative positions, which is more difficult than constructing the signed permutation notation notation left to right, which is why we choose to construct left to right.
+%Notice that if we were to construct the signed permutation for $w$ from right to left, we would start with $s_2=[1,3,2,4,5,6]$. Next we would have $s_5s_2=[1,3,2,4,6,5]$. However, $s_4s_5s_2=[1,3,2,5,6,4]$. Notice this time we were not able to just switch $w(i)$ and $w(i+1)$ instead we found $4$ and $5$ and switched their relative positions, which is more difficult than constructing the signed permutation notation notation left to right, which is why we choose to construct left to right.
 \end{example}
 
 Given the signed permutation notation for an element $w \in W(B_n)$ we can easily calculate the left and right descent sets of $w$. The following proposition explains how.
@@ -52,74 +48,74 @@ where $w(0)=0$ by definition.
 \end{proof}
 \end{proposition}
 
-We now will introduce the concept of signed pattern avoidance, which will help with the classification of the T-avoiding elements in Coxeter systems of type $B_n$. Our approach mimics the one found in~\cite{Gern2013a}. Let $w \in W(B_n)$, and let $a,b,c \in \mathbb{Z}$. We say that $w$ \emph{contains the signed consecutive pattern} $abc$ if there is some $i \in \{1,2, \ldots, n-2\}$ such that $(|w(i)|,|w(i+1)|,|w(i+2)|)$ is in the same relative order as $(|a|,|b|,|c|)$ and $\sgn(w(i))=\sgn(a), \sgn(w(i+1))=\sgn(b)$, and $\sgn(w(i+2))=\sgn(c)$, where typically one takes $\{a,b,c\}=\{\pm1,\pm2,\pm3\}$
-. We say that $w$ \emph{avoids the signed consecutive pattern} $abc$ if there is no $i \in \{1,2, \ldots, n-2\}$ such that $\left(|w(i)|, |w(i+1)|, |w(i+2)|\right)$ is in the same consecutive order as $\left(|a|, |b|, |c| \right)$ and such that $\sgn(w(i))=\sgn(a)$, $\sgn(w(i+1))=\sgn(b)$, and $\sgn(w(i+2))=\sgn(c)$.
+We now will introduce the concept of signed pattern avoidance, which will help with the classification of the T-avoiding elements in Coxeter systems of type $B_n$. Our approach mimics the one found in~\cite{Gern2013a}. Let $w \in W(B_n)$, and let $a,b,c \in \mathbb{Z}$. We say that $w$ \emph{contains the signed consecutive pattern} $abc$ if there is some $i \in \{1,2, \ldots, n-2\}$ such that $(|w(i)|,|w(i+1)|,|w(i+2)|)$ is in the same relative order as $(|a|,|b|,|c|)$ and $\sgn(w(i))=\sgn(a), \sgn(w(i+1))=\sgn(b)$, and $\sgn(w(i+2))=\sgn(c)$, where typically one takes $a,b,c$ from to be a subset of the set $\{\pm1,\pm2,\pm3\}$. We say that $w$ \emph{avoids the signed consecutive pattern} $abc$ if there is no $i \in \{1,2, \ldots, n-2\}$ such that $\left(|w(i)|, |w(i+1)|, |w(i+2)|\right)$ is in the same consecutive order as $\left(|a|, |b|, |c| \right)$ and such that $\sgn(w(i))=\sgn(a)$, $\sgn(w(i+1))=\sgn(b)$, and $\sgn(w(i+2))=\sgn(c)$.
 
 \begin{example}
 Let $w \in W(B_4)$ with signed permutation \[w=[\underline{2},4, \underline{1}, 3].\] We see that $w$ has the signed consecutive pattern $\underline{2} 3 \underline{1}$, since $(|w(1)|, |w(2)|, |w(3)|)$ are in the same relative order as $(|-2|, |3|, |-1|)$, and $\sgn(w(1))=\sgn(-2)$, $\sgn(w(2))=\sgn(3)$, and $\sgn(w(3))=\sgn(-1)$. However, $w$ avoids the signed consecutive pattern $1\underline{2}3$.
 \end{example}
 
-Occasionally, we will need to factor $w \in W(B_n)$ in a specific manner. Let $I=\{s,t\}$ for $s, t \in S(B_n)$. Define $W^I$ as the set of all $w \in W(B_n)$ such that $\LD(w) \cap I= \emptyset$ and define $W_I=\langle s,t \rangle$. In~\cite{Humphreys1990}, it is shown that any element $w \in W(B_n)$ can be written as $w=w^Iw_I$ reduced where $w_I \in W_I$ and $w^I \in W^I$.
+Occasionally, we will need to factor $w \in W(B_n)$ in a specific manner. Let $I=\{s,t\}$ for $s, t \in S(B_n)$ such that $s$ and $t$ do not commute. Define $W^I$ as the set of all $w \in W(B_n)$ such that $\LD(w) \cap I= \emptyset$ and define $W_I=\langle s,t \rangle$. In~\cite{Humphreys1990}, it is shown that any element $w \in W(B_n)$ can be written as $w=w^Iw_I$ (reduced) where $w^I \in W^I$ and $w_I \in W_I$.
 %%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Classification of T-Avoiding Elements in Type $B_n$}\label{sec:TAB}
 
 %\textcolor{red}{Time permitting we will streamline the corollaries into the lemmas themselves or as a remark at the end of the lemmas}
 
-In this section we will classify the T-avoiding elements in Coxeter systems of type $B_n$. Our main result in this section is Theorem~\ref{thm:classificationofB}. Notice that if $n=2$, $W(B_2) \cong I_2(4)$, which by Section~\ref{sec:tavoidI} we know has no $\tII$ elements. We proceed for $n \geq 3$. First we need some preparatory lemmas. 
+In this section we classify the T-avoiding elements in Coxeter systems of type $B_n$. Our main result in this section is Theorem~\ref{thm:classificationofB}. Notice that if $n=2$, $W(B_2) \cong I_2(4)$, which by Theorem~\ref{thm:i2m} we know has no $\tII$ elements. We proceed with $n \geq 3$. First we need some preparatory lemmas. 
 
 \begin{lemma}\label{lem:sts}
-Let $s,t \in S(B_n)$ such that $m(s,t)=3$. Then $w$ has a reduced expression ending in $sts$ if and only if $w$ has the consecutive pattern $321$.
+Let $s_i,s_{i+1} \in S(B_n)$ such that $m(s_i,s_{i+1})=3$. Then $w$ has a reduced expression ending in $s_is_{i+1}s_i$ if and only if $w$ contains the consecutive pattern $321$.
 \begin{proof}
 	Let $i \geq 1$, $I=\{s_i,s_{i+1}\}$ and write $w=w^Iw_I$. Note that since $m(s_i,s_{i+1})=3$, $s_0 \notin I$. Observe that if $w$ has a reduced expression ending in the product of two non-commuting generators $s_is_{i+1}$ or $s_{i+1}s_i$, then we have $w_I \in \{s_is_{i+1}, s_{i+1}s_i, s_is_{i+1}s_i=s_{i+1}s_is_{i+1}\}$.
 	
-	Suppose $w$ has the consecutive pattern $321$. Then there is some $i$ such that $w(i) > w(i+1) > w(i+2)$. By Proposition~\ref{prop:descent}, $s_i,s_{i+1} \in \mathcal{R}(w)$. Since $m(s_i,s_{i+1})=3$ and $s_i, s_{i+1} \in \RD(w)$, $w$ ends in $s_is_{i+1}s_{i}$ or $s_{i+1}s_is_{i+1}$.
+	Suppose $w$ contains the consecutive pattern $321$. Then there is some $i$ such that $w(i) > w(i+1) > w(i+2)$. By Proposition~\ref{prop:descent}, $s_i,s_{i+1} \in \mathcal{R}(w)$. Since $m(s_i,s_{i+1})=3$ and $s_i, s_{i+1} \in \RD(w)$, $w$ ends in $s_is_{i+1}s_{i}$ or $s_{i+1}s_is_{i+1}$.
 	
-	Conversely, suppose $w$ ends in $s_is_{i+1}s_i$. This implies that either $w_I=s_is_{i+1}s_i$ or $w_I=s_{i+1}s_is_{i+1}$ which implies that $s_i,s_{i+1} \in \mathcal{R}(w)$. Since $s_i,s_{i+1} \in \mathcal{R}(w)$, we see that $w(i)>w(i+1)>w(i+2)$ by Proposition~\ref{prop:descent}. Thus $w$ has the consecutive pattern 321.
-	Therefore, $w$ has a reduced expression ending in $sts$ if and only if $w$ has the consecutive pattern $321$. 
+	Conversely, suppose $w$ has a reduced expression ending in $s_is_{i+1}s_i$. This implies that either $w_I=s_is_{i+1}s_i$ or $w_I=s_{i+1}s_is_{i+1}$ which implies that $s_i,s_{i+1} \in \mathcal{R}(w)$. Since $s_i,s_{i+1} \in \mathcal{R}(w)$, we see that $w(i)>w(i+1)>w(i+2)$ by Proposition~\ref{prop:descent}. Thus $w$ contains the consecutive pattern 321.
+	
+	Therefore, $w$ has a reduced expression ending in $s_is_{i+1}s_i$ if and only if $w$ contains the consecutive pattern $321$. 
 \end{proof}	
 \end{lemma}
 
 \begin{corollary}\label{lem:endswithsts}
-	Let $s,t \in S(B_n)$ such that $m(s,t)=3$. Then $w$ has a reduced expression beginning with $sts$ if and only if $w^{-1}$ has the consecutive pattern $321$.
+	Let $s_i,s_{i+1} \in S(B_n)$ such that $m(s_i,s_{i+1})=3$. Then $w$ has a reduced expression beginning with $s_is_{i+1}s_i$ if and only if $w^{-1}$ contains the consecutive pattern $321$.
 	\begin{proof}
-		Let $s,t \in S(B_n)$ such that $m(s,t)=3$ and $s_0 \notin\{s,t\}$. We know that $w$ has no reduced expressions beginning with $sts$ if and only if $w^{-1}$ has no reduced expression ending with $sts$ which by Theorem~\ref{lem:endswithsts} happens only if $w^{-1}$ avoids the consecutive pattern $321$.
+		Let $s_i,s_{i+1} \in S(B_n)$ such that $m(s_i,s_{i+1})=3$ and $s_0 \notin\{s_i,s_{i+1}\}$. We know that $w$ has no reduced expressions beginning with $s_is_{i+1}s_i$ if and only if $w^{-1}$ has no reduced expression ending with $s_is_{i+1}s_i$ which by Lemma~\ref{lem:sts} happens only if $w^{-1}$ avoids the consecutive pattern $321$.
 	\end{proof}
 \end{corollary}
 
 \begin{lemma}\label{lem:ts}
-If $i \neq 0$, then $w$ has a reduced expression ending in $s_is_{i+1}$ if and only if $w$ has the consecutive pattern $231$.
+Let $s_i,s_{i+1} \in S(B_n)$ such that $m(s_i,s_{i+1})=3$. Then $w$ has a reduced expression ending in $s_is_{i+1}$ if and only if $w$ contains the consecutive pattern $231$.
 \begin{proof}	
-	Suppose that $w$ has the consecutive pattern $231$. Then there is some $i$ such that $w(i+1)>w(i)>w(i+2)$. By Proposition~\ref{prop:descent}, $s_{i+1} \in \mathcal{R}(w)$. Now multiplying on the right by $s_{i+1}$ we see that $ws_{i+1}(i+1)=w(i+2)$ and $ws_{i+1}(i)=w(i)$. We know that $w(i+2)<w(i)$, which implies that $s_i \in \mathcal{R}(ws_{i+1})$, and hence $w$ has a reduced expression that ends in $s_is_{i+1}$.
+	Suppose that $w$ contains the consecutive pattern $231$. Then there is some $i$ such that $w(i+1)>w(i)>w(i+2)$. By Proposition~\ref{prop:descent}, $s_{i+1} \in \mathcal{R}(w)$. Now multiplying on the right by $s_{i+1}$ we see that $ws_{i+1}(i+1)=w(i+2)$ and $ws_{i+1}(i)=w(i)$. We know that $w(i+2)<w(i)$, which implies that $s_i \in \mathcal{R}(ws_{i+1})$, and hence $w$ has a reduced expression that ends in $s_is_{i+1}$.
 	
-	 Conversely, suppose that $w$ has a reduced expression ending in $s_is_{i+1}$. Then $w(i+2)<w(i+1)$ and $w(i)<w(i+1)$. Since $s_i \in \mathcal{R}(ws_{i+1})$ we have $w(i+2)=ws_{i+1}(i+1)<ws_{i+1}(i)=w(i)$. Thus we have that $w(i+1) > w(i) > w(i+2)$. Hence $w$ has the consecutive pattern 231.
+	 Conversely, suppose that $w$ has a reduced expression ending in $s_is_{i+1}$. Then $w(i+2)<w(i+1)$ and $w(i)<w(i+1)$. Since $s_i \in \mathcal{R}(ws_{i+1})$ we have $w(i+2)=ws_{i+1}(i+1)<ws_{i+1}(i)=w(i)$. Thus we have that $w(i+1) > w(i) > w(i+2)$. Hence $w$ contains the consecutive pattern 231.
 	
-	Therefore, $w$ has a reduced expression ending in $s_is_{i+1}$ if and only if $w$ has the consecutive pattern $231$.
+	Therefore, $w$ has a reduced expression ending in $s_is_{i+1}$ if and only if $w$ contains the consecutive pattern $231$.
 \end{proof}	
 \end{lemma}
 
 \begin{corollary}\label{lem:endswithst}
-	If $i \neq 0$, then $w$ has a reduced expression beginning with $s_is_{i+1}$ if and only if $w^{-1}$ has the consecutive pattern $231$.
+	Let $s_i,s_{i+1} \in S(B_n)$ such that $m(s_i,s_{i+1})=3$. Then $w$ has a reduced expression beginning with $s_is_{i+1}$ if and only if $w^{-1}$ contains the consecutive pattern $231$.
 	\begin{proof}
-		Let $s_i,s_{i+1} \in S(B_n)$ such that $m(s_i,s_{i+1})=3$ and $s_0 \notin\{s_i,s_{i+1}\}$. We know that $w$ has no reduced expressions beginning with $s_is_{i+1}$ if and only if $w^{-1}$ has no reduced expression ending with $s_is_{i+1}$ which by Theorem~\ref{lem:endswithsts} happens only if $w^{-1}$ avoids the consecutive pattern $231$.
+		Let $s_i,s_{i+1} \in S(B_n)$ such that $m(s_i,s_{i+1})=3$ and $s_0 \notin\{s_i,s_{i+1}\}$. We know that $w$ has no reduced expressions beginning with $s_is_{i+1}$ if and only if $w^{-1}$ has no reduced expression ending with $s_is_{i+1}$ which by Lemma~\ref{lem:ts} happens only if $w^{-1}$ avoids the consecutive pattern $231$.
 	\end{proof}
 \end{corollary}
 
 \begin{lemma}\label{lem:st}
-If $i \neq 0$, then $w$ has a reduced expression ending in $s_{i+1}s_i$ if and only if $w$ has the consecutive pattern $312$.
+Let $s_i,s_{i+1} \in S(B_n)$ such that $m(s_i,s_{i+1})=3$. Then $w$ has a reduced expression ending in $s_{i+1}s_i$ if and only if $w$ contains the consecutive pattern $312$.
 \begin{proof}
-	Suppose that $w$ has the consecutive pattern $312$.  Then there is some $i$ such that $w(i)>w(i+2)>w(i+1)$. By Proposition~\ref{prop:descent} we see that $s_i \in \mathcal{R}(w)$. Multiplying on the right by $s_i$ we get $ws_i(i+1)=w(i)$ and $ws_i(i+2)=w(i+2)$. By above $w(i)>w(i+2)$, and by Proposition~\ref{prop:descent} $s_{i+1} \in \mathcal{R}(ws_i)$. This implies that $w$ has a reduced expression ending in $s_{i+1}s_i$. 
+	Suppose that $w$ contains the consecutive pattern $312$.  Then there is some $i$ such that $w(i)>w(i+2)>w(i+1)$. By Proposition~\ref{prop:descent} we see that $s_i \in \mathcal{R}(w)$. Multiplying on the right by $s_i$ we get $ws_i(i+1)=w(i)$ and $ws_i(i+2)=w(i+2)$. By above $w(i)>w(i+2)$, and by Proposition~\ref{prop:descent} $s_{i+1} \in \mathcal{R}(ws_i)$. This implies that $w$ has a reduced expression ending in $s_{i+1}s_i$. 
 	
-	Conversely suppose $w$ ends in a reduced expression with $s_{i+1}s_i$ Then $w_I=s_{i+1}s_i$. We see that $w(i)>w(i+1)$ and $w(i+2)>w(i+1)$. Since $s_{i+1} \in \mathcal{R}(ws_i)$, we have $w(i+2)=ws_i(i+2)<ws_i(i+1)=w(i)$. From this we have $w(i)>w(i+2)$, so $w(i)>w(i+2)>w(i+1)$. Hence, $w$ has the consecutive pattern $312$. 
+	Conversely suppose $w$ ends in a reduced expression with $s_{i+1}s_i$ Then $w_I=s_{i+1}s_i$. We see that $w(i)>w(i+1)$ and $w(i+2)>w(i+1)$. Since $s_{i+1} \in \mathcal{R}(ws_i)$, we have $w(i+2)=ws_i(i+2)<ws_i(i+1)=w(i)$. From this we have $w(i)>w(i+2)$, so $w(i)>w(i+2)>w(i+1)$. Hence, $w$ contains the consecutive pattern $312$. 
 	
-	Therefore, $w$ has a reduced expression ending in $s_{i+1}s_i$ if and only if $w$ has the consecutive pattern $312$.
+	Therefore, $w$ has a reduced expression ending in $s_{i+1}s_i$ if and only if $w$ contains the consecutive pattern $312$.
 \end{proof}
 \end{lemma}
 
 \begin{corollary}\label{lem:endswithts}
-	If $i \neq 0$, then $w$ has a reduced expression beginning with $s_{i+1}s_i$ if and only if $w^{-1}$ has the consecutive pattern $312$.
+	Let $s_i,s_{i+1} \in S(B_n)$ such that $m(s_i,s_{i+1})=3$. Then $w$ has a reduced expression beginning with $s_{i+1}s_i$ if and only if $w^{-1}$ contains the consecutive pattern $312$.
 	\begin{proof}
-		Let $s_i,s_{i+1} \in S(B_n)$ such that $m(s,t)=3$ and $s_0 \notin\{s_i,s_{i+1}\}$. We know that $w$ has no reduced expression beginning with $s_{i+1}s_i$ if and only if $w^{-1}$ has no reduced expression ending with $s_{i+1}s_i$ which by Theorem~\ref{lem:endswithsts} happens only if $w^{-1}$ avoids the consecutive pattern $312.$
+		Let $s_i,s_{i+1} \in S(B_n)$ such that $m(s,t)=3$ and $s_0 \notin\{s_i,s_{i+1}\}$. We know that $w$ has no reduced expression beginning with $s_{i+1}s_i$ if and only if $w^{-1}$ has no reduced expression ending with $s_{i+1}s_i$ which by Lemma~\ref{lem:st} happens only if $w^{-1}$ avoids the consecutive pattern $312.$
 	\end{proof}
 \end{corollary}
 
@@ -155,7 +151,7 @@ Let $w \in W(B_n)$. Then $w$ has a reduced expression ending in $s_0s_1$ if and 
 \begin{corollary}\label{lem:beginswiths1}
 	Let $w \in W(B_n)$. Then $w$ has a reduced expression beginning in $s_1s_0$ if and only if $w^{-1}(0)>w^{-1}(2)$ and $w^{-1}(1)>w^{-1}(2)$.
 	\begin{proof}
-		Let $w \in W(B_n)$. We know that $w$ has no reduced expressions beginning in $s_1s_0$ if and only if $w^{-1}$ has no reduced expressions ending in $s_1s_0$. By Lemma~\ref{lem:endswiths0} we know that this occurs if and only if $w^{-1}(0)>w^{-1}(2)$ and $w^{-1}(1)>w^{-1}(2)$.
+		Let $w \in W(B_n)$. We know that $w$ has no reduced expressions beginning in $s_1s_0$ if and only if $w^{-1}$ has no reduced expressions ending in $s_1s_0$. By Lemma~\ref{lem:endswiths_1} we know that this occurs if and only if $w^{-1}(0)>w^{-1}(2)$ and $w^{-1}(1)>w^{-1}(2)$.
 	\end{proof}
 \end{corollary}
 
@@ -175,79 +171,79 @@ Let $w \in W(B_n)$ be $\tI$ and let $i \in \{1,2, \ldots, n\}$. Then $w$ satisfi
 \item If $w(i), w(i+1) < 0$, then $w(j)<0$ for all $j \leq i+1$.\label{it:trivT4}
 \end{enumerate}
 \begin{proof}
-	Suppose there is some least $j>i$ such that $w(j) \leq \min\{w(i-1), w(i)\}$. Note that $j>i$ so $j \neq i$, and $j \neq i-1$ so $w(j) < \min\{w(i-1), w(i)\})$. Note that $j$ is the least so $w(j-2) \geq \min\{w(i+1), w(i)\}>w(j)$. This implies that either $w(j-1)>w(j-2)>w(j)$ or $w(j-2)>w(j-1)>w(j)$, which implies $w$ has the consecutive pattern $231$ or $321$, which is a contradiction to $w$ being a $\tI$ element by Lemmas~\ref{lem:sts} and~\ref{lem:st}. Thus proving~\ref{it:trivT1}.
+	Suppose there is some least $j>i$ such that $w(j) \leq \min\{w(i-1), w(i)\}$. Note that $j>i$ so $w(j) \neq w(i)$, and $w(j) \neq w(i-1)$ so $w(j) < \min\{w(i-1), w(i)\}$. Then $w(j-2) \geq \min\{w(i+1), w(i)\}>w(j)$. This implies that either $w(j-1)>w(j-2)>w(j)$ or $w(j-2)>w(j-1)>w(j)$, which implies $w$ contains the consecutive pattern $231$ or $321$, which is a contradiction to $w$ being a $\tI$ element by Lemmas~\ref{lem:sts} and~\ref{lem:st}. Thus proving~\ref{it:trivT1}.
 	
-	Suppose there exists a maximal $k<i-1$ such that $w \geq \max\{w(i-1), w(i)\}$. Note that $k < i-1$ so $k \neq i$ and $k \neq i-1$. Then $w(k)> \max\{w(i-1), w(i)\}$. Since $k$ is maximal $w(k+1) \leq  \max\{w(i-1), w(i)\}$ and $w(k+2) \leq \max\{w(i-1), w(i)\}$. This implies that either $w(k+2)<w(k+1)<w(k)$ or $w(k+1)<w(k+2)<w(k)$, which implies $w$ has the consecutive pattern $321$ or $312$, which is a contradiction to $w$ being a $\tI$ element by Lemmas~\ref{lem:sts} and~\ref{lem:ts}. Thus proving~\ref{it:trivT2}.
+	Suppose there exists a maximal $k<i-1$ such that $w \geq \max\{w(i-1), w(i)\}$. Note that $k < i-1$ so $k \neq i$ and $k \neq i-1$. Then $w(k)> \max\{w(i-1), w(i)\}$. Since $k$ is maximal $w(k+1) \leq  \max\{w(i-1), w(i)\}$ and $w(k+2) \leq \max\{w(i-1), w(i)\}$. This implies that either $w(k+2)<w(k+1)<w(k)$ or $w(k+1)<w(k+2)<w(k)$, which implies $w$ contains the consecutive pattern $321$ or $312$, which is a contradiction to $w$ being a $\tI$ element by Lemmas~\ref{lem:sts} and~\ref{lem:ts}. Thus proving~\ref{it:trivT2}.
 	
 	It is easy to see that Assertion~\ref{it:trivT1} implies~\ref{it:trivT3} and Assertion~\ref{it:trivT2} implies~\ref{it:trivT4}.
 \end{proof}	
 \end{lemma}
 
 \begin{lemma}\label{lem:231}
-Let $w \in W(B_n)$ such that $w$ has the consecutive pattern $\underline{2}31$. Then $w$ has Property T.
+Let $w \in W(B_n)$ such that $w$ contains the consecutive pattern $\underline{2}31$. Then $w$ has Property T.
 \begin{proof}
-	Let $w \in W(B_n)$ such that $w$ has the consecutive pattern $\underline{2}31$.
+	Let $w \in W(B_n)$ such that $w$ contains the consecutive pattern $\underline{2}31$.
 	
-	Case (1): Suppose $w$ has the signed permutation notation $w=[\underline{2},3,1]$. This implies that $w=s_1s_0s_2$. Clearly, $w$ begins with a product of non-commuting generators. Thus $w$ has Property T.
+	Case (1): Suppose $w$ has the signed permutation notation $w=[\underline{2},3,1]$. This implies that $w=s_1s_0s_2$. Clearly, some reduced expression for $w$ begins with a product of non-commuting generators. Thus $w$ has Property T.
 	
-	Case (2): Suppose that $w$ has the signed permutation notation $w=[\underline{a},b,c, \ast, \ldots, \ast]$ where $\underline{a}bc$ corresponds to the signed consecutive pattern $\underline{2}31$, and $\ast$ indicates unknown values for $w(i)$ for $i=4,5, \ldots, n$. We now consider the possible signed consecutive pattern $bc \ast$. The following are the possibilities: $312$, $31\underline{2}$, $321$, $32\underline{1}$, $213$, or $21\underline{3}$. We know that $b$ and $c$ must be positive since they are positive in $w$ and we also know that $b>c$ by the original signed consecutive pattern. Note that by Lemmas~\ref{lem:sts},~\ref{lem:ts}, and~\ref{lem:endswiths0} all of these patterns imply that $w$ ends or begins with a product of noncommuting generators. Thus $w$ has Property T.
+	Case (2): Suppose that $w$ has the signed permutation notation $w=[\underline{a},b,c, \ast, \ldots, \ast]$ where $\underline{a}bc$ corresponds to the signed consecutive pattern $\underline{2}31$, and $\ast$ indicates unknown values for $w(i)$ for $i=4,5, \ldots, n$. We now consider the possible signed consecutive pattern $bc \ast$. The possibilities are: $312$, $31\underline{2}$, $321$, $32\underline{1}$, $213$, or $21\underline{3}$. We know that $b$ and $c$ must be positive since they are positive in $w$ and we also know that $b>c$ by the original signed consecutive pattern. Note that by Lemmas~\ref{lem:sts},~\ref{lem:st}, and~\ref{lem:prodofcommA} and Corollaries~\ref{lem:endswithsts},and~\ref{lem:endswithst} all of these patterns imply that $w$ has a reduced expression that begins or ends with a product of non-commuting generators. Thus $w$ has Property T.
 	
-	Case (3): Suppose that $w$ has the signed permutation notation $w=[\ast, \ldots, \ast, \underline{a},b,c]$ where $\underline{a}bc$ corresponds to the signed consecutive pattern $\underline{2}31$, and $\ast$ indicates unknown values for $w(i)$ for $i=1,2, \ldots ,n-3$. We now consider the possible signed consecutive pattern $\ast \underline{a}b$. The following are the possibilities: $1 \underline{2} 3$, $\underline{1} \underline{2}3$, $2 \underline{1} 3$, $\underline{2} \underline{1} 3$, $3 \underline{1} 2$, or $\underline{3} \underline{1} 2$. Note that by Lemmas~\ref{lem:ts},~\ref{lem:endswiths0}, and~\ref{lem:endswiths_1} all of these patterns implies that $w$ ends or begins with a product of noncommuting generators. Thus $w$ has Property T. 
+	Case (3): Suppose that $w$ has the signed permutation notation $w=[\ast, \ldots, \ast, \underline{a},b,c]$ where $\underline{a}bc$ corresponds to the signed consecutive pattern $\underline{2}31$, and $\ast$ indicates unknown values for $w(i)$ for $i=1,2, \ldots ,n-3$. We now consider the possible signed consecutive pattern $\ast \underline{a}b$. The possibilities are: $1 \underline{2} 3$, $\underline{1} \underline{2}3$, $2 \underline{1} 3$, $\underline{2} \underline{1} 3$, $3 \underline{1} 2$, or $\underline{3} \underline{1} 2$. Note that by Lemmas~\ref{lem:st},~\ref{lem:endswiths0}, and~\ref{lem:endswiths_1} and Corollaries~\ref{lem:endswithst},~\ref{lem:beginswiths0} and~\ref{lem:beginswiths1} all of these patterns imply that $w$ has a reduced expression that begins or ends with a product of non-commuting generators. Thus $w$ has Property T. 
 	
-	Case (4): Suppose that $w$ has the signed permutation notation $w=[\ast, \ldots, \ast, \underline{a},b,c, \ast, \ldots, \ast]$ where $\underline{a}bc$ corresponds to the signed consecutive pattern $\underline{2}31$, and $\ast$ indicates unknown values for $w(i)$ for $|w(i)|\neq a,b,c$. In this case we can apply either Case (2) or Case (3) and we can conclude that $w$ ends or begins with a product of noncommuting generators. Thus $w$ has Property T.
+	Case (4): Suppose that $w$ has the signed permutation notation $w=[\ast, \ldots, \ast, \underline{a},b,c, \ast, \ldots, \ast]$ where $\underline{a}bc$ corresponds to the signed consecutive pattern $\underline{2}31$, and $\ast$ indicates unknown values for $w(i)$ for $|w(i)|\neq a,b,c$. In this case we can apply either Case (2) or Case (3) and we can conclude that $w$ has a reduced expression that begins or ends with a product of non-commuting generators. Thus $w$ has Property T.
 
-	Therefore, if $w \in W(B_n)$ contains the consecutive pattern $\underline{2}31$, then $w$ has Property T.
+	Hence, if $w \in W(B_n)$ contains the consecutive pattern $\underline{2}31$, then $w$ has Property T.
 \end{proof}	
 \end{lemma}
 
 \begin{lemma}\label{lem:2312}
-Let $w \in W(B_n)$ such that $w$ has the consecutive pattern $\underline{2}3\underline{1}$. Then $w$ has Property T.
+Let $w \in W(B_n)$ such that $w$ contains the consecutive pattern $\underline{2}3\underline{1}$. Then $w$ has Property T.
 \begin{proof}
-	Let $w \in W(B_n)$ such that $w$ has the consecutive pattern $\underline{2}3\underline{1}$.
+	Let $w \in W(B_n)$ such that $w$ contains the consecutive pattern $\underline{2}3\underline{1}$.
 	
-	Case (1): Suppose $w$ has the signed permutation notation $w=[\underline{2},3,\underline{1}]$. This implies that $w=s_0s_1s_0s_2$. Clearly, $w$ begins with a product of non-commuting generators. Thus $w$ has Property T.
+	Case (1): Suppose $w$ has the signed permutation notation $w=[\underline{2},3,\underline{1}]$. This implies that $w=s_0s_1s_0s_2$. Clearly, some reduced expression for $w$ begins with a product of non-commuting generators. Thus $w$ has Property T.
 	
-	Case (2): Suppose that $w$ has the signed permutation notation $w=[\underline{a},b,\underline{c}, \ast, \ldots, \ast]$ where $\underline{a}b\underline{c}$ corresponds to the signed consecutive pattern $\underline{2}3\underline{1}$, and $\ast$ indicates unknown values for $w(i)$ for $i=4,5, \ldots n$. We now consider the possible signed consecutive pattern $b \underline{c} \ast$. The following are the possibilities: $3\underline{1}2$, $3\underline{1}\underline{2}$, $3\underline{2}1$, $3 \underline{2}\underline{1}$, $2\underline{1}3$, or $2\underline{1}\underline{3}$. We know that $b$ must be positive since it is positive in $w$, $c$ must be negative since it is negative in $w$, and we also know that $|b|>|c|$ by the original signed consecutive pattern. Note that by Lemmas~\ref{lem:sts},~\ref{lem:ts}, and~\ref{lem:endswiths0} all of these patterns imply that $w$ ends or begins with a product of noncommuting generators. Thus $w$ has Property T.
+	Case (2): Suppose that $w$ has the signed permutation notation $w=[\underline{a},b,\underline{c}, \ast, \ldots, \ast]$ where $\underline{a}b\underline{c}$ corresponds to the signed consecutive pattern $\underline{2}3\underline{1}$, and $\ast$ indicates unknown values for $w(i)$ for $i=4,5, \ldots n$. We now consider the possible signed consecutive pattern $b \underline{c} \ast$. The possibilities are: $3\underline{1}2$, $3\underline{1}\underline{2}$, $3\underline{2}1$, $3 \underline{2}\underline{1}$, $2\underline{1}3$, or $2\underline{1}\underline{3}$. We know that $b$ must be positive since it is positive in $w$, $c$ must be negative since it is negative in $w$, and we also know that $|b|>|c|$ by the original signed consecutive pattern. Note that by Lemmas~\ref{lem:sts},~\ref{lem:st}, and~\ref{lem:endswiths_1} and Corollaries~\ref{lem:endswithsts},\ref{lem:endswithst} and~\ref{lem:beginswiths1} all of these patterns imply that $w$ has a reduced expression that begins or ends with a product of non-commuting generators. Thus $w$ has Property T.
 	
-	Case (3): Suppose that $w$ has the signed permutation notation $w=[\ast, \ldots, \ast, \underline{a},b,\underline{c}]$ where $\underline{a}b\underline{c}$ corresponds to the signed consecutive pattern $\underline{2}3\underline{1}$, and $\ast$ indicates unknown values for $w(i)$ for $i=1,2, \ldots ,n-3$. We now consider the possible signed consecutive pattern $\ast ab$. The following are the possibilities: $1 \underline{2} 3$, $\underline{1} \underline{2} 3$, $2 \underline{1} 3$, $\underline{2} \underline{1} 3$, $3 \underline{1} 2$, or $\underline{3} \underline{1} 2$. We know that $a$ must be negative, $b$ must be positive and $|a|<|b|$ by the original signed permutation. Note that by Lemmas~\ref{lem:ts},~\ref{lem:endswiths0}, and~\ref{lem:endswiths_1} all of these patterns implies that $w$ ends or begins with a product of noncommuting generators. Thus $w$ has Property T. 
+	Case (3): Suppose that $w$ has the signed permutation notation $w=[\ast, \ldots, \ast, \underline{a},b,\underline{c}]$ where $\underline{a}b\underline{c}$ corresponds to the signed consecutive pattern $\underline{2}3\underline{1}$, and $\ast$ indicates unknown values for $w(i)$ for $i=1,2, \ldots ,n-3$. We now consider the possible signed consecutive pattern $\ast ab$. The possibilities are: $1 \underline{2} 3$, $\underline{1} \underline{2} 3$, $2 \underline{1} 3$, $\underline{2} \underline{1} 3$, $3 \underline{1} 2$, or $\underline{3} \underline{1} 2$. We know that $a$ must be negative, $b$ must be positive and $|a|<|b|$ by the original signed permutation. Note that by Lemmas~\ref{lem:st},~\ref{lem:endswiths0}, and~\ref{lem:endswiths_1} and Corollaries~\ref{lem:endswithst},~\ref{lem:beginswiths0} and~\ref{lem:beginswiths1} all of these patterns imply that $w$ has a reduced expression that begins or ends with a product of non-commuting generators. Thus $w$ has Property T. 
 
-	Case (4): Suppose that $w$ has the signed permutation notation $w=[\ast, \ldots,\ast, \underline{a},b,\underline{c}, \ast, \ldots, \ast]$ where $\underline{a}b\underline{c}$ corresponds to the signed consecutive pattern $\underline{2}3\underline{1}$, and $\ast$ indicates unknown values for $w(i)$ for $|w(i)|\neq a,b,c$. In this case we can apply either Case (2) or Case (3) and we can conclude that $w$ ends or begins with a product of noncommuting generators. Thus $w$ has Property T.
+	Case (4): Suppose that $w$ has the signed permutation notation $w=[\ast, \ldots,\ast, \underline{a},b,\underline{c}, \ast, \ldots, \ast]$ where $\underline{a}b\underline{c}$ corresponds to the signed consecutive pattern $\underline{2}3\underline{1}$, and $\ast$ indicates unknown values for $w(i)$ for $|w(i)|\neq a,b,c$. In this case we can apply either Case (2) or Case (3) and we can conclude that $w$ has a reduced expression that begins or ends with a product of non-commuting generators. Thus $w$ has Property T.
 
-	Therefore, if $w \in W(B_n)$ contains the consecutive pattern $\underline{2}3\underline{1}$, then $w$ has Property T.
+	Hence, if $w \in W(B_n)$ contains the consecutive pattern $\underline{2}3\underline{1}$, then $w$ has Property T.
 \end{proof}	
 \end{lemma}
 
 \begin{lemma}\label{lem:123}
-Let $w \in W(B_n)$ such that $w$ has the consecutive pattern $\underline{1}23$. Then either $w$ has Property T or is a $\tI$ element.
+Let $w \in W(B_n)$ such that $w$ contains the consecutive pattern $\underline{1}23$. Then either $w$ has Property T or is a $\tI$ element.
 \begin{proof}
-	Let $w \in W(B_n)$ such that $w$ has the consecutive pattern $\underline{1}23$.
+	Let $w \in W(B_n)$ such that $w$ contains the consecutive pattern $\underline{1}23$.
 	
 	Case (1): Suppose $w$ has the signed permutation notation $w=[\underline{1}23]$. This implies that $w=s_0$. Clearly, $w$ is a $\tI$ element as it is a single generator.
 	
-	Case (2): Suppose that $w$ has the signed permutation notation $w=[\underline{a},b,c, \ast, \ldots, \ast]$ where $\underline{a}bc$ corresponds to the signed consecutive pattern $\underline{1}23$, and $\ast$ indicates unknown values for $w(i)$ for $i=4,5, \ldots n$. We now consider the possible signed consecutive patterns $bc \ast$. The following are the possibilities: $231$, $23 \underline{1}$, $132$, $13 \underline{2}$, $123$, $12 \underline{3}$. We know that $b$ and $c$ are positive, and we also know that $|b|<|c|$ by the original signed consecutive pattern. Note that by Lemmas~\ref{lem:sts},~\ref{lem:ts}, and~\ref{lem:endswiths0} all of these patterns imply that $w$ ends or begins with a product of noncommuting generators. Thus $w$ has Property T.
+	Case (2): Suppose that $w$ has the signed permutation notation $w=[\underline{a},b,c, \ast, \ldots, \ast]$ where $\underline{a}bc$ corresponds to the signed consecutive pattern $\underline{1}23$, and $\ast$ indicates unknown values for $w(i)$ for $i=4,5, \ldots n$. We now consider the possible signed consecutive patterns $bc \ast$. The possibilities are: $231$, $23 \underline{1}$, $132$, $13 \underline{2}$, $123$, $12 \underline{3}$. We know that $b$ and $c$ are positive, and we also know that $|b|<|c|$ by the original signed consecutive pattern. Note that by Lemmas~\ref{lem:ts},~\ref{lem:endswiths1} and~\ref{lem:prodofcommA} and Corollaries~\ref{lem:endswithts},~and\ref{lem:beginswiths1} all of these patterns imply that $w$ has a reduced expression that begins or ends with a product of non-commuting generators. Thus $w$ has Property T.
 	
-	Case (3): Suppose that $w$ has the signed permutation notation $w=[\ast, \ldots, \ast, \underline{a},b,c]$ where $\underline{a}bc$ corresponds to the signed consecutive pattern $\underline{1}23$, and $\ast$ indicates unknown values for $w(i)$ for $i=1,2, \ldots ,n-3$. We now consider the possible signed consecutive patterns $\ast \underline{a} b$. The following are the possibilities: $3 \underline{1} 2$, $\underline{3} \underline{1} 2$, $2 \underline{1} 3$, $\underline{2} \underline{1} 3$, $1 \underline{2} 3$, or $\underline{1} \underline{2} 3$. We know that $a$ must be negative, $b$ must be positive and $|a|<|b|$ by the original signed permutation. Note that by Lemmas~\ref{lem:ts},~\ref{lem:endswiths0}, and~\ref{lem:endswiths_1}, all of these patterns imply that $w$ ends or begins with a product of noncommuting generators. Thus $w$ has Property T. 
+	Case (3): Suppose that $w$ has the signed permutation notation $w=[\ast, \ldots, \ast, \underline{a},b,c]$ where $\underline{a}bc$ corresponds to the signed consecutive pattern $\underline{1}23$, and $\ast$ indicates unknown values for $w(i)$ for $i=1,2, \ldots ,n-3$. We now consider the possible signed consecutive patterns $\ast \underline{a} b$. The possibilities are: $3 \underline{1} 2$, $\underline{3} \underline{1} 2$, $2 \underline{1} 3$, $\underline{2} \underline{1} 3$, $1 \underline{2} 3$, or $\underline{1} \underline{2} 3$. We know that $a$ must be negative, $b$ must be positive and $|a|<|b|$ by the original signed permutation. Note that by Lemmas~\ref{lem:st},~\ref{lem:endswiths0}, and~\ref{lem:endswiths_1} and Corollaries~\ref{lem:endswithst},~\ref{lem:beginswiths0} and~\ref{lem:beginswiths1}, all of these patterns imply that $w$ has a reduced expression that begins or ends with a product of non-commuting generators. Thus $w$ has Property T. 
 	
-	Case (4): Suppose that $w$ has the signed permutation notation $w=[\ast, \ldots, \ast, \underline{a},b,c, \ast, \ldots, \ast]$ where $\underline{a}bc$ corresponds to the signed consecutive pattern $\underline{1}23$, and $\ast$ indicates unknown values for $w(i)$ for $|w(i)|\neq a,b,c$. In this case we can apply either Case (2) or Case (3) and we can conclude that $w$ ends or begins with a product of noncommuting generators. Thus $w$ has Property T.
+	Case (4): Suppose that $w$ has the signed permutation notation $w=[\ast, \ldots, \ast, \underline{a},b,c, \ast, \ldots, \ast]$ where $\underline{a}bc$ corresponds to the signed consecutive pattern $\underline{1}23$, and $\ast$ indicates unknown values for $w(i)$ for $|w(i)|\neq a,b,c$. In this case we can apply either Case (2) or Case (3) and we can conclude that $w$ has a reduced expression that begins or ends with a product of non-commuting generators. Thus $w$ has Property T.
 
-	Therefore, if $w \in W(B_n)$ contains the consecutive pattern $\underline{1}23$, then $w$ has Property T or is a $\tI$ element.
+	Hence, if $w \in W(B_n)$ contains the consecutive pattern $\underline{1}23$, then $w$ has Property T or is a $\tI$ element.
 \end{proof}	
 \end{lemma}
 
 \begin{lemma}\label{lem:132}
-Let $w \in W(B_n)$ such that $w$ has the consecutive pattern $\underline{1}32$. Then either $w$ has Property T or is a $\tI$ element.
+Let $w \in W(B_n)$ such that $w$ contains the consecutive pattern $\underline{1}32$. Then either $w$ has Property T or is a $\tI$ element.
 \begin{proof}
-	Let $w \in W(B_n)$ such that $w$ has the consecutive pattern $\underline{1}32$.
+	Let $w \in W(B_n)$ such that $w$ contains the consecutive pattern $\underline{1}32$.
 	
 	Case (1): Suppose $w$ has the signed permutation notation $w=[\underline{1}32]$. This implies that $w=s_0s_2$. Clearly, $w$ is a $\tI$ element as it is a product of commuting generators.
 	
-	Case (2): Suppose that $w$ has the signed permutation notation $w=[\underline{a},b,c, \ast, \ldots, \ast]$ where $\underline{a}bc$ corresponds to the signed consecutive pattern $\underline{1}32$, and $\ast$ indicates unknown values for $w(i)$ for $i=4,5, \ldots n$. We now consider the possible signed consecutive pattern $bc \ast$. The following are the possibilities: $231$, $23 \underline{1}$, $13 2$, $13 \underline{2}$, $123$, or $12\underline{3}$. We know that $b$ and $c$ are positive, and we also know that $|b|<|c|$ by the original signed consecutive pattern. Note that by Lemmas~\ref{lem:sts},~\ref{lem:ts}, and~\ref{lem:endswiths0} all of these patterns imply that $w$ ends or begins with a product of noncommuting generators. Thus $w$ has Property T.
+	Case (2): Suppose that $w$ has the signed permutation notation $w=[\underline{a},b,c, \ast, \ldots, \ast]$ where $\underline{a}bc$ corresponds to the signed consecutive pattern $\underline{1}32$, and $\ast$ indicates unknown values for $w(i)$ for $i=4,5, \ldots n$. We now consider the possible signed consecutive pattern $bc \ast$. The possibilities are: $231$, $23 \underline{1}$, $13 2$, $13 \underline{2}$, $123$, or $12\underline{3}$. We know that $b$ and $c$ are positive, and we also know that $|b|<|c|$ by the original signed consecutive pattern. Note that by Lemmas~\ref{lem:sts},~\ref{lem:st}, and~\ref{lem:prodofcommA} and Corollaries~\ref{lem:endswithsts} and~\ref{lem:endswithst} all of these patterns imply that $w$ has a reduced expression that begins or ends with a product of non-commuting generators. Thus $w$ has Property T.
 	
-	Case (3): Suppose that $w$ has the signed permutation notation $w=[\ast, \ldots, \ast, \underline{a},b,c]$ where $\underline{a}bc$ corresponds to the signed consecutive pattern $\underline{1}32$, and $\ast$ indicates unknown values for $w(i)$ for $i=1,2, \ldots ,n-3$. We now consider the possible signed consecutive pattern $\ast \underline{a} b$. The following are the possibilities: $3 \underline{1} 2$, $\underline{3} \underline{1} 2$, $2 \underline{1} 3$, $\underline{2} \underline{1} 3$, $3 \underline{2} 1$, or $\underline{3} \underline{2} 1$. We know that $a$ must be negative, $b$ must be positive and $|a|<|b|$ by the original signed permutation. Note that by Lemmas~\ref{lem:ts},~\ref{lem:endswiths0}, and~\ref{lem:endswiths_1} all of these patterns implies that $w$ ends or begins with a product of noncommuting generators. Thus $w$ has Property T. 
+	Case (3): Suppose that $w$ has the signed permutation notation $w=[\ast, \ldots, \ast, \underline{a},b,c]$ where $\underline{a}bc$ corresponds to the signed consecutive pattern $\underline{1}32$, and $\ast$ indicates unknown values for $w(i)$ for $i=1,2, \ldots ,n-3$. We now consider the possible signed consecutive pattern $\ast \underline{a} b$. The possibilities are: $3 \underline{1} 2$, $\underline{3} \underline{1} 2$, $2 \underline{1} 3$, $\underline{2} \underline{1} 3$, $3 \underline{2} 1$, or $\underline{3} \underline{2} 1$. We know that $a$ must be negative, $b$ must be positive and $|a|<|b|$ by the original signed permutation. Note that by Lemmas~\ref{lem:st},~\ref{lem:endswiths0}, and~\ref{lem:endswiths_1} and Corollaries~\ref{lem:endswithst},~\ref{lem:beginswiths0} and~\ref{lem:beginswiths1} all of these patterns imply that $w$ has a reduced expression that begins or ends with a product of non-commuting generators. Thus $w$ has Property T. 
 	
-	Case (4): Suppose that $w$ has the signed permutation notation $w=[\ast, \ldots, \ast, \underline{a},b,c, \ast, \ldots, \ast]$ where $\underline{a}bc$ corresponds to the signed consecutive pattern $\underline{1}32$, and $\ast$ indicates unknown values for $w(i)$ for $w(i)\neq a,b,c$. In this case we can apply either Case (2) or Case (3) and we can conclude that $w$ ends or begins with a product of noncommuting generators. Thus $w$ has Property T.
+	Case (4): Suppose that $w$ has the signed permutation notation $w=[\ast, \ldots, \ast, \underline{a},b,c, \ast, \ldots, \ast]$ where $\underline{a}bc$ corresponds to the signed consecutive pattern $\underline{1}32$, and $\ast$ indicates unknown values for $w(i)$ for $w(i)\neq a,b,c$. In this case we can apply either Case (2) or Case (3) and we can conclude that $w$ has a reduced expression that begins or ends with a product of non-commuting generators. Thus $w$ has Property T.
 	
-	Therefore, if $w \in W(B_n)$ contains the consecutive pattern $\underline{1}32$, then $w$ has Property T or is a $\tI$ element.
+	Hence, if $w \in W(B_n)$ contains the consecutive pattern $\underline{1}32$, then $w$ has Property T or is a $\tI$ element.
 \end{proof}	
 \end{lemma}
 

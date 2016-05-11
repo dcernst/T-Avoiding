@@ -123,7 +123,7 @@ In~\cite{Green2006a}, Green classified all star reducible Coxeter groups.
 
 %we are able to pull the top or bottom most block off of the heap and have the heap decrease in height (the number of rows that it consists of) or have a new block come into the top or bottom most rows. We can perform this pulling of blocks off the top and bottom of the heap systematically until the heap consists of one row, corresponding to an element that is a product of commuting generators. For example in Figure~\ref{fig:heapy}, we were able to apply a star reduction to remove the topmost block corresponding to the generator $s_0$ and obtain the new heap seen in Figure~\ref{fig:multiplied}. We see that the heap in Figure~\ref{fig:multiplied} has one less row than Figure~\ref{fig:heapy}. We could do the same with the block on bottom of Figure~\ref{fig:multiplied} corresponding to $s_3$ and have the heap again decrease in the number of rows it has. Performing one more star reduction in pulling the brick off the top of Figure~\ref{fig:multiplied} which corresponds to $s_1$ in the reduced expression would leave us with a heap that is only 1 row which is a product of commuting generators. Thus Figure~\ref{fig:heapy} can be star reduced to a product of commuting generators.  In~\cite{Green2006a}, Green classified all star reducible Coxeter groups. 
 %The Coxeter groups $W(A_n)$, $W(B_n)$ and $W(\widetilde{C}_n)$ are star reducible. However, $W(A_n)$ and $W(B_n)$ don't have $\tII$ elements, while $W(\widetilde{C}_n)$ in one parity does have $\tII$ elements.
-\begin{proposition}[Green,~\cite{Green2006a}]
+\begin{proposition}[Green,~\cite{Green2006a}]\label{prop:starredcoxgrp}
 	Let $(W,S)$ be a Coxeter system of type $\Gamma$. Then $(W,S)$ is star reducible if and only if each component of $\Gamma$ is either a complete graph with labels $m(s,t)\geq 3$ or is one of the following types: type $A_n$ $(n \geq 1)$, type $B_n$ $(n \geq 2)$, type $D_n$ $(n \geq 4)$, type $F_n$ $(n \geq 4)$, type $H_n$ $(n \geq 2)$, type $I_2(m)$ $(m \geq 3)$, type $\widetilde{A}_{n}$ $(n \geq 3 \textrm{ and } n \textrm{ even})$, type $\widetilde{C}_{n}$ $(n\geq 3 \textrm{ and } n \textrm{ odd})$, type $\widetilde{E}_6$, or type $\widetilde{F}_5$. \qed
 \end{proposition}    
 
@@ -227,7 +227,7 @@ One thing to notice here is that all Coxeter groups have $\tI$ elements as the i
 
 \section{Non-Cancellable Elements}\label{sec:noncancel}
  
-We now introduce the concept of weak star reducible, which is related to the notion of cancellable in~\cite{Fan1997}. Let $(W,S)$ be a Coxeter system of type $\Gamma$ and let $I=\{s,t\} \subseteq S$ be a pair of noncommuting generators. If $w  \in \FC(\Gamma)$, then $w$ is \emph{left weak star reducible by $s$ with respect to $t$ to $sw$} if
+We now introduce the concept of weak star reducible, which is related to the notion of cancellable in~\cite{Fan1997}. Let $(W,S)$ be a Coxeter system of type $\Gamma$ and let $I=\{s,t\} \subseteq S$ be a pair of non-commuting generators. If $w  \in \FC(\Gamma)$, then $w$ is \emph{left weak star reducible by $s$ with respect to $t$ to $sw$} if
 \begin{enumerate}[leftmargin=2cm]
 \item $w$ is left star reducible by $s$ with respect to $t$, and
 \item $tw \notin \FC(\Gamma)$.	

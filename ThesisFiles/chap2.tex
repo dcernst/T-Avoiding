@@ -64,58 +64,108 @@ Occasionally, we will need to factor $w \in W(B_n)$ in a specific manner. Let $I
 In this section we classify the T-avoiding elements in Coxeter systems of type $B_n$. Our main result in this section is Theorem~\ref{thm:classificationofB}. Notice that if $n=2$, $W(B_2) \cong I_2(4)$, which by Theorem~\ref{thm:i2m} we know has no $\tII$ elements. We proceed with $n \geq 3$. First we need some preparatory lemmas. 
 
 \begin{lemma}\label{lem:sts}
-Let $s_i,s_{i+1} \in S(B_n)$ such that $m(s_i,s_{i+1})=3$. Then $w$ has a reduced expression ending in $s_is_{i+1}s_i$ if and only if $w$ contains the consecutive pattern $321$ in position $i, i+1, i+2$.
+An element $w \in W(B_n)$ has a reduced expression ending in $s_is_{i+1}s_i$ where $m(s_i,s_{i+1})=3$ if and only if $w$ contains one of the following signed consecutive patterns beginning in position $i$:
+
+\begin{center}
+\begin{tabular}{llll}
+$321$             & $32\underbar{1}$ & $1 \underbar{23}$ & $\underbar{123}$  \\
+$31 \underbar{2}$ & $3 \underbar{12}$ & $21\underbar{3}$  & $2 \underbar{13}$ 
+
+\end{tabular}	
+\end{center}
+
+
 \begin{proof}
-	Let $i \geq 1$, $I=\{s_i,s_{i+1}\}$ and write $w=w^Iw_I$. Note that since $m(s_i,s_{i+1})=3$, $s_0 \notin I$. Observe that if $w$ has a reduced expression ending in the product of two non-commuting generators $s_is_{i+1}$ or $s_{i+1}s_i$, then we have $w_I \in \{s_is_{i+1}, s_{i+1}s_i, s_is_{i+1}s_i=s_{i+1}s_is_{i+1}\}$.
+	Suppose $w$ contains one of the signed consecutive patterns seen above. Then there is some $i$ such that $w(i) > w(i+1) > w(i+2)$. By Proposition~\ref{prop:descent}, $s_i,s_{i+1} \in \mathcal{R}(w)$. Since $m(s_i,s_{i+1})=3$ and $s_i, s_{i+1} \in \RD(w)$, $w$ ends in $s_is_{i+1}s_{i}$ or $s_{i+1}s_is_{i+1}$.
 	
-	Suppose $w$ contains the consecutive pattern $321$. Then there is some $i$ such that $w(i) > w(i+1) > w(i+2)$. By Proposition~\ref{prop:descent}, $s_i,s_{i+1} \in \mathcal{R}(w)$. Since $m(s_i,s_{i+1})=3$ and $s_i, s_{i+1} \in \RD(w)$, $w$ ends in $s_is_{i+1}s_{i}$ or $s_{i+1}s_is_{i+1}$.
+	Conversely, suppose $w$ has a reduced expression ending in $s_is_{i+1}s_i$ where $m(s_i,s_{i+1})=3$. This implies that $w_I=s_is_{i+1}s_i$ which implies that $s_i,s_{i+1} \in \mathcal{R}(w)$. Since $s_i,s_{i+1} \in \mathcal{R}(w)$, we see that $w(i)>w(i+1)>w(i+2)$ by Proposition~\ref{prop:descent}. Thus, $w$ contains one of the signed consecutive patterns seen above.
 	
-	Conversely, suppose $w$ has a reduced expression ending in $s_is_{i+1}s_i$. This implies that either $w_I=s_is_{i+1}s_i$ or $w_I=s_{i+1}s_is_{i+1}$ which implies that $s_i,s_{i+1} \in \mathcal{R}(w)$. Since $s_i,s_{i+1} \in \mathcal{R}(w)$, we see that $w(i)>w(i+1)>w(i+2)$ by Proposition~\ref{prop:descent}. Thus, $w$ contains the consecutive pattern 321.
-	
-	Therefore, $w$ has a reduced expression ending in $s_is_{i+1}s_i$ if and only if $w$ contains the consecutive pattern $321$ in position $i, i+1, i+2$. 
+	Therefore, $w$ has a reduced expression ending in $s_is_{i+1}s_i$ if and only if $w$ contains one of the signed consecutive patterns seen above beginning in position $i$. 
 \end{proof}	
 \end{lemma}
 
 \begin{corollary}\label{lem:endswithsts}
-	Let $s_i,s_{i+1} \in S(B_n)$ such that $m(s_i,s_{i+1})=3$. Then $w$ has a reduced expression beginning with $s_is_{i+1}s_i$ if and only if $w^{-1}$ contains the consecutive pattern $321$ in position $i, i+1, i+2$.
+	An element $w \in W(B_n)$ has a reduced expression beginning in $s_is_{i+1}s_i$ where $m(s_i,s_{i+1})=3$ if and only if $w$ contains one of the following consecutive patterns beginning in position $i$:
+
+\begin{center}
+\begin{tabular}{llll}
+$321$             & $32\underbar{1}$ & $1 \underbar{23}$ & $\underbar{123}$  \\
+$31 \underbar{2}$ & $3 \underbar{12}$ & $21\underbar{3}$  & $2 \underbar{13}$ 
+
+\end{tabular}	
+\end{center}
+
 	\begin{proof}
-		Let $s_i,s_{i+1} \in S(B_n)$ such that $m(s_i,s_{i+1})=3$ and $s_0 \notin\{s_i,s_{i+1}\}$. We know that $w$ has no reduced expressions beginning with $s_is_{i+1}s_i$ if and only if $w^{-1}$ has no reduced expression ending with $s_is_{i+1}s_i$ which by Lemma~\ref{lem:sts} happens only if $w^{-1}$ avoids the consecutive pattern $321$ in position $i, i+2, i+3$.
+		 We know that $w$ has no reduced expressions beginning with $s_is_{i+1}s_i$ if and only if $w^{-1}$ has no reduced expression ending with $s_is_{i+1}s_i$ which by Lemma~\ref{lem:sts} happens only if $w^{-1}$ avoids the signed consecutive patterns seen above beginning in position $i$.
 	\end{proof}
 \end{corollary}
 
 \begin{lemma}\label{lem:ts}
-Let $s_i,s_{i+1} \in S(B_n)$ such that $m(s_i,s_{i+1})=3$. Then $w$ has a reduced expression ending in $s_is_{i+1}$ if and only if $w$ contains the consecutive pattern $231$ in position $i, i+1$.
+An element $w \in W(B_n)$ has a reduced expression ending in $s_is_{i+1}$ where $m(s_i,s_{i+1})=3$ if and only if $w$ contains one of the following consecutive patterns beginning in position $i$:
+
+\begin{center}
+\begin{tabular}{llll}
+$231$             & $23\underbar{1}$ & $12 \underbar{3}$ & $\underbar{1}2\underbar{3}$  \\
+$\underline{1}32$ & $13 \underbar{2}$ & $\underbar{2}1\underbar{3}$  & $\underbar{213}$ 
+
+\end{tabular}	
+\end{center}
+
 \begin{proof}	
-	Suppose that $w$ contains the consecutive pattern $231$. Then there is some $i$ such that $w(i+1)>w(i)>w(i+2)$. By Proposition~\ref{prop:descent}, $s_{i+1} \in \mathcal{R}(w)$. Now multiplying on the right by $s_{i+1}$ we see that $ws_{i+1}(i+1)=w(i+2)$ and $ws_{i+1}(i)=w(i)$. We know that $w(i+2)<w(i)$, which implies that $s_i \in \mathcal{R}(ws_{i+1})$, and hence $w$ has a reduced expression that ends in $s_is_{i+1}$.
+	Suppose $w$ contains one of the signed consecutive patterns seen above. Then there is some $i$ such that $w(i+1)>w(i)>w(i+2)$. By Proposition~\ref{prop:descent}, $s_{i+1} \in \mathcal{R}(w)$. Now multiplying on the right by $s_{i+1}$ we see that $ws_{i+1}(i+1)=w(i+2)$ and $ws_{i+1}(i)=w(i)$. We know that $w(i+2)<w(i)$, which implies that $s_i \in \mathcal{R}(ws_{i+1})$, and hence $w$ has a reduced expression that ends in $s_is_{i+1}$.
 	
-	 Conversely, suppose that $w$ has a reduced expression ending in $s_is_{i+1}$. Then $w(i+2)<w(i+1)$ and $w(i)<w(i+1)$. Since $s_i \in \mathcal{R}(ws_{i+1})$ we have $w(i+2)=ws_{i+1}(i+1)<ws_{i+1}(i)=w(i)$. Thus, we have that $w(i+1) > w(i) > w(i+2)$. Hence $w$ contains the consecutive pattern 231.
+	 Conversely, suppose that $w$ has a reduced expression ending in $s_is_{i+1}$ where $m(s_i,s_{i+1})=3$. Then $w(i+2)<w(i+1)$ and $w(i)<w(i+1)$. Since $s_i \in \mathcal{R}(ws_{i+1})$ we have $w(i+2)=ws_{i+1}(i+1)<ws_{i+1}(i)=w(i)$. Thus, we have that $w(i+1) > w(i) > w(i+2)$. Hence $w$ contains one of the signed consecutive patterns from above.
 	
-	Therefore, $w$ has a reduced expression ending in $s_is_{i+1}$ if and only if $w$ contains the consecutive pattern $231$ in position $i, i+1$.
+	Therefore, $w$ has a reduced expression ending in $s_is_{i+1}$ if and only if $w$ contains the signed consecutive patterns from above beginning in position $i$.
 \end{proof}	
 \end{lemma}
 
 \begin{corollary}\label{lem:endswithst}
-	Let $s_i,s_{i+1} \in S(B_n)$ such that $m(s_i,s_{i+1})=3$. Then $w$ has a reduced expression beginning with $s_is_{i+1}$ if and only if $w^{-1}$ contains the consecutive pattern $231$ in position $i, i+1$.
+	An element $w \in W(B_n)$ has a reduced expression beginning in $s_is_{i+1}$ where $m(s_i,s_{i+1})=3$ if and only if $w$ contains one of the following consecutive patterns beginning in position $i$:
+
+\begin{center}
+\begin{tabular}{llll}
+$231$             & $23\underbar{1}$ & $12 \underbar{3}$ & $\underbar{1}2\underbar{3}$  \\
+$\underline{1}32$ & $13 \underbar{2}$ & $\underbar{2}1\underbar{3}$  & $\underbar{213}$ 
+
+\end{tabular}	
+\end{center}.
 	\begin{proof}
-		Let $s_i,s_{i+1} \in S(B_n)$ such that $m(s_i,s_{i+1})=3$ and $s_0 \notin\{s_i,s_{i+1}\}$. We know that $w$ has no reduced expressions beginning with $s_is_{i+1}$ if and only if $w^{-1}$ has no reduced expression ending with $s_is_{i+1}$ which by Lemma~\ref{lem:ts} happens only if $w^{-1}$ avoids the consecutive pattern $231$ in position $i, i+1$. 
+		We know that $w$ has no reduced expressions beginning with $s_is_{i+1}$ if and only if $w^{-1}$ has no reduced expression ending with $s_is_{i+1}$ which by Lemma~\ref{lem:ts} happens only if $w^{-1}$ avoids the signed consecutive patterns seen above in position $i$. 
 	\end{proof}
 \end{corollary}
 
 \begin{lemma}\label{lem:st}
-Let $s_i,s_{i+1} \in S(B_n)$ such that $m(s_i,s_{i+1})=3$. Then $w$ has a reduced expression ending in $s_{i+1}s_i$ if and only if $w$ contains the consecutive pattern $312$ in position $i, i+1$.
+An element $w \in W(B_n)$ has a reduced expression ending in $s_{i+1}s_i$ where $m(s_i, s_{i+1})=3$ if and only if $w$ contains one of the following consecutive patterns beginning in position $i$:
+
+\begin{center}
+\begin{tabular}{llll}
+$312$             & $3\underbar{1}2$ & $3 \underbar{2}1$ & $3\underbar{21}$  \\
+$2\underbar{3}1$ & $2\underbar{31}$ & $1\underbar{32}$  & $\underbar{132}$ 
+
+\end{tabular}	
+\end{center}
 \begin{proof}
-	Suppose that $w$ contains the consecutive pattern $312$.  Then there is some $i$ such that $w(i)>w(i+2)>w(i+1)$. By Proposition~\ref{prop:descent} we see that $s_i \in \mathcal{R}(w)$. Multiplying on the right by $s_i$ we get $ws_i(i+1)=w(i)$ and $ws_i(i+2)=w(i+2)$. By above $w(i)>w(i+2)$, and by Proposition~\ref{prop:descent} $s_{i+1} \in \mathcal{R}(ws_i)$. This implies that $w$ has a reduced expression ending in $s_{i+1}s_i$. 
+	Suppose that $w$ contains one of the signed consecutive patterns seen above.  Then there is some $i$ such that $w(i)>w(i+2)>w(i+1)$. By Proposition~\ref{prop:descent} we see that $s_i \in \mathcal{R}(w)$. Multiplying on the right by $s_i$ we get $ws_i(i+1)=w(i)$ and $ws_i(i+2)=w(i+2)$. By above $w(i)>w(i+2)$, and by Proposition~\ref{prop:descent} $s_{i+1} \in \mathcal{R}(ws_i)$. This implies that $w$ has a reduced expression ending in $s_{i+1}s_i$. 
 	
-	Conversely suppose $w$ ends in a reduced expression with $s_{i+1}s_i$ Then $w_I=s_{i+1}s_i$. We see that $w(i)>w(i+1)$ and $w(i+2)>w(i+1)$. Since $s_{i+1} \in \mathcal{R}(ws_i)$, we have $w(i+2)=ws_i(i+2)<ws_i(i+1)=w(i)$. From this we have $w(i)>w(i+2)$, so $w(i)>w(i+2)>w(i+1)$. Hence, $w$ contains the consecutive pattern $312$. 
+	Conversely suppose $w$ ends in a reduced expression with $s_{i+1}s_i$ where $m(s_i,s_{i+1})=3$. Then $w_I=s_{i+1}s_i$. We see that $w(i)>w(i+1)$ and $w(i+2)>w(i+1)$. Since $s_{i+1} \in \mathcal{R}(ws_i)$, we have $w(i+2)=ws_i(i+2)<ws_i(i+1)=w(i)$. From this we have $w(i)>w(i+2)$, so $w(i)>w(i+2)>w(i+1)$. Hence, $w$ contains one of the signed consecutive patterns seen above. 
 	
-	Therefore, $w$ has a reduced expression ending in $s_{i+1}s_i$ if and only if $w$ contains the consecutive pattern $312$ in position $i, i+1$.
+	Therefore, $w$ has a reduced expression ending in $s_{i+1}s_i$ if and only if $w$ contains one of the signed consecutive patterns seen above beginning in position $i$.
 \end{proof}
 \end{lemma}
 
 \begin{corollary}\label{lem:endswithts}
-	Let $s_i,s_{i+1} \in S(B_n)$ such that $m(s_i,s_{i+1})=3$. Then $w$ has a reduced expression beginning with $s_{i+1}s_i$ if and only if $w^{-1}$ contains the consecutive pattern $312$ in position $i, i+1$.
+An element $w \in W(B_n)$ has a reduced expression beginning in $s_{i+1}s_i$ where $m(s_i, s_{i+1})=3$ if and only if $w$ contains one of the following consecutive patterns beginning in position $i$:
+
+\begin{center}
+\begin{tabular}{llll}
+$312$             & $3\underbar{1}2$ & $3 \underbar{2}1$ & $3\underbar{21}$  \\
+$2\underbar{3}1$ & $2\underbar{31}$ & $1\underbar{32}$  & $\underbar{132}$ 
+
+\end{tabular}	
+\end{center}
 	\begin{proof}
-		Let $s_i,s_{i+1} \in S(B_n)$ such that $m(s,t)=3$ and $s_0 \notin\{s_i,s_{i+1}\}$. We know that $w$ has no reduced expression beginning with $s_{i+1}s_i$ if and only if $w^{-1}$ has no reduced expression ending with $s_{i+1}s_i$ which by Lemma~\ref{lem:st} happens only if $w^{-1}$ avoids the consecutive pattern $312$ in position $i, i+1$.
+		Let $s_i,s_{i+1} \in S(B_n)$ such that $m(s,t)=3$ and $s_0 \notin\{s_i,s_{i+1}\}$. We know that $w$ has no reduced expression beginning with $s_{i+1}s_i$ if and only if $w^{-1}$ has no reduced expression ending with $s_{i+1}s_i$ which by Lemma~\ref{lem:st} happens only if $w^{-1}$ avoids the signed consecutive patterns seen above beginning in position $i$.
 		\end{proof}
 \end{corollary}
 

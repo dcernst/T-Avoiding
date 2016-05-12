@@ -232,14 +232,14 @@ We now introduce the concept of weak star reducibility, which is related to the 
 \end{enumerate}
 Notice that Condition (2) implies that $l(tw)>l(w)$. Also note that we are restricting our definition of weak star reducible to the set of $\FC$ elements of $W(\Gamma)$. We analogously define \emph{right weak star reducible by $s$ with respect to $t$ to $ws$}. We say that $w$ is \emph{weak star reducible} if $w$ is either left or right weak star reducible. Otherwise, we say that $w$ is \emph{non-cancellable}. Notice that from this we know that if $w \in W(\Gamma)$ is weak star reducible, the $w$ is star reducible. However, $w$ being star reducible does not imply that $w$ is weak star reducible.
 
-\begin{example}\label{ex:noncancel}
- Let $\w=s_0s_1s_0s_2$ be a reduced expression for $w \in W(B_4)$. From Example~\ref{ex:starred} we know that $w$ is left star reducible. Also, $tw=s_1s_0s_1s_0s_2$, which is not in $\FC(B_4)$. Thus, we see that $w$ is left weak star reducible by $s_0$ with respect to $s_1$ to $s_1s_0s_2$. In addition, Example~\ref{ex:starred} showed that $w$ is not right star reducible and hence $w$ is not right weak star reducible. 
-\end{example}
+%\begin{example}\label{ex:noncancel}
+% Let $\w=s_0s_1s_0s_2$ be a reduced expression for $w \in W(B_4)$. From Example~\ref{ex:starred} we know that $w$ is left star reducible. Also, $tw=s_1s_0s_1s_0s_2$, which is not in $\FC(B_4)$. Thus, we see that $w$ is left weak star reducible by $s_0$ with respect to $s_1$ to $s_1s_0s_2$. In addition, Example~\ref{ex:starred} showed that $w$ is not right star reducible and hence $w$ is not right weak star reducible. 
+%\end{example}
 
-Again it might be useful to visualize the concept of weak star reducibility in terms of heaps. Recall that in Section~\ref{sec:star} we described what a star reduction looks like in terms of heap. Since the definition of weak star reducible includes that the element a heap represents is star reducible we again need to have those properties illustrated in Figure~\ref{fig:heapw/T}. In addition, for a heap to be weak star reducible, adding the block that becomes fully exposed when a block is removed from the heap must create a braid in the heap forcing the new larger heap to not be FC. That is, one of the impermissible configurations seen in Section~\ref{sec:Heaps} will appear at the top or bottom of the heap.
+Again it might be useful to visualize the concept of weak star reducibility in terms of heaps. Recall that in Section~\ref{sec:star} we described what a star reduction looks like in terms of heaps. Since the definition of weak star reducible includes that the element a heap represents is star reducible we again need to have those properties illustrated in Figure~\ref{fig:heapw/T}. In addition, for a heap to be weak star reducible, adding the block that becomes fully exposed when a block is removed from the heap must create a braid in the heap forcing the new larger heap to not be FC. That is, one of the impermissible configurations seen in Section~\ref{sec:Heaps} will appear at the top or bottom of the heap.
 
 \begin{example}
-	Let $\w=s_0s_1s_0s_2$ be a reduced expression for $w \in W(B_4)$ as in Example~\ref{ex:noncancel}. Figure~\ref{fig:heapin2.3.2} shows the heap of $w$. Notice that in the heap we can clearly see that $w$ is left star reducible by $s_0$ with respect to $s_1$. In Figure~\ref{fig:weakstarbraid} we see that adding $s_1$ to the top of the heap creates a braid which is highlighted in \textcolor{orange}{orange}. Therefore, $w$ is left weak star reducible by $s_0$ with respect to $s_1$ to $\w=s_1s_0s_2$.
+	Let $\w=s_0s_1s_0s_2$ be a reduced expression for $w \in W(B_4)$ as in Example~\ref{ex:noncancel}. Figure~\ref{fig:heapin2.3.2} shows the heap of $w$. Notice that in the heap we can clearly see that $w$ is left star reducible by $s_0$ with respect to $s_1$. In Figure~\ref{fig:weakstarbraid} we see that adding $s_1$ to the top of the heap creates a braid which is highlighted in \textcolor{orange}{orange}. Therefore, $w$ is left weak star reducible by $s_0$ with respect to $s_1$ to $\w=s_1s_0s_2$. In addition, Example~\ref{ex:starred} showed that $w$ is not right star reducible and hence $w$ is not right weak star reducible.
 \end{example}
   
 
@@ -309,7 +309,7 @@ Before we state the classification we first define a specific group element in $
 \caption{Heap of a sandwich stack in $\FC(\C_n)$ for $n$ odd.}\label{fig:singsandstack}
 \end{figure}
 
-We can extend this pattern to the heap seen in Figure~\ref{fig:stacksandstack}. Like the smaller example above the element that corresponds to this heap has full support, is FC, and is $\tII$. Since the element that corresponds to this heap is FC, we define \emph{sandwich stacks} to be the elements in $W(\C_n)$ for $n$ odd that have a heap of the form given in Figure~\ref{fig:stacksandstack}.
+We can extend this pattern to the heap seen in Figure~\ref{fig:stacksandstack}. Like the smaller example in Figure~\ref{fig:singsandstack} the element that corresponds to this heap has full support, is FC, and is $\tII$. We define \emph{sandwich stacks} to be the elements in $W(\C_n)$ for $n$ odd that have a heap of the form given in Figure~\ref{fig:stacksandstack}.
 
 \begin{figure}[h!] \centering
 \begin{tikzpicture}[scale=0.4]
@@ -342,7 +342,7 @@ We can extend this pattern to the heap seen in Figure~\ref{fig:stacksandstack}. 
 \end{figure}
 
 \begin{remark}\label{rem:noncancel}
-	 In Coxeter systems of type $\C_n$ for $n$ odd, the sandwich stacks are the only $\tII$ elements with full support. All other types of non-cancellable elements in $W(\C_n)$ ($n$ odd) that were classified in~\cite{Ernst2010} do not have full support or have Property T. This is important to our classification of T-avoiding elements in $W(\C_n)$ for $n$ odd.
+	 In Coxeter systems of type $\C_n$ for $n$ odd, the sandwich stacks are the only $\tII$ non-cancellable elements with full support. All other types of non-cancellable elements in $W(\C_n)$ ($n$ odd) that were classified in~\cite{Ernst2010} do not have full support or have Property T. This is important to our classification of T-avoiding elements in $W(\C_n)$ for $n$ odd.
 \end{remark}
 
 

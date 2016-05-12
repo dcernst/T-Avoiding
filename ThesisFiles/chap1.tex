@@ -795,7 +795,7 @@ We say that a block in the heap for a reduced expression is \emph{fully exposed}
 	Let $\w=s_6s_4s_2s_5s_3s_1s_4s_0s_1$ be a reduced expression for $w \in \FC(\widetilde{C}_6)$ as seen in Example~\ref{ex:word}. Figure~\ref{fig:FC heap} shows a possible lattice point representation for $H(\w)$. Since $w$ is FC this is the unique heap representation for $w$. Because $\w$ has a unique heap, we can obtain $\LD(w)$ (respectively, $\RD(w)$) from the blocks that are fully exposed to the top (respectively, bottom) of the heap. We see that $\LD(w)=\{s_2,s_4,s_6\}$ and $\RD(w)=\{s_1,s_4\}$.
 \begin{figure}[h]
 \centering
-\begin{tikzpicture}[scale=0.4]
+\begin{tikzpicture}[scale=0.45]
 \heapblock{2}{6}{2}{purple}
 \heapblock{4}{6}{4}{purple}
 \heapblock{6}{6}{6}{purple}
@@ -818,7 +818,7 @@ Let $\w_1=s_0s_2s_4s_3s_2s_1$ be a reduced expression for $w \in W(\widetilde{C}
 \centering
 \begin{subfigure}[b]{0.3\textwidth}	
 \centering
-\begin{tikzpicture}[scale=0.4]
+\begin{tikzpicture}[scale=0.45]
 \heapblock{0}{6}{0}{purple}
 \heapblock{2}{6}{2}{teal}
 \heapblock{4}{6}{4}{purple}	
@@ -830,7 +830,7 @@ Let $\w_1=s_0s_2s_4s_3s_2s_1$ be a reduced expression for $w \in W(\widetilde{C}
 \end{subfigure}
 \begin{subfigure}[b]{0.3\textwidth}	
 \centering
-\begin{tikzpicture}[scale=0.4]
+\begin{tikzpicture}[scale=0.45]
 \heapblock{10}{6}{0}{purple}
 \heapblock{14}{6}{4}{purple}
 \heapblock{13}{4}{3}{teal}
@@ -856,7 +856,7 @@ Let $\w=s_3s_2s_1s_2s_5s_4s_6s_5$ be a reduced expression for $w \in W(\C_7)$. N
 \centering
 \begin{subfigure}[b]{0.3\textwidth}	
 \centering
-\begin{tikzpicture}[scale=0.4]
+\begin{tikzpicture}[scale=0.45]
 %	\heapblock{0}{6}{0}{purple}
 %	\heapblock{2}{6}{2}{teal}
 %	\heapblock{4}{6}{4}{purple}	
@@ -868,7 +868,7 @@ Let $\w=s_3s_2s_1s_2s_5s_4s_6s_5$ be a reduced expression for $w \in W(\C_7)$. N
 \end{subfigure}
 \begin{subfigure}[b]{0.3\textwidth}	
 \centering
-\begin{tikzpicture}[scale=0.4]
+\begin{tikzpicture}[scale=0.45]
 %	\heapblock{10}{6}{0}{purple}
 %	\heapblock{14}{6}{4}{purple}
 	\heapblock{13}{4}{5}{purple}
@@ -892,7 +892,7 @@ Let $(W,S)$ be a Coxeter system of type $\C_n$. If $w \in \FC(\widetilde{C}_n)$,
 \begin{figure}[h]
 \begin{tabular}{m{4cm} m{4cm} m{4cm}}
 	\begin{subfigure}{0.33\textwidth} \centering
-	\begin{tikzpicture}[scale=0.4]
+	\begin{tikzpicture}[scale=0.45]
 		\heapblock{1}{6}{1}{purple}
 		\dheapblock{2}{4}{}{black}
 		\heapblock{0}{4}{0}{purple}
@@ -903,7 +903,7 @@ Let $(W,S)$ be a Coxeter system of type $\C_n$. If $w \in \FC(\widetilde{C}_n)$,
 	\end{subfigure} &
 	
 	\begin{subfigure}{0.33\textwidth} \centering
-	\begin{tikzpicture}[scale=0.4]
+	\begin{tikzpicture}[scale=0.45]
 		\heapblock{0}{6}{0}{purple}
 		\heapblock{1}{4}{1}{purple}
 		\heapblock{0}{2}{0}{purple}
@@ -914,7 +914,7 @@ Let $(W,S)$ be a Coxeter system of type $\C_n$. If $w \in \FC(\widetilde{C}_n)$,
 	\end{subfigure} &
 
 	\begin{subfigure} {0.33\textwidth} \centering
-	\begin{tikzpicture}[scale=0.4]
+	\begin{tikzpicture}[scale=0.45]
 		\heapblock{1}{8}{}{white}
 		\heapblock{1}{6}{k+1}{purple}
 		\heapblock{0}{4}{k}{purple}
@@ -927,7 +927,7 @@ Let $(W,S)$ be a Coxeter system of type $\C_n$. If $w \in \FC(\widetilde{C}_n)$,
 	&\\
 	
 	\begin{subfigure}{0.33\textwidth} \centering
-	\begin{tikzpicture}[scale=0.4]
+	\begin{tikzpicture}[scale=0.45]
 		\heapblock{1}{8}{}{white}
 		\heapblock{2}{6}{k}{purple}
 		\heapblock{3}{4}{k+1}{purple}
@@ -938,7 +938,7 @@ Let $(W,S)$ be a Coxeter system of type $\C_n$. If $w \in \FC(\widetilde{C}_n)$,
 	\end{subfigure}&
 	
 	\begin{subfigure}{0.33\textwidth} \centering
-	\begin{tikzpicture}[scale=0.4]
+	\begin{tikzpicture}[scale=0.45]
 		\heapblock{2}{6}{n}{purple}
 		\heapblock{1}{4}{n-1}{purple}
 		\heapblock{2}{2}{n}{purple}
@@ -949,7 +949,7 @@ Let $(W,S)$ be a Coxeter system of type $\C_n$. If $w \in \FC(\widetilde{C}_n)$,
 	\end{subfigure} &
 	
 	\begin{subfigure}{0.33\textwidth} \centering
-	\begin{tikzpicture}[scale=0.4]
+	\begin{tikzpicture}[scale=0.45]
 		\heapblock{1}{6}{n-1}{purple}
 		\dheapblock{0}{4}{}{black}
 		\heapblock{2}{4}{n}{purple}

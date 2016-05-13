@@ -101,21 +101,21 @@ $31 \underbar{2}$ & $3 \underbar{12}$ & $21\underbar{3}$  & $2 \underbar{13}$
 \end{proof}	
 \end{lemma}
 
-\begin{corollary}\label{lem:endswithsts}
-	An element $w \in W(B_n)$ has a reduced expression beginning in $s_is_{i+1}s_i$ where $m(s_i,s_{i+1})=3$ if and only if $w$ contains one of the following consecutive patterns beginning in position $i$:
-
-\begin{center}
-\begin{tabular}{llll}
-$321$             & $32\underbar{1}$ & $1 \underbar{23}$ & $\underbar{123}$  \\
-$31 \underbar{2}$ & $3 \underbar{12}$ & $21\underbar{3}$  & $2 \underbar{13}$ 
-
-\end{tabular}	
-\end{center}
-
-	\begin{proof}
-		 We know that $w$ has no reduced expressions beginning with $s_is_{i+1}s_i$ if and only if $w^{-1}$ has no reduced expression ending with $s_is_{i+1}s_i$ which by Lemma~\ref{lem:sts} happens only if $w^{-1}$ avoids the signed consecutive patterns seen above beginning in position $i$.
-	\end{proof}
-\end{corollary}
+%\begin{corollary}\label{lem:endswithsts}
+%	An element $w \in W(B_n)$ has a reduced expression beginning in $s_is_{i+1}s_i$ where $m(s_i,s_{i+1})=3$ if and only if $w$ contains one of the following consecutive patterns beginning in position $i$:
+%
+%\begin{center}
+%\begin{tabular}{llll}
+%$321$             & $32\underbar{1}$ & $1 \underbar{23}$ & $\underbar{123}$  \\
+%$31 \underbar{2}$ & $3 \underbar{12}$ & $21\underbar{3}$  & $2 \underbar{13}$ 
+%
+%\end{tabular}	
+%\end{center}
+%
+%	\begin{proof}
+%		 We know that $w$ has no reduced expressions beginning with $s_is_{i+1}s_i$ if and only if $w^{-1}$ has no reduced expression ending with $s_is_{i+1}s_i$ which by Lemma~\ref{lem:sts} happens only if $w^{-1}$ avoids the signed consecutive patterns seen above beginning in position $i$.
+%	\end{proof}
+%\end{corollary}
 
 \begin{lemma}\label{lem:ts}
 An element $w \in W(B_n)$ has a reduced expression ending in $s_is_{i+1}$ where $m(s_i,s_{i+1})=3$ if and only if $w$ contains one of the following consecutive patterns beginning in position $i$:
@@ -137,20 +137,20 @@ $\underline{1}32$ & $13 \underbar{2}$ & $\underbar{2}1\underbar{3}$  & $\underba
 \end{proof}	
 \end{lemma}
 
-\begin{corollary}\label{lem:endswithst}
-	An element $w \in W(B_n)$ has a reduced expression beginning in $s_is_{i+1}$ where $m(s_i,s_{i+1})=3$ if and only if $w$ contains one of the following consecutive patterns beginning in position $i$:
-
-\begin{center}
-\begin{tabular}{llll}
-$231$             & $23\underbar{1}$ & $12 \underbar{3}$ & $\underbar{1}2\underbar{3}$  \\
-$\underline{1}32$ & $13 \underbar{2}$ & $\underbar{2}1\underbar{3}$  & $\underbar{213}$ 
-
-\end{tabular}	
-\end{center}.
-	\begin{proof}
-		We know that $w$ has no reduced expressions beginning with $s_is_{i+1}$ if and only if $w^{-1}$ has no reduced expression ending with $s_is_{i+1}$ which by Lemma~\ref{lem:ts} happens only if $w^{-1}$ avoids the signed consecutive patterns seen above in position $i$. 
-	\end{proof}
-\end{corollary}
+%\begin{corollary}\label{lem:endswithst}
+%	An element $w \in W(B_n)$ has a reduced expression beginning in $s_is_{i+1}$ where $m(s_i,s_{i+1})=3$ if and only if $w$ contains one of the following consecutive patterns beginning in position $i$:
+%
+%\begin{center}
+%\begin{tabular}{llll}
+%$231$             & $23\underbar{1}$ & $12 \underbar{3}$ & $\underbar{1}2\underbar{3}$  \\
+%$\underline{1}32$ & $13 \underbar{2}$ & $\underbar{2}1\underbar{3}$  & $\underbar{213}$ 
+%
+%\end{tabular}	
+%\end{center}.
+%	\begin{proof}
+%		We know that $w$ has no reduced expressions beginning with $s_is_{i+1}$ if and only if $w^{-1}$ has no reduced expression ending with $s_is_{i+1}$ which by Lemma~\ref{lem:ts} happens only if $w^{-1}$ avoids the signed consecutive patterns seen above in position $i$. 
+%	\end{proof}
+%\end{corollary}
 
 \begin{lemma}\label{lem:st}
 An element $w \in W(B_n)$ has a reduced expression ending in $s_{i+1}s_i$ where $m(s_i, s_{i+1})=3$ if and only if $w$ contains one of the following consecutive patterns beginning in position $i$:
@@ -171,20 +171,20 @@ $2\underbar{3}1$ & $2\underbar{31}$ & $1\underbar{32}$  & $\underbar{132}$
 \end{proof}
 \end{lemma}
 
-\begin{corollary}\label{lem:endswithts}
-An element $w \in W(B_n)$ has a reduced expression beginning in $s_{i+1}s_i$ where $m(s_i, s_{i+1})=3$ if and only if $w$ contains one of the following consecutive patterns beginning in position $i$:
-
-\begin{center}
-\begin{tabular}{llll}
-$312$             & $3\underbar{1}2$ & $3 \underbar{2}1$ & $3\underbar{21}$  \\
-$2\underbar{3}1$ & $2\underbar{31}$ & $1\underbar{32}$  & $\underbar{132}$ 
-
-\end{tabular}	
-\end{center}
-	\begin{proof}
-		Let $s_i,s_{i+1} \in S(B_n)$ such that $m(s,t)=3$ and $s_0 \notin\{s_i,s_{i+1}\}$. We know that $w$ has no reduced expression beginning with $s_{i+1}s_i$ if and only if $w^{-1}$ has no reduced expression ending with $s_{i+1}s_i$ which by Lemma~\ref{lem:st} happens only if $w^{-1}$ avoids the signed consecutive patterns seen above beginning in position $i$.
-		\end{proof}
-\end{corollary}
+%\begin{corollary}\label{lem:endswithts}
+%An element $w \in W(B_n)$ has a reduced expression beginning in $s_{i+1}s_i$ where $m(s_i, s_{i+1})=3$ if and only if $w$ contains one of the following consecutive patterns beginning in position $i$:
+%
+%\begin{center}
+%\begin{tabular}{llll}
+%$312$             & $3\underbar{1}2$ & $3 \underbar{2}1$ & $3\underbar{21}$  \\
+%$2\underbar{3}1$ & $2\underbar{31}$ & $1\underbar{32}$  & $\underbar{132}$ 
+%
+%\end{tabular}	
+%\end{center}
+%	\begin{proof}
+%		Let $s_i,s_{i+1} \in S(B_n)$ such that $m(s,t)=3$ and $s_0 \notin\{s_i,s_{i+1}\}$. We know that $w$ has no reduced expression beginning with $s_{i+1}s_i$ if and only if $w^{-1}$ has no reduced expression ending with $s_{i+1}s_i$ which by Lemma~\ref{lem:st} happens only if $w^{-1}$ avoids the signed consecutive patterns seen above beginning in position $i$.
+%		\end{proof}
+%\end{corollary}
 
 \begin{lemma}\label{lem:endswiths0}
 Let $w \in W(B_n)$. Then $w$ has a reduced expression ending in $s_1s_0$ if and only if $w(0)>w(1)$ and $-w(1)>w(2)$.
@@ -197,12 +197,12 @@ Let $w \in W(B_n)$. Then $w$ has a reduced expression ending in $s_1s_0$ if and 
 \end{proof}
 \end{lemma}
 
-\begin{corollary}\label{lem:beginswiths0}
-	Let $w \in W(B_n)$. Then $w$ has a reduced expression beginning in $s_0s_1$ if and only if $w^{-1}(0)>w^{-1}(1)$ and $-w^{-1}(1)>w^{-1}(2)$.
-	\begin{proof}
-		Let $w \in W(B_n)$. We know that $w$ has no reduced expressions beginning in $s_0s_1$ if and only if $w^{-1}$ has no reduced expressions ending in $s_0s_1$. By Lemma~\ref{lem:endswiths0} we know that this occurs if and only if $w^{-1}(0)>w^{-1}(1)$ and $-w^{-1}(1)>w^{-1}(2)$.
-	\end{proof}
-\end{corollary}
+%\begin{corollary}\label{lem:beginswiths0}
+%	Let $w \in W(B_n)$. Then $w$ has a reduced expression beginning in $s_0s_1$ if and only if $w^{-1}(0)>w^{-1}(1)$ and $-w^{-1}(1)>w^{-1}(2)$.
+%	\begin{proof}
+%		Let $w \in W(B_n)$. We know that $w$ has no reduced expressions beginning in $s_0s_1$ if and only if $w^{-1}$ has no reduced expressions ending in $s_0s_1$. By Lemma~\ref{lem:endswiths0} we know that this occurs if and only if $w^{-1}(0)>w^{-1}(1)$ and $-w^{-1}(1)>w^{-1}(2)$.
+%	\end{proof}
+%\end{corollary}
 
 \begin{lemma}\label{lem:endswiths_1}
 Let $w \in W(B_n)$. Then $w$ has a reduced expression ending in $s_0s_1$ if and only if $w(0)>w(2)$ and $w(1)>w(2)$.
@@ -215,12 +215,12 @@ Let $w \in W(B_n)$. Then $w$ has a reduced expression ending in $s_0s_1$ if and 
 \end{proof}	
 \end{lemma}
 
-\begin{corollary}\label{lem:beginswiths1}
-	Let $w \in W(B_n)$. Then $w$ has a reduced expression beginning in $s_1s_0$ if and only if $w^{-1}(0)>w^{-1}(2)$ and $w^{-1}(1)>w^{-1}(2)$.
-	\begin{proof}
-		Let $w \in W(B_n)$. We know that $w$ has no reduced expressions beginning in $s_1s_0$ if and only if $w^{-1}$ has no reduced expressions ending in $s_1s_0$. By Lemma~\ref{lem:endswiths_1} we know that this occurs if and only if $w^{-1}(0)>w^{-1}(2)$ and $w^{-1}(1)>w^{-1}(2)$.
-	\end{proof}
-\end{corollary}
+%\begin{corollary}\label{lem:beginswiths1}
+%	Let $w \in W(B_n)$. Then $w$ has a reduced expression beginning in $s_1s_0$ if and only if $w^{-1}(0)>w^{-1}(2)$ and $w^{-1}(1)>w^{-1}(2)$.
+%	\begin{proof}
+%		Let $w \in W(B_n)$. We know that $w$ has no reduced expressions beginning in $s_1s_0$ if and only if $w^{-1}$ has no reduced expressions ending in $s_1s_0$. By Lemma~\ref{lem:endswiths_1} we know that this occurs if and only if $w^{-1}(0)>w^{-1}(2)$ and $w^{-1}(1)>w^{-1}(2)$.
+%	\end{proof}
+%\end{corollary}
 
 \begin{lemma}\label{lem:prodofcommA}
 Let $w \in W(B_n)$ such that each entry for $w$ in the signed permutation notation is positive and both $w$ and $w^{-1}$ avoid the consecutive patterns $321$, $231$, and $312$. Then $w$ is a product of commuting generators.

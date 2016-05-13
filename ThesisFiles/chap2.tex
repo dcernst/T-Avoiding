@@ -1,8 +1,8 @@
-\chapter{T-Avoiding Elements in Coxeter groups of Type $B_n$}\label{chap:BnandCn}
+\chapter{Characterization of Property T in Coxeter systems of Type $B_n$}\label{chap:BnandCn}
 
-In this chapter we classify the T-avoiding elements in Coxeter systems of type $B_n$, which is an original result. We start by introducing some combinatorial tools for type $B_n$ and then finish with a proof of the classification in type $B_n$. Note that the proof for Coxeter systems of type $B_n$ closely follows the classification of T-avoiding elements of type $D_n$ seen in~\cite{Gern2013a}. 
+Mimicking the classification of T-avoiding elements of Coxeter systems of Type $D_n$ seen in~\cite{Gern2013a}, we characterize Property T and T-avoiding elements in Coxeter systems of type $B_n$. We start by introducing some combinatorial tools for Coxeter systems of type $B_n$. 
 
-\section{Tools for the Classification}\label{sec:Btools}
+\section{Combinatorial Tools}\label{sec:Btools}
 
 Recall from Example~\ref{ex:B} that $W(B_n) \cong \Sym_n^B$ (also called the hyperoctahedral group). We define $\Sym_n^B$ to be the group of all bijections $w$ of the set $\{-n, \ldots, -1, 0, 1, 2, \ldots, n\}$ such that 
 \[w(-a)=-w(a)\] for all $a \in \{-n, \ldots, -1, 0, 1, 2, \ldots, n\}$. For $w \in \Sym_n^B$ we write $w=[a_1, a_2, \ldots, a_n]$, to mean that $w(i)=a_i$ for $i \in \{1,2, \ldots n\}$ and call this the signed permutation notation of $w$. That is, we can write $w \in W(B_n)$ using signed permutation notation 
@@ -57,11 +57,28 @@ Let $w \in W(B_4)$ with signed permutation \[w=[\underline{2},4, \underline{1}, 
 Occasionally, we will need to factor $w \in W(B_n)$ in a specific manner. Let $I=\{s,t\}$ for $s, t \in S(B_n)$ such that $s$ and $t$ do not commute. Define $W^I$ as the set of all $w \in W(B_n)$ such that $\LD(w) \cap I= \emptyset$ and define $W_I=\langle s,t \rangle$. In~\cite{Humphreys1990}, it is shown that any element $w \in W(B_n)$ can be written as $w=w^Iw_I$ (reduced) where $w^I \in W^I$ and $w_I \in W_I$.
 %%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Classification of T-Avoiding Elements in Type $B_n$}\label{sec:TAB}
+\section{Signed Consecutive Patterns and Property T}\label{sec:TAB}
 
 %\textcolor{red}{Time permitting we will streamline the corollaries into the lemmas themselves or as a remark at the end of the lemmas}
 
-In this section we classify the T-avoiding elements in Coxeter systems of type $B_n$. Our main result in this section is Theorem~\ref{thm:classificationofB}. Notice that if $n=2$, $W(B_2) \cong I_2(4)$, which by Theorem~\ref{thm:i2m} we know has no $\tII$ elements. We proceed with $n \geq 3$. First we need some preparatory lemmas. 
+%In this section we classify the T-avoiding elements in Coxeter systems of type $B_n$. Our main result in this section is Theorem~\ref{thm:classificationofB}. Notice that if $n=2$, $W(B_2) \cong W(I_2(4))$, which by Theorem~\ref{thm:i2m} we know has no $\tII$ elements. We proceed with $n \geq 3$. First we need some preparatory lemmas. 
+
+By Theorem~\ref{thm:typeB} there are no $\tII$ elements in  Coxeter systems of type $B_n$. If $n=2$, there are 8 elements in $W(B_2)$. In this case, the $\tI$ elements are
+\begin{align*}
+[12] &= e\\
+[\underbar{1}2]&= s_0\\
+[21] &= s_1	
+\end{align*}
+and the elements with Property T are
+\begin{align*}
+[\underbar{2}1] &= s_1s_0\\
+[2\underbar{1}]	&= s_0s_1\\
+[1\underbar{2}] &= s_1s_0s_1\\
+[\underbar{21}] &= s_0s_1s_0\\
+[\underbar{12}] &= s_0s_1s_0s_1 =s_0s_1s_0s_1.
+\end{align*}
+For the remainder of this section we assume that $n \geq 3$.
+
 
 \begin{lemma}\label{lem:sts}
 An element $w \in W(B_n)$ has a reduced expression ending in $s_is_{i+1}s_i$ where $m(s_i,s_{i+1})=3$ if and only if $w$ contains one of the following signed consecutive patterns beginning in position $i$:

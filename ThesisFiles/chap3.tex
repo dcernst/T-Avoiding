@@ -3,9 +3,9 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Classification of T-Avoiding Elements in Type $\C_n$}\label{sec:TAC}
+\section{Classification of T-Avoiding Elements in Coxeter Groups of Type $\C_n$}\label{sec:TAC}
 
-In this section we will classify the T-avoiding elements in Coxeter systems of type $\C_n$, a new result. Since $W(A_n)$ and $W(B_n)$ are parabolic subgroups of $W(\C_n)$ and these groups have no $\tII$ elements,  any $\tII$ elements of $W(\C_n)$ must have full support. We will first show that there are no $\tII$ elements that are not FC in $W(\C_n)$.
+In this section we will classify the T-avoiding elements in Coxeter systems of type $\C_n$, a new result. We will first show that there are no $\tII$ elements that are not FC in $W(\C_n)$.
 
 Before we begin the proof we must first define the notion of a pushed-down representation of a heap. First recall that there are potentially many ways to draw the lattice point representation of a heap, each differing by the amount of vertical space between blocks. We wish to fix one such representation. Let $\w$ be a reduced expression for $w \in W(\C_n)$. We construct the \emph{pushed-down representation} of $H(\w)$ by first giving all blocks fully exposed to the bottom the same vertical position, and then all other blocks are as low as possible in the heap. That is, the heap has been constructed by placing all blocks in the lowest possible vertical position of the heap. Notice that we can now label the rows in the heap from bottom to top where the bottom-most row is row 1 and proceed naturally upward from there. 
 
@@ -32,12 +32,12 @@ Let $\w=s_0s_1s_3s_2s_1s_0s_1s_3$ be a reduced expression for $w \in W(C_3)$. Th
 \end{figure}
 \end{example}
 
-We will now show that there are no $\tII$ elements in $W(\C_n) \setminus \FC(\C_n)$. We first need the following lemma.
+We now show that there are no $\tII$ elements in $W(\C_n) \setminus \FC(\C_n)$. We first need the following lemma.
 
 \begin{lemma}\label{lem:zigzag}
-Let $w=uv$ (reduced) in a Coxeter system of type $\C_n$ such that $v$ is FC and has a reduced expression beginning in $s_0s_1\cdots s_{n-1}s_ns_{n-1}$, then $w$ has Property T on the right.
+Let $w=uv$ (reduced) in a Coxeter system of type $\C_n$ such that $v$ is FC and has a reduced expression beginning with $s_0s_1\cdots s_{n-1}s_ns_{n-1}$. Then $w$ has Property T on the right.
 \begin{proof}
-	Let $w=uv$ (reduced) is a Coxeter system of type $\C_n$ such that $v$ is FC and has a reduced expression beginning in $s_0s_1 \cdots s_{n-1}s_ns_{n-1}$. Then $w$ has the convex subheap seen in Figure~\ref{fig:lemzigzag}. Since $v$ is FC, this is the only Notice that if $v$ is just the subheap seen in Figure~\ref{fig:lemzigzag}, then $w$ has Property T on the right. Notice that in order for the subword to remain FC the only possibility for a new block to be added to the bottom of the subheap is the block for $s_{n-2}$. Again if this were the bottom of the subheap $w$ would have Property T on the right. Iterating this process we see that we can only create a heap with a single diagonal zig-zag that changes direction when it reaches $s_0$ or $s_n$. This implies that 
+	Let $w=uv$ (reduced) in a Coxeter system of type $\C_n$ such that $v$ is FC and has a reduced expression beginning with $s_0s_1 \cdots s_{n-1}s_ns_{n-1}$. The top of the heap for $v$ is shown in Figure~\ref{fig:lemzigzag} which must be a convex subheap of the heap for some reduced expression for $w$. If $H(v)$ is equal to the heap in Figure~\ref{fig:lemzigzag1}, then $v$, and hence $w$ have Property T on the right. If the heap given in Figure~\ref{fig:lemzigzag1} is not the complete heap for $v$, then since $v$ is FC, it must be the case that the heap in Figure~\ref{fig:lemzigzag2} is a convex subheap of $H(v)$. Iterating this process we see that $H(v)$ must have a zigzagging shape that changes direction every time it encounters $s_0$ or $s_n$. That is, 
 	\[
 		v=(s_0s_1 \cdots s_{n-1}s_ns_{n-1} \cdots s_1)^m 
 		\begin{cases}
@@ -45,12 +45,15 @@ Let $w=uv$ (reduced) in a Coxeter system of type $\C_n$ such that $v$ is FC and 
  			s_0s_1 \cdots s_{n-1}s_ns_{n-1} \cdots s_j & \text{for } j> 1
 		\end{cases}
 	\]  
-	From this we see that $w$ ends with $s_{j-1}s_j$ which implies $w$ has Property T.
+	From this we see that $w$ ends with $s_{j-1}s_j$ which implies $w$ has Property T on the right.
 \end{proof}
 \end{lemma}
 
-\begin{figure}\centering
+\begin{figure}[h!]\centering
+\begin{tabular}{m{7cm} m{7cm}}
+\begin{subfigure}{0.5\textwidth} \centering
 \begin{tikzpicture}[scale=0.45]
+	\sheapblock{2}{0}{}{white}
 	\dheapblock{0}{-4}{}{black}
 	\dheapblock{1}{-6}{}{black}
 	\dheapblock{2}{-8}{}{black}
@@ -71,7 +74,38 @@ Let $w=uv$ (reduced) in a Coxeter system of type $\C_n$ such that $v$ is FC and 
 	\heapblock{7}{-12}{n-1}{purple}
 	\heapblock{8}{-14}{n}{purple}
 	\heapblock{7}{-16}{n-1}{purple}
-\end{tikzpicture}	
+\end{tikzpicture}
+\caption{}\label{fig:lemzigzag1}
+\end{subfigure} &
+
+\begin{subfigure}{0.5\textwidth} \centering
+\begin{tikzpicture}[scale=0.45]
+	\dheapblock{0}{-4}{}{black}
+	\dheapblock{1}{-6}{}{black}
+	\dheapblock{2}{-8}{}{black}
+
+	\heapblock{0}{0}{0}{purple}
+	\heapblock{1}{-2}{1}{purple}
+	\heapblock{2}{-4}{2}{purple}
+	\heapblock{3}{-6}{3}{purple}
+	\heapblock{4}{-8}{4}{purple}
+	
+	\node[] at (6,-10){$\ddots$}; 
+	\node[] at (3,-10){$\ddots$};
+	
+	\dheapblock{5}{-12}{}{black}
+	\dheapblock{6}{-14}{}{black}
+	\dheapblock{5}{-16}{}{black}
+	\dheapblock{4}{-18}{}{black}
+	
+	\heapblock{7}{-12}{n-1}{purple}
+	\heapblock{8}{-14}{n}{purple}
+	\heapblock{7}{-16}{n-1}{purple}
+	\heapblock{6}{-18}{n-2}{purple}
+\end{tikzpicture}
+\caption{}\label{fig:lemzigzag2}	
+\end{subfigure}
+\end{tabular}
 \caption{The subheap of $w$ discussed in Lemma~\ref{lem:zigzag}.}\label{fig:lemzigzag}
 \end{figure}
 
@@ -79,11 +113,11 @@ Let $w=uv$ (reduced) in a Coxeter system of type $\C_n$ such that $v$ is FC and 
 \begin{theorem}\label{thm:TavoidC}
 There are no $\tII$ elements in $W(\C_n)\setminus \FC(\C_n)$. 	
 \begin{proof}
-	We proceed by contradiction. Let $w \in W(\C_n)\setminus\FC(\C_n)$ such that $w$ has full support and $w$ is $\tII$. Consider all possible pushed-down representations for heaps of $w$. Choose a representation  that has a minimal height braid among all braids appearing in all heaps for $w$ and let $k$ represent that minimum height. There may be a tie, in which case choose your favorite. Without loss of generality we assume the generators involved in the braid are $s_{i-1}$ and $s_{i},$ where the bond strength is case specific. In the following cases we give the height of a braid and unless we indicate otherwise whenever we refer to a block being in a specific row, we are considering the pushed-down representation of the heap. In order to consider the braids that we are looking for we need to allow some flexibility when referring to the vertical position of a given block. In the following cases, all subheaps are assumed to be convex.
+	We proceed by contradiction. Let $w \in W(\C_n)\setminus\FC(\C_n)$ and $w$ is $\tII$. Consider all possible pushed-down representations for heaps of $w$. Choose a representation  that has a minimal height braid among all braids appearing in all heaps for $w$ and let $k$ represent that minimum height. There may be a tie, in which case choose your favorite. Without loss of generality we assume the generators involved in the braid are $s_{i-1}$ and $s_{i},$ where the bond strength is case specific. In the following cases we give the height of a braid and unless we indicate otherwise whenever we refer to a block being in a specific row, we are considering the pushed-down representation of the heap. In order to consider the braids that we are looking for we need to allow some flexibility when referring to the vertical position of a given block. In the following cases, all subheaps are assumed to be convex.
 	
-	Case (1): In this case, we are assuming that the braid is located in consecutive rows with the upper-most block in either row 3 or row 4 and the lowest block involved in the braid is located in the bottom-most row of the heap.
+	Case (1): In this case, we are assuming that the braid is located in consecutive rows with the upper-most block in either row 3 or row 4 depending on the bond strength and the lowest block involved in the braid is located in the bottom-most row of the heap.
 	
-	Subcase (1.1): Suppose $k=3$, this implies $m(s_{i-1}, s_i)=3$. Without loss of generality assume $s_{i-1}$ is in the bottom-most row of the heap. Clearly, the block for $s_{i+1}$ must be in the bottom-most row of the heap as well, otherwise $w$ has Property T, which is a contradiction to the original choice of $w$. Restricting our focus to the subheap of $w$ that contains the braid we are considering,  we see that the subheap of $w$ has the following form
+	Subcase (1.1): Suppose $k=3$. This implies that $m(s_{i-1}, s_i)=3$. Without loss of generality assume $s_{i-1}$ is in the bottom-most row of the heap. Clearly, the block for $s_{i+1}$ must be in the bottom-most row of the heap as well, otherwise $w$ has Property T, which is a contradiction to the original choice of $w$. Restricting our focus to the subheap of $w$ that contains the braid we are considering,  we see that this subheap of $w$ has the following form
 	\begin{center}
 	\begin{tikzpicture}[scale=0.45]
 		%\sheapblock{2}{6}{i}{purple}
@@ -94,7 +128,7 @@ There are no $\tII$ elements in $W(\C_n)\setminus \FC(\C_n)$.
 		\heapblock{1}{4}{i-1}{purple}
 	\end{tikzpicture}	
 	\end{center}
- 	here the blocks for $s_{i-1}$ and $s_{i+1}$ are in the bottom-most row of the heap and are thus fully exposed. Applying the braid move we get the subheap seen here
+ 	where the blocks for $s_{i-1}$ and $s_{i+1}$ are in the bottom-most row of the heap and are thus fully exposed. Applying the braid move we get the subheap seen here
  	\begin{center}
  	\begin{tikzpicture}[scale=0.45]
  		\dheapblock{0}{0}{}{black}
@@ -108,9 +142,9 @@ There are no $\tII$ elements in $W(\C_n)\setminus \FC(\C_n)$.
  	\end{center}
 	which clearly has Property T since $s_{i-1}$ is now in the first row of the pushed-down representation. This is a contradiction to the way in which we chose $w$. 
 	
-	Subcase (1.2): Suppose $k=4$, this implies $m(s_{i-1}, s_i)=4$. Without loss of generality assume $s_{i-1}=s_0$ and $s_{i}=s_1$. 
+	Subcase (1.2): Suppose $k=4$. This implies that $m(s_{i-1}, s_i)=4$. Without loss of generality assume $s_{i-1}=s_0$ and $s_{i}=s_1$. The other case being $s_{i-1}=s_{n-1}$ and $s_i=s_n$ which we could handle with a symmetric argument.
 	
-	Subcase (1.2.1): First we take $s_0$ to be the topmost brick in the heap. The we obtain the subheap seen here
+	Subcase (1.2.1): First we take $s_0$ to be the topmost block in the braid. Then we obtain the subheap seen here
 	\begin{center}
 	\begin{tikzpicture}[scale=0.45]
 		\dheapblock{2}{2}{}{black}
@@ -120,9 +154,9 @@ There are no $\tII$ elements in $W(\C_n)\setminus \FC(\C_n)$.
 		\heapblock{0}{6}{0}{purple}
 	\end{tikzpicture}	
 	\end{center}
-	which clearly has Property T on the bottom. This is a contradiction to the way in which we chose $w$.
+	which clearly indicates that $w$ has Property T on the right. This is a contradiction to the way in which we chose $w$.
 	
-	Subcase (1.2.2): Now we take $s_1$ to be the topmost brick in the heap. Clearly, the block for $s_2$ must be in the bottom-most row of the heap as well, otherwise $w$ has Property T, which is a contradiction to the orginal choice of $w$. Restricting our focus to the subheap of $w$ that contains the braid we are considering, we see that the subheap of $w$ has the following form
+	Subcase (1.2.2): Now we take $s_1$ to be the topmost block involved in the braid. Clearly, the block for $s_2$ must be in the bottom-most row of the heap as well, otherwise $w$ has Property T, which is a contradiction to the orginal choice of $w$. Restricting our focus to the subheap of $w$ that contains the braid we are considering, we see that the subheap of $w$ has the following form
 	\begin{center}
 	\begin{tikzpicture}[scale=0.45]
 		\heapblock{2}{6}{i}{purple}
@@ -133,7 +167,7 @@ There are no $\tII$ elements in $W(\C_n)\setminus \FC(\C_n)$.
 		\heapblock{1}{4}{i-1}{purple}
 	\end{tikzpicture}	
 	\end{center}
-	here the blocks for $s_{i-1}$ and $s_{i+1}$ are in the bottom-most row of the heap and are thus fully exposed. Applying the braid move we get the subheap seen here
+	where the blocks for $s_{i-1}$ and $s_{i+1}$ are in the bottom-most row of the heap and are thus fully exposed. Applying the braid move we get the subheap seen here
  	\begin{center}
  	\begin{tikzpicture}[scale=0.45]
  		\dheapblock{0}{0}{}{black}
@@ -145,11 +179,11 @@ There are no $\tII$ elements in $W(\C_n)\setminus \FC(\C_n)$.
  		\heapblock{0}{8}{0}{purple}
  	\end{tikzpicture}
  	\end{center}
-	which clearly has Property T since $s_{i-1}$ is now in the first row of the pushed-down representation. This is a contradiction to the way in which we chose $w$. 
+	which shows that $w$ has Property T since $s_{i-1}$ is now in the first row of a pushed-down representation for $w$. This is a contradiction to the way in which we chose $w$. 
  
 	For the rest of the cases we will assume that $k \geq 4$.
 	
-	Case (2): Suppose the braid has height $k$ and assume the braid does not involve $s_0, s_1, s_{n-1}$ or $s_n$. This implies that $m(s_{i-1},s_i)=3$, $m(s_{i-2},s_{i-1})=3$ and $m(s_i,s_{i+1})=3$. Without loss of generality assume $s_i$ is in the $k$th row of the heap and if necessary we have brought the blocks for $s_{i-1}$ and $s_i$ up next to $s_i$ in row $k$. We now consider what can be in the $(k-3)$th row of the heap in two cases. 
+	Case (2): Suppose the braid has height $k$ and assume the braid does not involve $s_0, s_1, s_{n-1}$ or $s_n$. This implies that $m(s_{i-1},s_i)=3$, $m(s_{i-2},s_{i-1})=3$ and $m(s_i,s_{i+1})=3$. Without loss of generality assume $s_i$ is in the $k$th row of the heap and if necessary we have brought the blocks for $s_{i-1}$ and $s_i$ up next to $s_i$ in row $k$. We now consider which blocks may occur in the $(k-3)$th row of the heap in two cases. 
 	
 	Subcase (2.1): Assume that the block for $s_{i-1}$ is in the heap in the $(k-3)$th row and we allow for the block for $s_{i+1}$ to be in the same row as well, but it does not necessarily have to be. In the following figures of subheaps, the block for $s_{i+1}$ will be represented in a \textcolor{purple}{purple}-striped block to indicate that it could be present but it does not have to be. The following is the subheap that we are considering
 	\begin{center}
@@ -163,7 +197,7 @@ There are no $\tII$ elements in $W(\C_n)\setminus \FC(\C_n)$.
 		\heapblock{3}{6}{i}{teal}
 	\end{tikzpicture}
 	\end{center}
-	where we have highlighted the braid in \textcolor{teal}{teal}. Notice that the block for $s_{i-2}$ is present in the $(k-2)$th row otherwise there is a braid with lower height and $w$ would not be reduced. Applying the braid move to the heap we get the following subheap
+	where we have highlighted the braid in \textcolor{teal}{teal}. Notice that the block for $s_{i-2}$ is present in the $(k-2)$th row otherwise there is a braid with height less than $k$ and $w$ would not be reduced. Applying the braid move to the heap we get the following subheap
 	\begin{center}
 	\begin{tikzpicture}[scale=0.45]
 		\dheapblock{3}{2}{}{black}
@@ -176,7 +210,7 @@ There are no $\tII$ elements in $W(\C_n)\setminus \FC(\C_n)$.
 		\heapblock{2}{8}{i-1}{teal}
 	\end{tikzpicture}
 	\end{center}
-	which has a new braid in it. This braid, which we have highlighted in \textcolor{rred}{red} for emphasis, has height $k-1$. In applying the braid move we have obtained a heap which has a braid with lower height than our original choice. This is a contradiction to the way in which we chose our heap.
+	which has a new braid in it. This braid, which we have highlighted in \textcolor{rred}{red} for emphasis, has height $k-1$. In applying the braid move we have obtained a heap which has a braid with height less than $k$ our original choice. This is a contradiction to the way in which we chose our heap.
 	
 	Subcase (2.2): Assume that the block for $s_{i+1}$ is in the $(k-3)$th row of the heap and the block for $s_{i-1}$ does not appear in the $(k-3)$th row. The following is the subheap we are considering
 	\begin{center}
@@ -203,7 +237,7 @@ There are no $\tII$ elements in $W(\C_n)\setminus \FC(\C_n)$.
 	
 	Case (3): Suppose the braid has height $k$ and assume the braid contains $s_2$ or $s_{n-2}$. This implies that either $s_{i-1}=s_1$ or $s_i=s_{n-1}$. Without loss of generality we assume that the braid contains $s_2$ as the other argument is symmetric to the one presented here, and assume $s_2$ is in the $k$th row. Notice that if the braid contains $s_2s_3s_2$, we are in Case (2), as a result we assume our braid is of the form $s_1s_2s_1$ or $s_2s_1s_2$. 
 	
-	Subcase (3.1): Let the block for $s_1$ is in row $k$, then as we are not in Case (1) we know that at least one of the blocks for $s_0, s_2$ are in the $(k-3)th$ row. 
+	Subcase (3.1): Let the block for $s_1$ is in row $k$, then as we are not in Case (1) we know that at least one of the blocks for $s_0, s_2$ are in the $(k-3)$th row. 
 	
 	Subcase (3.1.1): Assume that the block for $s_0$ is in row $k-3$ but the block for $s_2$ is not in row $k-3$. The following is the subheap we are considering
 	\begin{center}
@@ -288,7 +322,7 @@ There are no $\tII$ elements in $W(\C_n)\setminus \FC(\C_n)$.
 		\heapblock{1}{4}{1}{teal}
 	\end{tikzpicture}	
 	\end{center}
-	here the braid is now has height $k-1$. The new braid now has height less than $k$ which is a contradiction to the way in which we chose the heap for $w$.
+	where the braid is now has height $k-1$. The new braid now has height less than $k$ which is a contradiction to the way in which we chose the heap for $w$.
 	
 	Subcase (3.2.2): Assume that the block for $s_1$ is in row $k-3$ and the block for $s_3$ is not in row $k-3$. Then we have the subheap
 	\begin{center}
@@ -415,7 +449,7 @@ There are no $\tII$ elements in $W(\C_n)\setminus \FC(\C_n)$.
 	\end{center}
 	where no new braids have appeared, and in fact the original braid is higher now with height $k+1$. Notice however, that the $(k-3)$th row will not be the bottom row of our heap because $w$ would have Property T with respect to $s_1$ and $s_0$ a contradiction to our assumption. With this in mind we consider the $(k-4)$th row. Notice that $s_0$ will not appear in the $(k-4)$th row as we would have a lower braid. This implies that the $(k-4)$th row contains at least one of $s_2$ or $s_4$. With this in mind we represent this with the following in the following 3 subcases. 
 	
-	Subcase (3.2.3.1): Suppose $s_2$ is in the $(k-4)th$ row but $s_4$ is not. Then we have the subheap
+	Subcase (3.2.3.1): Suppose $s_2$ is in the $(k-4)$th row but $s_4$ is not. Then we have the subheap
 	\begin{center}
 	\begin{tikzpicture}[scale=0.45]
 		\dheapblock{0}{0}{}{black}
@@ -447,7 +481,7 @@ There are no $\tII$ elements in $W(\C_n)\setminus \FC(\C_n)$.
 	\end{center}
 	where we have highlighted the additions in \textcolor{rred}{red}-striped blocks and the new lower braid is also highlighted in \textcolor{rred}{red}. This is a contradiction to the way in which we chose $w$.
 	
-	Subcase (3.2.3.2): Suppose $s_4$ is in the $(k-4)th$ row but $s_2$ is not. Then we have the subheap
+	Subcase (3.2.3.2): Suppose $s_4$ is in the $(k-4)$th row but $s_2$ is not. Then we have the subheap
 	\begin{center}
 	\begin{tikzpicture}[scale=0.45]
 		\dheapblock{0}{0}{}{black}
@@ -563,7 +597,7 @@ There are no $\tII$ elements in $W(\C_n)\setminus \FC(\C_n)$.
 		\heapblock{1}{12}{1}{teal}
 	\end{tikzpicture}	
 	\end{center}
-	where again we have highlighted the additions in \textcolor{rred}{red} blocks and put dotted blocks where no block appears. Notice that if we were to only place one of the blocks for $s_3$ or $s_5$ we would quickly be in Subcase (ii) or (iii) above. Thus we know we must place both $s_3$ and $s_5$ in the $(k-5)th$ row. Again, if the $(k-5)$th row is the first row, then  $w$ would have Property T with respect to $s_3$ and $s_2$. This implies that the $(k-5)$th row is not the bottom-most row in our heap. Iterating this process we obtain the following subheap
+	where again we have highlighted the additions in \textcolor{rred}{red} blocks and put dotted blocks where no block appears. Notice that if we were to only place one of the blocks for $s_3$ or $s_5$ we would quickly be in Subcase (ii) or (iii) above. Thus we know we must place both $s_3$ and $s_5$ in the $(k-5)$th row. Again, if the $(k-5)$th row is the first row, then  $w$ would have Property T with respect to $s_3$ and $s_2$. This implies that the $(k-5)$th row is not the bottom-most row in our heap. Iterating this process we obtain the following subheap
 	\begin{center}
 	\begin{tikzpicture}[scale=0.45] 
 		\dheapblock{0}{2}{}{black}
@@ -647,7 +681,7 @@ There are no $\tII$ elements in $W(\C_n)\setminus \FC(\C_n)$.
 	\end{tikzpicture}
 
 	\end{center}
-	where the \textcolor{rred}{red} block correspond to a portion of an FC element. Recall that as we created this subheap we placed blocks in a manner to prevent a braid from appearing with lower height we prevented blocks from being placed inside the double diagonal (signified by the dotted blocks). However the \textcolor{orange}{orange} blocks create a new braid in a lower level than the original braid. This is a contradiction to the way in which we chose $w$.  
+	where the \textcolor{rred}{red} block correspond to a portion of an FC element. Recall that as we created this subheap we placed blocks in a manner to prevent a braid from appearing with height less than $k$ we prevented blocks from being placed inside the double diagonal (signified by the dotted blocks). However the \textcolor{orange}{orange} blocks create a new braid in a lower level than the original braid. This is a contradiction to the way in which we chose $w$.  
 %	\begin{center}
 %	\begin{tikzpicture}[scale=0.45] 
 %		\heapblock{1}{12}{1}{teal}
@@ -690,9 +724,9 @@ There are no $\tII$ elements in $W(\C_n)\setminus \FC(\C_n)$.
 %	\end{center}
 %	where we see that this has led to $s_0$ being located in the $(k-4)$th row. We emphasize here with the not labeled \textcolor{rred}{red}-striped blocks that every possible brick is present in the area that was outlined in the previous heap. Notice that a new braid has now appeared in the heap. We have highlighted this in \textcolor{orange}{orange} above. This new braid has height $k-1$. This is a contradiction as the braid appears lower than the original braid we chose. 
 		
-	Case (4): Suppose the braid has height $k$ and assume the braid contains $s_1$ or $s_{n-1}$. Without loss of generality we assume that the braid contains $s_1$, as the the other argument is symmetric to the one presented here. Notice that if the braid is  $s_1s_2s_1$, then we are in Case (3), so assume the braid consists of $s_0$ and $s_1$. In this case, we take our braid to be $s_1s_0s_1s_0$. We handle the case where $s_0$ is in the $k$th row individually in Case (5). Assume that, if necessary, the blocks that complete the braid have been brought up next to $s_1$ in the $k$th row. We now consider what can happen in the $(k-3)$th row and $(k-4)$th row in two cases.  
+	Case (4): Suppose the braid has height $k$ and assume the braid contains $s_1$ or $s_{n-1}$. Without loss of generality we assume that the braid contains $s_1$, as the the other argument is symmetric to the one presented here. Notice that if the braid is  $s_1s_2s_1$, then we are in Case (3), so assume the braid consists of $s_0$ and $s_1$. 
 	
-	Subcase (4.1): Assume the block for $s_2$ is located in the $(k-3)$th row. Then the subheap we are considering is
+	Subcase (4.1): In this case, we take our braid to be $s_1s_0s_1s_0$. Assume that, if necessary, the blocks that complete the braid have been brought up next to $s_1$ in the $k$th row. We now consider which blocks can occur in the $(k-3)$th row and $(k-4)$th row in two cases. We know that row $(k-3)$ is not the bottom row of our heap so  Notice that if the block for $s_2$ is not in the $(k-3)th$ row Assume the block for $s_2$ is located in the $(k-3)$th row. Then the subheap we are considering is
 	\begin{center}
 	\begin{tikzpicture}[scale=0.45]
 		\dheapblock{2}{4}{}{black}
@@ -818,7 +852,7 @@ There are no $\tII$ elements in $W(\C_n)\setminus \FC(\C_n)$.
 	\end{center}
 	where the zig-zag pattern continues. Then by Lemma~\ref{lem:zigzag} we know that the heap has Property T on the bottom. This is a contradiction to the way in which we chose the heap for $w$. 
 	
-	Case (5): Suppose the braid has height $k$ and assume the braid contains $s_0$ or $s_n$. Without loss of generality we assume that the braid contains $s_0$ as the other argument is symmetric to the one presented here, and assume $s_0$ is in row $k$. We now consider what is in row $k-4$. Notice that $s_0$ cannot be in the $(k-4)$th row as $w$ would not be reduced. This implies that $s_2$ is in the $(k-4)$th row as the $(k-3)th$ row cannot be row 1 otherwise we are in Case (1.2.1). From this we get the subheap
+	Case (5): Suppose the braid has height $k$ and assume the braid contains $s_0$ or $s_n$. Without loss of generality we assume that the braid contains $s_0$ as the other argument is symmetric to the one presented here, and assume $s_0$ is in row $k$. We now consider what is in row $k-4$. Notice that $s_0$ cannot be in the $(k-4)$th row as $w$ would not be reduced. This implies that $s_2$ is in the $(k-4)$th row as the $(k-3)$th row cannot be row 1 otherwise we are in Case (1.2.1). From this we get the subheap
 	\begin{center}
 	\begin{tikzpicture}[scale=0.45]
 		\heapblock{2}{0}{2}{purple}

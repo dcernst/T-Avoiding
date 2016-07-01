@@ -465,7 +465,7 @@
       \vskip .5 cm
       {\large \MakeUppercase\@title \par
       \vskip .5 cm
-      \@author} \end{center} \par
+      \MakeUppercase\@author} \end{center} \par
       \quotation}
      {\thispagestyle{plain} \endquotation \clearpage}
 \else
